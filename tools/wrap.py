@@ -88,7 +88,9 @@ def layout(toks):
 
 
 def wrap(en):
-    toks = [m.group(0) for m in text.TOKEN.finditer(en)]
+    if "{n}" in en:  # pre-formatted (credits, profile cards): the author laid out the lines; lint checks widths
+        return en
+    toks =[m.group(0) for m in text.TOKEN.finditer(en)]
     out, seg = [], []
     for t in toks + [None]:
         if t is not None and tok_name(t) not in PAGE:

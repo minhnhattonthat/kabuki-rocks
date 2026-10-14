@@ -25,7 +25,7 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 | 法界坊 | Hokaibo | | party | |
 | ジロキチ | Jirokichi | | party | |
 | フジムスメ | Fuji Musume | | party (Wisteria Maiden) | |
-| 夕風 | Yukaze | | party | |
+| 夕風 | Yunagi (read ゆうなぎ; real name Hama Yunagi) | | party | |
 | 辰五郎 | Tatsugoro | | party | |
 | お七 | Oshichi | | party | |
 | 景清 | Kagekiyo | | party | |

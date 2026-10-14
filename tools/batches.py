@@ -68,7 +68,7 @@ def check(batch, out=None):
             continue
         if not en.isascii() or "\\u" in en or "\t" in en:
             errs.append(f"{k}: non-ASCII, tab or \\u escape")
-        if "{n}" in en:
+        if "{n}" in en and not k.startswith("2D"):  # bank 2D (credits, ending cards) is laid out by hand
             errs.append(f"{k}: don't write {{n}}; the build wraps lines")
         for x in lint.check(dict(byid[k], en=en)):
             errs.append(f"{k}: {x}")

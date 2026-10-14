@@ -3,175 +3,175 @@
   "id": "10D078",
   "size": 160,
   "jp": "{name94}「{ウメばあちゃん#0A9D}の 言う事を{n}{ちゃん#0AB5}ときいて たびだちのじゅんびを{n}ととのえてね。{wait}{clr}{天資#0909}をたおして へいわを とりもどすために{n}{あたし#0A19}も いっしょに行くから かならず{n}むかえにきてね。{wait}",
-  "en": "",
+  "en": "{name94}: Listen to Granny Ume properly and get ready for your journey.{wait}{clr}I'm going with you to beat Tensai and bring back peace, so be sure to come get me.{wait}",
   "notes": ""
  },
  {
   "id": "10D11B",
   "size": 58,
   "jp": "{name94}の{手がみ#0A03}「おそい！！{n}{    #035F}まちくたびれたから{n}{    #035F}さきに行くわよ！{wait}",
-  "en": "",
+  "en": "Letter from {name94}: Too slow!! I got tired of waiting, so I'm going on ahead!{wait}",
   "notes": ""
  },
  {
   "id": "10D163",
   "size": 286,
   "jp": "{ジロキチ#0903}「{name93}！ 霊になって 気づいたんだけどよ{n}{     #034F}あっちの世界には おめえの{父ちゃん#0A93}は{n}{     #034F}いねェーみたいだぜ。{wait}{ba}{b8:000D}{clr}{name93}「エッ？！ と いうことは{‥‥‥#065F}{n}生きている！？{wait}{ba}{b8:540D}{p9a}{夕風#0905}「そうね{‥‥ #0A2C}法界さんみたいに この世を{n}{   #052F}ウロついているわけでもないし{‥‥‥#065F}{n}{   #052F}{たぶん#0A66}{‥‥‥#065F}{wait}{ba}{b8:0C0D}{clr}{name94}「{name93}。{n}さきへ行けば きっと何か わかるわ！{n}{行きましょ#0A6C}！！{wait}",
-  "en": "",
+  "en": "Jirokichi: {name93}! Somethin' I noticed after becomin' a ghost: your pop ain't in the other world.{wait}{ba}{b8:000D}{clr}{name93}: Huh!? Then that means... he's alive!?{wait}{ba}{b8:540D}{p9a}Yunagi: That's right... He isn't wandering around this world like Hokaibo, either... so most likely...{wait}{ba}{b8:0C0D}{clr}{name94}: {name93}. If we go on, I'm sure we'll find out something! Let's go!!{wait}",
   "notes": ""
  },
  {
   "id": "10D289",
   "size": 100,
   "jp": "「歩き方を かえるボタンを つかってみましたか？{n} それぞれの 歩き方を ためしてみるといいですよ。{wait}",
-  "en": "",
+  "en": "Have you tried the button that changes how you walk? Try out each way of walking.{wait}",
   "notes": ""
  },
  {
   "id": "10D2F0",
   "size": 127,
   "jp": "「悪い状態には 色々ありますが{n} それらの中で みどり色の{じぞう#0A0E}で 回復できるのは{n} 『戦闘不能』 『毒』 『前かがみ』の3つです。{wait}",
-  "en": "",
+  "en": "There are all kinds of bad conditions, but the green Jizo can only cure these 3: 'Knocked Out', 'Poison', and 'Hunched Over'.{wait}",
   "notes": ""
  },
  {
   "id": "10D372",
   "size": 109,
   "jp": "「{モンスター#0A8B}と戦う時は 前方にいる人の方が{n} ねらわれやすいんです。{n} 弱い人は 後へまわしておいた方が いいですよ。{wait}",
-  "en": "",
+  "en": "When fighting monsters, people up front are more likely to get targeted. You'd better put weak folks in the back.{wait}",
   "notes": ""
  },
  {
   "id": "10D3E2",
   "size": 72,
   "jp": "いわた「う～っ いそがしい いそがしい！{n}{    #035F}お前も デバッグしてくれよ！{wait}",
-  "en": "",
+  "en": "Iwata: Ugh, so busy, so busy! You help debug too!{wait}",
   "notes": ""
  },
  {
   "id": "10D42D",
   "size": 51,
   "jp": "さたけ「あっ ちゅうか もんだいないんで！ よい？{wait}",
-  "en": "",
+  "en": "Satake: Ah, like, it's no problem! Okay?{wait}",
   "notes": ""
  },
  {
   "id": "10D463",
   "size": 78,
   "jp": "ふじき「てぃーす！ データできたよ。{n}{    #035F}ここは カブキロックスの きかくしつ{だよ。#0A01}{wait}",
-  "en": "",
+  "en": "Fujiki: 'Sup! The data's done. This is the Kabuki Rocks planning room.{wait}",
   "notes": ""
  },
  {
   "id": "10D4B4",
   "size": 72,
   "jp": "ほその「オレに てっぽうを うたせろォ！{n}{    #035F}血を はくまで うたせろォ！{wait}",
-  "en": "",
+  "en": "Hosono: Let me fire the gun! Let me fire till I cough up blood!{wait}",
   "notes": ""
  },
  {
   "id": "10D4FF",
   "size": 17,
   "jp": "たかぎ{「・・・・・・#0ABB}・・・・{wait}",
-  "en": "",
+  "en": "Takagi: ..........{wait}",
   "notes": ""
  },
  {
   "id": "10D513",
   "size": 51,
   "jp": "てるい「ここは カブキロックスの プログラムしつ{だよ。#0A01}{wait}",
-  "en": "",
+  "en": "Terui: This is the Kabuki Rocks programming room.{wait}",
   "notes": ""
  },
  {
   "id": "10D549",
   "size": 19,
   "jp": "まつもと{「・・・・・・#0ABB}・・・・{wait}",
-  "en": "",
+  "en": "Matsumoto: ..........{wait}",
   "notes": ""
  },
  {
   "id": "10D55F",
   "size": 80,
   "jp": "たきの「戦国武将で ござるよ。{n}{    #035F}{おたずね者#0A96}の{name93}座とは{n}{    #035F}おぬしたちのことか！ かくご！！{wait}",
-  "en": "",
+  "en": "Takino: I am a warlord of the Warring States! Are you the wanted {name93} Troupe? Prepare yourselves!!{wait}",
   "notes": ""
  },
  {
   "id": "10D5B3",
   "size": 60,
   "jp": "たきの「ハーッハーッハーッハーッ！{n}{    #035F}じょうだんでござるよ。{wait}",
-  "en": "",
+  "en": "Takino: Ha-ha-ha-ha! I jest, I jest.{wait}",
   "notes": ""
  },
  {
   "id": "10D5F4",
   "size": 129,
   "jp": "たかしま「カブキロックスの デザインルームまで{n}{     #034F}よう来たのう！{wait}{clr}{     #034F}やるやるとは思うてたけど ここまでやるとは{n}{     #034F}思わんかったわ。{wait}",
-  "en": "",
+  "en": "Takashima: Well now, ya made it all the way to the Kabuki Rocks design room!{wait}{clr}I figured you'd go for it, but I never figured you'd go this far.{wait}",
   "notes": ""
  },
  {
   "id": "10D678",
   "size": 33,
   "jp": "ほんどう「え～っ ダッサダサァ！{wait}",
-  "en": "",
+  "en": "Hondo: Ewww, totally lame!{wait}",
   "notes": ""
  },
  {
   "id": "10D69C",
   "size": 41,
   "jp": "さとう「オレを！ {delay:3C}オレを 見てくれェ！{wait}",
-  "en": "",
+  "en": "Sato: Look at me! {delay:3C}Look at meee!{wait}",
   "notes": ""
  },
  {
   "id": "10D6CD",
   "size": 136,
   "jp": "かい「あばれてェ！ 物ぶっこわしてェ！{wait}{clr}{   #052F}ん？ なんだ{ お前#0A1B}たち？{n}{   #052F}データ入力の ジャマすんな！{wait}{clr}{   #052F}{こいつ#0A77}を やるから サッサとクリアしろよ！{wait}",
-  "en": "",
+  "en": "Kai: I wanna go wild! I wanna smash stuff!{wait}{clr}Hm? What're you guys? Quit getting in the way of my data entry!{wait}{clr}Here, take this and hurry up and clear the game!{wait}",
   "notes": ""
  },
  {
   "id": "10D75E",
   "size": 19,
   "jp": "コンサートマイク{を 手に入れた！#0A8E}{wait}",
-  "en": "",
+  "en": "Got the 'Concert Mic'!{wait}",
   "notes": ""
  },
  {
   "id": "10D776",
   "size": 21,
   "jp": "かい「{持ち物が いっぱい#065D}じゃねぇか！{wait}",
-  "en": "",
+  "en": "Kai: Your inventory's full, ain't it!{wait}",
   "notes": ""
  },
  {
   "id": "10D78E",
   "size": 39,
   "jp": "かい「あばれてェ！ 物ぶっこわしてェ！{wait}",
-  "en": "",
+  "en": "Kai: I wanna go wild! I wanna smash stuff!{wait}",
   "notes": ""
  },
  {
   "id": "10D7EA",
   "size": 31,
   "jp": "「うちのふろは 天下一品だよ！{wait}",
-  "en": "",
+  "en": "Our bath is the finest in the land!{wait}",
   "notes": ""
  },
  {
   "id": "10D813",
   "size": 287,
   "jp": "「やあ！ ぼくの名は オタッカー おたくらは？{wait}{clr}{オタッカー「#0A8C}へー おたくら役者なんだ。{wait}{clr}{オタッカー「#0A8C}ぼくは 世界中の宝箱を あつめててね。{n}{      #034E}カブキロックスの世界には 256個の宝箱が{n}{      #034E}あると きいて やって来たんだ。{wait}{clr}{オタッカー「#0A8C}おたくらも 宝箱を持ってきたら{n}{      #034E}ぼくの 持っているアイテムと{n}{      #034E}とっかえてあげるよ。{wait}",
-  "en": "",
+  "en": "Hi! The name's Otakker. And who might you folks be?{wait}{clr}Otakker: Huh, so you folks are actors.{wait}{clr}Otakker: I collect treasure chests from all over the world. I heard there are 256 treasure chests in the world of Kabuki Rocks, so here I am.{wait}{clr}Otakker: If you folks bring me treasure chests too, I'll trade you for items I've got.{wait}",
   "notes": ""
  },
  {
   "id": "10D935",
   "size": 48,
   "jp": "{オタッカー「#0A8C}やあ おたくらか、とっかえに来たのかい？{n}{n}{choice:10D968}",
-  "en": "",
+  "en": "Otakker: Hey, it's you folks. Come to trade?{choice:10D968}",
   "notes": ""
  },
  {
@@ -185,189 +185,189 @@
   "id": "10D99C",
   "size": 18,
   "jp": "{オタッカー「#0A8C}また 来てね。{n}{wait}",
-  "en": "",
+  "en": "Otakker: Come again.{wait}",
   "notes": ""
  },
  {
   "id": "10D9B3",
   "size": 60,
   "jp": "パンパカパ{ーーー#0A2F}ン！！{delay:50}{clr}イズモの宝箱が すべて あつまりました{wait}",
-  "en": "",
+  "en": "Ta-da-da-daaaah!!{delay:50}{clr}All the treasure chests of Izumo have been collected!{wait}",
   "notes": ""
  },
  {
   "id": "10D9F9",
   "size": 58,
   "jp": "パンパカパ{ーーー#0A2F}ン！！{delay:50}{clr}アワの宝箱が すべて あつまりました{wait}",
-  "en": "",
+  "en": "Ta-da-da-daaaah!!{delay:50}{clr}All the treasure chests of Awa have been collected!{wait}",
   "notes": ""
  },
  {
   "id": "10DA3D",
   "size": 56,
   "jp": "パンパカパ{ーーー#0A2F}ン！！{delay:50}{clr}{キョウ#066E}の宝箱が すべて あつまりました{wait}",
-  "en": "",
+  "en": "Ta-da-da-daaaah!!{delay:50}{clr}All the treasure chests of Kyo have been collected!{wait}",
   "notes": ""
  },
  {
   "id": "10DA7F",
   "size": 56,
   "jp": "パンパカパ{ーーー#0A2F}ン！！{delay:50}{clr}{ヒノクニ#0997}の宝箱が すべて あつまりました{wait}",
-  "en": "",
+  "en": "Ta-da-da-daaaah!!{delay:50}{clr}All the treasure chests of Hinokuni have been collected!{wait}",
   "notes": ""
  },
  {
   "id": "10DAC1",
   "size": 58,
   "jp": "パンパカパ{ーーー#0A2F}ン！！{delay:50}{clr}エゾの宝箱が すべて あつまりました{wait}",
-  "en": "",
+  "en": "Ta-da-da-daaaah!!{delay:50}{clr}All the treasure chests of Ezo have been collected!{wait}",
   "notes": ""
  },
  {
   "id": "10DB05",
   "size": 58,
   "jp": "パンパカパ{ーーー#0A2F}ン！！{delay:50}{clr}ムツの宝箱が すべて あつまりました{wait}",
-  "en": "",
+  "en": "Ta-da-da-daaaah!!{delay:50}{clr}All the treasure chests of Mutsu have been collected!{wait}",
   "notes": ""
  },
  {
   "id": "10DB49",
   "size": 60,
   "jp": "パンパカパ{ーーー#0A2F}ン！！{delay:50}{clr}オエドの宝箱が すべて あつまりました{wait}",
-  "en": "",
+  "en": "Ta-da-da-daaaah!!{delay:50}{clr}All the treasure chests of Oedo have been collected!{wait}",
   "notes": ""
  },
  {
   "id": "10DB8F",
   "size": 68,
   "jp": "パンパカパ{ーーー#0A2F}ン！！{delay:50}{clr}カブキロックスの宝箱が すべて あつまりました{wait}",
-  "en": "",
+  "en": "Ta-da-da-daaaah!!{delay:50}{clr}All the treasure chests of Kabuki Rocks have been collected!{wait}",
   "notes": ""
  },
  {
   "id": "10DBD5",
   "size": 113,
   "jp": "{オタッカー「#0A8C}{‥‥‥#065F}‥。{wait}{clr}{オタッカー「#0A8C}すべての宝箱が あつまった しゅんかん、{n}{      #034E}ぼくは この時の かんかくが たまらなく{n}{      #034E}大すきなんだ。{wait}",
-  "en": "",
+  "en": "Otakker: ......{wait}{clr}Otakker: The moment every treasure chest is collected... I just love that feeling to pieces.{wait}",
   "notes": ""
  },
  {
   "id": "10DC4A",
   "size": 69,
   "jp": "{オタッカー「#0A8C}おめでとう。{n}{      #034E}これは ぼくの かんしゃの {気持ち#0A21}だ{n}{      #034E}うけとってくれ。{wait}",
-  "en": "",
+  "en": "Otakker: Congratulations. This is a token of my thanks. Please accept it.{wait}",
   "notes": ""
  },
  {
   "id": "10DCC4",
   "size": 5,
   "jp": "{お宝たんちマシーン#033E}{を 手に入れた！#0A8E}{wait}",
-  "en": "",
+  "en": "Got the 'Treasure Detector'!{wait}",
   "notes": ""
  },
  {
   "id": "10DCD6",
   "size": 5,
   "jp": "{体力うちわ#0316}{を 手に入れた！#0A8E}{wait}",
-  "en": "",
+  "en": "Got the 'HP Fan'!{wait}",
   "notes": ""
  },
  {
   "id": "10DCE8",
   "size": 5,
   "jp": "{声力うちわ#0317}{を 手に入れた！#0A8E}{wait}",
-  "en": "",
+  "en": "Got the 'Voice Fan'!{wait}",
   "notes": ""
  },
  {
   "id": "10DCFA",
   "size": 13,
   "jp": "金のわらじ{を 手に入れた！#0A8E}{wait}",
-  "en": "",
+  "en": "Got the 'Golden Sandals'!{wait}",
   "notes": ""
  },
  {
   "id": "10DD14",
   "size": 15,
   "jp": "二足のわらじ{を 手に入れた！#0A8E}{wait}",
-  "en": "",
+  "en": "Got the 'Double-Duty Sandals'!{wait}",
   "notes": ""
  },
  {
   "id": "10DD30",
   "size": 17,
   "jp": "ラスト・マイク{を 手に入れた！#0A8E}{wait}",
-  "en": "",
+  "en": "Got the 'Last Mic'!{wait}",
   "notes": ""
  },
  {
   "id": "10DD4E",
   "size": 5,
   "jp": "{パラパラまんが#033F}{を 手に入れた！#0A8E}{wait}",
-  "en": "",
+  "en": "Got the 'Flip Book'!{wait}",
   "notes": ""
  },
  {
   "id": "10DD62",
   "size": 19,
   "jp": "丸めたしんぶんし{を 手に入れた！#0A8E}{wait}",
-  "en": "",
+  "en": "Got the 'Rolled-Up Newspaper'!{wait}",
   "notes": ""
  },
  {
   "id": "10DDA3",
   "size": 20,
   "jp": "{オタッカー「#0A8C}{お宝たんちマシーン#033E}{を わたしたいんだけど#0A8F}{n}{      #034E}{持ち物が いっぱい#065D}だ{ね、何か すてる？#0A91}{n}{choice:10DEC6}",
-  "en": "",
+  "en": "Otakker: I'd like to give you the 'Treasure Detector', but your inventory's full. Throw something away?{choice:10DEC6}",
   "notes": ""
  },
  {
   "id": "10DDC2",
   "size": 20,
   "jp": "{オタッカー「#0A8C}{体力うちわ#0316}{を わたしたいんだけど#0A8F}{n}{      #034E}{持ち物が いっぱい#065D}だ{ね、何か すてる？#0A91}{n}{choice:10DED7}",
-  "en": "",
+  "en": "Otakker: I'd like to give you the 'HP Fan', but your inventory's full. Throw something away?{choice:10DED7}",
   "notes": ""
  },
  {
   "id": "10DDE1",
   "size": 20,
   "jp": "{オタッカー「#0A8C}{声力うちわ#0317}{を わたしたいんだけど#0A8F}{n}{      #034E}{持ち物が いっぱい#065D}だ{ね、何か すてる？#0A91}{n}{choice:10DEE8}",
-  "en": "",
+  "en": "Otakker: I'd like to give you the 'Voice Fan', but your inventory's full. Throw something away?{choice:10DEE8}",
   "notes": ""
  },
  {
   "id": "10DE00",
   "size": 28,
   "jp": "{オタッカー「#0A8C}金のわらじ{を わたしたいんだけど#0A8F}{n}{      #034E}{持ち物が いっぱい#065D}だ{ね、何か すてる？#0A91}{n}{choice:10DEF9}",
-  "en": "",
+  "en": "Otakker: I'd like to give you the 'Golden Sandals', but your inventory's full. Throw something away?{choice:10DEF9}",
   "notes": ""
  },
  {
   "id": "10DE27",
   "size": 30,
   "jp": "{オタッカー「#0A8C}二足のわらじ{を わたしたいんだけど#0A8F}{n}{      #034E}{持ち物が いっぱい#065D}だ{ね、何か すてる？#0A91}{n}{choice:10DF0A}",
-  "en": "",
+  "en": "Otakker: I'd like to give you the 'Double-Duty Sandals', but your inventory's full. Throw something away?{choice:10DF0A}",
   "notes": ""
  },
  {
   "id": "10DE50",
   "size": 32,
   "jp": "{オタッカー「#0A8C}ラスト・マイク{を わたしたいんだけど#0A8F}{n}{      #034E}{持ち物が いっぱい#065D}だ{ね、何か すてる？#0A91}{n}{choice:10DF1B}",
-  "en": "",
+  "en": "Otakker: I'd like to give you the 'Last Mic', but your inventory's full. Throw something away?{choice:10DF1B}",
   "notes": ""
  },
  {
   "id": "10DE7B",
   "size": 20,
   "jp": "{オタッカー「#0A8C}{パラパラまんが#033F}{を わたしたいんだけど#0A8F}{n}{      #034E}{持ち物が いっぱい#065D}だ{ね、何か すてる？#0A91}{n}{choice:10DF2C}",
-  "en": "",
+  "en": "Otakker: I'd like to give you the 'Flip Book', but your inventory's full. Throw something away?{choice:10DF2C}",
   "notes": ""
  },
  {
   "id": "10DE9A",
   "size": 34,
   "jp": "{オタッカー「#0A8C}丸めたしんぶんし{を わたしたいんだけど#0A8F}{n}{      #034E}{持ち物が いっぱい#065D}だ{ね、何か すてる？#0A91}{n}{choice:10DF3D}",
-  "en": "",
+  "en": "Otakker: I'd like to give you the 'Rolled-Up Newspaper', but your inventory's full. Throw something away?{choice:10DF3D}",
   "notes": ""
  },
  {
@@ -381,7 +381,7 @@
   "id": "10DEC8",
   "size": 10,
   "jp": "{オタッカー「#0A8C}{それじゃあ これは#0621}{n}{      #034E}{ぼくが あずかっておくね。#0622}{wait}",
-  "en": "",
+  "en": "Otakker: Well then, I'll hold on to this one for you.{wait}",
   "notes": ""
  },
  {
@@ -395,7 +395,7 @@
   "id": "10DED9",
   "size": 10,
   "jp": "{オタッカー「#0A8C}{それじゃあ これは#0621}{n}{      #034E}{ぼくが あずかっておくね。#0622}{wait}",
-  "en": "",
+  "en": "Otakker: Well then, I'll hold on to this one for you.{wait}",
   "notes": ""
  },
  {
@@ -409,7 +409,7 @@
   "id": "10DEEA",
   "size": 10,
   "jp": "{オタッカー「#0A8C}{それじゃあ これは#0621}{n}{      #034E}{ぼくが あずかっておくね。#0622}{wait}",
-  "en": "",
+  "en": "Otakker: Well then, I'll hold on to this one for you.{wait}",
   "notes": ""
  },
  {
@@ -423,7 +423,7 @@
   "id": "10DEFB",
   "size": 10,
   "jp": "{オタッカー「#0A8C}{それじゃあ これは#0621}{n}{      #034E}{ぼくが あずかっておくね。#0622}{wait}",
-  "en": "",
+  "en": "Otakker: Well then, I'll hold on to this one for you.{wait}",
   "notes": ""
  },
  {
@@ -437,7 +437,7 @@
   "id": "10DF0C",
   "size": 10,
   "jp": "{オタッカー「#0A8C}{それじゃあ これは#0621}{n}{      #034E}{ぼくが あずかっておくね。#0622}{wait}",
-  "en": "",
+  "en": "Otakker: Well then, I'll hold on to this one for you.{wait}",
   "notes": ""
  },
  {
@@ -451,7 +451,7 @@
   "id": "10DF1D",
   "size": 10,
   "jp": "{オタッカー「#0A8C}{それじゃあ これは#0621}{n}{      #034E}{ぼくが あずかっておくね。#0622}{wait}",
-  "en": "",
+  "en": "Otakker: Well then, I'll hold on to this one for you.{wait}",
   "notes": ""
  },
  {
@@ -465,7 +465,7 @@
   "id": "10DF2E",
   "size": 10,
   "jp": "{オタッカー「#0A8C}{それじゃあ これは#0621}{n}{      #034E}{ぼくが あずかっておくね。#0622}{wait}",
-  "en": "",
+  "en": "Otakker: Well then, I'll hold on to this one for you.{wait}",
   "notes": ""
  },
  {
@@ -479,56 +479,56 @@
   "id": "10DF3F",
   "size": 10,
   "jp": "{オタッカー「#0A8C}{それじゃあ これは#0621}{n}{      #034E}{ぼくが あずかっておくね。#0622}{wait}",
-  "en": "",
+  "en": "Otakker: Well then, I'll hold on to this one for you.{wait}",
   "notes": ""
  },
  {
   "id": "10DF4F",
   "size": 65,
   "jp": "{オタッカー「#0A8C}ガラスケースの中の宝箱が{n}{      #034E}ぜんぶ う{まって#0ABC}るから{n}{      #034E}{気持ち#0A21}がいいよね。{wait}",
-  "en": "",
+  "en": "Otakker: Every treasure chest in the glass case is filled in. Feels great, doesn't it?{wait}",
   "notes": ""
  },
  {
   "id": "10E04C",
   "size": 398,
   "jp": "{フジムスメ#0904}「はて？ どこかで 見たことのあるような‥‥{wait}{clr}{クロツカ#0913}「おおっ！ {フジムスメ#0904}ではないか！{n}{     #034F}わたしだ！ {クロツカ#0913}だ！{wait}{clr}{フジムスメ#0904}「げっ！ ク {クロツカ#0913}！{wait}{clr}{クロツカ#0913}「元気だったか？ マイハニー♥{n}{     #034F}どうだ？ むかしのことは 水にながして{n}{     #034F}わたしと けっこんしないか？{wait}{clr}{フジムスメ#0904}「き {気持ち#0A21}は うれしいどすが{n}{      #034E}女どうしは けっこんできんのどすェ{‥‥‥#065F}{wait}{clr}{name93}「女どうし じゃないって{‥‥‥#065F}{wait}{p9a}{フジムスメ#0904}「さあ {行きましょ#0A6C}う！{wait}{clr}{name94}「なんだか かわいそう あの男{‥‥‥#065F}{wait}{p9a}{name93}「男じゃないって{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "Fuji Musume: My? Haven't I seen you somewhere before...?{wait}{clr}Kurotsuka: Ohh! If it isn't Fuji Musume! It's me! Kurotsuka!{wait}{clr}Fuji Musume: Eek! K-Kurotsuka!{wait}{clr}Kurotsuka: Have you been well, my honey? What say you? Let bygones be bygones and marry me, won't you?{wait}{clr}Fuji Musume: I-I'm touched by your feelings, dear, but two women can't marry each other, you see...{wait}{clr}{name93}: You two aren't both women...{wait}{p9a}Fuji Musume: Now, let us be going!{wait}{clr}{name94}: I kinda feel sorry for that man...{wait}{p9a}{name93}: It's not a man...{wait}",
   "notes": ""
  },
  {
   "id": "10E1E1",
   "size": 43,
   "jp": "どこかで 見たことのある ふろう者がいる。{wait}",
-  "en": "",
+  "en": "There's a vagrant here who looks somehow familiar.{wait}",
   "notes": ""
  },
  {
   "id": "10E20E",
   "size": 241,
   "jp": "{クロツカ#0913}「き {きさま#0A29}たちは {name93}座！{n}{     #034F}{きさま#0A29}たちの おかげで{‥‥‥#065F}{n}{     #034F}わたしは{‥‥ #0A2C}わたしは{‥‥‥#065F}ううっ{wait}{clr}{name94}「なんだか {ちょっと#0A9B} かわいそうね。{n}何か めぐんであげましょうか？{wait}{p9a}{クロツカ#0913}「フン！{n}{     #034F}ブサイクな女の ほどこしなど うけるか！{wait}{clr}{name94}「アンタに 言われたくないわ！{wait}{clr}{行きましょ#0A6C}う！ {name93}！{wait}",
-  "en": "",
+  "en": "Kurotsuka: Y-you're the {name93} Troupe! Thanks to you lot... I... I... ugh...{wait}{clr}{name94}: Kinda pitiful, huh? Should we spare something for the poor thing?{wait}{p9a}Kurotsuka: Hmph! As if I'd take charity from an ugly woman!{wait}{clr}{name94}: Look who's talking!{wait}{clr}Let's go, {name93}!{wait}",
   "notes": ""
  },
  {
   "id": "10E304",
   "size": 17,
   "jp": "ふろう者がいる{‥‥。#0A24}{wait}",
-  "en": "",
+  "en": "There's a vagrant here...{wait}",
   "notes": ""
  },
  {
   "id": "10E31B",
   "size": 217,
   "jp": "{モ大エ#092B}「おう！ なんでェい！ てめェら！！{n}{    #035F}この{オレさま#0A4F}に 何か用か？{wait}{clr}{    #035F}{オレさま#0A4F}が 誰だか しってんのか！？{n}{    #035F}泣く子もだまる {モ大エ#092B}さまとは{n}{    #035F}このオレの事だぜ！！{wait}{clr}{    #035F}なにィ！ しらねェだァ！？{n}{    #035F}頭にくるヤロウだぜ！ かかってきな！{wait}",
-  "en": "",
+  "en": "Mo-Daiku: Oi! Whaddaya want, you lot!! Ya got business with yours truly?{wait}{clr}Ya know who I am!? The great Mo-Daiku, who shuts up even crying kids -- that's me!!{wait}{clr}Whaaat! Ya never heard of me!? You punks are gettin' on my nerves! Bring it on!{wait}",
   "notes": ""
  },
  {
   "id": "10E400",
   "size": 158,
   "jp": "{モ大エ#092B}「ま まいった！ まいりました！！{n}{    #035F}手ぬきで つくった家は{n}{    #035F}すぐに なおします ハイ{‥‥。#0A24}{wait}{clr}{    #035F}ですから このカオのことは{n}{    #035F}誰にも 言わないでおいて下さいね{‥‥。#0A24}{wait}",
-  "en": "",
+  "en": "Mo-Daiku: I-I give! I give up!! The house I built cutting corners, I'll fix it right away, yessir...{wait}{clr}So please, don't go telling anyone about this face of mine...{wait}",
   "notes": ""
  }
 ]

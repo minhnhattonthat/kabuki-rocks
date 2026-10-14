@@ -437,553 +437,553 @@
   "id": "0BA0B8",
   "size": 1384,
   "jp": "{イタコ#0921}「さて つぎは {ジロキチ#0903} という男の人ね{n}{    #035F}なかなか いい男みたいね{‥‥‥#065F}{wait}{b8:900D}{clr}{ジロキチ#0903}「{name94}！ {name94}は{n}{     #034F}{だいじょうぶ#0A2A}か？{wait}{clr}{     #034F}{‥‥‥#065F}すまん！{n}{     #034F}いくら ケモノになったとはいえ{‥‥‥#065F}{n}{     #034F}{name94}に手を{‥‥‥#065F} ゆるしてくれ。{wait}{clr}{     #034F}今は ケモノの心も 消えている。{n}{     #034F}{オレさま#0A4F}も また 戦いたいゼ！{wait}{ba}{clr}{イタコ#0921}「つぎは{‥‥‥#065F} あら？！ この人は{‥‥‥#065F}{n}{    #035F}そこのキミのお母さんだわ！{wait}{b8:030D}{clr}{name93}「！ オ オレの{‥‥‥#065F}{母ちゃん#0AA8}？！{wait}{ba}{p9a}ハナ「{name93}？ {name93}なのね。 母さんよ！{wait}{clr}{   #052F}お父さまのこと わかってくれたのね。{n}{   #052F}よかった{‥‥‥#065F}。{n}{   #052F}お父さまは りっぱな役者。{wait}{clr}{   #052F}お父さまを こえるように がんばりなさい。{n}{   #052F}お前には ステキな友だちが たくさんいる。{n}{   #052F}お前なら きっと できるはずよ。{wait}{clr}{イタコ#0921}「さいごは {法界坊#0902}っていう おじい{ちゃん#0AB5}ね{‥‥‥#065F}{wait}{clr}{    #035F}{‥‥‥#065F}‥‥{wait}{clr}{    #035F}{‥‥‥#065F}ヘンねェ。{n}{    #035F}この人の霊は 見つからないわ。{n}{    #035F}どこか さまよっているみたいね。{wait}{b8:0F0D}{clr}{name94}「スッゴイ！ この人 ホンモノよ！{wait}{ba}{b8:540D}{p9a}{イタコ#0921}「わたしの名は {夕風#0905}（ゆうなぎ）。{wait}{clr}{    #035F}『{天資#0909}をたおす！』なんて ムボウなことを{n}{    #035F}言っている{name93}座とは {あなた#0A17}たちね！{wait}{ba}{b8:030D}{clr}{name93}「ムボウじゃねェ！{‥‥‥#065F}はずだ！{wait}{ba}{b8:540D}{p9a}{夕風#0905}「{フフフッ#0A2D}。{n}{   #052F}そうね ムボウではないわ！{n}{   #052F}わたしが 仲間に入れば{‥‥‥#065F}ネッ！{wait}{ba}{b8:030D}{clr}{name93}「エッ！{n}じゃあ {ねーちゃん#0AB2}も{n}いっしょに来てくれるの？{wait}{ba}{b8:540D}{p9a}{夕風#0905}「わたしの目は 戦いの中で うしなわれたの{‥‥‥#065F}{wait}{ba}{b8:030D}{clr}{name93}「？！{‥‥‥#065F}{wait}{ba}{b8:540D}{p9a}{夕風#0905}「でも くやんでは いないわ。{n}{   #052F}今の{あなた#0A17}たちは ふくしゅうの ドロドロした心で{n}{   #052F}みちているわね。{wait}{clr}{   #052F}うらみ つらみで戦うと のこるのは{n}{   #052F}むなしさだけ{‥‥‥#065F}{wait}{clr}{   #052F}この山の ずっとおくに{n}{   #052F}{『清めの滝』#066A}という滝が あるわ。{n}{   #052F}まずは その滝にうたれ 心を清めなさい。{wait}{ba}{b8:0F0D}{clr}{name94}「{‥‥‥#065F}わかったわ。{n}滝へ{行きましょ#0A6C}う。 {name93}。{wait}",
-  "en": "",
+  "en": "Itako: Now, next is a man called Jirokichi. Seems he's quite the handsome fellow...{wait}{b8:900D}{clr}Jirokichi: {name94}! {name94}, are you all right?{wait}{clr}...I'm sorry! Even if I had turned into a beast... to lay a hand on {name94}... Forgive me.{wait}{clr}The beast's heart is gone now. I want to fight again too!{wait}{ba}{clr}Itako: Next is... oh my?! This person is... your mother, you over there!{wait}{b8:030D}{clr}{name93}: ! M-my... Mom?!{wait}{ba}{p9a}Hana: {name93}? It's you, {name93}. It's your mother!{wait}{clr}So you've come to understand your father. I'm so glad... Your father was a fine actor.{wait}{clr}Strive to surpass your father. You have so many wonderful friends. I know you can do it.{wait}{clr}Itako: Last is an old man called Hokaibo...{wait}{clr}......{wait}{clr}...How odd. I can't find this man's spirit. It seems to be wandering somewhere.{wait}{b8:0F0D}{clr}{name94}: Amazing! She's the real deal!{wait}{ba}{b8:540D}{p9a}Itako: My name is Yunagi.{wait}{clr}So you're the {name93} Troupe, going around saying such reckless things as 'We'll defeat Tensai!'{wait}{ba}{b8:030D}{clr}{name93}: It's not reckless! ...It shouldn't be!{wait}{ba}{b8:540D}{p9a}Yunagi: Heh heh. You're right, it's not reckless! Not if I join you... right?{wait}{ba}{b8:030D}{clr}{name93}: Huh! So you'll come with us, lady?{wait}{ba}{b8:540D}{p9a}Yunagi: My eyes were lost in battle...{wait}{ba}{b8:030D}{clr}{name93}: ?!...{wait}{ba}{b8:540D}{p9a}Yunagi: But I have no regrets. Right now, you're all filled with a murky lust for revenge.{wait}{clr}Fight out of grudges and bitterness, and all that remains is emptiness...{wait}{clr}Deep in these mountains is a waterfall called the 'Falls of Purification'. First, stand under those falls and purify your hearts.{wait}{ba}{b8:0F0D}{clr}{name94}: ...All right. Let's go to the falls, {name93}.{wait}",
   "notes": ""
  },
  {
   "id": "0BA628",
   "size": 95,
   "jp": "{夕風#0905}「この山の ずっとおくに{n}{   #052F}{『清めの滝』#066A}という滝が あるわ。{n}{   #052F}まずは その滝にうたれ 心を清めなさい。{wait}",
-  "en": "",
+  "en": "Yunagi: Deep in these mountains is a waterfall called the 'Falls of Purification'. First, stand under those falls and purify your hearts.{wait}",
   "notes": ""
  },
  {
   "id": "0BA68A",
   "size": 68,
   "jp": "「これよりさきは {夕風#0905}さまの {しゅぎょう#0A4D}場です。{n} いっぱん人は 入れません。{wait}",
-  "en": "",
+  "en": "Beyond this point lies Yunagi-sama's training ground. Ordinary folk may not enter.{wait}",
   "notes": ""
  },
  {
   "id": "0BA6E1",
   "size": 192,
   "jp": "{name93}「おいおい！{n}{ホント#0A5A}に {こんな所#0A68}に 入るのかよ！！{wait}{ba}{b8:0F0D}{p9a}{name94}「しかたないでしょ！{n}そうしないと {夕風#0905}さんが いっしょに{n}来てくれないって言うんだから。{wait}{clr}さあさあ！{n}早いとこ 心を清めましょ！！{wait}{ba}{b8:000D}{p9a}{name93}「チェッ！{wait}",
-  "en": "",
+  "en": "{name93}: Hey, hey! Are we really going into a place like this!!{wait}{ba}{b8:0F0D}{p9a}{name94}: What choice do we have! Yunagi-san says she won't come with us unless we do.{wait}{clr}Come on, come on! Let's hurry up and purify our hearts!!{wait}{ba}{b8:000D}{p9a}{name93}: Tch!{wait}",
   "notes": ""
  },
  {
   "id": "0BA7CB",
   "size": 260,
   "jp": "{name94}「う～ん{‥‥。#0A24}{n}心が あらわれるようねェ{‥‥。#0A24}{wait}{ba}{b8:040D}{p9a}{name93}「そうかあ？ 冷てェだけだぜ{‥‥‥#065F}{wait}{ba}{b8:0F0D}{p9a}{name94}「もう！ デリカシーのないヤツ！{wait}{clr}こうしていると{‥‥‥#065F}{n}人をうらんじゃ いけない{‥‥‥#065F}{n}そう思えてくるのよ！{wait}{ba}{b8:000D}{p9a}{name93}「チェッ！{n}こうして 頭を冷やしても {天資#0909}軍への{n}にくしみは 消えねェーゼ！{wait}",
-  "en": "",
+  "en": "{name94}: Mmm... I feel like my heart's being washed clean...{wait}{ba}{b8:040D}{p9a}{name93}: You think? It's just cold...{wait}{ba}{b8:0F0D}{p9a}{name94}: Ugh! You're so insensitive!{wait}{clr}Standing here like this... you shouldn't hold grudges against people... that's what I start to think!{wait}{ba}{b8:000D}{p9a}{name93}: Tch! Even cooling my head like this, my hatred for Tensai's army won't go away!{wait}",
   "notes": ""
  },
  {
   "id": "0BA8E3",
   "size": 55,
   "jp": "{夕風#0905}「あらっ？{n}{   #052F}おどろいた！{n}{   #052F}{あなた#0A17}たち すなおなのね～。{wait}",
-  "en": "",
+  "en": "Yunagi: My, my! What a surprise! You're quite the obedient bunch!{wait}",
   "notes": ""
  },
  {
   "id": "0BA928",
   "size": 643,
   "jp": "{name94}「エッ？！{wait}{ba}{b8:540D}{p9a}{夕風#0905}「{フフフッ#0A2D}。 うらむ心は しずまったの？{n}{   #052F}滝にうたれたぐらいで しずまるような{n}{   #052F}思いならば{‥‥‥#065F}{wait}{clr}{   #052F}このさきへは とうてい すすめないわよ。{wait}{ba}{b8:000D}{clr}{name93}「で でも{‥‥‥#065F}{n}さっき {ねーちゃん#0AB2}は うらみ つらみで{n}戦うな！{‥‥‥#065F}って{wait}{ba}{b8:540D}{p9a}{夕風#0905}「そう！ むなしさだけが のこるわ{‥‥‥#065F}{wait}{clr}{   #052F}わたしの この目{‥‥‥#065F} ある人物にやられたの。{n}{   #052F}でも うらんではいないわ！{wait}{clr}{   #052F}{‥‥‥#065F}ただね{‥‥‥#065F}{delay:3C}{clr}{   #052F}このカリは {キッチリ#0A92}と かえす{！！！#0A54}{n}{   #052F}そう{思って#0A75}いるだけよ。{wait}{ba}{b8:000D}{clr}{name93}「な なんだよ！ それって{n}思いっきり うらんでるんじゃねェか！{wait}{ba}{b8:540D}{p9a}{夕風#0905}「{フフフッ#0A2D}{n}{   #052F}どーせなら くらくジメジメするより{n}{   #052F}さわやかに いかなくちゃ！ ねっ！！{wait}{ba}{b8:0C0D}{clr}{name94}「はぁ～{‥‥‥#065F}{n}わかったような わからないような{‥‥‥#065F}{wait}{ba}{b8:540D}{p9a}{夕風#0905}「気にしないの。{n}{   #052F}{フフフッ#0A2D}。{wait}",
-  "en": "",
+  "en": "{name94}: Huh?!{wait}{ba}{b8:540D}{p9a}Yunagi: Heh heh. Has your grudge calmed down? If your feelings are so weak a waterfall can calm them...{wait}{clr}...then you'll never make it any further.{wait}{ba}{b8:000D}{clr}{name93}: B-but... earlier, lady, you said not to fight out of grudges and bitterness!...{wait}{ba}{b8:540D}{p9a}Yunagi: That's right! Only emptiness remains...{wait}{clr}These eyes of mine... a certain person did this to me. But I hold no grudge!{wait}{clr}...It's just...{delay:3C}{clr}I WILL pay this debt back in full!!! That's all I'm thinking.{wait}{ba}{b8:000D}{clr}{name93}: Wh-what the heck! That's a total grudge!{wait}{ba}{b8:540D}{p9a}Yunagi: Heh heh. If you're going to do it anyway, better to be refreshing than gloomy and damp! Right!!{wait}{ba}{b8:0C0D}{clr}{name94}: Haah... I sort of get it, and sort of don't...{wait}{ba}{b8:540D}{p9a}Yunagi: Don't worry about it. Heh heh.{wait}",
   "notes": ""
  },
  {
   "id": "0BABAD",
   "size": 21,
   "jp": "{夕風#0905}が 仲間になった！{wait}",
-  "en": "",
+  "en": "Yunagi joined the party!{wait}",
   "notes": ""
  },
  {
   "id": "0BABE0",
   "size": 377,
   "jp": "{景清#0908}「{‥‥‥#065F}{wait}{ba}{b8:580D}{clr}{夕風#0905}「あら？ {あなた#0A17}は{‥‥‥#065F}{n}{   #052F}ひょっとして！{wait}{ba}{b8:6C0D}{clr}{景清#0908}「{！！！#0A54}！{wait}{ba}{b8:580D}{clr}{夕風#0905}「{やっぱり#0A1D} {あなた#0A17}！ ウラ{イタコ#0921}ね！{n}{   #052F}どうして {こんな所#0A68}に！！{wait}{ba}{b8:000D}{clr}{name93}「ちょ {ちょっと#0A9B} まったぁ！{n}{イタコ#0921}どうしなのに なか悪いの？{wait}{ba}{b8:580D}{p9a}{夕風#0905}「ウラ{イタコ#0921}は {モンスター#0A8B}などの{n}{   #052F}邪悪な霊を つけ‥‥{n}{   #052F}わが オモテ{イタコ#0921}は 人の霊をつける‥‥{wait}{clr}{   #052F}人をつければ {モンスター#0A8B}はつかず{n}{   #052F}{モンスター#0A8B}をつければ 人はつかず‥‥{n}{   #052F}決して あい入れるものでは ないのよ。{wait}{ba}{b8:6C0D}{clr}{景清#0908}「{‥‥‥#065F}！！{wait}",
-  "en": "",
+  "en": "Kagekiyo: ......{wait}{ba}{b8:580D}{clr}Yunagi: Oh? You are... could it be!{wait}{ba}{b8:6C0D}{clr}Kagekiyo: !!!!{wait}{ba}{b8:580D}{clr}Yunagi: I knew it! You're an Ura Itako! What are you doing in a place like this!!{wait}{ba}{b8:000D}{clr}{name93}: W-wait a sec! You're both Itako, but you don't get along?{wait}{ba}{b8:580D}{p9a}Yunagi: Ura Itako take on evil spirits, like those of monsters... We Omote Itako take on the spirits of people...{wait}{clr}Take on people, and monsters won't come; take on monsters, and people won't come... The two can never be reconciled.{wait}{ba}{b8:6C0D}{clr}Kagekiyo: ...!!{wait}",
   "notes": ""
  },
  {
   "id": "0BAD7B",
   "size": 411,
   "jp": "{name93}「あれ！？{n}{景清#0908}も 心を清めに 来たのか？{wait}{ba}{b8:580D}{p9a}{夕風#0905}「あら？ {あなた#0A17}は{‥‥‥#065F}{n}{   #052F}ひょっとして！{wait}{ba}{b8:6C0D}{clr}{景清#0908}「{！！！#0A54}！{wait}{ba}{b8:580D}{clr}{夕風#0905}「{やっぱり#0A1D} {あなた#0A17}！ ウラ{イタコ#0921}ね！{n}{   #052F}どうして {こんな所#0A68}に！！{wait}{ba}{b8:000D}{clr}{name93}「ちょ {ちょっと#0A9B} まったぁ！{n}{イタコ#0921}どうしなのに なか悪いの？{wait}{ba}{b8:580D}{p9a}{夕風#0905}「ウラ{イタコ#0921}は {モンスター#0A8B}などの{n}{   #052F}邪悪な霊を つけ‥‥{n}{   #052F}わが オモテ{イタコ#0921}は 人の霊をつける‥‥{wait}{clr}{   #052F}人をつければ {モンスター#0A8B}はつかず{n}{   #052F}{モンスター#0A8B}をつければ 人はつかず‥‥{n}{   #052F}決して あい入れるものでは ないのよ。{wait}{ba}{b8:6C0D}{clr}{景清#0908}「{‥‥‥#065F}！！{wait}",
-  "en": "",
+  "en": "{name93}: Huh!? Kagekiyo, did you come to purify your heart too?{wait}{ba}{b8:580D}{p9a}Yunagi: Oh? You are... could it be!{wait}{ba}{b8:6C0D}{clr}Kagekiyo: !!!!{wait}{ba}{b8:580D}{clr}Yunagi: I knew it! You're an Ura Itako! What are you doing in a place like this!!{wait}{ba}{b8:000D}{clr}{name93}: W-wait a sec! You're both Itako, but you don't get along?{wait}{ba}{b8:580D}{p9a}Yunagi: Ura Itako take on evil spirits, like those of monsters... We Omote Itako take on the spirits of people...{wait}{clr}Take on people, and monsters won't come; take on monsters, and people won't come... The two can never be reconciled.{wait}{ba}{b8:6C0D}{clr}Kagekiyo: ...!!{wait}",
   "notes": ""
  },
  {
   "id": "0BAF2B",
   "size": 31,
   "jp": "{name94}「{ちょっと#0A9B} {景清#0908}！！{n}どこへ行くの？！{wait}",
-  "en": "",
+  "en": "{name94}: Hey, Kagekiyo!! Where are you going!?{wait}",
   "notes": ""
  },
  {
   "id": "0BAF54",
   "size": 1072,
   "jp": "{夕風#0905}「{たぶん#0A66} かれは {オソレ山#09AB}へ むかったんだと思うわ。{wait}{clr}{   #052F}さあ 霊を {ひょうい#0A52}させて{n}{   #052F}わたしたちも かれを おいましょう！{wait}{ba}{b8:0C0D}{clr}{name94}「{夕風#0905}さんは みんなの霊を{n}よび出せるだけじゃなく{n}{ひょうい#0A52} させられるんですね？{wait}{ba}{b8:540D}{p9a}{夕風#0905}「うん！{n}{   #052F}今 つけられるのは {‥‥‥#065F}{じらいや#0901}クン{n}{   #052F}{‥‥‥#065F}{ジロキチ#0903}くん {‥‥‥#065F}{お七#0907}さんの3人ね。{wait}{clr}{   #052F}わたしの十八番 『霊の{ひょうい#0A52}』で{n}{   #052F}人の霊を つけたり はずしたりできるわ。{wait}{clr}{   #052F}そうそう さっきも言ったけど 人の霊をつける時{n}{   #052F}今まで つけていた{モンスター#0A8B}の霊は{n}{   #052F}はずれてしまうわよ。 おぼえておいてね。{wait}{ba}{b8:000D}{clr}{name93}「ところで{‥‥‥#065F}{n}{法界坊#0902}の{ジイさん#0A65}は なんで{n}よべないんだ？{wait}{ba}{b8:540D}{p9a}{夕風#0905}「法界さんの霊は この世のどこかを{n}{   #052F}さまよっているみたいね。{wait}{ba}{b8:000D}{clr}{name93}「どこかには いるんだ！{wait}{ba}{b8:540D}{p9a}{夕風#0905}「ええ。{n}{   #052F}それよりも {景清#0908}っていったっけ{‥‥‥#065F}{n}{   #052F}かれのことが {しんぱい#0A28}だわ。{wait}{clr}{   #052F}かれを すくうためにも いそぎましょう！{n}{   #052F}{オソレ山#09AB}へ！{wait}{ba}{b8:0C0D}{clr}{name94}「すくうために{‥‥‥#065F}？{wait}{ba}{b8:540D}{p9a}{夕風#0905}「そう。{wait}{ba}{b8:0C0D}{clr}{name94}「{景清#0908}は より強い{モンスター#0A8B}をつけるため{n}{オソレ山#09AB}へ 行ったのですか？{wait}{ba}{b8:540D}{p9a}{夕風#0905}「そうね。 {たぶん#0A66}{‥‥‥#065F}{n}{   #052F}わたしに 封こう するためにね。{wait}{ba}{b8:0C0D}{clr}{name94}「{キケン#0A48}なんですか？{wait}{ba}{b8:540D}{p9a}{夕風#0905}「ええ。{n}{   #052F}へたをすると {モンスター#0A8B}に 体を{n}{   #052F}のっとられてしまうわ。{wait}{ba}{b8:0C0D}{clr}{name94}「そ そんなー！！{wait}{ba}{b8:540D}{p9a}{夕風#0905}「{だいじょうぶ#0A2A}。{n}{   #052F}わたしが いるんだから。{n}{   #052F}さあ {行きましょ#0A6C}う！{wait}",
-  "en": "",
+  "en": "Yunagi: He probably headed for Mount Osore.{wait}{clr}Come, let me have the spirits possess you, and we'll go after him too!{wait}{ba}{b8:0C0D}{clr}{name94}: Yunagi-san, you can't just summon everyone's spirits, you can make them possess people too?{wait}{ba}{b8:540D}{p9a}Yunagi: Yes! Right now I can attach three: ...Jiraiya-kun, ...Jirokichi-kun and ...Oshichi-san.{wait}{clr}With my Specialty, 'Spirit Possession', I can attach or remove a person's spirit.{wait}{clr}Oh yes, as I said before, when you attach a person's spirit, any monster spirit you had attached will come off. Remember that.{wait}{ba}{b8:000D}{clr}{name93}: By the way... why can't you summon old man Hokaibo?{wait}{ba}{b8:540D}{p9a}Yunagi: Hokaibo-san's spirit seems to be wandering somewhere in this world.{wait}{ba}{b8:000D}{clr}{name93}: So he's out there somewhere!{wait}{ba}{b8:540D}{p9a}Yunagi: Yes. More importantly, Kagekiyo, was it... I'm worried about him.{wait}{clr}Let's hurry, to save him too! To Mount Osore!{wait}{ba}{b8:0C0D}{clr}{name94}: To save him...?{wait}{ba}{b8:540D}{p9a}Yunagi: That's right.{wait}{ba}{b8:0C0D}{clr}{name94}: Did Kagekiyo go to Mount Osore to attach a stronger monster?{wait}{ba}{b8:540D}{p9a}Yunagi: Yes. Probably... to rival me.{wait}{ba}{b8:0C0D}{clr}{name94}: Is it dangerous?{wait}{ba}{b8:540D}{p9a}Yunagi: Yes. If it goes wrong, the monster could take over his body.{wait}{ba}{b8:0C0D}{clr}{name94}: N-no way!!{wait}{ba}{b8:540D}{p9a}Yunagi: It's all right. I'm here, after all. Come, let's go!{wait}",
   "notes": ""
  },
  {
   "id": "0BB3A2",
   "size": 25,
   "jp": "出演者が いっぱいです。{wait}",
-  "en": "",
+  "en": "The cast is full.{wait}",
   "notes": ""
  },
  {
   "id": "0BB3D2",
   "size": 34,
   "jp": "{name93}「もう ここには 用はないだろ。{wait}",
-  "en": "",
+  "en": "{name93}: Nothing left for us here.{wait}",
   "notes": ""
  },
  {
   "id": "0BB403",
   "size": 731,
   "jp": "{ケッカイババ「#0923}この山は じゃ悪な霊を ふうじた山。{n}{       #034D}いっぱん人は 中へは 入れんの{じゃ。#0A31}{wait}{clr}{夕風#0905}「オババたち{n}{   #052F}おつとめ ごくろうさま。{wait}{clr}{フウインババ「#0924}おおっ {あなた#0A17}は {夕風#0905}さま！{wait}{clr}{ケッカイババ「#0923}今 この{『オソレ山』#066B}は {キケン#0A48}です{じゃ。#0A31}{n}{       #034D}いくら {夕風#0905}さまといえども{‥‥‥#065F}{wait}{clr}{夕風#0905}「{だいじょうぶ#0A2A}よ オババ。{wait}{clr}{フウインババ「#0924}実は{‥‥‥#065F}{n}{       #034D}けっかいの一ヶ所が {五ェ門#090A}によって{n}{       #034D}やぶられたままです{じゃ。#0A31}{wait}{clr}{ケッカイババ「#0923}{ドーマン#0916}を ときはなったままで{n}{       #034D}{あたし#0A19}らの力では けっかいを{n}{       #034D}もとに もどせんのです{じゃ。#0A31}{wait}{clr}{name93}「{ドーマン#0916}を{‥‥‥#065F} {五ェ門#090A}が{‥‥‥#065F}{wait}{p9a}{フウインババ「#0924}ときはなった その時に 前の{将軍さま#0A2B}が{n}{       #034D}霊力の強い 長刀の中に ふうじこめたから{n}{       #034D}たすかったんじゃが{‥‥‥#065F}{wait}{clr}{       #034D}あのままでは この世は{‥‥‥#065F}{wait}{clr}{name94}「{ベンケイ#0900}の長刀は 将軍さまから{n}おくられた物なのね。{wait}{p9a}{name93}「{ドーマン#0916}も {天資#0909}のしわざだったのか！{n}ゆるせねェ！ {天資#0909}め！！{wait}{p9a}{夕風#0905}「{‥‥‥#065F}いそぎましょ {name93}！{n}{   #052F}{景清#0908}が あぶないわ！！{wait}{clr}{name93}「よし！ {行こう#0A69}ぜ！{wait}{p9a}{ケッカイババ「#0923}分かりました {夕風#0905}さま。{n}{       #034D}お通り下さい。{wait}",
-  "en": "",
+  "en": "Kekkai Baba: On this mountain, evil spirits are sealed. Ordinary folk may not enter.{wait}{clr}Yunagi: Grannies, thank you for your hard work.{wait}{clr}Fuin Baba: Ohh, it's you, Yunagi-sama!{wait}{clr}Kekkai Baba: Mount Osore is dangerous right now. Even for you, Yunagi-sama...{wait}{clr}Yunagi: It's all right, Granny.{wait}{clr}Fuin Baba: The truth is... one spot in the barrier was broken by Goemon, and it is still broken.{wait}{clr}Kekkai Baba: He set Doman loose, and our power alone cannot restore the barrier.{wait}{clr}{name93}: Goemon... set Doman loose...{wait}{p9a}Fuin Baba: When he was set loose, the previous shogun sealed him inside a naginata of great spiritual power, and that saved us, but...{wait}{clr}As things are, this world will...{wait}{clr}{name94}: So Benkei's naginata was a gift from the shogun.{wait}{p9a}{name93}: So Doman was Tensai's doing too! I won't stand for it! Curse you, Tensai!!{wait}{p9a}Yunagi: ...Let's hurry, {name93}! Kagekiyo is in danger!!{wait}{clr}{name93}: Right! Let's go!{wait}{p9a}Kekkai Baba: Understood, Yunagi-sama. Please, go on through.{wait}",
   "notes": ""
  },
  {
   "id": "0BB70E",
   "size": 80,
   "jp": "オババ「この山は じゃ悪な霊を ふうじた山。{n}{    #035F}いっぱん人は 中へは 入れんの{じゃ。#0A31}{wait}",
-  "en": "",
+  "en": "Granny: On this mountain, evil spirits are sealed. Ordinary folk may not enter.{wait}",
   "notes": ""
  },
  {
   "id": "0BB766",
   "size": 200,
   "jp": "「けっかいの一ヶ所が やぶられてから{n} 霊が {キョウ#066E}ボウに なっているようだなっす。{wait}{b8:540D}{clr}{夕風#0905}「そとの空気にふれると{n}{   #052F}霊は {キョウ#066E}ボウになるのよ。{wait}{ba}{b8:0F0D}{clr}{name94}「{景清#0908}は そんな中にいるの{‥‥‥#065F}{n}ちょう上へ{‥‥‥#065F} いそぎましょう！{wait}",
-  "en": "",
+  "en": "Ever since that one spot in the barrier broke, the spirits seem to have turned violent, y'see.{wait}{b8:540D}{clr}Yunagi: When spirits touch the outside air, they turn violent.{wait}{ba}{b8:0F0D}{clr}{name94}: And Kagekiyo's in the middle of all that... To the summit... let's hurry!{wait}",
   "notes": ""
  },
  {
   "id": "0BB833",
   "size": 35,
   "jp": "「このごろ 霊が おとなしいなァ{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "The spirits have been quiet lately...{wait}",
   "notes": ""
  },
  {
   "id": "0BB862",
   "size": 28,
   "jp": "{name94}「大きな {地しん#0A53}だったわね‥‥{wait}",
-  "en": "",
+  "en": "{name94}: That was a big earthquake...{wait}",
   "notes": ""
  },
  {
   "id": "0BB883",
   "size": 11,
   "jp": "「お{気をつけ#0A63}て。{wait}",
-  "en": "",
+  "en": "Take care.{wait}",
   "notes": ""
  },
  {
   "id": "0BB8AD",
   "size": 10,
   "jp": "{name93}「{景清#0908}！！{wait}",
-  "en": "",
+  "en": "{name93}: Kagekiyo!!{wait}",
   "notes": ""
  },
  {
   "id": "0BB8CF",
   "size": 24,
   "jp": "{name93}「{景清#0908}！！{wait}{ba}{b8:730D}{p9a}{景清#0908}「{‥‥‥#065F}！{wait}",
-  "en": "",
+  "en": "{name93}: Kagekiyo!!{wait}{ba}{b8:730D}{p9a}Kagekiyo: ...!{wait}",
   "notes": ""
  },
  {
   "id": "0BB8F5",
   "size": 48,
   "jp": "{name94}「{景清#0908}！！ 行っちゃだめェー！！{wait}{ba}{b8:730D}{p9a}{景清#0908}「{‥‥‥#065F}！！{wait}",
-  "en": "",
+  "en": "{name94}: Kagekiyo!! Don't go!!{wait}{ba}{b8:730D}{p9a}Kagekiyo: ...!!{wait}",
   "notes": ""
  },
  {
   "id": "0BB934",
   "size": 104,
   "jp": "{name93}「あ あれは {ドーマン#0916}！？{wait}{ba}{b8:540D}{p9a}{夕風#0905}「いいえ！ {ドーマン#0916}の弟・{ゴーマン#0927}よ！{n}{   #052F}たんなる弟だなんて {思って#0A75}いると{n}{   #052F}ケガするわよ！{wait}",
-  "en": "",
+  "en": "{name93}: Wh-what, is that Doman!?{wait}{ba}{b8:540D}{p9a}Yunagi: No! It's Doman's little brother, Goman! Think he's just a little brother and you'll get hurt!{wait}",
   "notes": ""
  },
  {
   "id": "0BB9AB",
   "size": 25,
   "jp": "{name94}「{景清#0908}！ もどるのよ！！{wait}{p9a}",
-  "en": "",
+  "en": "{name94}: Kagekiyo! Come back!!{wait}{p9a}",
   "notes": ""
  },
  {
   "id": "0BB9D5",
   "size": 187,
   "jp": "{name93}「なーに 死んだって {夕風#0905}の{ねェーちゃん#0A3E}に{n}よんでもらえるんだ。{n}あん心して 死んでいいゾ！ {景清#0908}！！{wait}{ba}{b8:730D}{p9a}{景清#0908}「！{wait}{ba}{b8:0C0D}{clr}{name94}「{name93}！ 何てこと言うの！！{wait}{ba}{b8:030D}{p9a}{name93}「{夕風#0905}の{ねェーちゃん#0A3E}の 勝ちだな。{n}お前の まけだよ {景清#0908}！！{wait}{p9a}",
-  "en": "",
+  "en": "{name93}: Aw, even if you die, big sis Yunagi can call you back. So go ahead and die with peace of mind, Kagekiyo!!{wait}{ba}{b8:730D}{p9a}Kagekiyo: !{wait}{ba}{b8:0C0D}{clr}{name94}: {name93}! What a thing to say!!{wait}{ba}{b8:030D}{p9a}{name93}: Then big sis Yunagi wins. You lose, Kagekiyo!!{wait}{p9a}",
   "notes": ""
  },
  {
   "id": "0BBA9E",
   "size": 44,
   "jp": "{景清#0908}「ウオーッ！{n}{   #052F}{こんな所#0A68}で 死んでたまるかぁ！！{wait}",
-  "en": "",
+  "en": "Kagekiyo: Graaah! I will not die in a place like this!!{wait}",
   "notes": ""
  },
  {
   "id": "0BBAD7",
   "size": 15,
   "jp": "{name94}「か {景清#0908}が{‥‥‥#065F}{wait}{p9a}",
-  "en": "",
+  "en": "{name94}: K-Kagekiyo...{wait}{p9a}",
   "notes": ""
  },
  {
   "id": "0BBB03",
   "size": 588,
   "jp": "{name94}「か {景清#0908}が{‥‥‥#065F} しゃべった{‥‥‥#065F}{wait}{ba}{b8:730D}{p9a}{景清#0908}「し しまった！{wait}{ba}{b8:540D}{clr}{夕風#0905}「それでいいのよ。 {景清#0908}くん。{n}{   #052F}人の心を わすれてまで {モンスター#0A8B}を{n}{   #052F}つけるようなことを してはいけないわ。{wait}{ba}{b8:6F0D}{clr}{景清#0908}「しかし{‥‥‥#065F} しゃべってしまったからには{‥‥‥#065F}{n}{   #052F}もう{‥‥‥#065F} {モンスター#0A8B}は つけられぬ！！{wait}{ba}{b8:540D}{clr}{夕風#0905}「{フフフッ#0A2D} {だいじょうぶ#0A2A}よ。{n}{   #052F}今まで かなり {しゅぎょう#0A4D}を つんでるもの。{wait}{clr}{   #052F}あの手の{モンスター#0A8B}は つけられないけど{n}{   #052F}{あなた#0A17}の力は そのままよ。{wait}{ba}{b8:6F0D}{clr}{景清#0908}「エッ？{wait}{ba}{b8:540D}{clr}{夕風#0905}「ウラ{イタコ#0921}はね 人の言葉を しゃべっちゃいけない{n}{   #052F}なんて 決めごとを作ってるけど{‥‥‥#065F}{n}{   #052F}何の こんきょも ないのよ！！{wait}{ba}{b8:6F0D}{clr}{景清#0908}「ええ～ッ！！{wait}{ba}{b8:540D}{clr}{夕風#0905}「{フフフッ#0A2D}。 それより あの{まぬけ#0AA2}{n}{   #052F}ついでだから やっつけちゃいましょ！{wait}",
-  "en": "",
+  "en": "{name94}: K-Kagekiyo... spoke...{wait}{ba}{b8:730D}{p9a}Kagekiyo: Bl-blast!{wait}{ba}{b8:540D}{clr}Yunagi: That's fine, Kagekiyo-kun. You mustn't go so far as to forget your human heart just to attach monsters.{wait}{ba}{b8:6F0D}{clr}Kagekiyo: But... now that I have spoken... I can no longer take on monsters!!{wait}{ba}{b8:540D}{clr}Yunagi: Hehehe, don't worry. You've done plenty of training up to now.{wait}{clr}You can't attach monsters like that one anymore, but your power stays as it is.{wait}{ba}{b8:6F0D}{clr}Kagekiyo: Eh?{wait}{ba}{b8:540D}{clr}Yunagi: The Shadow Itako made a rule that you mustn't speak human words... but there's no basis for it at all!!{wait}{ba}{b8:6F0D}{clr}Kagekiyo: Whaaat!!{wait}{ba}{b8:540D}{clr}Yunagi: Hehehe. Anyway, while we're at it, let's take out that dimwit too!{wait}",
   "notes": ""
  },
  {
   "id": "0BBD64",
   "size": 139,
   "jp": "{ゴーマン#0927}「くっ くっ くっ{wait}{clr}{    #035F}おれさまを・・・・たおすだと！？{wait}{clr}{    #035F}{きさま#0A29}ら 虫ケラに 何ができる{n}{    #035F}{景清#0908}と いっしょに この体に{n}{    #035F}とりこんでくれるわ{！！！#0A54}{wait}",
-  "en": "",
+  "en": "Goman: Heh, heh, heh...{wait}{clr}You... defeat the great me!?{wait}{clr}What can vermin like you do? I'll absorb you into this body along with Kagekiyo!!!{wait}",
   "notes": ""
  },
  {
   "id": "0BBE06",
   "size": 169,
   "jp": "{夕風#0905}「さて と・・・言うことは それだけ？{wait}{clr}  せっかく 出てきたのに かわいそう だけど{n}  しかたないわね{wait}{clr}  いくわよ {景清#0908}くん！{wait}{ba}{b8:6F0D}{clr}{景清#0908}「ハイ！！{delay:B4}{ba}{b8:580D}{clr}{夕風#0905}「ヤァ{ーーー#0A2F}{！！！#0A54}{wait}",
-  "en": "",
+  "en": "Yunagi: Well, then... is that all you have to say?{wait}{clr}You went to the trouble of coming out here, so it's a pity, but it can't be helped.{wait}{clr}Here we go, Kagekiyo-kun!{wait}{ba}{b8:6F0D}{clr}Kagekiyo: Yes!!{delay:B4}{ba}{b8:580D}{clr}Yunagi: Yaaaah!!!{wait}",
   "notes": ""
  },
  {
   "id": "0BBECD",
   "size": 13,
   "jp": "{景清#0908}「タァ{ーーー#0A2F}{！！！#0A54}{wait}",
-  "en": "",
+  "en": "Kagekiyo: Taaaah!!!{wait}",
   "notes": ""
  },
  {
   "id": "0BBEF4",
   "size": 182,
   "jp": "{ゴーマン#0927}「な なに！？{n}{     #034F}お おれさまの・・・ か 体が・・・{wait}{b8:541F}{clr}{夕風#0905}「自分の 世界に 帰りなさい！！{wait}{clr}  {景清#0908}くん さいごの しあげよ{wait}{ba}{clr}{ゴーマン#0927}「くっ き {きさま#0A29}ら・・・{delay:5A}{b8:541F}{clr}{夕風#0905}「じゃあね バイバイ{wait}",
-  "en": "",
+  "en": "Goman: Wh-what?! M-my... b-body...{wait}{b8:541F}{clr}Yunagi: Go back to your own world!!{wait}{clr}Kagekiyo-kun, time for the finishing touch!{wait}{ba}{clr}Goman: Ngh, y-you wretches...{delay:5A}{b8:541F}{clr}Yunagi: Well, bye-bye!{wait}",
   "notes": ""
  },
  {
   "id": "0BBFCE",
   "size": 20,
   "jp": "{ゴーマン#0927}「うおっ{ーーー#0A2F}ーー！{n}{wait}",
-  "en": "",
+  "en": "Goman: Uwoooooh!{wait}",
   "notes": ""
  },
  {
   "id": "0BC002",
   "size": 838,
   "jp": "{name93}「やったじゃねーか {景清#0908}！{wait}{ba}{b8:6F0D}{p9a}{景清#0908}「{name93} {ありがとう#0AB4}{‥‥ #0A2C}れいを言う。{wait}{ba}{b8:000D}{clr}{name93}「エッ？{wait}{ba}{b8:6F0D}{p9a}{景清#0908}「あそこで{ お前#0A1B}が わたしを ぶじょくしなければ{n}{   #052F}今ごろ{‥‥‥#065F}{n}{   #052F}ヤツに とりこまれていただろう。{wait}{ba}{b8:540D}{clr}{夕風#0905}「フフッ かんがえたわね。 さすがは 座長さんね。{wait}{ba}{b8:0F0D}{clr}{name94}「{name93} ごめん {あたし#0A19}{‥‥‥#065F}{n}『なんだ{こいつ#0A77}！』って 思っちゃったわ。{wait}{ba}{b8:000D}{p9a}{name93}「へへっ いいってことよ！{wait}{clr}でも {夕風#0905}の {ねーちゃん#0AB2}もすげえよな{wait}{ba}{b8:6F0D}{p9a}{景清#0908}「ああ {夕風#0905}さんの 力が これほどとは・・・・{wait}{ba}{b8:540D}{clr}{夕風#0905}「わたし 一人の 力じゃないわよ{n}{   #052F}さっきも言ったけど {景清#0908}くん{n}{   #052F}{あなた#0A17}も 霊力がアップしてるのよ{wait}{clr}{   #052F}だって いくらわたしでも あんな 化け物{n}{   #052F}一人じゃ たおせないわよ{wait}{ba}{b8:030D}{clr}{name93}「でも あんなに じしんたっぷりに・・・{wait}{ba}{b8:540D}{p9a}{夕風#0905}「かけよ！{wait}{ba}{b8:030D}{clr}{name93}「えっ！？{wait}{ba}{b8:540D}{p9a}{夕風#0905}「{景清#0908}くんの 力を しんじてみたのよ！{wait}{ba}{b8:030D}{clr}{name93}「じゃ 本当に 勝てるかどうか{n}わからなかったのか！？{wait}{ba}{b8:540D}{p9a}{夕風#0905}「ええ{wait}{ba}{b8:030D}{clr}{name93}「いやー ほんとにすげえよ{n}きもっ玉 すわってるよ{n}{夕風#0905}の{ねーちゃん#0AB2}は！{wait}",
-  "en": "",
+  "en": "{name93}: You did it, Kagekiyo!{wait}{ba}{b8:6F0D}{p9a}Kagekiyo: {name93}, thank you... I am in your debt.{wait}{ba}{b8:000D}{clr}{name93}: Huh?{wait}{ba}{b8:6F0D}{p9a}Kagekiyo: Had you not insulted me back there, by now... that thing would have swallowed me up.{wait}{ba}{b8:540D}{clr}Yunagi: Heh, clever thinking. Just what I'd expect from our troupe leader.{wait}{ba}{b8:0F0D}{clr}{name94}: {name93}, I'm sorry... I thought, 'What is with this guy!'{wait}{ba}{b8:000D}{p9a}{name93}: Heh, don't sweat it!{wait}{clr}But Big Sis Yunagi is amazing too!{wait}{ba}{b8:6F0D}{p9a}Kagekiyo: Yes, I never knew Yunagi-san's power was this great...{wait}{ba}{b8:540D}{clr}Yunagi: It wasn't my power alone. Like I said before, Kagekiyo-kun, your spirit power has gone up too.{wait}{clr}After all, even I couldn't defeat a monster like that by myself.{wait}{ba}{b8:030D}{clr}{name93}: But you were so full of confidence...{wait}{ba}{b8:540D}{p9a}Yunagi: It was a gamble!{wait}{ba}{b8:030D}{clr}{name93}: Huh?!{wait}{ba}{b8:540D}{p9a}Yunagi: I chose to believe in Kagekiyo-kun's power!{wait}{ba}{b8:030D}{clr}{name93}: So you really didn't know if we could win?!{wait}{ba}{b8:540D}{p9a}Yunagi: That's right.{wait}{ba}{b8:030D}{clr}{name93}: Man, you really are amazing! You've got nerves of steel, Big Sis Yunagi!{wait}",
   "notes": ""
  },
  {
   "id": "0BC379",
   "size": 93,
   "jp": "{name93}「あれ {甚五郎#0922}のおっさん！{wait}{ba}{p9a}{甚五郎#0922}「{name93}よ！ たいへん{じゃ！#0A58}！{wait}{b8:0F0D}{clr}{name94}「どうしたの あわてて！{wait}{ba}{p9a}{甚五郎#0922}「実は！{wait}",
-  "en": "",
+  "en": "{name93}: Hey, it's old man Jingoro!{wait}{ba}{p9a}Jingoro: {name93}! This is terrible!!{wait}{b8:0F0D}{clr}{name94}: What's wrong? Why the rush?{wait}{ba}{p9a}Jingoro: The truth is...!{wait}",
   "notes": ""
  },
  {
   "id": "0BC3E7",
   "size": 201,
   "jp": "{甚五郎#0922}「{天資#0909}の 本当のねらいは この世のハカイ！{n}{    #035F}全ての人々の霊を 自分に ごっそりつけよう{n}{    #035F}という コンタンなの{じゃ。#0A31}{wait}{b8:540D}{clr}{夕風#0905}「霊を そんなにたくさん つけたら{‥‥‥#065F}{n}{   #052F}とてつもない 化け物になるわよ！ {キケン#0A48}だわ！{wait}",
-  "en": "",
+  "en": "Jingoro: Tensai's true aim is to destroy this world! His scheme is to make the spirits of all people possess him, every last one.{wait}{b8:540D}{clr}Yunagi: If he takes on that many spirits... he'll become a monster beyond imagining! That's dangerous!{wait}",
   "notes": ""
  },
  {
   "id": "0BC4BB",
   "size": 510,
   "jp": "{景清#0908}「{天資#0909}は わたしの{ししょう#0A55} カゲトラから{n}{   #052F}ウラ{イタコ#0921}じゅつを 盗んだ上に{‥‥‥#065F}{n}{   #052F}{ししょう#0A55}を{‥‥‥#065F} ころしたのだ！！{wait}{ba}{b8:030D}{clr}{name93}「{景清#0908}が {天資#0909}を ねらっていたのは{n}{ししょう#0A55}のためだったのか{‥‥‥#065F}{wait}{ba}{b8:700D}{p9a}{景清#0908}「ウム！{n}{   #052F}{ししょう#0A55}のうらみ はらさでおくべきか！！{wait}{ba}{clr}{甚五郎#0922}「{天資#0909}は {れんダコわく星#0A0F}の パイプを{n}{    #035F}切ろうと しておるの{じゃ。#0A31}{wait}{b8:0C0D}{clr}{name94}「それじゃあ さっきの {地しん#0A53}も{‥‥‥#065F}{wait}{ba}{p9a}{甚五郎#0922}「ムツの国と オエドをむすぶ パイプを 切られたら{n}{    #035F}世界は ハメツする！{wait}{b8:000D}{clr}{name93}「じゃあ 今まで {天資#0909}がやってたことは{‥‥‥#065F}{wait}{ba}{p9a}{甚五郎#0922}「そう！ たんなる {あそび#0A56}なの{じゃ！#0A58}{n}{    #035F}{name93}よ {関所#0674}へ いそぐの{じゃ！#0A58}{n}{    #035F}ワシは {楽屋シップ#0A12}のかいぞうに とりかかる！{wait}",
-  "en": "",
+  "en": "Kagekiyo: Tensai stole the Shadow Itako arts from my master, Kagetora... and then... he killed my master!!{wait}{ba}{b8:030D}{clr}{name93}: So you were after Tensai for your master's sake, Kagekiyo...{wait}{ba}{b8:700D}{p9a}Kagekiyo: Indeed! Shall my master's grudge go unavenged? Never!!{wait}{ba}{clr}Jingoro: Tensai means to cut the pipe of Planet Rendako.{wait}{b8:0C0D}{clr}{name94}: Then that earthquake just now...{wait}{ba}{p9a}Jingoro: If the pipe linking the Land of Mutsu and Oedo is cut, the world will be ruined!{wait}{b8:000D}{clr}{name93}: Then everything Tensai's done up to now...{wait}{ba}{p9a}Jingoro: Yes! Mere child's play! {name93}, hurry to the checkpoint! I'll start remodeling the Dressing Room Ship!{wait}",
   "notes": ""
  },
  {
   "id": "0BC6C2",
   "size": 46,
   "jp": "{ケッカイババ「#0923}{夕風#0905}さま こちらへ！{n}{       #034D}山をおりる 近道です{じゃ。#0A31}{wait}",
-  "en": "",
+  "en": "Kekkai Baba: Yunagi-sama, this way! It's a shortcut down the mountain.{wait}",
   "notes": ""
  },
  {
   "id": "0BC702",
   "size": 56,
   "jp": "{フウインババ「#0924}{夕風#0905}さま いっこくの ゆうよも{n}{       #034D}ゆるされませんのです{じゃ。#0A31}{wait}",
-  "en": "",
+  "en": "Fuin Baba: Yunagi-sama, there's not a moment to lose.{wait}",
   "notes": ""
  },
  {
   "id": "0BC746",
   "size": 19,
   "jp": "{夕風#0905}「いそぎましょ！{wait}",
-  "en": "",
+  "en": "Yunagi: Let's hurry!{wait}",
   "notes": ""
  },
  {
   "id": "0BC766",
   "size": 39,
   "jp": "{景清#0908}「おれも いっしょに 戦わせてくれ！{wait}",
-  "en": "",
+  "en": "Kagekiyo: Let me fight alongside you too!{wait}",
   "notes": ""
  },
  {
   "id": "0BC7BA",
   "size": 393,
   "jp": "{name93}「法界の{ジイさん#0A65}！{wait}{ba}{b8:870D}{p9a}{法界坊#0902}「ギョッ！{n}{    #035F}おおっ！ {name93}！{n}{    #035F}お前 ワシが見えるのか？！{wait}{ba}{b8:000D}{clr}{name93}「{夕風#0905}の{ねーちゃん#0AB2}が ついてるから{n}見えるんでェい！{wait}{ba}{b8:870D}{p9a}{法界坊#0902}「そーか！{n}{    #035F}会いたかったゾィ {name93}よ！{wait}{ba}{b8:0C0D}{clr}{name94}「ウソばっか！{n}女ぶろのぞいてる霊の セリフじゃないわ！{wait}{ba}{b8:870D}{p9a}{法界坊#0902}「{どひゃひゃ#0A57}！ まぁ そう言いなさんな。{n}{    #035F}さぁ 役者は そろった！{n}{    #035F}行ってみようかいのォ！ {どひゃひゃ#0A57}！{wait}{ba}{b8:0C0D}{clr}{name94}「あいかわらず ちょーしのいい{ジジイ#0A70}{n}なんだから！ まったく！{wait}",
-  "en": "",
+  "en": "{name93}: Old man Hokaibo!{wait}{ba}{b8:870D}{p9a}Hokaibo: Gyah! Ooh! {name93}! You can see me?!{wait}{ba}{b8:000D}{clr}{name93}: I can see you 'cause Big Sis Yunagi's with us!{wait}{ba}{b8:870D}{p9a}Hokaibo: I see! I missed you, {name93}!{wait}{ba}{b8:0C0D}{clr}{name94}: Yeah, right! That's no line for a spirit who peeks into the women's bath!{wait}{ba}{b8:870D}{p9a}Hokaibo: Dohyahya! Now, now, don't be like that. Well, the cast is all here! Shall we give it a go? Dohyahya!{wait}{ba}{b8:0C0D}{clr}{name94}: Smooth-talking old geezer, same as ever! Honestly!{wait}",
   "notes": ""
  },
  {
   "id": "0BC94E",
   "size": 39,
   "jp": "人間の霊と 会話ができる人が いない{‥‥。#0A24}{wait}",
-  "en": "",
+  "en": "No one here can talk with human spirits...{wait}",
   "notes": ""
  },
  {
   "id": "0BC982",
   "size": 97,
   "jp": "{甚十郎#0920}「わしの弟子たちは 今ごろ どこで何を{n}{    #035F}しているのやら‥‥{n}{    #035F}あいつらには すまんことをした{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "Jinjuro: I wonder where my apprentices are now, and what they're doing... I did them a terrible wrong...{wait}",
   "notes": ""
  },
  {
   "id": "0BC9EB",
   "size": 233,
   "jp": "{甚十郎#0920}「ン？ ワシの持っている せっちゃくざいを{n}{    #035F}かしてくれ だって？{wait}{clr}{    #035F}ナニッ？{ お前#0A1B}たちは 左 {甚五郎#0922}の{n}{    #035F}しり合いだと言うのか？！{wait}{clr}{    #035F}そうか{‥‥ #0A2C}左の{‥‥。#0A24} このせっちゃくざいは{n}{    #035F}やつのために 作った物。{n}{    #035F}ならば{ お前#0A1B}たちに わたしても よかろう。{wait}",
-  "en": "",
+  "en": "Jinjuro: Hm? You want to borrow the glue I have?{wait}{clr}What? You say you know Hidari Jingoro?!{wait}{clr}I see... Hidari's friends... This glue is something I made for him. Then I may as well hand it to you.{wait}",
   "notes": ""
  },
  {
   "id": "0BCADD",
   "size": 23,
   "jp": "『{霊力せっちゃくざい#0347}』を 手にいれた！{wait}",
-  "en": "",
+  "en": "Got the 'Spirit Power Glue'!!{wait}",
   "notes": ""
  },
  {
   "id": "0BCAFA",
   "size": 39,
   "jp": "{甚十郎#0920}「{甚五郎#0922}に会ったら よろしく言ってくれ。{wait}",
-  "en": "",
+  "en": "Jinjuro: If you meet Jingoro, give him my regards.{wait}",
   "notes": ""
  },
  {
   "id": "0BCB24",
   "size": 70,
   "jp": "{甚十郎#0920}「どうやら {持ち物#0A90}がいっぱいのようだ。{n}{    #035F}{持ち物#0A90}を へらして 来てくれんか。{wait}",
-  "en": "",
+  "en": "Jinjuro: Seems your belongings are full. Lighten your load and come back, would you?{wait}",
   "notes": ""
  },
  {
   "id": "0BCBD9",
   "size": 68,
   "jp": "{甚十郎#0920}「{お前たち#0A98}は オエドへ行くのか‥‥{n}{    #035F}{甚五郎#0922}に会ったら よろしく言ってくれ。{wait}",
-  "en": "",
+  "en": "Jinjuro: So you're going to Oedo... If you meet Jingoro, give him my regards.{wait}",
   "notes": ""
  },
  {
   "id": "0BCC20",
   "size": 245,
   "jp": "{甚十郎#0920}「{しかし #0A4E}そのせっちゃくざいは 大きな霊力を{n}{    #035F}ひつようとする。 力のある{イタコ#0921}が せめて{n}{    #035F}二人は いないと つかうことはできん。{wait}{clr}{    #035F}ワシは 人として おかしてはならぬ あやまちを{n}{    #035F}おかした。 ゆるしてはもらえぬだろうが{‥‥‥#065F}{n}{    #035F}{甚五郎#0922}に よろしく言ってくれ。{wait}",
-  "en": "",
+  "en": "Jinjuro: But that glue needs great spirit power. It can't be used unless you have at least two powerful Itako.{wait}{clr}I made a mistake no man should ever make. I doubt I'll be forgiven, but... give Jingoro my regards.{wait}",
   "notes": ""
  },
  {
   "id": "0BCD25",
   "size": 705,
   "jp": "{name94}「なにか ワケありみたいね？{n}{甚五郎#0922}さんと{‥‥‥#065F}{wait}{ba}{b8:870D}{p9a}{法界坊#0902}「そのむかし {甚十郎#0920}には 二人の弟子がおった。{n}{    #035F}一人は みんなのしっている 左 {甚五郎#0922}。{n}{    #035F}もう一人の名は 右 {ジンゴロー#0917}という。{wait}{clr}{    #035F}二人は みるみるうちに 力をつけ{n}{    #035F}{ししょう#0A55}の座を おびやかすようになった。{wait}{clr}{    #035F}そこで 自分の名声を 守ろうとした{n}{    #035F}{甚十郎#0920}は‥‥{wait}{clr}{    #035F}二人の弟子の かたウデを{n}{    #035F}きりおとしてしまったの{じゃ。#0A31}{wait}{ba}{b8:0C0D}{clr}{name94}「エッ！？ それで {甚五郎#0922}さんは 右手は‥‥{n}な なんて ひどい人なの！{wait}{ba}{b8:870D}{p9a}{法界坊#0902}「左は これもあたえられた しれん！ とうけとめ{n}{    #035F}前むきにいきて 今にいたった。{n}{    #035F}が {しかし #0A4E}右は{‥‥‥#065F}{wait}{clr}{    #035F}{甚十郎#0920}をうらみ くるった{発明家#065C}となったらしい‥‥{n}{    #035F}二人を見て {甚十郎#0920}は{n}{    #035F}ふかく はんせいしているのであろうのォ。{wait}{ba}{b8:000D}{clr}{name93}「{甚五郎#0922}のおっさんって スゴイ人なんだ‥‥{n}なにはともあれ {関所#0674}へ いそぐゼ！！{wait}{ba}",
-  "en": "",
+  "en": "{name94}: Looks like there's some history there, huh? With Jingoro-san...{wait}{ba}{b8:870D}{p9a}Hokaibo: Long ago, Jinjuro had two disciples. One was the Hidari Jingoro we all know. The other was named Migi Jingoro.{wait}{clr}Before anyone knew it, the two grew so strong that they threatened their own master's standing.{wait}{clr}And so, to protect his own fame, Jinjuro...{wait}{clr}cut off one arm from each of his two disciples.{wait}{ba}{b8:0C0D}{clr}{name94}: Huh!? So that's why Jingoro-san's right hand... What a horrible man!{wait}{ba}{b8:870D}{p9a}Hokaibo: Hidari took it as \"This too is a trial I've been given!\", kept looking forward, and became the man he is today. But Migi...{wait}{clr}hated Jinjuro, and they say he became a mad inventor... Seeing the two of them, Jinjuro must deeply regret what he did.{wait}{ba}{b8:000D}{clr}{name93}: So old man Jingoro's an amazing guy... Anyway, let's hurry to the checkpoint!!{wait}{ba}",
   "notes": ""
  },
  {
   "id": "0BCFF4",
   "size": 43,
   "jp": "{name94}「なにか ワケありみたいね？{n}{甚五郎#0922}さんと{‥‥‥#065F}‥{wait}",
-  "en": "",
+  "en": "{name94}: Looks like there's some history there, huh? With Jingoro-san...{wait}",
   "notes": ""
  },
  {
   "id": "0BD372",
   "size": 99,
   "jp": "{五ェ門#090A}「ほおー ここまで 来るとは{‥‥‥#065F}{n}{    #035F}{しかし #0A4E}もうおそい！{n}{    #035F}じきに この地は 切りはなされる！{wait}{clr}{    #035F}さらば{じゃ！#0A58}{wait}",
-  "en": "",
+  "en": "Goemon: Oho, so you made it this far... But it's too late! Soon this land will be cut adrift!{wait}{clr}Farewell!{wait}",
   "notes": ""
  },
  {
   "id": "0BD3DF",
   "size": 86,
   "jp": "{name93}「まちやがれ！ {五ェ門#090A}！{n}ここで てめェを ぶったおして{n}オエドの{天資#0909}の所へ 行ってやるぜ！{wait}",
-  "en": "",
+  "en": "{name93}: Hold it, Goemon! I'm gonna knock you flat right here, then go after Tensai in Oedo!{wait}",
   "notes": ""
  },
  {
   "id": "0BD43C",
   "size": 224,
   "jp": "{五ェ門#090A}「フッ。 このワシに 勝てる気で いるのか？{n}{    #035F}思い上がるなよ {こぞう#0A26}！！{wait}{clr}{    #035F}{イタコ#0921}なんぞを 仲間にしたくらいでは{n}{    #035F}このワシは たおせはせんぞ！！{wait}{clr}{    #035F}ましてや ワシが かつて両方の目の光を{n}{    #035F}うばってやった{夕風#0905}などが 仲間ではな！！{wait}",
-  "en": "",
+  "en": "Goemon: Heh. You think you can beat me? Don't get cocky, boy!!{wait}{clr}Taking on the likes of an Itako won't be enough to bring me down!!{wait}{clr}Least of all with Yunagi at your side, whose eyes I once robbed of their light!!{wait}",
   "notes": ""
  },
  {
   "id": "0BD528",
   "size": 31,
   "jp": "{清姫「#090B}{私が #0A87}おあいてして あげるわよ！{wait}",
-  "en": "",
+  "en": "Kiyohime: I'll be your opponent!{wait}",
   "notes": ""
  },
  {
   "id": "0BD54E",
   "size": 139,
   "jp": "{五ェ門#090A}「よせ {清姫#0929}！ 時間が ないゾ！{wait}{clr}{清姫「#090B}すぐに おわるわ！ すぐにね{‥‥‥#065F}！{n}{   #052F}クククッ{‥‥‥#065F} なさけをかけられた くつじょく{n}{   #052F}今こそ はらそうぞ！！{wait}",
-  "en": "",
+  "en": "Goemon: Stop, Kiyohime! There's no time!{wait}{clr}Kiyohime: It'll be over soon! Very soon...! Kukuku... The disgrace of being shown mercy... now I shall wipe it away!!{wait}",
   "notes": ""
  },
  {
   "id": "0BD5E3",
   "size": 21,
   "jp": "{清姫「#090B}さあ 来るがいい！{wait}",
-  "en": "",
+  "en": "Kiyohime: Now, come at me!{wait}",
   "notes": ""
  },
  {
   "id": "0BD604",
   "size": 35,
   "jp": "{清姫「#090B}む むねん・・・・・ {天資#0909}さま！！{wait}",
-  "en": "",
+  "en": "Kiyohime: Cu-curses... Tensai-sama!!{wait}",
   "notes": ""
  },
  {
   "id": "0BD634",
   "size": 128,
   "jp": "{五ェ門#090A}「ほおー パワーアップした{清姫#0929}を たおすとは{n}{    #035F}だいぶ 力をつけたようだな。{wait}{clr}{    #035F}時間がない{‥‥‥#065F}{n}{    #035F}生きていたら また会おう！{n}{    #035F}{フフフッ#0A2D}。{wait}",
-  "en": "",
+  "en": "Goemon: Oho, you defeated the powered-up Kiyohime... You've grown quite strong.{wait}{clr}There's no time... If you live, we'll meet again! Heh heh heh.{wait}",
   "notes": ""
  },
  {
   "id": "0BD6C0",
   "size": 77,
   "jp": "{清姫「#090B}フン！{n}{   #052F}なさけなどと ふざけたことをするには{n}{   #052F}まだまだ みじゅくよのー。{wait}",
-  "en": "",
+  "en": "Kiyohime: Hmph! You're still far too green to play foolish games like showing mercy.{wait}",
   "notes": ""
  },
  {
   "id": "0BD711",
   "size": 60,
   "jp": "{甚五郎#0922}「{楽屋シップ#0A12}の かいぞうは おわった！{n}{    #035F}いそいで {五ェ門#090A}を おうぞ！{wait}",
-  "en": "",
+  "en": "Jingoro: The Dressing Room Ship's remodel is done! Hurry, after Goemon!{wait}",
   "notes": ""
  },
  {
   "id": "0BD751",
   "size": 41,
   "jp": "その時 どこからともなく ブキミな声が{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "At that moment, an eerie voice came from out of nowhere...{wait}",
   "notes": ""
  },
  {
   "id": "0BD77C",
   "size": 169,
   "jp": "声「{ケッケッケッ#0A20}！ それが {きさま#0A29}らの シップか？{n}  そんな チンケな物では{n}  このわたしの テキではないな！{wait}{clr}  マヌケな {発明家#065C}をもった {きさま#0A29}らの{n}  不うんを のろいな！{n}  {ケッケッケッ#0A20}！！{wait}",
-  "en": "",
+  "en": "Voice: Kekeke! That's your ship? A shoddy thing like that is no match for me!{wait}{clr}Curse your bad luck for having such a halfwit inventor! Kekeke!!{wait}",
   "notes": ""
  },
  {
   "id": "0BD83D",
   "size": 138,
   "jp": "{name93}「い 今の声は‥‥？{wait}{ba}{p9a}{甚五郎#0922}「くるっちまった ワシの あに弟子‥‥{n}{    #035F}右 {ジンゴロー#0917}じゃ{‥‥‥#065F}。{wait}{clr}{    #035F}{‥‥‥#065F}{name93} あんずるでない！{n}{    #035F}さあ オエドへ むかうの{じゃ！#0A58}！{wait}",
-  "en": "",
+  "en": "{name93}: Th-that voice just now...?{wait}{ba}{p9a}Jingoro: My senior apprentice, the one who went mad... Migi Jingoro...{wait}{clr}...Do not worry, {name93}! Now, head for Oedo!!{wait}",
   "notes": ""
  },
  {
   "id": "0BD8DB",
   "size": 354,
   "jp": "{name94}「{夕風#0905}さん {あなた#0A17}の目は{n}あの{五ェ門#090A}に やられたものだったのね‥‥{delay:00}{ba}{b8:580D}{p9a}{夕風#0905}「{五ェ門#090A}は IQ300の頭のうを 持つ男。{n}{   #052F}野心家でもあるカレは その頭を 悪事に 用いた。{n}{delay:00}{clr}{   #052F}{天資#0909}を そそのかしたのも{‥‥‥#065F}{n}{   #052F}{たぶん#0A66}{‥‥‥#065F} {五ェ門#090A}よ。{n}{   #052F}{天資#0909}のカタウデになる {少し#0A22}前のことだったわ。{delay:00}{clr}{   #052F}わたしは それを やめさせようとして{‥‥‥#065F}{delay:00}{ba}{b8:000D}{clr}{name93}「あのヤロォ！ ゆるせねェ！！{n}カタキは ぜェ～ったい {オレが#0A18}{‥‥‥#065F}{delay:00}",
-  "en": "",
+  "en": "{name94}: Yunagi-san, so it was that Goemon who did that to your eyes...{delay:00}{ba}{b8:580D}{p9a}Yunagi: Goemon is a man with an IQ of 300. Ambitious, too, he turned that brain to evil.{delay:00}{clr}The one who led Tensai astray... was probably... Goemon, too. It was a little before he became Tensai's right-hand man.{delay:00}{clr}I tried to stop him...{delay:00}{ba}{b8:000D}{clr}{name93}: That bastard! I won't forgive him!! I'm gonna ab-so-lutely avenge you myself...{delay:00}",
   "notes": ""
  },
  {
   "id": "0BDA5A",
   "size": 34,
   "jp": "とつぜん {楽屋シップ#0A12}が 大きく ゆれた！{delay:78}",
-  "en": "",
+  "en": "Suddenly, the Dressing Room Ship shook violently!{delay:78}",
   "notes": ""
  },
  {
   "id": "0BDA81",
   "size": 247,
   "jp": "{name93}「ど どうしたんだ！{wait}{ba}{b8:0F0D}{p9a}{name94}「右げん前方に ビームほう ひだん！{wait}{ba}{b8:040D}{p9a}{name93}「な なにい！{wait}{ba}{b8:0F0D}{p9a}{name94}「3時の方こう てきがきます{！！！#0A54}{wait}{ba}{b8:040D}{p9a}{name93}「ぜんいん 戦闘はいちに つけ！！{wait}{clr}{name94}！ ひがいじょうきょうの{n}かくにんを！！{wait}{clr}{ベンケイ#0900}！{n}コントロールパネルの スイッチだ！{wait}",
-  "en": "",
+  "en": "{name93}: Wh-what's going on!{wait}{ba}{b8:0F0D}{p9a}{name94}: Beam cannon hit on the starboard bow!{wait}{ba}{b8:040D}{p9a}{name93}: Wh-what!?{wait}{ba}{b8:0F0D}{p9a}{name94}: Enemy approaching at three o'clock!!!{wait}{ba}{b8:040D}{p9a}{name93}: All hands, battle stations!!{wait}{clr}{name94}! Check the damage!!{wait}{clr}Benkei! The control panel switch!{wait}",
   "notes": ""
  },
  {
   "id": "0BDBA9",
   "size": 217,
   "jp": "{name94}「{あっ！ #0A67}あれは！？{delay:78}{ba}{p9a}{ジンゴロー#0917}「{ケッケッケッ#0A20}！{n}{      #034E}おどろいたか！ ワシの けっさく{n}{      #034E}{アンコクロボ#092C}{じゃ！#0A58}{delay:B4}{clr}{      #034E}{れんダコわく星#0A0F}と ともに 死ねィ{！！！#0A54}{delay:78}{clr}{甚五郎#0922}「{name93}！{n}{    #035F}{楽屋シップ#0A12} かいぞうバージョン 見せてやれ！{delay:B4}{b8:000D}{clr}{name93}「へっ？ きいてないよ{ーーー#0A2F}ー！{wait}{ba}{p9a}{甚五郎#0922}「チェンジ！{n}{    #035F}カブキロボォ{ーーー#0A2F}{！！！#0A54}{wait}",
-  "en": "",
+  "en": "{name94}: Ah! What is that!?{delay:78}{ba}{p9a}Migi Jingoro: Kekeke! Surprised? My masterpiece, the Ankoku Robo!{delay:B4}{clr}Die along with Planet Rendako!!!{delay:78}{clr}Jingoro: {name93}! Show him the Dressing Room Ship, remodeled version!{delay:B4}{b8:000D}{clr}{name93}: Huh? Nobody told me about thiiis!{wait}{ba}{p9a}Jingoro: Change! Kabuki Robooo!!!{wait}",
   "notes": ""
  },
  {
   "id": "0BDCB0",
   "size": 63,
   "jp": "{ジンゴロー#0917}「うぬぬぬぬ～～～！ 左め～！{n}{      #034E}こしゃくな！{n}{      #034E}いくぞォ！！{wait}",
-  "en": "",
+  "en": "Migi Jingoro: Grrrrr! Hidari, you...! Insolent wretch! Here I come!!{wait}",
   "notes": ""
  },
  {
   "id": "0BDCFB",
   "size": 96,
   "jp": "{ジンゴロー#0917}「くそおっっっ！ {アンコクロボ#092C}が{‥‥‥#065F}{n}{      #034E}ワシの{アンコクロボ#092C}が {まける#0AAF}{‥‥‥#065F}とは！{wait}{clr}{      #034E}だが これで！ この世は おしまいだぁ！{wait}",
-  "en": "",
+  "en": "Migi Jingoro: Damn iiit! To think the Ankoku Robo... my Ankoku Robo... would lose!{wait}{clr}But with this! This world is finished!{wait}",
   "notes": ""
  },
  {
   "id": "0BDD8D",
   "size": 107,
   "jp": "{甚五郎#0922}「い いかん！ パイプが きれる！！{n}{    #035F}パイプを つなぎとめるん{じゃ！#0A58}{n}{    #035F}カブキロボのパワーならば できる！！{wait}",
-  "en": "",
+  "en": "Jingoro: Th-this is bad! The pipe's going to break!! Hold the pipe together! Kabuki Robo has the power to do it!!{wait}",
   "notes": ""
  },
  {
   "id": "0BDDFF",
   "size": 209,
   "jp": "{name94}「フ～ッ！！{n}あぶなかったわね！！{wait}{ba}{p9a}{甚五郎#0922}「うむ{‥‥‥#065F}{n}{    #035F}もう{少し#0A22}で {れんダコわく星#0A0F}が{n}{    #035F}バラバラに なってしまうところだった。{wait}{clr}{    #035F}さぁ オエドは もうすぐ{じゃ！#0A58}{n}{    #035F}ワシが いっしょに行けるのは ここまで。{n}{    #035F}あとは たのんだぞ {name93}座よ！{wait}",
-  "en": "",
+  "en": "{name94}: Phew!! That was close!!{wait}{ba}{p9a}Jingoro: Mm... A little more and Planet Rendako would have broken to pieces.{wait}{clr}Now, Oedo is close at hand! This is as far as I can go with you. The rest is up to you, {name93} Troupe!{wait}",
   "notes": ""
  },
  {
   "id": "0BDEE2",
   "size": 73,
   "jp": "{ジンゴロー#0917}「くはっはっはっはっ！{n}{      #034E}見たか！{n}{      #034E}これで この世は おしまいだぁ！！{wait}",
-  "en": "",
+  "en": "Migi Jingoro: Kuhahahaha! See that! Now this world is finished!!{wait}",
   "notes": ""
  },
  {
   "id": "0BDF2F",
   "size": 37,
   "jp": "{甚五郎#0922}「いよいよ オエドへ のりこむぞ！{wait}",
-  "en": "",
+  "en": "Jingoro: At last, we storm into Oedo!{wait}",
   "notes": ""
  },
  {
   "id": "0BE03D",
   "size": 29,
   "jp": "『{霊力せっちゃくざい#0347}』を つかいますか？{n}{choice:0BE160}",
-  "en": "",
+  "en": "Use the 'Spirit Adhesive'? {choice:0BE160}",
   "notes": ""
  },
  {
   "id": "0BE0DC",
   "size": 78,
   "jp": "この『{霊力せっちゃくざい#0347}』は 二人の霊のう力者が{n}力を合わせることによって {つかえる#0A4C}ようになります。{wait}",
-  "en": "",
+  "en": "This 'Spirit Adhesive' can be used when two psychics combine their powers.{wait}",
   "notes": ""
  },
  {
   "id": "0BE136",
   "size": 31,
   "jp": "地われのため 通れそうにない。{wait}",
-  "en": "",
+  "en": "The ground has split; there's no getting through.{wait}",
   "notes": ""
  },
  {
@@ -997,420 +997,420 @@
   "id": "0BE171",
   "size": 197,
   "jp": "氏神「お前は たしか{‥‥‥#065F}{n}{   #052F}{法界坊#0902}のとっつぁんと いっしょに いた{‥‥‥#065F}{n}{   #052F}{name93}{‥‥‥#065F}といったか？{wait}{clr}{   #052F}{法界坊#0902}は どうしている？{n}{   #052F}あいかわらず スケベなオヤジなのか？ {ハハハ#0A4A}ッ{wait}{clr}{   #052F}{‥‥‥#065F}{n}{   #052F}なに！？{‥‥‥#065F}{法界坊#0902}が{‥‥‥#065F}死んだ！？{n}{   #052F}{‥‥‥#065F}そうか{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "Ujigami: You're... if I recall... the one who was with old Hokaibo... {name93}, was it?{wait}{clr}How is Hokaibo doing? Still the same old lecher? Hahaha!{wait}{clr}...What!? ...Hokaibo... is dead!? ...I see...{wait}",
   "notes": ""
  },
  {
   "id": "0BE240",
   "size": 294,
   "jp": "{法界坊#0902}「{どひゃひゃ#0A57}！{n}{    #035F}ひさしぶりじゃのォ！ 氏神よ！！{wait}{ba}{clr}氏神「なっ！ なんだ！！{n}{   #052F}{法界坊#0902}の声がする！{wait}{b8:840D}{clr}{法界坊#0902}「{どひゃひゃ#0A57}！ わしじゃ {法界坊#0902}{じゃ！#0A58}{n}{    #035F}いろいろあってな 霊になってしまったん{じゃ。#0A31}{wait}{ba}{clr}氏神「う～む{‥‥‥#065F}{n}{   #052F}あいかわらず ぶっとんだ{ジジイ#0A70}だな。{wait}{clr}{   #052F}ところで おまえの弟子の{name93}たちは{n}{   #052F}りっぱな {歌武器#0A09}つかいに なりつつあるようだな。{wait}",
-  "en": "",
+  "en": "Hokaibo: Dohyahya! Long time no see, Ujigami!!{wait}{ba}{clr}Ujigami Ichiban: Wha-! What!! I hear Hokaibo's voice!{wait}{b8:840D}{clr}Hokaibo: Dohyahya! It's me, Hokaibo! A lot happened, and I ended up a spirit.{wait}{ba}{clr}Ujigami Ichiban: Hmm... Still the same wild old coot.{wait}{clr}By the way, your disciples, {name93} and company, seem to be growing into fine song weapon users.{wait}",
   "notes": ""
  },
  {
   "id": "0BE36C",
   "size": 196,
   "jp": "氏神「{法界坊#0902}の こころざしを つぐのだ {name93}！{n}{   #052F}{お前たち#0A98}に より強力な{歌武器#0A09}・{コーラス#0A3D}を{n}{   #052F}{おしえて#0450}やろう！！{wait}{clr}{   #052F}{コーラス#0A3D}とは 5人の仲間の力を合わせる{歌武器#0A09}。{n}{   #052F}5人の心が 一つにならねば つかえぬ。{n}{   #052F}それを心して つかうのだぞ！！{wait}",
-  "en": "",
+  "en": "Ujigami Ichiban: Carry on Hokaibo's will, {name93}! I shall teach you all a mightier song weapon: Chorus!!{wait}{clr}Chorus is a song weapon that joins the power of five companions. It cannot be used unless all five hearts are as one. Keep that in mind when you use it!!{wait}",
   "notes": ""
  },
  {
   "id": "0BE434",
   "size": 63,
   "jp": "『{コーラス#0A3D}』が {つかえる#0A4C}ようになった！{wait}{clr}そして 作曲できる長さが ふえた！{wait}",
-  "en": "",
+  "en": "You can now use 'Chorus'!{wait}{clr}And the length of songs you can compose has increased!{wait}",
   "notes": ""
  },
  {
   "id": "0BE486",
   "size": 517,
   "jp": "氏神一番「お前は！ {法界坊#0902}ではないか！{n}{     #034F}このような所で 会うとは！{wait}{b8:300D}{clr}{法界坊#0902}「氏神か！ ひさしぶりじゃのォ！{wait}{ba}{b8:0C0D}{clr}{name94}「{あたし#0A19} その人の名前 {きいた#0A06}ことある。{n}すっごい {歌武器#0A09}つかいなんだって！{wait}{ba}{p9a}氏神一番「{カラオケボックス#0A3F}が えいぎょう禁止になって{n}{     #034F}こ{まって#0ABC}いるようだが{‥‥。#0A24}{n}{     #034F}いい事を {おしえて#0450}やろう。{wait}{clr}{     #034F}全ての国の 全ての{カラオケボックス#0A3F}には{n}{     #034F}{ひみつ#06FA}のうら口というものが あるのだ！{wait}{clr}{     #034F}そのうら口をぬけて 中に入れば{n}{     #034F}これまでとおなじように {歌武器#0A09}を{n}{     #034F}おぼえることが できる！！{wait}{clr}{     #034F}そのうら口の場所は おぬしたちが{n}{     #034F}自分の力で さがし出すのだ。{n}{     #034F}{せっしゃ#0A1A}が おしえるわけにはいかん。{wait}",
-  "en": "",
+  "en": "Ujigami Ichiban: You! Why, if it isn't Hokaibo! Fancy meeting you in a place like this!{wait}{b8:300D}{clr}Hokaibo: Ujigami! Long time no see!{wait}{ba}{b8:0C0D}{clr}{name94}: I've heard that man's name. They say he's an amazing song weapon user!{wait}{ba}{p9a}Ujigami Ichiban: It seems the ban on karaoke boxes has you in a fix... Let me tell you something useful.{wait}{clr}Every karaoke box in every land has what is called a secret back door!{wait}{clr}Slip in through that back door, and you can learn song weapons just as before!!{wait}{clr}Where those back doors are, you must find by your own strength. It is not for me to tell you.{wait}",
   "notes": ""
  },
  {
   "id": "0BE691",
   "size": 718,
   "jp": "氏神一番「ほう{‥‥‥#065F} おぬしたちは{n}{     #034F}法界のとっつぁんの とこのもんか？{n}{     #034F}なるほど {少し#0A22}は できそうだな。{wait}{b8:000D}{clr}{name93}「{法界坊#0902}の{ジイさん#0A65}の しり合いか？{wait}{ba}{p9a}氏神一番「{せっしゃ#0A1A}は 氏神一番（うじがみいちばん）。{n}{     #034F}人は {せっしゃ#0A1A}を{n}{     #034F}『でんせつの{歌武器#0A09}つかい』と よぶ。{wait}{b8:0C0D}{clr}{name94}「{name93}！{n}{あたし#0A19} その人の名前 {きいた#0A06}ことある。{n}すっごい {歌武器#0A09}つかいなんだって！{wait}{ba}{p9a}氏神一番「{カラオケボックス#0A3F}が えいぎょう禁止になって{n}{     #034F}こ{まって#0ABC}いるようだが{‥‥。#0A24}{n}{     #034F}いい事を {おしえて#0450}やろう。{wait}{clr}{     #034F}全ての国の 全ての{カラオケボックス#0A3F}には{n}{     #034F}{ひみつ#06FA}のうら口というものが あるのだ！{wait}{clr}{     #034F}そのうら口をぬけて 中に入れば{n}{     #034F}これまでとおなじように {歌武器#0A09}を{n}{     #034F}おぼえることが できる！！{wait}{clr}{     #034F}そのうら口の場所は おぬしたちが{n}{     #034F}自分の力で さがし出すのだ。{n}{     #034F}{せっしゃ#0A1A}が おしえるわけにはいかん。{wait}{clr}{     #034F}{name93}とやら {法界坊#0902}をこえる{n}{     #034F}{歌武器#0A09}つかいになれ！{n}{     #034F}おぬしなら なれるはずだ！！{wait}",
-  "en": "",
+  "en": "Ujigami Ichiban: Hoh... So you lot are from Pops Hokai's place? I see, you look like you can handle yourselves a little.{wait}{b8:000D}{clr}{name93}: You know old man Hokaibo?{wait}{ba}{p9a}Ujigami Ichiban: I am Ujigami Ichiban. People call me 'the legendary song weapon user.'{wait}{b8:0C0D}{clr}{name94}: {name93}! I've heard that man's name. They say he's an amazing song weapon user!{wait}{ba}{p9a}Ujigami Ichiban: It seems the ban on karaoke boxes has you in a fix... Let me tell you something useful.{wait}{clr}Every karaoke box in every land has what is called a secret back door!{wait}{clr}Slip in through that back door, and you can learn song weapons just as before!!{wait}{clr}Where those back doors are, you must find by your own strength. It is not for me to tell you.{wait}{clr}{name93}, was it? Become a song weapon user who surpasses Hokaibo! You can do it, I know you can!!{wait}",
   "notes": ""
  },
  {
   "id": "0BE965",
   "size": 34,
   "jp": "氏神一番「{name93}よ！ {歌武器#0A09}を きわめよ！{wait}",
-  "en": "",
+  "en": "Ujigami Ichiban: {name93}! Master the song weapons!{wait}",
   "notes": ""
  },
  {
   "id": "0BE99B",
   "size": 62,
   "jp": "「いっぱい {しゅぎょう#0A4D}して{n} {夕風#0905}さまのような りっぱな{イタコ#0921}に なるずや。{wait}",
-  "en": "",
+  "en": "I'm gonna train real hard and become a fine Itako like Yunagi-sama, ya see.{wait}",
   "notes": ""
  },
  {
   "id": "0BE9E1",
   "size": 105,
   "jp": "「{この村#0A5D}には {イタコ#0921}が たくさんいるダ。{n} でも 『さいきょうの{イタコ#0921}』と よばれるのは{n} ごく かぎられた人だけダ。{wait}",
-  "en": "",
+  "en": "This village has lotsa Itako. But only a precious few get called 'the Strongest Itako.'{wait}",
   "notes": ""
  },
  {
   "id": "0BEA52",
   "size": 76,
   "jp": "「目は見えなくとも {夕風#0905}さまは シッカリとした{n} 心の目を 持っておられるダ。{wait}",
-  "en": "",
+  "en": "Her eyes may not see, but Yunagi-sama has a mighty steady eye of the heart.{wait}",
   "notes": ""
  },
  {
   "id": "0BEAA6",
   "size": 159,
   "jp": "「エッ？ なみの{イタコ#0921}と さいきょうの{イタコ#0921}の{n} 見分け方？{n} 霊を よび出してもらえば すぐわかる{だよ。#0A01}{n}{wait}{clr} その他にも ウラとオモテもあるから{n} ルイジ{イタコ#0921}には {気をつけ#0A63}んだな。{wait}",
-  "en": "",
+  "en": "Eh? How to tell a regular Itako from the Strongest Itako? Have 'em call up a spirit and you'll know right off.{wait}{clr}Besides, everything's got its real and its fake, so watch out for knockoff Itako.{wait}",
   "notes": ""
  },
  {
   "id": "0BEB52",
   "size": 62,
   "jp": "「{夕風#0905}さまは 今 {『清めの滝』#066A}で {しゅぎょう#0A4D}中だ。{n} ジャマを しちゃなんねェぞ。{wait}",
-  "en": "",
+  "en": "Yunagi-sama's trainin' at the 'Purifying Falls' right now. Don't you go botherin' her.{wait}",
   "notes": ""
  },
  {
   "id": "0BEB98",
   "size": 76,
   "jp": "「{あなた#0A17}たちも たいせつな友だちを{n} うしなってしまったことが あるようですね。{wait}",
-  "en": "",
+  "en": "It seems you too have lost a dear friend.{wait}",
   "notes": ""
  },
  {
   "id": "0BEBEC",
   "size": 76,
   "jp": "「われわれ{イタコ#0921}は 死んだ人間の霊を 命ある人間に{n} つける力を 持っています。{wait}",
-  "en": "",
+  "en": "We Itako have the power to place the spirits of the dead upon the living.{wait}",
   "notes": ""
  },
  {
   "id": "0BEC45",
   "size": 92,
   "jp": "「{なぜ #0A6E}{夕風#0905}さまが 『さいきょうの{イタコ#0921}』と{n} よばれているのかって？{wait}{clr} 会ってみれば 分かるかもよ。{wait}",
-  "en": "",
+  "en": "Why is Yunagi-sama called 'the Strongest Itako,' you ask?{wait}{clr}Meet her and maybe you'll see.{wait}",
   "notes": ""
  },
  {
   "id": "0BECA9",
   "size": 69,
   "jp": "「{『清めの滝』#066A}？{n} ああ {この村#0A5D}から 東へずっと行った所にある{n} あの滝のことだべ。{wait}",
-  "en": "",
+  "en": "The 'Purifying Falls'? Ah, that'd be the falls way off east of this village.{wait}",
   "notes": ""
  },
  {
   "id": "0BECF6",
   "size": 121,
   "jp": "「霊を よび出しますか？{n}{choice:0BEFD8}{clr}{じらいや#0901}「みんな 元気？{n}{     #034F}ボクも こっちでは とっても元気でーす！{wait}{clr}{name94}「なんだか あやしいわね。{wait}",
-  "en": "",
+  "en": "Shall I call up a spirit?{choice:0BEFD8}{clr}Jiraiya: Hi, everyone! I'm super-duper healthy over here too!{wait}{clr}{name94}: Something's fishy about this.{wait}",
   "notes": ""
  },
  {
   "id": "0BED77",
   "size": 90,
   "jp": "「霊を よび出しますか？{n}{choice:0BEFD8}{clr}{お七#0907}「はーい！ {お七#0907}でございまーす！{wait}{clr}{name93}「なんだか あやしいぜ。{wait}",
-  "en": "",
+  "en": "Shall I call up a spirit?{choice:0BEFD8}{clr}Oshichi: Hellooo! Oshichi here, at your service!{wait}{clr}{name93}: Something's fishy about this.{wait}",
   "notes": ""
  },
  {
   "id": "0BEDD9",
   "size": 180,
   "jp": "「霊を よび出しますか？{n}{choice:0BEFD8}{clr}{法界坊#0902}「何を おいても {しゅぎょう#0A4D}{じゃ！#0A58}！{wait}{clr}{ジロキチ#0903}「ボクは今 サンズの川を{n}{     #034F}わたろうとして こ{まって#0ABC}います！{n}{     #034F}だって ボク およげないんだもん！{wait}{clr}{name93}「なんだか あやしいぜ。{wait}",
-  "en": "",
+  "en": "Shall I call up a spirit?{choice:0BEFD8}{clr}Hokaibo: Training comes before all else!!{wait}{clr}Jirokichi: I'm trying to cross the River Sanzu, and I'm stuck! 'Cause I can't swim!{wait}{clr}{name93}: Something's fishy about this.{wait}",
   "notes": ""
  },
  {
   "id": "0BEE9A",
   "size": 316,
   "jp": "「霊を よび出してほしいのかな？{n}{choice:0BEFD8}{b8:780D}{clr}{じらいや#0901}「こっちの世界は たいくつだぜ！{n}{     #034F}オイラも いっしょに 戦いてーぜ！！{wait}{ba}{clr}「フーッ 年かのォ{‥‥‥#065F}{n} 一人を よび出すのが やっとじゃわい。{wait}{b8:0F0D}{clr}{name94}「今のは 本物の{じらいや#0901}よ！{wait}{ba}{p9a}「{夕風#0905}さまは もっと楽に霊を よび出すし{n} あやつることもできる すごい お方{じゃ。#0A31}{n} 今も {清めの滝#09AA}で {しゅぎょう#0A4D}中じゃろう。{wait}",
-  "en": "",
+  "en": "Want me to call up a spirit, then?{choice:0BEFD8}{b8:780D}{clr}Jiraiya: It's boring over here! I wanna fight alongside you guys too!!{wait}{ba}{clr}Phew, must be my age... Calling up one is all I can manage.{wait}{b8:0F0D}{clr}{name94}: That was the real Jiraiya!{wait}{ba}{p9a}Yunagi-sama calls up spirits with ease and can even control them. A remarkable lady. She's likely still training at the Purifying Falls.{wait}",
   "notes": ""
  },
  {
   "id": "0BEFD8",
   "size": 16,
   "jp": "{clr} そうですか{‥‥。#0A24}{wait}",
-  "en": "",
+  "en": "{clr}I see...{wait}",
   "notes": ""
  },
  {
   "id": "0BEFEB",
   "size": 53,
   "jp": "「もう わしが 霊をよび出さなくとも よいじゃろう。{wait}",
-  "en": "",
+  "en": "You've no more need of me callin' up spirits, I reckon.{wait}",
   "notes": ""
  },
  {
   "id": "0BF023",
   "size": 80,
   "jp": "「{夕風#0905}さまの 霊のう力は すごいべ？{n} 『さいきょうの{イタコ#0921}』の名は ダテじゃねェべ。{wait}",
-  "en": "",
+  "en": "Yunagi-sama's spirit powers are somethin', ain't they? The name 'Strongest Itako' ain't just for show.{wait}",
   "notes": ""
  },
  {
   "id": "0BF07B",
   "size": 82,
   "jp": "「このところ {地しん#0A53}が多くて こまるだなっス。{n} 以前は こんなことは なかったのに{‥‥。#0A24}{wait}",
-  "en": "",
+  "en": "All these earthquakes lately are a real bother, y'know. Never used to be like this before...{wait}",
   "notes": ""
  },
  {
   "id": "0BF0D5",
   "size": 104,
   "jp": "「ムツの国は 地ばんが ゆるい所が 所々あるだなっス。{n} だから {地しん#0A53}が おきると ヒヤヒヤするだなっス。{wait}",
-  "en": "",
+  "en": "The Land of Mutsu's got soft ground here and there, y'know. So when a quake hits, it's real nerve-rackin', y'know.{wait}",
   "notes": ""
  },
  {
   "id": "0BF145",
   "size": 101,
   "jp": "「{『日光町』#066C}には 大{発明家#065C}として ゆう名な{n} 『両手 {甚十郎#0920}』さんが すんでいる{だよ。#0A01}{n} 左 {甚五郎#0922}さんの {ししょう#0A55} なんだってさ。{wait}",
-  "en": "",
+  "en": "In 'Nikko Town' lives 'Both-Hands Jinjuro,' famous as a great inventor. They say he's the teacher of 'Lefty' Jingoro-san.{wait}",
   "notes": ""
  },
  {
   "id": "0BF1B2",
   "size": 109,
   "jp": "「{甚十郎#0920}さまは すっかり かい心されて{n} 今は {『日光町』#066C}に すんでます。{n} きっと かいしんの発明を しているでしょう。{wait}",
-  "en": "",
+  "en": "Jinjuro-sama has completely seen the light, and now lives in 'Nikko Town.' I bet he's working on some brilliant invention.{wait}",
   "notes": ""
  },
  {
   "id": "0BF227",
   "size": 45,
   "jp": "「{『オソレ山』#066B}は ここから 南へ行った所に あるわよ。{wait}",
-  "en": "",
+  "en": "'Mount Osore' is south of here.{wait}",
   "notes": ""
  },
  {
   "id": "0BF25C",
   "size": 149,
   "jp": "「あの{清姫#0929}を やっつけたというのは キミたちなのかい！？{n} すげぇなぁ！！{n} キミたち ただ者じゃないね？{wait}{clr} {ウワサ#0A32}じゃ {清姫#0929}は オエドに にげていったとか。{wait}",
-  "en": "",
+  "en": "You're the ones who beat that Kiyohime!? Amazing!! You guys are no ordinary folks, huh?{wait}{clr}Rumor has it Kiyohime ran off to Oedo.{wait}",
   "notes": ""
  },
  {
   "id": "0BF2F9",
   "size": 107,
   "jp": "「{『オソレ山』#066B}には ケッカイババと フウインババという{n} ふたごの おばあ{ちゃん#0AB5}が いるわ。{n} CDも出す 人気者なのよ。{wait}",
-  "en": "",
+  "en": "On 'Mount Osore' there are twin grannies called Kekkai Baba and Fuin Baba. They're so popular they even put out CDs.{wait}",
   "notes": ""
  },
  {
   "id": "0BF36C",
   "size": 125,
   "jp": "「オエドを目ざして たびをしているんですか？{n} だったら もうすこしですね。 ムツを出たら{n} いよいよ オエドに つきますよ。{wait}",
-  "en": "",
+  "en": "You're traveling toward Oedo? Then you're almost there. Once you leave Mutsu, you'll finally reach Oedo.{wait}",
   "notes": ""
  },
  {
   "id": "0BF3F1",
   "size": 186,
   "jp": "「霊というのは 一つの場所に じっとしていることは{n} ほとんど ありません。{wait}{clr} {しかし #0A4E}そこに とくべつな 思い入れが{n} ある場合は その場所に いつまでも 霊が{n} あらわれることが あります。{wait}",
-  "en": "",
+  "en": "Ghosts hardly ever stay put in one place.{wait}{clr}But when they have a special attachment to a place, a ghost may keep appearing there forever.{wait}",
   "notes": ""
  },
  {
   "id": "0BF4B3",
   "size": 93,
   "jp": "「お{にいちゃん#0A73}たち オエドへ 行くの？{n} あのねぇ オエドって {ものすごく#0A49} 人が多くて{n} 楽しい町なんだって！{wait}",
-  "en": "",
+  "en": "Are you guys going to Oedo? Ya know, they say Oedo has tons and tons of people and it's a really fun town!{wait}",
   "notes": ""
  },
  {
   "id": "0BF51D",
   "size": 86,
   "jp": "「さいきん おフロに 入っていると 誰かに{n} 見られているみたいで {気持ち#0A21}悪いだなっす‥‥{wait}",
-  "en": "",
+  "en": "Lately, when I'm in the bath, it feels like somebody's watchin' me. Gives me the creeps, it does...{wait}",
   "notes": ""
  },
  {
   "id": "0BF580",
   "size": 76,
   "jp": "「霊のう者が 言うには 女ブロに 坊さんの霊が出る{n} ということなんだべや。{wait}",
-  "en": "",
+  "en": "The spirit medium says a monk's ghost shows up in the women's bath, y'see.{wait}",
   "notes": ""
  },
  {
   "id": "0BF5D9",
   "size": 97,
   "jp": "「両手 {甚十郎#0920}センセイが 持っている{n} 『{霊力せっちゃくざい#0347}』は なんだって{n} くっつけられる スッゴイ発明なんだ！！{wait}",
-  "en": "",
+  "en": "The 'Spirit Adhesive' that Ryote Jinjuro-sensei has is an amazing invention that can stick anything together!!{wait}",
   "notes": ""
  },
  {
   "id": "0BF647",
   "size": 199,
   "jp": "「今 この国は {五ェ門#090A}が おさめている{だよ。#0A01}{n} もともとは オエドにいたんだが{n} さいきんになって このムツの国に 来た{だよ。#0A01}{wait}{clr} どうやら オエドにつく前に{name93}さんを{n} たおすように {天資#0909}から 命令されてきたらしいべ。{wait}",
-  "en": "",
+  "en": "Right now Goemon rules this land. He used to be in Oedo, but lately he came here to the Land of Mutsu.{wait}{clr}Seems Tensai ordered him to take down {name93} before you lot ever reach Oedo.{wait}",
   "notes": ""
  },
  {
   "id": "0BF716",
   "size": 72,
   "jp": "「オエドの{将軍さま#0A2B}は もう 死んでしまったという{n} はなしだけど 本当だべか？{wait}",
-  "en": "",
+  "en": "They say the shogun in Oedo has already died. Is that true, I wonder?{wait}",
   "notes": ""
  },
  {
   "id": "0BF766",
   "size": 134,
   "jp": "「{この町#0A71}のはずれには {甚十郎#0920}さんが つぐないために{n} たてた トウショウグウがあるだなっす。{wait}{clr} そこに {ヘンな#0A61} ふろう者が すみついてるだなっす。{wait}",
-  "en": "",
+  "en": "Out at the edge of this town is a Toshogu shrine Jinjuro-san built to atone for himself, it is.{wait}{clr}Some strange vagrant has gone and settled in there, he has.{wait}",
   "notes": ""
  },
  {
   "id": "0BF7F9",
   "size": 94,
   "jp": "「女ぶろのあたりに 強い霊気を かんじる‥‥{n} あの場所から 動こうとしない 強いパワーを{‥‥‥#065F}‥{wait}",
-  "en": "",
+  "en": "I sense a strong spirit aura around the women's bath... A strong power that refuses to leave that place........{wait}",
   "notes": ""
  },
  {
   "id": "0BF85A",
   "size": 111,
   "jp": "「いくら {あたし#0A19}が かわいくて スタイルばつぐんで{n} セクシーだからって オフロを のぞくなんて{n} ゆるせないべ！！{wait}",
-  "en": "",
+  "en": "Sure, I'm cute, and I've got a great figure, and I'm sexy, but peepin' at me in the bath? Unforgivable!!{wait}",
   "notes": ""
  },
  {
   "id": "0BF8CC",
   "size": 45,
   "jp": "「女ぶろに出る霊って どんなヤツなんだべか？{wait}",
-  "en": "",
+  "en": "What kinda ghost shows up in the women's bath, I wonder?{wait}",
   "notes": ""
  },
  {
   "id": "0BF8FC",
   "size": 64,
   "jp": "「たいへんだよ！！{n} {甚十郎#0920}センセイが {ヘンな#0A61}男に ころされちゃったよ！{wait}",
-  "en": "",
+  "en": "This is terrible!! Jinjuro-sensei's been killed by some weird man!{wait}",
   "notes": ""
  },
  {
   "id": "0BF93F",
   "size": 155,
   "jp": "「えっ！ {五ェ門#090A}は オエドに かえっただか！？{wait}{clr} それでは このムツは やっと{n} {天資#0909}軍から かいほうされた ということだか！？{n} ああ{‥‥ #0A2C}ついに この日が‥‥！！{wait}",
-  "en": "",
+  "en": "What! Goemon went back to Oedo!?{wait}{clr}Then that means Mutsu's finally free of Tensai's army!? Ahh... at last, this day has come...!!{wait}",
   "notes": ""
  },
  {
   "id": "0BF9DD",
   "size": 35,
   "jp": "「あの霊は どこへ行ったのだろう？{wait}",
-  "en": "",
+  "en": "Where did that ghost go, I wonder?{wait}",
   "notes": ""
  },
  {
   "id": "0BFA0B",
   "size": 811,
   "jp": "{ジンゴロー#0917}「{ケッケッケッ#0A20}！{n}{      #034E}{まって#0ABC}いたぞ 左の仲間{n}{      #034E}{name93}座よ！{wait}{b8:000D}{clr}{name93}「お おめーは！{n}あの{バクハツ#0A46}で 死んだんじゃねェーのか！{n}バケモノめ！！{wait}{ba}{p9a}{ジンゴロー#0917}「{ケッケッケッ#0A20}！{n}{      #034E}バケモノとは 人ぎきの悪い。{wait}{clr}{      #034E}この左ウデは かつて ワシらの{ししょう#0A55}に{n}{      #034E}きりとられた 左 {甚五郎#0922}のもの。{wait}{clr}{      #034E}そして この両ウデは ワシの {ししょう#0A55}だった{n}{      #034E}両手 {甚十郎#0920}のものよ！{wait}{clr}{      #034E}ケ～～～～ッ{ケッケッケッ#0A20}！！{wait}{b8:0F0D}{clr}{name94}「{甚十郎#0920}さんの手って{‥‥‥#065F}まさか！{wait}{ba}{p9a}{ジンゴロー#0917}「ころしてやったよ！{ お前#0A1B}たちが{n}{      #034E}{清姫#0929}と 戦っている間にな。{n}{      #034E}ケーッ{ケッケッケッ#0A20}！{wait}{clr}{      #034E}もっとも 悪いのは あいつだろ？{n}{      #034E}なんせ このワシの手を 切ったのだからな！{wait}{clr}{      #034E}これで のこる左 {甚五郎#0922}の右ウデが{n}{      #034E}手に入れば ワシは この世で一番の{n}{      #034E}大大大だぁ～い {発明家#065C}となるのだ！！{wait}{clr}{      #034E}ケーッ{ケッケッケッ#0A20}！{n}{      #034E}ケーーッ{ケッケッケッ#0A20}{ケッ！#0A60}{wait}{b8:000D}{clr}{name93}「く くるってやがる！{wait}{ba}{p9a}{ジンゴロー#0917}「ワシを みとめてくれた {天資#0909}さまのためにも{n}{      #034E}ここは 通さんゾ！！{wait}{clr}{      #034E}おまえたちを たおして 左 {甚五郎#0922}のウデを{n}{      #034E}いただきに行ってやる！！{n}{      #034E}ケーッ{ケッケッケッ#0A20}！！{wait}",
-  "en": "",
+  "en": "Jingoro: Kekeke! I've been waiting for you, Hidari's pals, the {name93} Troupe!{wait}{b8:000D}{clr}{name93}: Y-you!! Weren't you blown to bits in that explosion!? You monster!!{wait}{ba}{p9a}Jingoro: Kekeke! \"Monster\"? How rude.{wait}{clr}This left arm belonged to Hidari Jingoro, whose arm was once cut off by our master.{wait}{clr}And these two arms belonged to my master, Ryote Jinjuro!{wait}{clr}Keeeeeh-kekekeke!!{wait}{b8:0F0D}{clr}{name94}: Jinjuro-san's hands... You don't mean...!{wait}{ba}{p9a}Jingoro: I killed him! While you lot were fighting Kiyohime. Keh-kekekeke!{wait}{clr}Anyway, he had it coming, didn't he? After all, he cut off my hands!{wait}{clr}Now, once I get the right arm Hidari Jingoro has left, I'll be the greatest, grandest, gra-a-andest inventor in the world!!{wait}{clr}Keh-kekekeke! Keeeh-kekekekeke!{wait}{b8:000D}{clr}{name93}: H-he's gone nuts!{wait}{ba}{p9a}Jingoro: For the sake of Tensai-sama, who recognized my genius, you shall not pass!!{wait}{clr}I'll beat you, then go and take Hidari Jingoro's arm!! Keh-kekekeke!!{wait}",
   "notes": ""
  },
  {
   "id": "0BFD46",
   "size": 25,
   "jp": "{ジンゴロー#0917}「て {天資#0909}さま{ーーー#0A2F}ーっ！！{wait}",
-  "en": "",
+  "en": "Jingoro: T-Tensai-samaaaaa!!{wait}",
   "notes": ""
  },
  {
   "id": "0BFD6D",
   "size": 49,
   "jp": "{name93}「お おめーは いったい？！{‥‥‥#065F}{wait}{ba}{p9a}マスクマン「{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "{name93}: Wh-who the heck are you!?...{wait}{ba}{p9a}Masked Man: ...{wait}",
   "notes": ""
  },
  {
   "id": "0BFDAA",
   "size": 68,
   "jp": "{name94}「誰なのかしら{‥‥‥#065F}？{n}みかたみたいだけど{‥‥‥#065F}{wait}{ba}{b8:000D}{p9a}{name93}「さきを いそごう。{wait}",
-  "en": "",
+  "en": "{name94}: Who could that be...? He seems to be on our side...{wait}{ba}{b8:000D}{p9a}{name93}: Let's hurry on.{wait}",
   "notes": ""
  },
  {
   "id": "0BFDF5",
   "size": 69,
   "jp": "{ジンゴロー#0917}「ケケケ{ケッ！#0A60}{n}{      #034E}これで ワシは 大大大だぁ～い{発明家#065C}だ！！{n}{      #034E}ケ～ッ{ケッケッケッ#0A20}！！{wait}",
-  "en": "",
+  "en": "Jingoro: Kekekeke! Now I'm the greatest, grandest, gra-a-andest inventor!! Keh-kekekeke!!{wait}",
   "notes": ""
  },
  {
   "id": "0BFE3F",
   "size": 39,
   "jp": "このさき {キケン#0A48}！ 入っては いけません！{wait}",
-  "en": "",
+  "en": "Danger ahead! Do not enter!{wait}",
   "notes": ""
  },
  {
   "id": "0BFE69",
   "size": 39,
   "jp": "かたこり リュウマチに よくきく {おんせん#0A15}！{wait}",
-  "en": "",
+  "en": "A hot spring that works wonders on stiff shoulders and rheumatism!{wait}",
   "notes": ""
  },
  {
   "id": "0BFE93",
   "size": 18,
   "jp": "北{‥‥‥#065F}{モザイク洞#098B}くつ{n}南{‥‥‥#065F}{さかわ村#098C}{wait}",
-  "en": "",
+  "en": "North: Mosaic Cave. South: Sakawa Village.{wait}",
   "notes": ""
  },
  {
   "id": "0BFEA8",
   "size": 7,
   "jp": "西{‥‥‥#065F}{かれずの洞くつ#098D}{wait}",
-  "en": "",
+  "en": "West: Never-Dry Cave.{wait}",
   "notes": ""
  },
  {
   "id": "0BFEB7",
   "size": 65,
   "jp": "{おたずね者#0A96}・{name93}と その仲間たち{n}とらえた者には 1000両の しょう金！！{wait}",
-  "en": "",
+  "en": "WANTED: {name93} and companions. A 1000 ryo reward for their capture!!{wait}",
   "notes": ""
  },
  {
   "id": "0BFEFB",
   "size": 15,
   "jp": "{コウズケノスケ#090C}さまの お{やしき#0A13}{wait}",
-  "en": "",
+  "en": "Residence of Kozukenosuke-sama{wait}",
   "notes": ""
  },
  {
   "id": "0BFF12",
   "size": 50,
   "jp": "{歌しばい#065A}禁止令 および {モンスターあわれみの令#065B}！{n}やぶりし者は {魔ぬけの森#0984}一生の刑！{wait}",
-  "en": "",
+  "en": "Song Play Ban and Edict of Mercy for Monsters! Violators get life in Witless Woods!{wait}",
   "notes": ""
  },
  {
   "id": "0BFF47",
   "size": 29,
   "jp": "{カラオケボックス#0A3F}の えいぎょうを 禁ずる！{wait}",
-  "en": "",
+  "en": "Karaoke boxes are banned from doing business!{wait}",
   "notes": ""
  },
  {
   "id": "0BFF67",
   "size": 60,
   "jp": "ただ今 こしょう中です。{n}ごめいわくを おかけしております。{wait}",
-  "en": "",
+  "en": "Currently out of order. We apologize for the inconvenience.{wait}",
   "notes": ""
  },
  {
   "id": "0BFFA6",
   "size": 32,
   "jp": "{天資#0909}を やっつけた{name93}さんが {千両役者#0A25}に！{wait}",
-  "en": "",
+  "en": "Tensai's vanquisher, {name93}, becomes a thousand-ryo star!{wait}",
   "notes": ""
  }
 ]
