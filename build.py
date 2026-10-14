@@ -16,6 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "tools"))
 import text  # noqa: E402
+import wrap  # noqa: E402
 from script_ops import off  # noqa: E402
 
 EXP_BANKS = range(0x30, 0x40)  # LoROM 30:8000-3F:FFFF = file 0x180000-0x1FFFFF
@@ -74,6 +75,8 @@ def build(out, marker=False, reloc_jp=False, qa=None):
         space = Space()
         for e, s, enc in todo:
             a = int(e["id"], 16)
+            if enc is text.EN.enc:
+                s = wrap.wrap(s)
             body = text.encode(s, enc)
             if not re.search(r"\{jump:[0-9A-F]{6}\}$", s):
                 body += jump(a + e["size"])

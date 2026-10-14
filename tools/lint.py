@@ -12,9 +12,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import text  # noqa: E402
+import wrap  # noqa: E402
 
 WIDTH, LINES = 28, 3
-NAME_LEN = {"name93": 6, "name94": 6}  # shortcut: assumed max English name length; check the name tables
+NAME_LEN = wrap.NAME_LEN
 KEEP = {"jump", "choice", "b8", "ba", "name93", "name94"}  # must match the Japanese multiset
 PAGE = {"clr", "p9a"}
 JP_CHARS = re.compile(r"[぀-ヿ一-鿿「」『』。、！？]")
@@ -37,7 +38,7 @@ def ctrl(s):
 
 def check(e):
     errs = []
-    en = e["en"]
+    en = wrap.wrap(e["en"])  # the build inserts the same line and page breaks
     if JP_CHARS.search(en):
         errs.append("Japanese left in en")
     if ctrl(en) != ctrl(e["jp"]):

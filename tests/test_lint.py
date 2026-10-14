@@ -23,8 +23,12 @@ def test_lost_jump_and_name():
 def test_too_wide_and_too_many_lines():
     long = "A" * 29
     assert any("over 28" in x for x in errs("{name94}" + long + "{jump:088000}"))
-    assert any("3 lines" in x for x in errs("{name94}A{n}B{n}C{n}D{jump:088000}"))
-    assert any("arrow" in x for x in errs("{name94}" + "A" * 22 + "{wait}{jump:088000}"))  # 6 (name) + 22 = 28
+    assert any("arrow" in x for x in errs("{name94}" + "A" * 23 + "{wait}{jump:088000}"))  # 5 (name) + 23 = 28
+
+
+def test_wrapped_long_text_passes():
+    words = " ".join(["WORD"] * 60)
+    assert errs("{name94} " + words + "{wait}{jump:088000}") == []
 
 
 def test_japanese_left():
