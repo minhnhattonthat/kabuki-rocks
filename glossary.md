@@ -15,9 +15,59 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 ## Style rules
 - Punctuation map: 「」 -> "...", 『』 -> '...', ・・・ -> ..., ！？ -> !?
 
-## Characters
+## Characters (proposed 2026-10-15 from dictionary 0x0900-0x092C; Hepburn, macrons dropped - confirm with user)
 | JP | EN | max | notes | Avoid |
 |---|---|---|---|---|
+| ロック | Rock | 4 | hero, {name93} | |
+| マッキー | Makki | 5 | heroine, {name94} | |
+| ベンケイ | Benkei | | party | |
+| じらいや | Jiraiya | | party | |
+| 法界坊 | Hokaibo | | party | |
+| ジロキチ | Jirokichi | | party | |
+| フジムスメ | Fuji Musume | | party (Wisteria Maiden) | |
+| 夕風 | Yukaze | | party | |
+| 辰五郎 | Tatsugoro | | party | |
+| お七 | Oshichi | | party | |
+| 景清 | Kagekiyo | | party | |
+| 天資 / 天資さま | Tensai / Tensai-sama | | the shogun | |
+| 五ェ門 | Goemon | | | |
+| 清姫 | Kiyohime | | | |
+| コウズケノスケ | Kozukenosuke | | | |
+| ダンジョー | Danjo | | | |
+| ナルカミ | Narukami | | | |
+| シッコクのライ | Rai of the Jet Black | | boss | |
+| シャクネツのエン | En of the Scorching Heat | | boss | |
+| コウセンのフウ | Fu of the ... (コウセン unclear) | | boss | |
+| セイガのヒョウ | Hyo of the ... (セイガ unclear) | | boss | |
+| クロツカ | Kurotsuka | | | |
+| タケヒラ | Takehira | | | |
+| トクベエ | Tokubei | | | |
+| ドーマン | Doman | | | |
+| 甚五郎 / ジンゴロー | Jingoro | | | |
+| 甚十郎 | Jinjuro | | | |
+| ネムリン | Nemurin | | | |
+| ウメ / ウメさん / ウメばあちゃん | Ume / Ume-san / Granny Ume | | | |
+| スケノブ | Sukenobu | | | |
+| イタコ | Itako | | | |
+| ケッカイババ | Kekkai Baba | | | |
+| フウインババ | Fuin Baba | | | |
+| ゴーマン | Goman | | | |
+| ええからだ四天王 | ? Four Heavenly Kings | | | |
+| アンコクロボ | Ankoku Robo | | | |
+| 役者A / 役者B / 役者C | Actor A / Actor B / Actor C | | intro play | |
+| 女中 | Maid | | | |
+| 客 | Audience | | kabuki kakegoe shouts (おとわ屋 = "Otowaya!") | |
+| 兵士 | Soldier | | | |
+| 将軍 | Shogun | | | |
+
+## Terms
+| JP | EN | notes |
+|---|---|---|
+| 歌しばい | song play | the banned musical kabuki |
+| モンスターあわれみの令 | Edict of Mercy for Monsters | parody of 生類憐れみの令 |
+| 両 | ryo | money |
+| 体力 / 声力 | HP / Voice (?) | menu stats |
+| 十八番 | ? Specialties (juhachiban) | menu command |
 
 ## Places
 | JP | EN | max | notes | Avoid |
