@@ -78,3 +78,13 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 |---|---|---|---|---|
 
 ## Decisions from earlier batches
+- 魔ぬけの森 -> Witless Woods (まぬけ pun; hermit tests "witless"). 魔の山 -> Demon Mountain. 四布町 -> Shippu Town. オエド -> Oedo.
+- 役人 -> Official. ダフ屋 -> Scalper. 幕の内ベントウ -> Makunouchi Bento. かぶきあげ -> Kabuki-age.
+- 歌武器 -> song weapon. 十八番 -> Specialty. 歌しばい -> song play. しばい小屋 -> playhouse. 千両役者 -> thousand-ryo star.
+- 天資軍 -> Tensai's army. 酒屋 -> Brewer. ナルカミ上人 -> His Holiness Narukami. 四天王 -> Four Heavenly Kings; ええからだ四天王 -> Bodacious Four Heavenly Kings.
+- コウセンのフウ -> Fu of the Kosen; セイガのヒョウ -> Hyo of the Seiga (readings unconfirmed; replace everywhere if settled).
+- Kozukenosuke's でゲス tic -> ", yesss!" (weaselly). Benkei's ござる -> stiff archaic English, no "gozaru" tag.
+- Item pickup: Got the 'Item Name'!! 『』 -> single quotes.
+- Nameless 「 lines: no speaker prefix, no stray opening quote.
+- {name93}/{name94}: no honorific suffix glued on; use "Sir {name93}" style or rephrase.
+- 泣き所町 -> Nakidokoro Town (pun on Benkei's weak spot lost; revisit).
