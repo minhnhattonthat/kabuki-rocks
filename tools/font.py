@@ -2,6 +2,7 @@
 
     python -X utf8 tools/font.py sheet OUT.png [--from 0 --to 2FF] [--zoom 3]   # labelled glyph sheet
     python -X utf8 tools/font.py en-sheet OUT.png                              # English font review sheet
+    python -X utf8 tools/font.py tiny-sheet OUT.png                            # tiny label font + sample labels
 """
 import argparse
 import sys
@@ -17,6 +18,7 @@ FONT_BLOCKS = (0xF8000, 0xF987D)  # 1F:8000 -> BG3 tiles 0-511, 1F:987D -> 512-1
 SPACE = 0x02FF
 TABLE = 0x3C48  # 00:BC48 byte-pair table: (top, bottom) tile byte per glyph code
 FONT_EN = ROOT / "assets" / "font_en.txt"
+FONT_TINY = ROOT / "assets" / "font_tiny.txt"  # 3x5 label font, two letters per 8-px cell
 PIX = {".": 3, "#": 1, "+": 2}  # font_en.txt pixel chars -> palette index
 VOLATILE = range(0x2E0, 0x300)  # BG3 tiles the game overwrites at run time (VRAM dump work/qa/ppu1)
 # Page-2 kanji whose tiles the English glyphs may take. Codes 139-13F share table entries with 140-146,
@@ -202,9 +204,89 @@ def en_sheet(out, text=SAMPLE, zoom=4):
     print(out)
 
 
+def load_tiny(path=FONT_TINY):
+    """{char: 6 rows x 4 px (1 = ink)} from assets/font_tiny.txt (3-px glyphs, column 4 is the gap)."""
+    glyphs, cur = {}, None
+    for line in Path(path).read_text(encoding="utf-8").splitlines():
+        if line.startswith("== "):
+            cur = glyphs[line[3:]] = []
+        elif cur is not None and line:  # lines before the first header are comments
+            assert len(line) == 4 and line[3] == "." and set(line) <= {".", "#"}, f"{line!r}"
+            cur.append([int(c == "#") for c in line])
+    for ch, rows in glyphs.items():
+        assert len(ch) == 1 and len(rows) == 6, f"{ch!r}: {len(rows)} rows"
+    return glyphs
+
+
+def render_label(text: str, cells: int, lines: int = 1) -> list[list[list[int]]]:
+    """`cells` 8x16 cells (palette index 3 = background, 1 = ink) of `text` in the tiny font, two
+    letters per cell, each line centred. lines=2 splits `text` at its one '/'."""
+    if lines not in (1, 2) or (lines == 2 and text.count("/") != 1):
+        raise ValueError(f"{text!r}: lines=2 needs exactly one '/'" if lines == 2 else f"lines={lines}")
+    font = load_tiny()
+    px = [[3] * (cells * 8) for _ in range(16)]
+    parts = text.split("/") if lines == 2 else [text]
+    for top, part in zip((5,) if lines == 1 else (1, 9), parts):
+        if len(part) > 2 * cells:
+            raise ValueError(f"{part!r}: {len(part)} chars > {2 * cells} for {cells} cells")
+        x0 = (cells * 8 - (4 * len(part) - 1)) // 2  # centre the ink, not the trailing gap
+        for i, ch in enumerate(part):
+            for y, row in enumerate(font[ch]):
+                for x, p in enumerate(row):
+                    if p:
+                        px[top + y][x0 + 4 * i + x] = 1
+    return [[r[c * 8:c * 8 + 8] for r in px] for c in range(cells)]
+
+
+TINY_SAMPLES = [("Song/Weapon", 3, 2), ("Item", 3, 1), ("Forte", 3, 1), ("Run", 3, 1), ("Attack", 3, 1),
+                ("Equip", 4, 1), ("Status", 4, 1), ("Config", 4, 1)] + \
+    [(w, 4, 1) for w in ("HP", "Voice", "Attack", "Accuracy", "Defense", "Evasion", "Speed", "Singing", "Spirit")] + \
+    [("Change/Order", 4, 2), ("The quick brown fox jumps over/the lazy dog. 0123456789 rn m", 16, 2)]
+
+
+def label_image(cells):
+    """1x RGB image of render_label() output, game palette."""
+    from PIL import Image
+    img = Image.new("RGB", (8 * len(cells), 16))
+    for c, cell in enumerate(cells):
+        for y, row in enumerate(cell):
+            for x, p in enumerate(row):
+                img.putpixel((c * 8 + x, y), GAME_RGB[p])
+    return img
+
+
+def tiny_sheet(out, zoom=4):
+    """Every tiny glyph at `zoom`, then TINY_SAMPLES at 1x and 3x."""
+    from PIL import Image, ImageDraw
+    font = load_tiny()
+    cols, cw, ch = 16, 4 * zoom + 12, 6 * zoom + 16
+    grid = Image.new("RGB", (cols * cw + 8, -(-len(font) // cols) * ch + 8), (60, 60, 60))
+    dr = ImageDraw.Draw(grid)
+    for i, (c, rows) in enumerate(font.items()):
+        x, y = 8 + i % cols * cw, 8 + i // cols * ch
+        g = Image.new("RGB", (5, 7), GAME_RGB[3])  # 1-px navy margin left/top so the glyph edge shows
+        for gy, r in enumerate(rows):
+            for gx, p in enumerate(r):
+                if p:
+                    g.putpixel((gx + 1, gy + 1), GAME_RGB[1])
+        grid.paste(g.resize((5 * zoom, 7 * zoom), Image.NEAREST), (x, y))
+        dr.text((x, y + 7 * zoom + 1), c, fill=(255, 255, 160))
+    labels = [label_image(render_label(*s)) for s in TINY_SAMPLES]
+    h = grid.height + sum(16 * 3 + 8 for _ in labels) + 8
+    img = Image.new("RGB", (max(grid.width, 16 + max(4 * im.width for im in labels) + 16), h), (60, 60, 60))
+    img.paste(grid, (0, 0))
+    y = grid.height
+    for im in labels:
+        img.paste(im, (8, y + 16))
+        img.paste(im.resize((im.width * 3, im.height * 3), Image.NEAREST), (16 + im.width, y))
+        y += 16 * 3 + 8
+    img.save(out)
+    print(out)
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["sheet", "en-sheet"])
+    ap.add_argument("cmd", choices=["sheet", "en-sheet", "tiny-sheet"])
     ap.add_argument("out")
     ap.add_argument("--from", dest="lo", default="0")
     ap.add_argument("--to", dest="hi", default="2FF")
@@ -214,5 +296,7 @@ if __name__ == "__main__":
     a = ap.parse_args()
     if a.cmd == "en-sheet":
         en_sheet(a.out, a.text)
+    elif a.cmd == "tiny-sheet":
+        tiny_sheet(a.out)
     else:
         sheet(a.out, int(a.lo, 16), int(a.hi, 16), a.zoom, a.vram)

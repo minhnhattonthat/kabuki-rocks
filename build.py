@@ -21,7 +21,7 @@ import text  # noqa: E402
 import wrap  # noqa: E402
 from script_ops import off  # noqa: E402
 
-EXP_BANKS = range(0x30, 0x3F)  # LoROM 30:8000-3E:FFFF; bank $3F is reserved for QA debug scripts
+EXP_BANKS = range(0x30, 0x3B)  # LoROM 30:8000-3A:FFFF; $3B-$3C code strings, $3F QA debug scripts
 ROM_SIZE = 0x200000
 DICT_BANK = 0x30
 
@@ -84,84 +84,81 @@ def patch_names(rom, space):
     assert NAME_INIT + 6 + 0x24 == 0x00A012
 
 
-DICT_LOOKUP = 0x00BC31  # `LDA $2F0000,x` in 00:BBEE: reads the word pointer; becomes JML to dict_tail
-DICT_READERS = (0x00E11D, 0x00E139, 0x039669, 0x0394E3)  # `LDA $2F0000,x` word readers; become JSL dict_read
-DICT_SEL = 0x7FFFF8  # WRAM word: 0 = words in bank $30, 1 = bank $31 (never written in the original; RAM scan)
-SPLIT_CODE = 0x0600  # codes below live in bank $30, the rest in bank $31 (the bank-$31 words follow the code)
-DICT_BASES = 0x003C38  # 8 words: pointer-table base per code group (00:BC38)
-DICT_BASE_9XX = 0x003C0B  # `LDA #$F30B` operand: base for codes >= 0x980 (00:BC0A)
+DICT_OVERFLOW = 0x30  # English dictionary words that do not fit bank $2F
+DICT_READ = 0x318000  # helper: dictionary word read for the `LDA $2F0000,x ; BMI` loops
+# Groups whose words must stay in bank $2F (read through a 24-bit pointer fixed to bank $2F, e.g. 02:93E2 battle
+# messages), then the rest in order of how likely code reads them; the tail spills to DICT_OVERFLOW.
+DICT_PRIORITY = (0x8, 0x9, 0x3, 0x4, 0x5, 0x6, 0xA)  # code >> 8 (0x6 covers 0x600-0x7FF)
 
 
 def patch_dictionary(rom, entries):
-    """Move the dictionary out of bank $2F (English does not fit one bank) into banks $30 and $31.
+    """English dictionary words, with the pointer tables left in place in bank $2F.
 
-    Bank $30: the pointer tables (same group/index scheme as the original, dictwords.GROUPS) and the words for
-    codes < SPLIT_CODE. Bank $31: two small routines, then the words for the other codes. Japanese words are
-    copied where `en` is empty. 00:BBEE's pointer read becomes a JML to dict_tail, which also stores which bank
-    the word is in (DICT_SEL); the four word readers become JSL dict_read, which reads from that bank."""
+    Several routines read the tables directly (00:BBEE, `LDA $2FA74F,x` at 07:ADAA, `$2FDEAD,x` at 02:93DA) and
+    bank $2F also holds item data, so only the pointers change. Words go into the old word space of bank $2F
+    first (DICT_PRIORITY order); the rest go to bank DICT_OVERFLOW and their pointer is stored as address-$8000
+    (< $8000). Every `LDA $2F0000,x ; BMI` word loop becomes JSL DICT_READ: X < $8000 reads DICT_OVERFLOW:8000+X,
+    otherwise bank $2F as before. Japanese is kept where `en` is empty."""
     import dictwords
     en = {e["id"]: e["en"] for e in entries}
-    code_at = 0x318000
-    helper = bytes([0xAF, DICT_SEL & 0xFF, DICT_SEL >> 8 & 0xFF, DICT_SEL >> 16,  # dict_read: LDA.l DICT_SEL
-                    0xD0, 0x05,                                                   # BNE hi
-                    0xBF, 0x00, 0x00, 0x30, 0x6B,                                 # LDA $300000,x ; RTL
-                    0xBF, 0x00, 0x00, 0x31, 0x6B])                                # hi: LDA $310000,x ; RTL
-    sel = [0x8F, DICT_SEL & 0xFF, DICT_SEL >> 8 & 0xFF, DICT_SEL >> 16]           # STA.l DICT_SEL
-    tail = bytes([0xBF, 0x00, 0x00, 0x30, 0x48, 0xAA,                             # dict_tail: LDA $300000,x ; PHA ; TAX
-                  0xC0, SPLIT_CODE & 0xFF, SPLIT_CODE >> 8, 0xB0, 0x09,           # CPY #SPLIT ; BCS hi
-                  0xA9, 0x00, 0x00, *sel, 0x80, 0x07,                             # LDA #0 ; STA.l ; BRA done
-                  0xA9, 0x01, 0x00, *sel,                                         # hi: LDA #1 ; STA.l
-                  0x68, 0x28, 0x6B])                                              # done: PLA ; PLP ; RTL
-    tail_at = code_at + len(helper)
-    pos = 0x8000
-    tables = []
-    for base, first, n in dictwords.GROUPS:
-        tables.append(pos)
-        pos += 2 * n
-    lo, hi = bytearray(), bytearray()
-    lo_base, hi_base = pos, 0x8000 + len(helper) + len(tail)
-    words = {}  # (bank, word bytes) -> offset
-    ptrs = {}
-    for base, first, n in dictwords.GROUPS:
+    # free space in bank $2F: the extents of the original word lists
+    tables = [(base, base + 2 * n) for base, first, n in dictwords.GROUPS]
+    spans = sorted({(dictwords.entry_addr(rom, c), len(dictwords.word(rom, c))) for c in dictwords.codes()})
+    # junk codes point below $8000 or into the tables: never count those as free
+    spans = [(a, n) for a, n in spans if 0xA74F <= a and a + 2 * n <= dictwords.DATA_END
+             and not any(t0 < a + 2 * n and a < t1 for t0, t1 in tables)]
+    free = []
+    for a, n in spans:
+        a, e = a, a + 2 * n
+        if free and a <= free[-1][1]:
+            free[-1][1] = max(free[-1][1], e)
+        else:
+            free.append([a, e])
+    data_of = {}
+    for code in dictwords.codes():
+        s = en.get(f"{code:04X}", "")
+        if s:
+            b = text.encode(s, text.EN.enc)
+            ws = [int.from_bytes(b[k:k + 2], "big") for k in range(0, len(b), 2)]
+        else:
+            ws = dictwords.word(rom, code)
+        ws[-1] |= 0x8000
+        data_of[code] = b"".join(w.to_bytes(2, "little") for w in ws)
+    order = sorted(dictwords.codes(), key=lambda c: (DICT_PRIORITY.index(c >> 8 & 0xFE if c >> 8 in (6, 7)
+                                                                         else c >> 8), c))
+    placed, ptrs = {}, {}
+    over = bytearray()
+    for c in order:
+        d = data_of[c]
+        if d in placed:
+            ptrs[c] = placed[d]
+            continue
+        for iv in free:
+            if iv[1] - iv[0] >= len(d):
+                p = iv[0]
+                iv[0] += len(d)
+                rom[off(0x2F << 16 | p):off(0x2F << 16 | p) + len(d)] = d
+                break
+        else:
+            if 0x8000 + len(over) + len(d) > 0x10000:
+                raise ValueError("dictionary overflow bank full")
+            p = len(over)  # stored as address - $8000
+            over += d
+        placed[d] = ptrs[c] = p
+    o = off(DICT_OVERFLOW << 16 | 0x8000)
+    rom[o:o + len(over)] = over
+    for base, first, n in dictwords.GROUPS:  # rewrite the pointer tables in place
         for i in range(n):
-            code = first + i
-            s = en.get(f"{code:04X}", "")
-            if s:
-                b = text.encode(s, text.EN.enc)
-                ws = [int.from_bytes(b[k:k + 2], "big") for k in range(0, len(b), 2)]
-            else:
-                ws = dictwords.word(rom, code)
-            ws[-1] |= 0x8000
-            data = b"".join(w.to_bytes(2, "little") for w in ws)
-            blob, start = (lo, lo_base) if code < SPLIT_CODE else (hi, hi_base)
-            if (code < SPLIT_CODE, data) not in words:
-                words[(code < SPLIT_CODE, data)] = start + len(blob)
-                blob += data
-            ptrs[code] = words[(code < SPLIT_CODE, data)]
-    for name, end in (("$30", lo_base + len(lo)), ("$31", hi_base + len(hi))):
-        if end > 0x10000:
-            raise ValueError(f"dictionary does not fit bank {name}: {end - 0x10000:#x} bytes over")
-    table = bytearray()
-    for base, first, n in dictwords.GROUPS:
-        for i in range(n):
-            table += ptrs[first + i].to_bytes(2, "little")
-    o = off(0x30 << 16 | 0x8000)
-    rom[o:o + len(table) + len(lo)] = table + lo
-    o = off(code_at)
-    rom[o:o + len(helper) + len(tail) + len(hi)] = helper + tail + hi
-    g0, g1, g2, g3, g5, g6, g6b, g7 = tables
-    for k, v in enumerate((g0, g1, g2, g3, g3, g5, g6, g7)):
-        rom[DICT_BASES + 2 * k:DICT_BASES + 2 * k + 2] = v.to_bytes(2, "little")
-    assert rom[DICT_BASE_9XX - 1] == 0xA9
-    rom[DICT_BASE_9XX:DICT_BASE_9XX + 2] = g6b.to_bytes(2, "little")
-    o = off(DICT_LOOKUP)
-    assert rom[o:o + 4] == b"\xbf\x00\x00\x2f"
-    rom[o:o + 4] = bytes([0x5C, tail_at & 0xFF, tail_at >> 8 & 0xFF, tail_at >> 16])
-    for a in DICT_READERS:
-        o = off(a)
-        assert rom[o:o + 4] == b"\xbf\x00\x00\x2f", hex(a)
-        rom[o:o + 4] = bytes([0x22, code_at & 0xFF, code_at >> 8 & 0xFF, code_at >> 16])
-    return len(table) + len(lo) + len(hi)
+            t = off(0x2F << 16 | (base + 2 * i))
+            rom[t:t + 2] = ptrs[first + i].to_bytes(2, "little")
+    helper = bytes([0xE0, 0x00, 0x80, 0xB0, 0x05,                 # CPX #$8000 ; BCS in2f
+                    0xBF, 0x00, 0x80, DICT_OVERFLOW, 0x6B,        # LDA $308000,x ; RTL
+                    0xBF, 0x00, 0x00, 0x2F, 0x6B])                # in2f: LDA $2F0000,x ; RTL
+    o = off(DICT_READ)
+    rom[o:o + len(helper)] = helper
+    for m in re.finditer(rb"\xbf\x00\x00\x2f\x30", bytes(rom[:0x178000])):
+        rom[m.start():m.start() + 4] = bytes([0x22, DICT_READ & 0xFF, DICT_READ >> 8 & 0xFF, DICT_READ >> 16])
+    return len(over)
 
 
 def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
@@ -208,11 +205,104 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             dentries = json.loads((ROOT / "script" / "dict.json").read_text(encoding="utf-8"))
             if any(e["en"] for e in dentries):
                 patch_dictionary(rom, dentries)
+            cpath = ROOT / "script" / "code.json"
+            if cpath.exists():
+                patch_codestr(rom, json.loads(cpath.read_text(encoding="utf-8")))
+            patch_fixed(rom)
     if debug:
         patch_debug_start(rom, bytes.fromhex(debug.replace(" ", "")))
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     Path(out).write_bytes(rom)
     return rom, len(todo)
+
+
+CODESTR_BANK = 0x3B  # English for strings that live in code banks (script/code.json)
+# not relocatable this way: 078D81 is a false hit (07:81A4 is LDA #$81 / STA $4200); 02F078/02F07E are read as
+# $F078 + offset (fixed 6-byte slots; labels); banks $05/$0F use other readers (prologue, composer) - TODO
+CODESTR_SKIP_IDS = {"078D81", "02F078", "02F07E"}
+CODESTR_SKIP_BANKS = {0x05, 0x0F}
+CODESTR_HELPERS = 0x3C8000  # one reader helper per source bank
+
+
+def patch_codestr(rom, entries):
+    """English for bit-15 strings referenced from code (tools/codestr.py catalog).
+
+    Each source bank B gets a window [S, E) of addresses: the English sits at those addresses in CODESTR_BANK,
+    and [S, E) is chosen where bank B itself holds no strings. Every bit-15 reader of bank B (`LDA $B0000,x`
+    followed by BMI) becomes JSL helper_B: read CODESTR_BANK when S <= X < E, else bank B as before. All
+    references (LDX/LDY/LDA #imm, pointer-table words) of a translated string are repointed."""
+    import codestr
+    by_bank = {}
+    for e in entries:
+        bank = int(e["id"][:2], 16)
+        if e["en"] and e["id"] not in CODESTR_SKIP_IDS and bank not in CODESTR_SKIP_BANKS:
+            by_bank.setdefault(bank, []).append(e)
+    if not by_bank:
+        return 0
+    taken = set()  # string-ish starts per bank, from the blind scan and the catalog
+    for o, n, term, s in codestr.scan(bytes(rom[:0x180000]), 1):
+        taken.add((o // 0x8000, codestr.cpu(o) & 0xFFFF))
+    for e in entries:
+        taken.add((int(e["id"][:2], 16), int(e["id"][2:], 16)))
+    pos = 0x8000
+    helpers = bytearray()
+    for bank, es in sorted(by_bank.items()):
+        blobs = []
+        for e in es:
+            b = text.encode(e["en"], text.EN.enc)
+            ws = [int.from_bytes(b[k:k + 2], "big") for k in range(0, len(b), 2)]
+            ws[-1] |= 0x8000
+            blobs.append(b"".join(w.to_bytes(2, "little") for w in ws))
+        size = sum(map(len, blobs))
+        while any(bb == bank and pos <= a < pos + size for bb, a in taken):
+            pos += 0x100
+        if pos + size > 0x10000:
+            raise ValueError(f"code strings do not fit bank ${CODESTR_BANK:02X}")
+        start, end = pos, pos + size
+        for e, blob in zip(es, blobs):
+            old, new = int(e["id"][2:], 16), pos
+            rom[off(CODESTR_BANK << 16 | pos):off(CODESTR_BANK << 16 | pos) + len(blob)] = blob
+            for site, kind in e["refs"]:
+                o = off(int(site, 16)) + (0 if kind == "table" else 1)
+                assert int.from_bytes(rom[o:o + 2], "little") == old, (e["id"], site)
+                rom[o:o + 2] = new.to_bytes(2, "little")
+            pos += len(blob)
+        pos = (pos + 0xFF) & ~0xFF
+        h = CODESTR_HELPERS + len(helpers)
+        helpers += bytes([0xE0, start & 0xFF, start >> 8, 0x90, 0x0A,           # CPX #S ; BCC old
+                          0xE0, end & 0xFF, end >> 8, 0xB0, 0x05,               # CPX #E ; BCS old
+                          0xBF, 0x00, 0x00, CODESTR_BANK, 0x6B,                 # LDA new,x ; RTL
+                          0xBF, 0x00, 0x00, bank, 0x6B])                        # old: LDA $B0000,x ; RTL
+        pat = bytes([0xBF, 0x00, 0x00, bank])
+        for m in re.finditer(re.escape(pat), bytes(rom[:0x180000])):
+            if rom[m.start() + 4] == 0x30:  # a string reader: LDA long,x ; BMI
+                rom[m.start():m.start() + 4] = bytes([0x22, h & 0xFF, h >> 8 & 0xFF, h >> 16])
+    o = off(CODESTR_HELPERS)
+    rom[o:o + len(helpers)] = helpers
+    return sum(len(v) for v in by_bank.values())
+
+
+FIXED_AT = 0x3C9000  # fixed-count strings (no terminator), see FIXED
+# Strings printed with a hard-coded pointer, bank and glyph count (02:AFEE). Each: (LDA #ptr site, LDA #bank site,
+# LDX #count site, English). The sites are opcode addresses; operands follow.
+FIXED = [
+    (0x0282E0, 0x0282E7, 0x0282F8, "Enemies appeared!"),  # てきがあらわれた！ (02:E12C, 12 cells)
+]
+
+
+def patch_fixed(rom):
+    pos = FIXED_AT
+    for ptr_site, bank_site, count_site, s in FIXED:
+        b = text.encode(s, text.EN.enc)
+        ws = [b[k:k + 2][::-1] for k in range(0, len(b), 2)]  # glyph words, little-endian
+        o = off(pos)
+        rom[o:o + 2 * len(ws)] = b"".join(ws)
+        for site, op, val in ((ptr_site, 0xA9, pos & 0xFFFF), (bank_site, 0xA9, pos >> 16),
+                              (count_site, 0xA2, len(ws))):
+            so = off(site)
+            assert rom[so] == op, hex(site)
+            rom[so + 1:so + 3] = val.to_bytes(2, "little")
+        pos += 2 * len(ws)
 
 
 SCRIPT_TABLE = 0x03978E  # 3 bytes per script id; id 0 runs right after "new game"

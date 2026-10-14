@@ -1,0 +1,2152 @@
+[
+ {
+  "id": "00E468",
+  "len": 15,
+  "jp": "だれに ひょうい させますか？",
+  "en": "Who should it possess?",
+  "refs": [
+   [
+    "00E0AC",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00E486",
+  "len": 10,
+  "jp": "霊は ついていません",
+  "en": "No spirit attached",
+  "refs": [
+   [
+    "00E0DB",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00E49A",
+  "len": 10,
+  "jp": "の霊が ついています",
+  "en": "'s spirit is attached",
+  "refs": [
+   [
+    "00E10F",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00E4AE",
+  "len": 19,
+  "jp": "この霊を 成仏させて よろしいですか？",
+  "en": "Lay this spirit to rest. Is that OK?",
+  "refs": [
+   [
+    "00E2A9",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00E4D4",
+  "len": 6,
+  "jp": "を はずして",
+  "en": " comes off and",
+  "refs": [
+   [
+    "00E326",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00E4E0",
+  "len": 9,
+  "jp": "を ひょういさせて",
+  "en": " takes possession.",
+  "refs": [
+   [
+    "00E3A0",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00E4F2",
+  "len": 8,
+  "jp": "よろしいですか？",
+  "en": "Is that OK?",
+  "refs": [
+   [
+    "00E3AD",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F3E5",
+  "len": 20,
+  "jp": "さて‥‥と 霊を どうしたいのかしら？ ",
+  "en": "Now then... what shall we do with the spirits?",
+  "refs": [
+   [
+    "00E659",
+    "ldx"
+   ],
+   [
+    "00E77C",
+    "ldx"
+   ],
+   [
+    "00EA9A",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F40D",
+  "len": 20,
+  "jp": "誰に 霊を ひょういさせたいの？    ",
+  "en": "Who should I have a spirit possess?",
+  "refs": [
+   [
+    "00E705",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F435",
+  "len": 20,
+  "jp": "誰の霊を ひょういさせたいの？     ",
+  "en": "Whose spirit shall I attach?",
+  "refs": [
+   [
+    "00E81F",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F45D",
+  "len": 20,
+  "jp": "はずすの？ いいわよ。 誰の霊をはずす？",
+  "en": "Remove one? All right. Whose spirit comes off?",
+  "refs": [
+   [
+    "00EB67",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F485",
+  "len": 5,
+  "jp": "霊をつける",
+  "en": "Attach Spirit",
+  "refs": [
+   [
+    "00E625",
+    "ldx"
+   ],
+   [
+    "00EAED",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F48F",
+  "len": 5,
+  "jp": "霊をはずす",
+  "en": "Remove Spirit",
+  "refs": [
+   [
+    "00E5BD",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F499",
+  "len": 3,
+  "jp": "やめる",
+  "en": "Quit",
+  "refs": [
+   [
+    "00E5C6",
+    "ldx"
+   ],
+   [
+    "00E70E",
+    "ldx"
+   ],
+   [
+    "00EB70",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F49F",
+  "len": 11,
+  "jp": "ひょうい していない霊",
+  "en": "Unattached Spirits",
+  "refs": [
+   [
+    "00E5CF",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F4B5",
+  "len": 7,
+  "jp": "ひょうい中の霊",
+  "en": "Attached Spirits",
+  "refs": [
+   [
+    "00E5D8",
+    "ldx"
+   ],
+   [
+    "00EAC0",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F4C3",
+  "len": 21,
+  "jp": "ひょうい前▶ひょういあと  攻撃力   ▶",
+  "en": "Before▶After  Attack   ▶",
+  "refs": [
+   [
+    "00E5E1",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F525",
+  "len": 7,
+  "jp": "の霊をはずして",
+  "en": "'s spirit comes off, and",
+  "refs": [
+   [
+    "00E8C0",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F533",
+  "len": 15,
+  "jp": "さんの霊を ひょういさせるのね",
+  "en": "'s spirit goes on, right?",
+  "refs": [
+   [
+    "00E8D8",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F551",
+  "len": 21,
+  "jp": "でも、モンスターの霊は はずしてしまったら",
+  "en": "But once a monster's spirit is removed,",
+  "refs": [
+   [
+    "00E8E1",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F57B",
+  "len": 19,
+  "jp": "つけなおすことはできないわよ。いいの？",
+  "en": "it can't be attached again. Is that OK?",
+  "refs": [
+   [
+    "00E8EA",
+    "ldx"
+   ],
+   [
+    "00EC7B",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F5A1",
+  "len": 9,
+  "jp": "さんの霊をはずして",
+  "en": "'s spirit comes off, and",
+  "refs": [
+   [
+    "00E91E",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F5B3",
+  "len": 15,
+  "jp": "さんの霊をひょういさせるのね？",
+  "en": "'s spirit goes on, right?",
+  "refs": [
+   [
+    "00E936",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F5D1",
+  "len": 6,
+  "jp": "それじゃあ、",
+  "en": "All right then,",
+  "refs": [
+   [
+    "00E960",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F5DD",
+  "len": 5,
+  "jp": "さんの霊を",
+  "en": "'s spirit",
+  "refs": [
+   [
+    "00E978",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F5E7",
+  "len": 11,
+  "jp": "ひょうい させるわね？",
+  "en": "will be attached, OK?",
+  "refs": [
+   [
+    "00E981",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F5FD",
+  "len": 20,
+  "jp": "モンスターの霊は、一度はずしてしまったら",
+  "en": "Once a monster's spirit is removed,",
+  "refs": [
+   [
+    "00EC72",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F625",
+  "len": 12,
+  "jp": "さんの霊を はずすのね？",
+  "en": "'s spirit comes off, right?",
+  "refs": [
+   [
+    "00ECAE",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F63D",
+  "len": 9,
+  "jp": "はい    いいえ",
+  "en": "Yes    No",
+  "refs": [
+   [
+    "00ED7C",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "00F64F",
+  "len": 20,
+  "jp": "はずす前▶はずしたあと  攻撃力   ▶",
+  "en": "Before▶After  Attack   ▶",
+  "refs": [
+   [
+    "00ED47",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "01F21D",
+  "len": 3,
+  "jp": "イズモ",
+  "en": "Izumo",
+  "refs": [
+   [
+    "01F205",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "01F227",
+  "len": 3,
+  "jp": "キョウ",
+  "en": "Kyo",
+  "refs": [
+   [
+    "01F207",
+    "table"
+   ],
+   [
+    "01F20D",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "01F22D",
+  "len": 4,
+  "jp": "ヒノクニ",
+  "en": "Hinokuni",
+  "refs": [
+   [
+    "01F20B",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "01F2A9",
+  "len": 5,
+  "jp": "楽屋シップ",
+  "en": "Dressing Room Ship",
+  "refs": [
+   [
+    "01E9E0",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "01F2B3",
+  "len": 17,
+  "jp": "ヨウケンヲ セレクト シテクダサイ",
+  "en": "PLEASE SELECT YOUR REQUEST",
+  "refs": [
+   [
+    "01E9E9",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "01F2D5",
+  "len": 8,
+  "jp": "国内をいどうする",
+  "en": "Travel Within This Land",
+  "refs": [
+   [
+    "01E9F2",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "01F2E5",
+  "len": 4,
+  "jp": "へいどう",
+  "en": " Voyage",
+  "refs": [
+   [
+    "01EA21",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "01F2F1",
+  "len": 3,
+  "jp": "やめる",
+  "en": "Quit",
+  "refs": [
+   [
+    "01EA04",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "01F2F7",
+  "len": 25,
+  "jp": "ここは たかいたて物が 多いので キケン防止のため",
+  "en": "There are many tall buildings here, so for safety",
+  "refs": [
+   [
+    "01EAC6",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "01F329",
+  "len": 13,
+  "jp": "楽屋シップは つかえません",
+  "en": "the Dressing Room Ship can't be used.",
+  "refs": [
+   [
+    "01EACF",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0287F4",
+  "len": 19,
+  "jp": "あいての方が 役者が一まい上手だった！",
+  "en": "The foe was a better actor!",
+  "refs": [
+   [
+    "028753",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "028E5E",
+  "len": 13,
+  "jp": "両のおひねりがとんできた！",
+  "en": " ryo in ohineri came flying!",
+  "refs": [
+   [
+    "028C6E",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "028E96",
+  "len": 7,
+  "jp": "をてにいれた！",
+  "en": " obtained!",
+  "refs": [
+   [
+    "028E3E",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02BBED",
+  "len": 7,
+  "jp": "をやっつけた！",
+  "en": " was defeated!",
+  "refs": [
+   [
+    "02BBAC",
+    "lda"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02D178",
+  "len": 9,
+  "jp": "れにつかいますか？",
+  "en": "Use it on whom?",
+  "refs": [
+   [
+    "0298EE",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02DBA4",
+  "len": 5,
+  "jp": "名もない歌",
+  "en": "\"Nameless Song\"",
+  "refs": [
+   [
+    "02DA35",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02E924",
+  "len": 11,
+  "jp": "の出番だ！ どうする？",
+  "en": "'s cue! What'll you do?",
+  "refs": [
+   [
+    "02E917",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02EFB4",
+  "len": 5,
+  "jp": "デュエット",
+  "en": "Duet",
+  "refs": [
+   [
+    "02EDF9",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02EFBE",
+  "len": 4,
+  "jp": "コーラス",
+  "en": "Chorus",
+  "refs": [
+   [
+    "02EDC0",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02EFF6",
+  "len": 7,
+  "jp": "ふるいたたせる",
+  "en": "Rouse",
+  "refs": [
+   [
+    "02EF98",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02F004",
+  "len": 5,
+  "jp": "大たち回り",
+  "en": "Grand Brawl",
+  "refs": [
+   [
+    "02EF9A",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02F00E",
+  "len": 5,
+  "jp": "かっぱらう",
+  "en": "Swipe",
+  "refs": [
+   [
+    "02EF9C",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02F024",
+  "len": 8,
+  "jp": "かわりみのじゅつ",
+  "en": "Substitution Technique",
+  "refs": [
+   [
+    "02EFA0",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02F034",
+  "len": 6,
+  "jp": "しなをつくる",
+  "en": "Flirt",
+  "refs": [
+   [
+    "02EFA2",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02F040",
+  "len": 7,
+  "jp": "なかまひょうい",
+  "en": "Ally Possession",
+  "refs": [
+   [
+    "02EFA4",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02F04E",
+  "len": 6,
+  "jp": "トビろっぽう",
+  "en": "Flying Roppo",
+  "refs": [
+   [
+    "02EFA6",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02F05A",
+  "len": 6,
+  "jp": "のろいをとく",
+  "en": "Lift Curse",
+  "refs": [
+   [
+    "02EFA8",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02F066",
+  "len": 9,
+  "jp": "モンスタ一ひょうい",
+  "en": "Monster Possession",
+  "refs": [
+   [
+    "02EFAA",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02F078",
+  "len": 3,
+  "jp": "にげる",
+  "en": "Run",
+  "refs": [
+   [
+    "02E1E7",
+    "lda"
+   ],
+   [
+    "02EFAC",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02F07E",
+  "len": 3,
+  "jp": "まもる",
+  "en": "Defend",
+  "refs": [
+   [
+    "02EFAE",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "02FE7E",
+  "len": 11,
+  "jp": "しかしうたえなかった！",
+  "en": "But no song came out!",
+  "refs": [
+   [
+    "02FE64",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "048DCA",
+  "len": 11,
+  "jp": "が  ポイント上がった",
+  "en": " went up  points",
+  "refs": [
+   [
+    "048CE9",
+    "ldx"
+   ],
+   [
+    "048D48",
+    "ldx"
+   ],
+   [
+    "048D51",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "049317",
+  "len": 13,
+  "jp": "のろわれた装備が はずれた",
+  "en": "Cursed equipment came off",
+  "refs": [
+   [
+    "0492C7",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0493F0",
+  "len": 7,
+  "jp": "ひょうい中の霊",
+  "en": "Possessing Spirit",
+  "refs": [
+   [
+    "049364",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0494AF",
+  "len": 7,
+  "jp": "ふるいたたせる",
+  "en": "Rouse",
+  "refs": [
+   [
+    "049475",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0494BD",
+  "len": 5,
+  "jp": "大たち回り",
+  "en": "Grand Brawl",
+  "refs": [
+   [
+    "049477",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0494C7",
+  "len": 5,
+  "jp": "かっぱらう",
+  "en": "Swipe",
+  "refs": [
+   [
+    "049479",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0494E1",
+  "len": 8,
+  "jp": "かわりみのじゅつ",
+  "en": "Substitution Technique",
+  "refs": [
+   [
+    "04947D",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0494F1",
+  "len": 6,
+  "jp": "しなをつくる",
+  "en": "Flirt",
+  "refs": [
+   [
+    "04947F",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0494FD",
+  "len": 10,
+  "jp": "なかまの霊のひょうい",
+  "en": "Ally Spirit Possession",
+  "refs": [
+   [
+    "049481",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "049511",
+  "len": 6,
+  "jp": "トビろっぽう",
+  "en": "Flying Roppo",
+  "refs": [
+   [
+    "049483",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04951D",
+  "len": 6,
+  "jp": "のろいをとく",
+  "en": "Lift Curse",
+  "refs": [
+   [
+    "049485",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "049529",
+  "len": 9,
+  "jp": "モンスターひょうい",
+  "en": "Monster Possession",
+  "refs": [
+   [
+    "049487",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "049D01",
+  "len": 12,
+  "jp": "装備品が いっぱいです。",
+  "en": "Your equipment is full.",
+  "refs": [
+   [
+    "049C57",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "049E82",
+  "len": 15,
+  "jp": "すてる装備品を えらんで下さい",
+  "en": "Choose equipment to discard",
+  "refs": [
+   [
+    "049D71",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04A0BB",
+  "len": 7,
+  "jp": "装備できません",
+  "en": "Can't equip",
+  "refs": [
+   [
+    "04A0A6",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04AD53",
+  "len": 3,
+  "jp": "おわる",
+  "en": "Done",
+  "refs": [
+   [
+    "04ABCD",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04AD5F",
+  "len": 5,
+  "jp": "歩くはやさ",
+  "en": "Walking Speed",
+  "refs": [
+   [
+    "04EEBE",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04B136",
+  "len": 4,
+  "jp": "けってい",
+  "en": "Confirm",
+  "refs": [
+   [
+    "04B219",
+    "ldx"
+   ],
+   [
+    "04B128",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04B13E",
+  "len": 5,
+  "jp": "キャンセル",
+  "en": "Cancel",
+  "refs": [
+   [
+    "04B230",
+    "ldx"
+   ],
+   [
+    "04B12A",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04B148",
+  "len": 7,
+  "jp": "コマンドをよぶ",
+  "en": "Open Commands",
+  "refs": [
+   [
+    "04B246",
+    "ldx"
+   ],
+   [
+    "04B12C",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04B156",
+  "len": 5,
+  "jp": "つかわない",
+  "en": "Not Used",
+  "refs": [
+   [
+    "04B12E",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04B160",
+  "len": 7,
+  "jp": "歩き方をかえる",
+  "en": "Change Walking Style",
+  "refs": [
+   [
+    "04B130",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04B16E",
+  "len": 11,
+  "jp": "ひょうじキャラをかえる",
+  "en": "Change Shown Character",
+  "refs": [
+   [
+    "04B132",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04B184",
+  "len": 10,
+  "jp": "キャンセルとコマンド",
+  "en": "Cancel and Commands",
+  "refs": [
+   [
+    "04B134",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04B296",
+  "len": 10,
+  "jp": "ボタンが ありません",
+  "en": "No button assigned",
+  "refs": [
+   [
+    "04B21F",
+    "ldx"
+   ],
+   [
+    "04B236",
+    "ldx"
+   ],
+   [
+    "04B24C",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04C50E",
+  "len": 5,
+  "jp": "名もない歌",
+  "en": "\"Nameless Song\"",
+  "refs": [
+   [
+    "04C3F3",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04CC79",
+  "len": 8,
+  "jp": "サウンド テスト",
+  "en": "Sound Test",
+  "refs": [
+   [
+    "04CB57",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04CCA9",
+  "len": 12,
+  "jp": "おすと おとが消えます。",
+  "en": "Press to stop the sound.",
+  "refs": [
+   [
+    "04CB69",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04E579",
+  "len": 7,
+  "jp": "持ちきれません",
+  "en": "Can't carry any more",
+  "refs": [
+   [
+    "04E543",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04E69E",
+  "len": 13,
+  "jp": "キャンセル‥‥‥数をへらす",
+  "en": "Cancel......Lower the amount",
+  "refs": [
+   [
+    "04E656",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04E6B8",
+  "len": 26,
+  "jp": "方向キー左右‥‥べつの しゅるいのリストを ひょうじ",
+  "en": "Left/Right....Other lists",
+  "refs": [
+   [
+    "04E658",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04E6EC",
+  "len": 13,
+  "jp": "（売る時のみ つかいます）",
+  "en": "(Used only when selling)",
+  "refs": [
+   [
+    "04E5C5",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04E706",
+  "len": 23,
+  "jp": "1‥カーソルを ほしい商品に合わせ ほしい数を",
+  "en": "1. Point at an item you want",
+  "refs": [
+   [
+    "04E65A",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04E734",
+  "len": 23,
+  "jp": "  決定ボタンと キャンセルボタンで 決める。",
+  "en": "   and set how many with Confirm and Cancel.",
+  "refs": [
+   [
+    "04E65C",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04E762",
+  "len": 28,
+  "jp": "2‥他にも ほしい商品が ある時は つづけて その商品に",
+  "en": "2. If you want other items too, point at them",
+  "refs": [
+   [
+    "04E65E",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04E79A",
+  "len": 21,
+  "jp": "  カーソルを合わせ ほしい数を 決める。",
+  "en": "   and set how many.",
+  "refs": [
+   [
+    "04E660",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04E7C4",
+  "len": 23,
+  "jp": "3‥ほしい商品と ほしい数が すべて決まったら",
+  "en": "3. Once all items and amounts are set,",
+  "refs": [
+   [
+    "04E662",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04E7F2",
+  "len": 26,
+  "jp": "  『決定』に カーソルを合わせ 決定ボタンをおす。",
+  "en": "   point at 'Confirm' and press Confirm.",
+  "refs": [
+   [
+    "04E664",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04F30E",
+  "len": 8,
+  "jp": "何をすてますか？",
+  "en": "What will you throw away?",
+  "refs": [
+   [
+    "04EF7A",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04F31E",
+  "len": 12,
+  "jp": "すてるのを 止めますか？",
+  "en": "Stop throwing things away?",
+  "refs": [
+   [
+    "04F1CF",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "04F336",
+  "len": 12,
+  "jp": "これで よろしいですか？",
+  "en": "Is this all right?",
+  "refs": [
+   [
+    "04F297",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FB95",
+  "len": 14,
+  "jp": "本日はご来場いただきまして、",
+  "en": "Thank you for joining us today,",
+  "refs": [
+   [
+    "05ED7A",
+    "ldy"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FBB1",
+  "len": 15,
+  "jp": "まことにありがとうございます。",
+  "en": "we are most grateful.",
+  "refs": [
+   [
+    "05EDDE",
+    "ldy"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FBCF",
+  "len": 20,
+  "jp": "みなさま、たいへんおまたせいたしました。",
+  "en": "Ladies and gentlemen, thank you for waiting.",
+  "refs": [
+   [
+    "05EDF7",
+    "ldy"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FC3B",
+  "len": 20,
+  "jp": "さいごまで、ごゆっくりとごらんください。",
+  "en": "Please enjoy the show to the very end.",
+  "refs": [
+   [
+    "05EE42",
+    "ldy"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FC63",
+  "len": 21,
+  "jp": "ここは、はるかかなた、れんダコわく星・・・",
+  "en": "Far, far away lies Planet Rendako...",
+  "refs": [
+   [
+    "05E36F",
+    "ldy"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FCE7",
+  "len": 19,
+  "jp": "邪悪なかげが、しのびよろうとしていた。",
+  "en": "where an evil shadow was creeping in.",
+  "refs": [
+   [
+    "05EBEB",
+    "ldy"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FD2F",
+  "len": 3,
+  "jp": "イズモ",
+  "en": "Izumo",
+  "refs": [
+   [
+    "05C033",
+    "lda"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FD3F",
+  "len": 3,
+  "jp": "キョウ",
+  "en": "Kyo",
+  "refs": [
+   [
+    "05C11E",
+    "lda"
+   ],
+   [
+    "05BB2F",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FD47",
+  "len": 4,
+  "jp": "ヒノクニ",
+  "en": "Hinokuni",
+  "refs": [
+   [
+    "05C19F",
+    "lda"
+   ],
+   [
+    "05BB31",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FD5F",
+  "len": 3,
+  "jp": "オエド",
+  "en": "Oedo",
+  "refs": [
+   [
+    "05C140",
+    "lda"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FDB7",
+  "len": 3,
+  "jp": "アソ町",
+  "en": "Aso Town",
+  "refs": [
+   [
+    "05BB4D",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FDBF",
+  "len": 4,
+  "jp": "ウトロ村",
+  "en": "Utoro Village",
+  "refs": [
+   [
+    "05BB4F",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FDEF",
+  "len": 3,
+  "jp": "やめる",
+  "en": "Quit",
+  "refs": [
+   [
+    "05C178",
+    "lda"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "078D81",
+  "len": 6,
+  "jp": "さい。ロック",
+  "en": "Rock",
+  "refs": [
+   [
+    "0781A4",
+    "lda"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "07A3F4",
+  "len": 8,
+  "jp": "はおどりだした！",
+  "en": " started dancing!",
+  "refs": [
+   [
+    "07A3C8",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "07AF02",
+  "len": 6,
+  "jp": "が下がった！",
+  "en": " fell!",
+  "refs": [
+   [
+    "07A3AD",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "07B1BF",
+  "len": 11,
+  "jp": "しかし声力がたりない！",
+  "en": "But not enough Voice!",
+  "refs": [
+   [
+    "07B1A5",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "07C196",
+  "len": 8,
+  "jp": "はおどっている！",
+  "en": " is dancing!",
+  "refs": [
+   [
+    "07C13A",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "07CB76",
+  "len": 19,
+  "jp": "あいての方が 役者が一まい上手だった！",
+  "en": "The foe was a better actor!",
+  "refs": [
+   [
+    "07CB49",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "07CFAB",
+  "len": 13,
+  "jp": "パートナーをえらんで下さい",
+  "en": "Choose a partner",
+  "refs": [
+   [
+    "07CD6B",
+    "ldx"
+   ],
+   [
+    "07CEBC",
+    "ldx"
+   ],
+   [
+    "07CF39",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "07CFC5",
+  "len": 8,
+  "jp": "声力が足りません",
+  "en": "Not enough Voice",
+  "refs": [
+   [
+    "07CE21",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "07DC9F",
+  "len": 10,
+  "jp": "だれにつかいますか？",
+  "en": "Use it on whom?",
+  "refs": [
+   [
+    "07DC80",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "07E564",
+  "len": 7,
+  "jp": "をよび出した！",
+  "en": " was summoned!",
+  "refs": [
+   [
+    "07E4D9",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "07FEB8",
+  "len": 5,
+  "jp": "マスクマン",
+  "en": "Masked Man",
+  "refs": [
+   [
+    "07FCBF",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0FC9A1",
+  "len": 8,
+  "jp": "作った曲をなおす",
+  "en": "Edit Your Song",
+  "refs": [
+   [
+    "0FC707",
+    "lda"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0FC9B1",
+  "len": 7,
+  "jp": "作った曲をきく",
+  "en": "Listen to Your Song",
+  "refs": [
+   [
+    "0FC71D",
+    "lda"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0FC9D1",
+  "len": 3,
+  "jp": "やめる",
+  "en": "Quit",
+  "refs": [
+   [
+    "0FC749",
+    "lda"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0FC9F1",
+  "len": 6,
+  "jp": "コントロール",
+  "en": "Controls",
+  "refs": [
+   [
+    "0FC23C",
+    "lda"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0FCA01",
+  "len": 5,
+  "jp": "方向ボタン",
+  "en": "Control Pad",
+  "refs": [
+   [
+    "0FB989",
+    "ldy"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0FCA3D",
+  "len": 5,
+  "jp": "キャンセル",
+  "en": "Cancel",
+  "refs": [
+   [
+    "0FC25E",
+    "lda"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "0FFA3C",
+  "len": 10,
+  "jp": "ここではつかえない！",
+  "en": "Can't use that here!",
+  "refs": [
+   [
+    "0FF06F",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EB3E0",
+  "len": 3,
+  "jp": "ロック",
+  "en": "Rock",
+  "refs": [
+   [
+    "1EB3CA",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EB3E6",
+  "len": 4,
+  "jp": "マッキー",
+  "en": "Makki",
+  "refs": [
+   [
+    "1EB3CC",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EB3EE",
+  "len": 4,
+  "jp": "ベンケイ",
+  "en": "Benkei",
+  "refs": [
+   [
+    "1EB3CE",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EB3F6",
+  "len": 4,
+  "jp": "じらいや",
+  "en": "Jiraiya",
+  "refs": [
+   [
+    "1EB3D0",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EB3FE",
+  "len": 3,
+  "jp": "法界坊",
+  "en": "Hokaibo",
+  "refs": [
+   [
+    "1EB3D2",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EB404",
+  "len": 4,
+  "jp": "ジロキチ",
+  "en": "Jirokichi",
+  "refs": [
+   [
+    "1EB3D4",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EB40C",
+  "len": 5,
+  "jp": "フジムスメ",
+  "en": "Fuji Musume",
+  "refs": [
+   [
+    "1EB3D6",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EB416",
+  "len": 2,
+  "jp": "夕風",
+  "en": "Yunagi",
+  "refs": [
+   [
+    "1EB3D8",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EB41A",
+  "len": 3,
+  "jp": "辰五郎",
+  "en": "Tatsugoro",
+  "refs": [
+   [
+    "1EB3DA",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EB420",
+  "len": 2,
+  "jp": "お七",
+  "en": "Oshichi",
+  "refs": [
+   [
+    "1EB3DC",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EB424",
+  "len": 2,
+  "jp": "景清",
+  "en": "Kagekiyo",
+  "refs": [
+   [
+    "1EB3DE",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1ED498",
+  "len": 5,
+  "jp": "控えカーゴ",
+  "en": "Standby Cargo",
+  "refs": [
+   [
+    "1EC7B4",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1ED4A2",
+  "len": 15,
+  "jp": "へい、どんな ご用でやんしょ！",
+  "en": "Yessir, what'll it be!",
+  "refs": [
+   [
+    "1EC7BD",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1ED4C6",
+  "len": 8,
+  "jp": "なかまの入れかえ",
+  "en": "Swap Party Members",
+  "refs": [
+   [
+    "1EC7D9",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1ED516",
+  "len": 3,
+  "jp": "の空き",
+  "en": " free",
+  "refs": [
+   [
+    "1ECF23",
+    "ldx"
+   ],
+   [
+    "1ED22E",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1ED52C",
+  "len": 4,
+  "jp": " その他",
+  "en": " Other",
+  "refs": [
+   [
+    "1ECF1A",
+    "ldx"
+   ],
+   [
+    "1ED225",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1ED544",
+  "len": 11,
+  "jp": "は もう預けられません",
+  "en": " can't be stored any more",
+  "refs": [
+   [
+    "1ED0C7",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1ED568",
+  "len": 9,
+  "jp": "は もう持てません",
+  "en": " can't carry any more",
+  "refs": [
+   [
+    "1ED38C",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EDE15",
+  "len": 7,
+  "jp": "空いています。",
+  "en": "Empty.",
+  "refs": [
+   [
+    "1EDD09",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EDE23",
+  "len": 13,
+  "jp": "どこに きろくするんじゃ？",
+  "en": "Where shall I record it?",
+  "refs": [
+   [
+    "1ED9B5",
+    "ldx"
+   ],
+   [
+    "1EDB44",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EDE3D",
+  "len": 16,
+  "jp": "ふるいきろくは 消えてもいいな？",
+  "en": "The old record will be erased. All right?",
+  "refs": [
+   [
+    "1EDA94",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EDE5D",
+  "len": 7,
+  "jp": "はい  いいえ",
+  "en": "Yes  No",
+  "refs": [
+   [
+    "1EDD1D",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EDE6B",
+  "len": 13,
+  "jp": "きろくせんでも いいのか？",
+  "en": "Leave without recording?",
+  "refs": [
+   [
+    "1EDAFB",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EDE85",
+  "len": 18,
+  "jp": "どこから たびを さいかいしますか？",
+  "en": "Where will you resume your journey?",
+  "refs": [
+   [
+    "1ED9BA",
+    "ldx"
+   ],
+   [
+    "1EDB3C",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1EDEA9",
+  "len": 14,
+  "jp": "ここからで よろしいですか？",
+  "en": "Resume from here?",
+  "refs": [
+   [
+    "1EDA8C",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ }
+]

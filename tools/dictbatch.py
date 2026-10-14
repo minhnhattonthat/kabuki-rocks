@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DICT = ROOT / "script" / "dict.json"
 TL = ROOT / "work" / "tl"
 ICON = re.compile(r"\[01F[0-9A]\]")
+PREFIX = "d"
 
 
 def load():
@@ -35,7 +36,7 @@ def split(n):
     todo = [e for e in load() if not e["en"] and e["jp"].strip() not in ("", "％")]
     for i in range(0, len(todo), n):
         rows = "".join(f"{e['id']}\t{e['len']}\t{e['jp']}\n" for e in todo[i:i + n])
-        (TL / f"d{i // n + 1:03d}.tsv").write_text(rows, encoding="utf-8", newline="\n")
+        (TL / f"{PREFIX}{i // n + 1:03d}.tsv").write_text(rows, encoding="utf-8", newline="\n")
     print(f"{(len(todo) + n - 1) // n} batches, {len(todo)} words")
 
 
@@ -58,7 +59,7 @@ def check(batch):
     for k, v in res.items():
         if k not in jp:
             continue
-        if not v.isascii() or "{" in v or "\\" in v:
+        if not v.replace("▶", "").isascii() or "{" in v or "\\" in v:
             errs.append(f"{k}: non-ASCII, '{{' or backslash")
         if Counter(ICON.findall(v)) != Counter(ICON.findall(jp[k])):
             errs.append(f"{k}: icon tokens differ (jp {ICON.findall(jp[k])} en {ICON.findall(v)})")
@@ -89,7 +90,12 @@ if __name__ == "__main__":
     ap.add_argument("cmd", choices=["split", "check", "merge"])
     ap.add_argument("batch", nargs="?")
     ap.add_argument("--n", type=int, default=150)
+    ap.add_argument("--json", help="another word list with the same fields (e.g. script/code.json); "
+                    "split then writes cNNN batches")
     a = ap.parse_args()
+    if a.json:
+        DICT = ROOT / a.json
+        PREFIX = "c"
     if a.cmd == "split":
         split(a.n)
     elif a.cmd == "check":

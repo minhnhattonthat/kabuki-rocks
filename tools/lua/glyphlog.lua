@@ -8,5 +8,8 @@ L.on_exec(0x00BA9D, 0x00BA9D, function()
   local s = emu.getState()
   local sp = s["cpu.sp"]
   local ret = emu.read(sp + 1, mem) | emu.read(sp + 2, mem) << 8 | emu.read(sp + 3, mem) << 16
-  L.log(string.format("G %d %04X %06X", L.frame, s["cpu.a"] & 0xFFFF, ret))
+  -- menu path 04:B725: PHX PHY JSL -> stack holds Y, X, then the JSR return of B71D/B725's caller
+  local x = emu.read(sp + 6, mem) | emu.read(sp + 7, mem) << 8
+  local ret2 = emu.read(sp + 8, mem) | emu.read(sp + 9, mem) << 8
+  L.log(string.format("G %d %04X %06X X=%04X caller=%04X", L.frame, s["cpu.a"] & 0xFFFF, ret, x, ret2))
 end)

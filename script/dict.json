@@ -6788,7 +6788,7 @@
   "ptr": "E06F",
   "len": 11,
   "jp": "たちは ふいをつかれた",
-  "en": "and party were caught off guard",
+  "en": " and party were caught off guard",
   "notes": ""
  },
  {
@@ -6796,7 +6796,7 @@
   "ptr": "E085",
   "len": 14,
   "jp": "たちは てきに気づいていない",
-  "en": "and party haven't noticed the enemy",
+  "en": " and party haven't noticed the enemy",
   "notes": ""
  },
  {
@@ -6812,7 +6812,7 @@
   "ptr": "E0B9",
   "len": 6,
   "jp": "を 攻撃する",
-  "en": "comes under attack",
+  "en": " is the target",
   "notes": ""
  },
  {
@@ -6828,7 +6828,7 @@
   "ptr": "E0D7",
   "len": 13,
   "jp": "は いたい所を つかれた！",
-  "en": "was hit where it hurts!",
+  "en": " was hit where it hurts!",
   "notes": ""
  },
  {
@@ -6836,7 +6836,7 @@
   "ptr": "E0F1",
   "len": 12,
   "jp": "に ダメージを あたえた",
-  "en": "was dealt damage",
+  "en": " was dealt damage",
   "notes": ""
  },
  {
@@ -6844,7 +6844,7 @@
   "ptr": "E109",
   "len": 11,
   "jp": "は ダメージを うけた",
-  "en": "took damage",
+  "en": " took damage",
   "notes": ""
  },
  {
@@ -6852,7 +6852,7 @@
   "ptr": "E11F",
   "len": 10,
   "jp": "は うまく かわした",
-  "en": "deftly dodged",
+  "en": " deftly dodged",
   "notes": ""
  },
  {
@@ -6860,7 +6860,7 @@
   "ptr": "E133",
   "len": 7,
   "jp": "を とっちめた",
-  "en": "got a good thrashing",
+  "en": " got a good thrashing",
   "notes": ""
  },
  {
@@ -6868,7 +6868,7 @@
   "ptr": "E141",
   "len": 10,
   "jp": "は 戦闘不能になった",
-  "en": "was knocked out",
+  "en": " was knocked out",
   "notes": ""
  },
  {
@@ -6876,7 +6876,7 @@
   "ptr": "E155",
   "len": 9,
   "jp": "には きかなかった",
-  "en": "was unaffected",
+  "en": " was unaffected",
   "notes": ""
  },
  {
@@ -6884,7 +6884,7 @@
   "ptr": "E167",
   "len": 6,
   "jp": "を つかった",
-  "en": "was used",
+  "en": " was used",
   "notes": ""
  },
  {
@@ -6892,7 +6892,7 @@
   "ptr": "E173",
   "len": 6,
   "jp": "は 石化した",
-  "en": "turned to stone",
+  "en": " turned to stone",
   "notes": ""
  },
  {
@@ -6900,7 +6900,7 @@
   "ptr": "E17F",
   "len": 11,
   "jp": "は 金しばりに なった",
-  "en": "was paralyzed",
+  "en": " was paralyzed",
   "notes": ""
  },
  {
@@ -6908,7 +6908,7 @@
   "ptr": "E195",
   "len": 13,
   "jp": "は ばくすい してしまった",
-  "en": "fell into a deep sleep",
+  "en": " fell into a deep sleep",
   "notes": ""
  },
  {
@@ -6916,7 +6916,7 @@
   "ptr": "E1AF",
   "len": 12,
   "jp": "は 愛のどれいに なった",
-  "en": "became a slave to love",
+  "en": " became a slave to love",
   "notes": ""
  },
  {
@@ -6924,7 +6924,7 @@
   "ptr": "E1C7",
   "len": 12,
   "jp": "は 動ようを かくせない",
-  "en": "is visibly rattled",
+  "en": " is visibly rattled",
   "notes": ""
  },
  {
@@ -6932,7 +6932,7 @@
   "ptr": "E1DF",
   "len": 10,
   "jp": "は 毒に おかされた",
-  "en": "was poisoned",
+  "en": " was poisoned",
   "notes": ""
  },
  {
@@ -6940,7 +6940,7 @@
   "ptr": "E1F3",
   "len": 15,
   "jp": "は のどに ポリープが できた",
-  "en": "got a polyp on the throat",
+  "en": " got a polyp on the throat",
   "notes": ""
  },
  {
@@ -6948,7 +6948,7 @@
   "ptr": "E211",
   "len": 11,
   "jp": "は 前かがみに なった",
-  "en": "was left hunched over",
+  "en": " was left hunched over",
   "notes": ""
  },
  {
@@ -6980,7 +6980,7 @@
   "ptr": "E269",
   "len": 5,
   "jp": "の 攻撃！",
-  "en": "attacks!",
+  "en": " attacks!",
   "notes": ""
  },
  {
@@ -6988,7 +6988,7 @@
   "ptr": "E273",
   "len": 12,
   "jp": "の サマーソルトキック！",
-  "en": "does a somersault kick!",
+  "en": " does a somersault kick!",
   "notes": ""
  },
  {
@@ -7036,7 +7036,7 @@
   "ptr": "E2F9",
   "len": 9,
   "jp": "は ひき金をひいた",
-  "en": "pulled the trigger",
+  "en": " pulled the trigger",
   "notes": ""
  },
  {
@@ -7044,7 +7044,7 @@
   "ptr": "E30B",
   "len": 8,
   "jp": "の まわしげり！",
-  "en": "does a roundhouse kick!",
+  "en": " does a roundhouse kick!",
   "notes": ""
  },
  {
@@ -7068,7 +7068,7 @@
   "ptr": "E33F",
   "len": 11,
   "jp": "は ぶたいに 復帰した",
-  "en": "returned to the stage",
+  "en": " returned to the stage",
   "notes": ""
  },
  {
@@ -7076,7 +7076,7 @@
   "ptr": "E355",
   "len": 10,
   "jp": "は 石化が 回復した",
-  "en": "is no longer stone",
+  "en": " is no longer stone",
   "notes": ""
  },
  {
@@ -7084,7 +7084,7 @@
   "ptr": "E369",
   "len": 12,
   "jp": "は 体が動くようになった",
-  "en": "can move again",
+  "en": " can move again",
   "notes": ""
  },
  {
@@ -7092,7 +7092,7 @@
   "ptr": "E381",
   "len": 8,
   "jp": "は 目をさました",
-  "en": "woke up",
+  "en": " woke up",
   "notes": ""
  },
  {
@@ -7100,7 +7100,7 @@
   "ptr": "E391",
   "len": 14,
   "jp": "は 本当の愛を 思い出した！",
-  "en": "remembered true love!",
+  "en": " remembered true love!",
   "notes": ""
  },
  {
@@ -7108,7 +7108,7 @@
   "ptr": "E3AD",
   "len": 14,
   "jp": "は おちつきを とりもどした",
-  "en": "regained composure",
+  "en": " regained composure",
   "notes": ""
  },
  {
@@ -7116,7 +7116,7 @@
   "ptr": "E3C9",
   "len": 8,
   "jp": "の 毒が 消えた",
-  "en": "is no longer poisoned",
+  "en": " is no longer poisoned",
   "notes": ""
  },
  {
@@ -7124,7 +7124,7 @@
   "ptr": "E3D9",
   "len": 12,
   "jp": "は ポリープが 回復した",
-  "en": "is cured of the polyp",
+  "en": " is cured of the polyp",
   "notes": ""
  },
  {
@@ -7132,7 +7132,7 @@
   "ptr": "E3F1",
   "len": 12,
   "jp": "は 前かがみが 回復した",
-  "en": "is no longer hunched over",
+  "en": " is no longer hunched over",
   "notes": ""
  },
  {
@@ -7140,7 +7140,7 @@
   "ptr": "E409",
   "len": 15,
   "jp": "は おん度へん化に 強くなった",
-  "en": "now resists heat and cold",
+  "en": " now resists heat and cold",
   "notes": ""
  },
  {
@@ -7148,7 +7148,7 @@
   "ptr": "E427",
   "len": 11,
   "jp": "は 電気に 強くなった",
-  "en": "now resists electricity",
+  "en": " now resists electricity",
   "notes": ""
  },
  {
@@ -7156,7 +7156,7 @@
   "ptr": "E43D",
   "len": 9,
   "jp": "両を かっぱらった",
-  "en": "ryo was swiped",
+  "en": " ryo was swiped",
   "notes": ""
  },
  {
@@ -7164,7 +7164,7 @@
   "ptr": "E44F",
   "len": 8,
   "jp": "を かっぱらった",
-  "en": "was swiped",
+  "en": " was swiped",
   "notes": ""
  },
  {
@@ -7204,7 +7204,7 @@
   "ptr": "E4C7",
   "len": 12,
   "jp": "に 必中の精霊が 宿った",
-  "en": "now hosts a Sure-Hit Spirit",
+  "en": " now hosts a Sure-Hit Spirit",
   "notes": ""
  },
  {
@@ -7220,7 +7220,7 @@
   "ptr": "E4ED",
   "len": 11,
   "jp": "は 歌を はねかえした",
-  "en": "reflected the song",
+  "en": " reflected the song",
   "notes": ""
  },
  {
@@ -7228,7 +7228,7 @@
   "ptr": "E503",
   "len": 9,
   "jp": "たちは にげだした",
-  "en": "and party ran away",
+  "en": " and party ran away",
   "notes": ""
  },
  {
@@ -7244,7 +7244,7 @@
   "ptr": "E535",
   "len": 8,
   "jp": "は 石化している",
-  "en": "is turned to stone",
+  "en": " is turned to stone",
   "notes": ""
  },
  {
@@ -7252,7 +7252,7 @@
   "ptr": "E545",
   "len": 8,
   "jp": "は 体が動かない",
-  "en": "can't move",
+  "en": " can't move",
   "notes": ""
  },
  {
@@ -7260,7 +7260,7 @@
   "ptr": "E555",
   "len": 11,
   "jp": "は ばくすい している",
-  "en": "is in a deep sleep",
+  "en": " is in a deep sleep",
   "notes": ""
  },
  {
@@ -7268,7 +7268,7 @@
   "ptr": "E56B",
   "len": 12,
   "jp": "は 毒のダメージをうけた",
-  "en": "took poison damage",
+  "en": " took poison damage",
   "notes": ""
  },
  {
@@ -7356,7 +7356,7 @@
   "ptr": "E6A9",
   "len": 8,
   "jp": "の ローキック！",
-  "en": "does a low kick!",
+  "en": " does a low kick!",
   "notes": ""
  },
  {
@@ -7364,7 +7364,7 @@
   "ptr": "E6B9",
   "len": 9,
   "jp": "の かかとおとし！",
-  "en": "does an axe kick!",
+  "en": " does an axe kick!",
   "notes": ""
  },
  {
@@ -7372,7 +7372,7 @@
   "ptr": "E6CB",
   "len": 14,
   "jp": "の しんくう とびひざげり！",
-  "en": "does a vacuum flying knee!",
+  "en": " does a vacuum flying knee!",
   "notes": ""
  },
  {
@@ -7380,7 +7380,7 @@
   "ptr": "E6E7",
   "len": 11,
   "jp": "の ハイヒールキック！",
-  "en": "does a high-heel kick!",
+  "en": " does a high-heel kick!",
   "notes": ""
  },
  {
@@ -7388,7 +7388,7 @@
   "ptr": "E6FD",
   "len": 14,
   "jp": "は 大きなアワを はきだした",
-  "en": "spat out a big bubble",
+  "en": " spat out a big bubble",
   "notes": ""
  },
  {
@@ -7396,7 +7396,7 @@
   "ptr": "E719",
   "len": 13,
   "jp": "の 近くでアワが はじけた",
-  "en": "was hit by a bursting bubble",
+  "en": " was hit by a bursting bubble",
   "notes": ""
  },
  {
@@ -7404,7 +7404,7 @@
   "ptr": "E733",
   "len": 16,
   "jp": "の わきから 大五郎がおどりでた",
-  "en": "lets Daigoro leap out!",
+  "en": " lets Daigoro leap out!",
   "notes": ""
  },
  {
@@ -7420,7 +7420,7 @@
   "ptr": "E76F",
   "len": 14,
   "jp": "は クッキーを ほうりなげた",
-  "en": "tossed a cookie",
+  "en": " tossed a cookie",
   "notes": ""
  },
  {
@@ -7436,7 +7436,7 @@
   "ptr": "E797",
   "len": 16,
   "jp": "は クッキーが まえばに当たった",
-  "en": "took a cookie to the front teeth",
+  "en": " took a cookie to the front teeth",
   "notes": ""
  },
  {
@@ -7444,7 +7444,7 @@
   "ptr": "E7B7",
   "len": 8,
   "jp": "の みだれうち！",
-  "en": "fires wildly!",
+  "en": " fires wildly!",
   "notes": ""
  },
  {
@@ -7452,7 +7452,7 @@
   "ptr": "E7C7",
   "len": 12,
   "jp": "は りゅうさんを はいた",
-  "en": "spat sulfuric acid",
+  "en": " spat sulfuric acid",
   "notes": ""
  },
  {
@@ -7460,7 +7460,7 @@
   "ptr": "E7DF",
   "len": 12,
   "jp": "は ニトロえきを はいた",
-  "en": "spat nitroglycerin",
+  "en": " spat nitroglycerin",
   "notes": ""
  },
  {
@@ -7468,7 +7468,7 @@
   "ptr": "E7F7",
   "len": 16,
   "jp": "は あらかじめワナをしかけていた",
-  "en": "had set a trap in advance",
+  "en": " had set a trap in advance",
   "notes": ""
  },
  {
@@ -7476,7 +7476,7 @@
   "ptr": "E817",
   "len": 13,
   "jp": "は ワナにかかってしまった",
-  "en": "fell into the trap",
+  "en": " fell into the trap",
   "notes": ""
  },
  {
@@ -7500,7 +7500,7 @@
   "ptr": "E871",
   "len": 7,
   "jp": "の 体当り攻撃",
-  "en": "does a body slam",
+  "en": " does a body slam",
   "notes": ""
  },
  {
@@ -7516,7 +7516,7 @@
   "ptr": "E899",
   "len": 12,
   "jp": "は かみのけを とばした",
-  "en": "flung its hair",
+  "en": " flung its hair",
   "notes": ""
  },
  {
@@ -7524,7 +7524,7 @@
   "ptr": "E8B1",
   "len": 10,
   "jp": "の れんぞく うち！",
-  "en": "fires a barrage!",
+  "en": " fires a barrage!",
   "notes": ""
  },
  {
@@ -7532,7 +7532,7 @@
   "ptr": "E8C5",
   "len": 7,
   "jp": "は 炎をはいた",
-  "en": "breathed fire",
+  "en": " breathed fire",
   "notes": ""
  },
  {
@@ -7540,7 +7540,7 @@
   "ptr": "E8D3",
   "len": 8,
   "jp": "は 冷気をはいた",
-  "en": "breathed icy air",
+  "en": " breathed icy air",
   "notes": ""
  },
  {
@@ -7548,7 +7548,7 @@
   "ptr": "E8E3",
   "len": 14,
   "jp": "は きいろい いきを はいた",
-  "en": "let out a yellow gas",
+  "en": " let out a yellow gas",
   "notes": ""
  },
  {
@@ -7556,7 +7556,7 @@
   "ptr": "E8FF",
   "len": 11,
   "jp": "は 火のたまを はいた",
-  "en": "spat a fireball",
+  "en": " spat a fireball",
   "notes": ""
  },
  {
@@ -7564,7 +7564,7 @@
   "ptr": "E915",
   "len": 14,
   "jp": "は 毒のほうしを ふりまいた",
-  "en": "scattered poison spores",
+  "en": " scattered poison spores",
   "notes": ""
  },
  {
@@ -7572,7 +7572,7 @@
   "ptr": "E931",
   "len": 13,
   "jp": "は セメントを ふりまいた",
-  "en": "scattered cement",
+  "en": " scattered cement",
   "notes": ""
  },
  {
@@ -7588,7 +7588,7 @@
   "ptr": "E967",
   "len": 12,
   "jp": "は 守りを かためている",
-  "en": "is standing guard",
+  "en": " is standing guard",
   "notes": ""
  },
  {
@@ -7596,7 +7596,7 @@
   "ptr": "E97F",
   "len": 16,
   "jp": "のまわりに どしゃぶり雨がふった",
-  "en": "got caught in a downpour",
+  "en": " got caught in a downpour",
   "notes": ""
  },
  {
@@ -7612,7 +7612,7 @@
   "ptr": "E9BD",
   "len": 12,
   "jp": "は 空を見上げてしまった",
-  "en": "looked up at the sky",
+  "en": " looked up at the sky",
   "notes": ""
  },
  {
@@ -7620,7 +7620,7 @@
   "ptr": "E9D5",
   "len": 14,
   "jp": "は マイムマイムを おどった",
-  "en": "danced the Mayim Mayim",
+  "en": " danced the Mayim Mayim",
   "notes": ""
  },
  {
@@ -7628,7 +7628,7 @@
   "ptr": "E9F1",
   "len": 13,
   "jp": "は つられて おどりだした",
-  "en": "got swept up and danced too",
+  "en": " got swept up and danced too",
   "notes": ""
  },
  {
@@ -7644,7 +7644,7 @@
   "ptr": "EA1F",
   "len": 14,
   "jp": "は カゲを ふまれてしまった",
-  "en": "had its shadow pinned",
+  "en": " had its shadow pinned",
   "notes": ""
  },
  {
@@ -7652,7 +7652,7 @@
   "ptr": "EA3B",
   "len": 14,
   "jp": "は むずかしいクイズを出した",
-  "en": "posed a tricky quiz",
+  "en": " posed a tricky quiz",
   "notes": ""
  },
  {
@@ -7660,7 +7660,7 @@
   "ptr": "EA57",
   "len": 15,
   "jp": "は しんけんに かんがえこんだ",
-  "en": "thought really, really hard",
+  "en": " thought really, really hard",
   "notes": ""
  },
  {
@@ -7668,7 +7668,7 @@
   "ptr": "EA75",
   "len": 12,
   "jp": "は こたえを しっていた",
-  "en": "knew the answer",
+  "en": " knew the answer",
   "notes": ""
  },
  {
@@ -7676,7 +7676,7 @@
   "ptr": "EA8D",
   "len": 9,
   "jp": "は 大声を出した！",
-  "en": "let out a huge shout!",
+  "en": " let out a huge shout!",
   "notes": ""
  },
  {
@@ -7684,7 +7684,7 @@
   "ptr": "EA9F",
   "len": 8,
   "jp": "は たちすくんだ",
-  "en": "froze in place",
+  "en": " froze in place",
   "notes": ""
  },
  {
@@ -7692,7 +7692,7 @@
   "ptr": "EAAF",
   "len": 16,
   "jp": "は ギャグ（と思われる）を言った",
-  "en": "told a joke (we think)",
+  "en": " told a joke (we think)",
   "notes": ""
  },
  {
@@ -7708,7 +7708,7 @@
   "ptr": "EAE1",
   "len": 9,
   "jp": "は ききそこなった",
-  "en": "didn't catch it",
+  "en": " didn't catch it",
   "notes": ""
  },
  {
@@ -7724,7 +7724,7 @@
   "ptr": "EB13",
   "len": 8,
   "jp": "は にげだした！",
-  "en": "ran away!",
+  "en": " ran away!",
   "notes": ""
  },
  {
@@ -7772,7 +7772,7 @@
   "ptr": "EB73",
   "len": 10,
   "jp": "は つかれて動けない",
-  "en": "is too tired to move",
+  "en": " is too tired to move",
   "notes": ""
  },
  {
@@ -7780,7 +7780,7 @@
   "ptr": "EB87",
   "len": 16,
   "jp": "はいきなり 思い出しわらいをした",
-  "en": "suddenly laughed at a memory",
+  "en": " suddenly laughed at a memory",
   "notes": ""
  },
  {
@@ -7788,7 +7788,7 @@
   "ptr": "EBA7",
   "len": 9,
   "jp": "は 力をためている",
-  "en": "is building up power",
+  "en": " is building up power",
   "notes": ""
  },
  {
@@ -7796,7 +7796,7 @@
   "ptr": "EBB9",
   "len": 12,
   "jp": "は たま切れを おこした",
-  "en": "ran out of ammo",
+  "en": " ran out of ammo",
   "notes": ""
  },
  {
@@ -7804,7 +7804,7 @@
   "ptr": "EBD1",
   "len": 11,
   "jp": "は 雨ごいを はじめた",
-  "en": "began praying for rain",
+  "en": " began praying for rain",
   "notes": ""
  },
  {
@@ -7828,7 +7828,7 @@
   "ptr": "EC1B",
   "len": 11,
   "jp": "は 毒のツバを ふいた",
-  "en": "spat poison",
+  "en": " spat poison",
   "notes": ""
  },
  {
@@ -7836,7 +7836,7 @@
   "ptr": "EC31",
   "len": 13,
   "jp": "は 目玉を くるくる回した",
-  "en": "spun its eyeballs around",
+  "en": " spun its eyeballs around",
   "notes": ""
  },
  {
@@ -7844,7 +7844,7 @@
   "ptr": "EC4B",
   "len": 12,
   "jp": "は カミナリを おとした",
-  "en": "called down lightning",
+  "en": " called down lightning",
   "notes": ""
  },
  {
@@ -7860,7 +7860,7 @@
   "ptr": "EC77",
   "len": 11,
   "jp": "は うまく ごまかした",
-  "en": "slickly played it off",
+  "en": " slickly played it off",
   "notes": ""
  },
  {
@@ -7868,7 +7868,7 @@
   "ptr": "EC8D",
   "len": 13,
   "jp": "は つむじかぜを おこした",
-  "en": "whipped up a whirlwind",
+  "en": " whipped up a whirlwind",
   "notes": ""
  },
  {
@@ -7876,7 +7876,7 @@
   "ptr": "ECA7",
   "len": 10,
   "jp": "は うまく かわした",
-  "en": "deftly dodged",
+  "en": " deftly dodged",
   "notes": ""
  },
  {
@@ -7884,7 +7884,7 @@
   "ptr": "ECBB",
   "len": 10,
   "jp": "には きかなかったは",
-  "en": "was unaffected",
+  "en": " was unaffected",
   "notes": ""
  },
  {
@@ -7892,7 +7892,7 @@
   "ptr": "ECCF",
   "len": 11,
   "jp": "は 金しばりに なった",
-  "en": "was paralyzed",
+  "en": " was paralyzed",
   "notes": ""
  },
  {
@@ -7900,7 +7900,7 @@
   "ptr": "ECE5",
   "len": 13,
   "jp": "は ばくすい してしまった",
-  "en": "fell fast asleep",
+  "en": " fell fast asleep",
   "notes": ""
  },
  {
@@ -7908,7 +7908,7 @@
   "ptr": "ECFF",
   "len": 12,
   "jp": "は 愛のどれいに なった",
-  "en": "became a slave to love",
+  "en": " became a slave to love",
   "notes": ""
  },
  {
@@ -7916,7 +7916,7 @@
   "ptr": "ED17",
   "len": 12,
   "jp": "は 動ようを かくせない",
-  "en": "is visibly shaken",
+  "en": " is visibly shaken",
   "notes": ""
  },
  {
@@ -7924,7 +7924,7 @@
   "ptr": "ED2F",
   "len": 10,
   "jp": "は 毒に おかされた",
-  "en": "was poisoned",
+  "en": " was poisoned",
   "notes": ""
  },
  {
@@ -7932,7 +7932,7 @@
   "ptr": "ED43",
   "len": 15,
   "jp": "は ポリープが のどに できた",
-  "en": "got a polyp in the throat",
+  "en": " got a polyp in the throat",
   "notes": ""
  },
  {
@@ -8004,7 +8004,7 @@
   "ptr": "EE0D",
   "len": 12,
   "jp": "は 体が動くようになった",
-  "en": "can move again",
+  "en": " can move again",
   "notes": ""
  },
  {
@@ -8012,7 +8012,7 @@
   "ptr": "EE25",
   "len": 8,
   "jp": "は 目をさました",
-  "en": "woke up",
+  "en": " woke up",
   "notes": ""
  },
  {
@@ -8020,7 +8020,7 @@
   "ptr": "EE35",
   "len": 13,
   "jp": "は 本当の愛を 思い出した",
-  "en": "remembered true love",
+  "en": " remembered true love",
   "notes": ""
  },
  {
@@ -8036,7 +8036,7 @@
   "ptr": "EE5F",
   "len": 12,
   "jp": "は ポリープが 回復した",
-  "en": "was cured of the polyp",
+  "en": " was cured of the polyp",
   "notes": ""
  },
  {
@@ -8052,7 +8052,7 @@
   "ptr": "EE8F",
   "len": 13,
   "jp": "は 炎と冷気に 強くなった",
-  "en": "now resists fire and cold",
+  "en": " now resists fire and cold",
   "notes": ""
  },
  {
@@ -8060,7 +8060,7 @@
   "ptr": "EEA9",
   "len": 11,
   "jp": "は 電気に 強くなった",
-  "en": "now resists electricity",
+  "en": " now resists electricity",
   "notes": ""
  },
  {
@@ -8084,7 +8084,7 @@
   "ptr": "EEFF",
   "len": 11,
   "jp": "は 歌を はねかえした",
-  "en": "bounced the song back",
+  "en": " bounced the song back",
   "notes": ""
  },
  {
@@ -8092,7 +8092,7 @@
   "ptr": "EF15",
   "len": 9,
   "jp": "は 体が 動かない",
-  "en": "can't move",
+  "en": " can't move",
   "notes": ""
  },
  {
@@ -8100,7 +8100,7 @@
   "ptr": "EF27",
   "len": 11,
   "jp": "は ばくすい している",
-  "en": "is sound asleep",
+  "en": " is sound asleep",
   "notes": ""
  },
  {
@@ -8108,7 +8108,7 @@
   "ptr": "EF3D",
   "len": 12,
   "jp": "は 毒のダメージをうけた",
-  "en": "took poison damage",
+  "en": " took poison damage",
   "notes": ""
  },
  {
@@ -8124,7 +8124,7 @@
   "ptr": "EF6D",
   "len": 14,
   "jp": "は おちつきを とりもどした",
-  "en": "calmed down",
+  "en": " calmed down",
   "notes": ""
  },
  {
@@ -8140,7 +8140,7 @@
   "ptr": "EFA7",
   "len": 16,
   "jp": "は さいごの気力を ふりしぼった",
-  "en": "mustered one last burst",
+  "en": " mustered one last burst",
   "notes": ""
  },
  {
@@ -8148,7 +8148,7 @@
   "ptr": "EFC7",
   "len": 16,
   "jp": "の みみには 声がとどかなかった",
-  "en": "couldn't hear the voice",
+  "en": " couldn't hear the voice",
   "notes": ""
  },
  {
@@ -8220,7 +8220,7 @@
   "ptr": "F077",
   "len": 8,
   "jp": "は もらったぜ！",
-  "en": "is mine!",
+  "en": " is mine!",
   "notes": ""
  },
  {
