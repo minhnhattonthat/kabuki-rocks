@@ -3,434 +3,434 @@
   "id": "0B8027",
   "size": 323,
   "jp": "{name94}「ジイ{ちゃん#0AB5} 本当に {だいじょうぶ#0A2A}？{wait}{ba}{b8:330D}{p9a}{法界坊#0902}「ああ {しんぱい#0A28}には およばんよ。{wait}{ba}{b8:0C0D}{clr}{name94}「でも エゾへ入ったあたりから{n}体力の へり方が 早いみたいだけど{‥‥‥#065F}{n}どこか 体 悪くしてるんじゃない？{wait}{ba}{b8:000D}{p9a}{name93}「そう言えば{‥‥‥#065F} {ジイさん#0A65}‥‥{n}ここで やすんでなよ。{wait}{ba}{b8:330D}{p9a}{法界坊#0902}「いいや！ これは ワシの仕事{じゃ。#0A31}{n}{    #035F}{ドーマン#0916}は さしちがえても ワシがたおす！{n}{    #035F}さあ！ 行くぞィ！！{wait}",
-  "en": "",
+  "en": "{name94}: Gramps, are you really okay?{wait}{ba}{b8:330D}{p9a}Hokaibo: Ah, no need to worry.{wait}{ba}{b8:0C0D}{clr}{name94}: But ever since we entered Ezo, your strength's been draining fast... Aren't you sick or something?{wait}{ba}{b8:000D}{p9a}{name93}: Now that you mention it... Gramps... you rest here.{wait}{ba}{b8:330D}{p9a}Hokaibo: No! This is my job. I'll take down Doman even if it costs me my life! Now! Let's go!!{wait}",
   "notes": ""
  },
  {
   "id": "0B8191",
   "size": 132,
   "jp": "{name94}「ホ {ホント#0A5A}に{‥‥ #0A2C}{こんな所#0A68}に いるの？{wait}{p9a}{法界坊#0902}「まちがいない！{n}{    #035F}{ベンケイ#0900}の長刀の中におったのは やつの霊{じゃ。#0A31}{n}{    #035F}やつは ここにある体をもとめ やってくる！{wait}",
-  "en": "",
+  "en": "{name94}: R-really... he's in a place like this?{wait}{p9a}Hokaibo: No doubt about it! What lurked in Benkei's naginata was his spirit. He'll come here seeking the body that lies here!{wait}",
   "notes": ""
  },
  {
   "id": "0B822A",
   "size": 237,
   "jp": "{ドーマン#0916}「{グウフフフフ#0AA7}！ 一足 おそかったな {法界坊#0902}！{n}{     #034F}ついに{‥‥ #0A2C}ついに 体{を手に入れた！！#0A27}{n}{     #034F}むかし以上に 力がみなぎるぞ！！{wait}{clr}{法界坊#0902}「手ごわいぞ {name93}！{n}{    #035F}だが {こいつ#0A77}を たおせんようでは{n}{    #035F}{天資#0909}などは とうてい たおせはせんぞ！{wait}{clr}{ドーマン#0916}「さあ いくぞ！ {法界坊#0902}！{n}{     #034F}今度は {きさま#0A29}が死ぬ番だ！！{wait}",
-  "en": "",
+  "en": "Doman: Guhuhuhuhu! One step too late, Hokaibo! At last... at last I have a body!! Power surges through me, greater than of old!!{wait}{clr}Hokaibo: He's a tough one, {name93}! But if you can't beat the likes of him, you'll never beat Tensai!{wait}{clr}Doman: Now, here I come, Hokaibo! This time it's your turn to die!!{wait}",
   "notes": ""
  },
  {
   "id": "0B8326",
   "size": 56,
   "jp": "{ドーマン#0916}「グッ{‥‥ #0A2C}ま{‥‥ #0A2C}また{‥‥ #0A2C}くらやみがぁ～！{n}{     #034F}グオ～～～ッ！！{wait}",
-  "en": "",
+  "en": "Doman: Ngh... th-the... the darkness... again...! Guoooooh!!{wait}",
   "notes": ""
  },
  {
   "id": "0B8371",
   "size": 117,
   "jp": "{法界坊#0902}「フーッ{‥‥‥#065F}{wait}{clr}{name93}「{ジイさん#0A65}！ {だいじょうぶ#0A2A}か！？{wait}{p9a}{法界坊#0902}「ウ ウム{‥‥‥#065F}{n}{    #035F}まだ ハアハア{‥‥ #0A2C}{だいじょうぶ#0A2A}じゃ{‥‥‥#065F}{wait}{clr}{name94}「とりあえず 回復{じぞう#0A0E}の所まで{n}つれて{行きましょ#0A6C}。{wait}",
-  "en": "",
+  "en": "Hokaibo: Phew...{wait}{clr}{name93}: Gramps! You all right!?{wait}{p9a}Hokaibo: Y-yes... I'm still... *huff huff*... all right...{wait}{clr}{name94}: For now, let's take him to the Healing Jizo.{wait}",
   "notes": ""
  },
  {
   "id": "0B83FB",
   "size": 26,
   "jp": "{name94}「あったわ。 回復{じぞう#0A0E}よ！{wait}",
-  "en": "",
+  "en": "{name94}: There it is. The Healing Jizo!{wait}",
   "notes": ""
  },
  {
   "id": "0B8431",
   "size": 12,
   "jp": "{name94}「ジ {ジロキチ#0903}？{wait}",
-  "en": "",
+  "en": "{name94}: J-Jirokichi?{wait}",
   "notes": ""
  },
  {
   "id": "0B845C",
   "size": 27,
   "jp": "{name93}「{ジロキチ#0903}！ オレだ！ {name93}でィ！{wait}",
-  "en": "",
+  "en": "{name93}: Jirokichi! It's me! It's {name93}!{wait}",
   "notes": ""
  },
  {
   "id": "0B847E",
   "size": 23,
   "jp": "{モンスター#0A8B}{ジロキチ#0903}「ガルルルルー！！{wait}",
-  "en": "",
+  "en": "Monster Jirokichi: Grrrrrrr!!{wait}",
   "notes": ""
  },
  {
   "id": "0B849B",
   "size": 103,
   "jp": "{name93}「かんぜんに バケモノに{n}なっち{まって#0ABC}る！{n}もう{‥‥ #0A2C}戦うしかねェ！！{wait}{p9a}{name94}「ダメ！{n}{モンスター#0A8B}でも {ジロキチ#0903}なのよ！{n}戦えない！{wait}",
-  "en": "",
+  "en": "{name93}: He's turned into a total monster! We've got... no choice but to fight!!{wait}{p9a}{name94}: No! Even as a monster, he's still Jirokichi! I can't fight him!{wait}",
   "notes": ""
  },
  {
   "id": "0B8512",
   "size": 15,
   "jp": "{モンスター#0A8B}{ジロキチ#0903}「ガル{ーーー#0A2F}ッ{wait}",
-  "en": "",
+  "en": "Monster Jirokichi: Grrraaaah{wait}",
   "notes": ""
  },
  {
   "id": "0B852E",
   "size": 40,
   "jp": "{name94}「{おねがい#0AB3}！{n}{ジロキチ#0903}！ 元に{‥‥‥#065F}{n}元に もどって！！{wait}",
-  "en": "",
+  "en": "{name94}: Please! Jirokichi! Go back... back to how you were!!{wait}",
   "notes": ""
  },
  {
   "id": "0B856C",
   "size": 67,
   "jp": "{name93}「{name94}！！ {ジロキチ#0903}！ {きさま#0A29}～！{wait}{p9a}{name94}「だ{‥‥ #0A2C}だめ{‥‥‥#065F}{n}‥‥{name93}{‥‥‥#065F}{n}戦っては{‥‥‥#065F} だ{‥‥ #0A2C}め{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "{name93}: {name94}!! Jirokichi! Why you...!{wait}{p9a}{name94}: N-no... ...{name93}... don't... fi... ght...{wait}",
   "notes": ""
  },
  {
   "id": "0B85B7",
   "size": 180,
   "jp": "{法界坊#0902}「これは おいぼれの{‥‥ #0A2C}ワシの仕事{じゃ。#0A31}{n}{    #035F}さがっておれ {name93}！！{wait}{clr}{モンスター#0A8B}{ジロキチ#0903}「ガル ガル{ーーー#0A2F}ーーッ！！{wait}{clr}{法界坊#0902}「ウム{‥‥ #0A2C}わかった {ジロキチ#0903}{‥‥‥#065F}{n}{    #035F}さぞや つらかったじゃろォ{‥‥‥#065F}{wait}{clr}{    #035F}今 ワシが 楽にしてやるでな{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "Hokaibo: This is a job for an old geezer... for me. Stand back, {name93}!!{wait}{clr}Monster Jirokichi: Grr, grraaaaaah!!{wait}{clr}Hokaibo: Mm... I understand, Jirokichi... It must have been so painful for you...{wait}{clr}I'll put you at ease now...{wait}",
   "notes": ""
  },
  {
   "id": "0B8673",
   "size": 144,
   "jp": "{法界坊#0902}「今まで ワシのような おいぼれと いっしょに{n}{    #035F}たびをしてきてくれて うれしかったぞィ。{n}{delay:78}{clr}{    #035F}{name93}よ！{n}{    #035F}りっぱな{歌武器#0A09}つかいになれ！{n}{    #035F}さらば{じゃ！#0A58}！{delay:5A}",
-  "en": "",
+  "en": "Hokaibo: I was glad you traveled all this way with an old geezer like me.{delay:78}{clr}{name93}! Become a fine song weapon wielder! Farewell!!{delay:5A}",
   "notes": ""
  },
  {
   "id": "0B871C",
   "size": 26,
   "jp": "{name93}「ジイさ{ーーー#0A2F}ん！！ {ジロキチ#0903}！！{wait}",
-  "en": "",
+  "en": "{name93}: Graaaaamps!! Jirokichi!!{wait}",
   "notes": ""
  },
  {
   "id": "0B874A",
   "size": 21,
   "jp": "{辰五郎#0906}「せんせい{！！！#0A54} {ジロキチ#0903}{！！！#0A54}{wait}",
-  "en": "",
+  "en": "Tatsugoro: Master!!! Jirokichi!!!{wait}",
   "notes": ""
  },
  {
   "id": "0B876F",
   "size": 29,
   "jp": "{景清#0908}「{！！！#0A54} {！！！#0A54}{wait}{clr}{ベンケイ#0900}「法界どの！！{wait}",
-  "en": "",
+  "en": "Kagekiyo: !!! !!!{wait}{clr}Benkei: Hokaibo-dono!!{wait}",
   "notes": ""
  },
  {
   "id": "0B8792",
   "size": 27,
   "jp": "{景清#0908}「{！！！#0A54} {！！！#0A54}{wait}{clr}{フジムスメ#0904}「{ジロキチ#0903}はん！！{wait}",
-  "en": "",
+  "en": "Kagekiyo: !!! !!!{wait}{clr}Fuji Musume: Jirokichi-han!!{wait}",
   "notes": ""
  },
  {
   "id": "0B87B3",
   "size": 33,
   "jp": "{ベンケイ#0900}「法界どの！！{wait}{clr}{フジムスメ#0904}「{ジロキチ#0903}はん！！{wait}",
-  "en": "",
+  "en": "Benkei: Hokaibo-dono!!{wait}{clr}Fuji Musume: Jirokichi-han!!{wait}",
   "notes": ""
  },
  {
   "id": "0B87DA",
   "size": 304,
   "jp": "{name94}「も もう いやぁ～！！{delay:B4}{clr}みんな みんな‥‥死んじゃって{n}ジイ{ちゃん#0AB5}も！ そして ‥{ジロキチ#0903}までも！{delay:B4}{p9a}{name93}「さあ！ 行くぞ！！{wait}{p9a}{name94}「もう{‥‥ #0A2C}イヤだってば！{n}こんなに{‥‥ #0A2C}こんなに{n}仲間が いなくなるなんて{‥‥‥#065F}{wait}{p9a}{name93}「だから 行くんだ！{n}行かなきゃ ならないんだ！{wait}{clr}みんなの 思いをいっぱい せおってんだ！{n}メソメソしてられっか！！{wait}",
-  "en": "",
+  "en": "{name94}: I-I can't take it anymore!!{delay:B4}{clr}Everyone, everyone... is dying. Gramps too! And... even Jirokichi!{delay:B4}{p9a}{name93}: Come on! Let's go!!{wait}{p9a}{name94}: I told you, I can't! Losing so... so many friends like this...{wait}{p9a}{name93}: That's why we go! We have to go!{wait}{clr}We're carrying everyone's hopes on our backs! No time for moping!!{wait}",
   "notes": ""
  },
  {
   "id": "0B8913",
   "size": 262,
   "jp": "{辰五郎#0906}「そう{っス！#0ABD} {name93}どのだって つらいんス！{wait}{clr}{    #035F}さきへ すすむことが 死んでいった{n}{    #035F}みんなに 封する さいこうの たむけッス！{n}{    #035F}{お七#0907}や せんせい だって きっと・・・{wait}{clr}{name94}「{‥‥ #0A2C}{name93} 強くなったわね。{n}{‥‥‥#065F}ゴメン {辰五郎#0906}さん{‥‥‥#065F}{wait}{clr}{お七#0907}さんや {ししょう#0A55}を うしなった{n}{あなた#0A17}の方が つらいのにね・・・{wait}",
-  "en": "",
+  "en": "Tatsugoro: That's right! It's hard on Sir {name93} too, y'know!{wait}{clr}Pushing on ahead is the best offering we can make to everyone who died, y'know! Oshichi and the Master would surely...{wait}{clr}{name94}: ...{name93}, you've gotten strong. ...Sorry, Tatsugoro-san...{wait}{clr}It's even harder for you, after losing Oshichi-san and your master...{wait}",
   "notes": ""
  },
  {
   "id": "0B8A29",
   "size": 60,
   "jp": "{name93}{「行くぞ！！#0AA3}{n}{name94}！ {ベンケイ#0900}！ 景清！{wait}{p9a}{ベンケイ#0900}「うん{‥‥‥#065F}{n}{     #034F}うん{‥‥‥#065F}{n}{     #034F}{行こう#0A69}で{ござる！#0A0A}{wait}{clr}{景清#0908}「{！！！#0A54}{wait}",
-  "en": "",
+  "en": "{name93}: Let's go!! {name94}! Benkei! Kagekiyo!{wait}{p9a}Benkei: Mm... mm... Let us go forth!{wait}{clr}Kagekiyo: !!!{wait}",
   "notes": ""
  },
  {
   "id": "0B8A6B",
   "size": 50,
   "jp": "{name93}{「行くぞ！！#0AA3}{n}{name94}！ {景清#0908}！ おフジさん！{wait}{p9a}{フジムスメ#0904}「{行きましょ#0A6C}う！{wait}{clr}{景清#0908}「{！！！#0A54}！{wait}",
-  "en": "",
+  "en": "{name93}: Let's go!! {name94}! Kagekiyo! Ofuji-san!{wait}{p9a}Fuji Musume: Let's go!{wait}{clr}Kagekiyo: !!!!{wait}",
   "notes": ""
  },
  {
   "id": "0B8AA3",
   "size": 70,
   "jp": "{name93}{「行くぞ！！#0AA3}{n}{name94}！ {ベンケイ#0900}！ おフジさん！{wait}{p9a}{ベンケイ#0900}「うん{‥‥‥#065F}{n}{     #034F}うん{‥‥‥#065F}{n}{     #034F}{行こう#0A69}で{ござる！#0A0A}{wait}{clr}{フジムスメ#0904}「{行きましょ#0A6C}う！{wait}",
-  "en": "",
+  "en": "{name93}: Let's go!! {name94}! Benkei! Ofuji-san!{wait}{p9a}Benkei: Mm... mm... Let us go forth!{wait}{clr}Fuji Musume: Let's go!{wait}",
   "notes": ""
  },
  {
   "id": "0B8AEF",
   "size": 160,
   "jp": "{name94}「そうよね みんなのためにも{n}メソメソ してちゃ いけないのよね{n}ゴメンなさい。 わたしもつれてって{wait}{p9a}{name93}「うっしゃあ！{n}オレたち{name93}座は ふめつ！！{n}{まって#0ABC}ろよ！ {天資#0909}！！{wait}",
-  "en": "",
+  "en": "{name94}: You're right. For everyone's sake, I can't just sit here moping. I'm sorry. Take me with you.{wait}{p9a}{name93}: All riiight! We, the {name93} Troupe, are undying!! Just you wait, Tensai!!{wait}",
   "notes": ""
  },
  {
   "id": "0B8B96",
   "size": 27,
   "jp": "作曲できる長さが ふえた！{wait}",
-  "en": "",
+  "en": "You can now compose longer songs!{wait}",
   "notes": ""
  },
  {
   "id": "0B8BC4",
   "size": 49,
   "jp": "{ドーマン#0916}「{グウフフフフ#0AA7}！{n}{     #034F}{法界坊#0902}よ！ 思いしったか！{n}{     #034F}グウフ{フフフッ#0A2D}！！{wait}",
-  "en": "",
+  "en": "Doman: Guhuhuhuhu! Hokaibo! Now you've learned your lesson! Guhuhuhuhu!!{wait}",
   "notes": ""
  },
  {
   "id": "0B8C0D",
   "size": 25,
   "jp": "{法界坊#0902}「空桶{洞くつ#0A1E}へ いそぐの{じゃ。#0A31}{wait}",
-  "en": "",
+  "en": "Hokaibo: Hurry to the Karaoke Cave.{wait}",
   "notes": ""
  },
  {
   "id": "0B8C69",
   "size": 107,
   "jp": "{法界坊#0902}「あんまり たいくつなんで {楽屋シップ#0A12}から{n}{    #035F}出てきてしまったが{‥‥ #0A2C}そとは {さむい#0A4B}のォ！{wait}{ba}{b8:000D}{clr}{name93}「るす番 しててくれよ{‥‥。#0A24}{wait}",
-  "en": "",
+  "en": "Hokaibo: I got so bored that I came out of the Dressing Room Ship... but it's cold out here!{wait}{ba}{b8:000D}{clr}{name93}: Just mind the house for us...{wait}",
   "notes": ""
  },
  {
   "id": "0B8CF5",
   "size": 121,
   "jp": "{ジロキチ#0903}「よお {name93}！{n}{     #034F}あんまり たいくつだから 出てきちまったぜ！{n}{     #034F}{イタコ#0921}さんは 見つかったのかい？{wait}{ba}{b8:000D}{clr}{name93}「るす番 してろって{‥‥。#0A24}{wait}",
-  "en": "",
+  "en": "Jirokichi: Yo, {name93}! I got so bored I came on out! Did you find Itako-san?{wait}{ba}{b8:000D}{clr}{name93}: I told you to mind the house...{wait}",
   "notes": ""
  },
  {
   "id": "0B8D7B",
   "size": 1049,
   "jp": "{name93}「ところで おっさん！ たのむ！{wait}{ba}{p9a}{イタコ#0921}「へっ？ な なんじゃ{ お前#0A1B}たちは？{wait}{b8:0C0D}{clr}{name94}「もう とうとつなんだから！{n}{イタコ#0921}さん 実は{‥‥‥#065F}{n}マルマル ウマウマ{‥‥‥#065F}{wait}{ba}{p9a}{イタコ#0921}「へっ？{wait}{b8:300D}{clr}{法界坊#0902}「かわいこぶってちゃあ 通じんぞィ！{n}{    #035F}実はのォ{‥‥‥#065F}{n}{    #035F}カクカク シカジカ{‥‥‥#065F}{wait}{ba}{clr}{イタコ#0921}「ウ～ン むずかしい話しじゃな{‥‥‥#065F}{n}{    #035F}ムツの国におられる {夕風#0905}さまなら{n}{    #035F}友を たすけることも できるじゃろうが{‥‥‥#065F}{wait}{b8:000D}{clr}{name93}「{あんた#0A16}は できないのか？{wait}{ba}{p9a}{イタコ#0921}「1つだけ 方法がある。{wait}{b8:0C0D}{clr}{name94}「エッ！ 何 それ！？{wait}{ba}{p9a}{イタコ#0921}「{お前たち#0A98}が 長刀の中に入るのだ。{n}{    #035F}生きて出られるかどうかは わからんが{‥‥‥#065F}{wait}{clr}{    #035F}かなり{キケン#0A48}だが{‥‥ #0A2C}やってみるか？{wait}{b8:000D}{clr}{name93}「やる！{wait}{ba}{b8:3F0D}{p9a}{ジロキチ#0903}「やばそうだな{‥‥‥#065F}やめとこうぜ！{wait}{ba}{b8:000D}{clr}{name93}「なに？！{wait}{ba}{b8:300D}{p9a}{法界坊#0902}「まあまあ{n}{    #035F}{ジロキチ#0903}は {ベンケイ#0900}を よくしらんのだし{n}{    #035F}{ジロキチ#0903}の{気持ち#0A21}も 分からんでもない。{wait}{ba}{b8:0C0D}{clr}{name94}「でも 行かなきゃ！{n}{ジロキチ#0903}とおなじように {ベンケイ#0900}も{n}大切な 仲間なんだもの。{wait}{ba}{b8:3F0D}{p9a}{ジロキチ#0903}「わかった わかった！{n}{     #034F}しかたねェ！{wait}{clr}{     #034F}じゃあ {行こう#0A69}ゼ {name93}！{wait}{ba}{clr}{イタコ#0921}「長刀の中へ 入れるのは 5人まで‥‥{n}{    #035F}この5人で よいのだな？{wait}{b8:300D}{clr}{法界坊#0902}「ワシを つれて行けィ！{n}{    #035F}{長刀の世界#09A1}なんて{n}{    #035F}面白そォーじゃしのォ！！{wait}{ba}{b8:3F0D}{clr}{ジロキチ#0903}「{オレさま#0A4F}も つれて行けよ！！{n}{     #034F}{name94}を 守ってやれるのは{n}{     #034F}{オレさま#0A4F}だけ なんだからな！！{wait}",
-  "en": "",
+  "en": "{name93}: Hey, mister! Please, help us!{wait}{ba}{p9a}Itako: Huh? Wh-what are you people?{wait}{b8:0C0D}{clr}{name94}: Jeez, you're so abrupt! Itako-san, the thing is... blah-blah, yadda-yadda...{wait}{ba}{p9a}Itako: Huh?{wait}{b8:300D}{clr}Hokaibo: Playing cute won't get it across! You see... thus and so, such and such...{wait}{ba}{clr}Itako: Hmm, a difficult matter... Yukaze-sama, who dwells in the Land of Mutsu, could save your friend, but...{wait}{b8:000D}{clr}{name93}: Can't you do it?{wait}{ba}{p9a}Itako: There is just one way.{wait}{b8:0C0D}{clr}{name94}: Eh! What is it!?{wait}{ba}{p9a}Itako: You go inside the naginata. Whether you'll come out alive, I can't say...{wait}{clr}It's quite dangerous... Will you try?{wait}{b8:000D}{clr}{name93}: We'll do it!{wait}{ba}{b8:3F0D}{p9a}Jirokichi: Sounds risky... Let's skip it!{wait}{ba}{b8:000D}{clr}{name93}: What!?{wait}{ba}{b8:300D}{p9a}Hokaibo: Now, now. Jirokichi doesn't know Benkei well. I can understand how he feels.{wait}{ba}{b8:0C0D}{clr}{name94}: But we have to go! Benkei is a precious friend, just like Jirokichi.{wait}{ba}{b8:3F0D}{p9a}Jirokichi: All right, all right! Can't be helped!{wait}{clr}Then let's go, {name93}!{wait}{ba}{clr}Itako: Up to five can enter the naginata... These five, then?{wait}{b8:300D}{clr}Hokaibo: Take me with you! A world inside a naginata sounds like great fun!!{wait}{ba}{b8:3F0D}{clr}Jirokichi: Take me along too!! I'm the only one who can protect {name94}!!{wait}",
   "notes": ""
  },
  {
   "id": "0B91C3",
   "size": 58,
   "jp": "{イタコ#0921}「では いくぞ！ よいな！！{n}{    #035F}ウリャアアアアアアーッ{！！！#0A54}{wait}",
-  "en": "",
+  "en": "Itako: Here we go! Ready!? Uryaaaaaaaah!!!{wait}",
   "notes": ""
  },
  {
   "id": "0B920F",
   "size": 34,
   "jp": "{イタコ#0921}「{しゅぎょう#0A4D}中{じゃ！#0A58}！{n}{    #035F}ジャマするでない{！！！#0A54}{wait}",
-  "en": "",
+  "en": "Itako: I'm in the middle of training!! Do not disturb me!!!{wait}",
   "notes": ""
  },
  {
   "id": "0B9234",
   "size": 73,
   "jp": "{イタコ#0921}「もう ここには 用は ないじゃろう。{n}{    #035F}{気をつけ#0A63}て たびを つづけなされ。{n}{wait}",
-  "en": "",
+  "en": "Itako: You've no more business here, I'd wager. Take care as you continue your journey.{wait}",
   "notes": ""
  },
  {
   "id": "0B9282",
   "size": 10,
   "jp": "{name93}「{ベンケイ#0900}！！{wait}",
-  "en": "",
+  "en": "{name93}: Benkei!!{wait}",
   "notes": ""
  },
  {
   "id": "0B929F",
   "size": 317,
   "jp": "{ベンケイ#0900}「おお！ {name93}どの！{n}{     #034F}よくぞ 来てくれたで{ござる！#0A0A}{n}{     #034F}{せっしゃ#0A1A}などのために{‥‥‥#065F}{wait}{clr}{name94}「よかった！ 生きていてくれて！{wait}{p9a}{法界坊#0902}「ここまで 来たのは いいが{‥‥‥#065F}{n}{    #035F}さて どうやって そとへ出るかな{‥‥‥#065F}{wait}{clr}{ベンケイ#0900}「カンオケの中には 魔物がいるで{ござる。#0A74}{n}{     #034F}この魔物たちを すべて たおせば‥‥{n}{     #034F}{たぶん#0A66}{‥‥‥#065F}{wait}{clr}{     #034F}かたほうは {せっしゃ#0A1A}が ひきうけた！{n}{     #034F}もう1ぴきを たのむで{ござる！#0A0A}！{wait}",
-  "en": "",
+  "en": "Benkei: Oh! Sir {name93}! You have come for me at last! And for the likes of me...{wait}{clr}{name94}: Thank goodness! You're alive!{wait}{p9a}Hokaibo: Getting this far is all well and good... but now, how do we get back outside...{wait}{clr}Benkei: Monsters dwell within the coffins. If we defeat every one of these monsters... perhaps...{wait}{clr}I shall take on one of them! The other I leave to you!!{wait}",
   "notes": ""
  },
  {
   "id": "0B9416",
   "size": 51,
   "jp": "{name93}「いよいよ ボスってことか{‥‥‥#065F}{n}よし やってやる！！{wait}",
-  "en": "",
+  "en": "{name93}: So this is finally the boss... All right, let's do this!!{wait}",
   "notes": ""
  },
  {
   "id": "0B9468",
   "size": 27,
   "jp": "「{‥‥ #0A2C}くらい{‥‥ #0A2C}まだ{‥‥ #0A2C}くらい{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "...So dark... still... so dark...{wait}",
   "notes": ""
  },
  {
   "id": "0B948E",
   "size": 229,
   "jp": "{法界坊#0902}「き {きさま#0A29}は {ドーマン#0916}！！{wait}{clr}{ジロキチ#0903}「へっ！ {ジイさん#0A65} とんでもねェやつと{n}{     #034F}しり合いなんだな！{wait}{clr}{法界坊#0902}「やつは むかし ワシが ふうじこめた魔物。{n}{    #035F}{こんな所#0A68}に おるとは{‥‥‥#065F}{wait}{clr}{ドーマン#0916}「{‥‥ #0A2C}わが名は {‥‥‥#065F}{ドーマン#0916}{‥‥‥#065F}{n}{     #034F}フフフ{‥‥ #0A2C}法界よ{‥‥ #0A2C}10年前のうらみ{n}{     #034F}今こそ{‥‥ #0A2C}はらそうぞ！！{wait}",
-  "en": "",
+  "en": "Hokaibo: Y-you are Doman!!{wait}{clr}Jirokichi: Heh! Old man, you sure know some nasty characters!{wait}{clr}Hokaibo: He is a demon I sealed away long ago. To think he would be in a place like this...{wait}{clr}Doman: ...My name is... Doman... Heh heh heh... Hokaibo... my grudge of 10 years ago... now at last... I shall settle it!!{wait}",
   "notes": ""
  },
  {
   "id": "0B9579",
   "size": 57,
   "jp": "{法界坊#0902}「にげるんじゃ {name93}！{n}{    #035F}今のワシらでは ヤツには勝てん！{wait}",
-  "en": "",
+  "en": "Hokaibo: Run, {name93}! As we are now, we can't beat him!{wait}",
   "notes": ""
  },
  {
   "id": "0B95C4",
   "size": 24,
   "jp": "{name94}「じい{ちゃん#0AB5} あぶない！！{wait}",
-  "en": "",
+  "en": "{name94}: Gramps, look out!!{wait}",
   "notes": ""
  },
  {
   "id": "0B95EB",
   "size": 16,
   "jp": "{ドーマン#0916}「死ねェ！！{delay:3C}",
-  "en": "",
+  "en": "Doman: Die!!{delay:3C}",
   "notes": ""
  },
  {
   "id": "0B95FD",
   "size": 13,
   "jp": "{ジロキチ#0903}「くっそ！{wait}",
-  "en": "",
+  "en": "Jirokichi: Dammit!{wait}",
   "notes": ""
  },
  {
   "id": "0B9629",
   "size": 22,
   "jp": "{ジロキチ#0903}「ぐっ！！{wait}{clr}{name93}「{ジロキチ#0903}！{wait}",
-  "en": "",
+  "en": "Jirokichi: Gugh!!{wait}{clr}{name93}: Jirokichi!{wait}",
   "notes": ""
  },
  {
   "id": "0B964B",
   "size": 167,
   "jp": "{法界坊#0902}「い いかん！{n}{    #035F}これは！ けものの矢！！{n}{    #035F}{ジロキチ#0903}！{wait}{clr}{ジロキチ#0903}「ガルル{‥‥ #0A2C}くそお{‥‥‥#065F}{n}{     #034F}{こんな所#0A68}で{‥‥ #0A2C}ガルル ル ル{‥‥‥#065F}{wait}{clr}{name94}「{ジロキチ#0903}！{n}誰か 何とかしてェ！{wait}{p9a}{ジロキチ#0903}「ガルル{‥‥‥#065F}{n}{     #034F}{‥‥‥#065F}{name94}{‥‥‥#065F}{n}{     #034F}ガルゥーッ！！{wait}",
-  "en": "",
+  "en": "Hokaibo: Th-this is bad! This is...! A beast arrow!! Jirokichi!{wait}{clr}Jirokichi: Grrr... dammit... Not in a place like this... Grrr rr rr...{wait}{clr}{name94}: Jirokichi! Somebody do something!{wait}{p9a}Jirokichi: Grrr... ...{name94}... Grraaagh!!{wait}",
   "notes": ""
  },
  {
   "id": "0B96FD",
   "size": 48,
   "jp": "{ドーマン#0916}「ひかり{‥‥ #0A2C}あ‥か‥る‥い{‥‥‥#065F}{n}{     #034F}オオオオオッ！！{wait}",
-  "en": "",
+  "en": "Doman: Light... so... bri... ght... Ooooohhh!!{wait}",
   "notes": ""
  },
  {
   "id": "0B9739",
   "size": 34,
   "jp": "{ベンケイ#0900}「今で{ござる！#0A0A}{n}{     #034F}ここから 出るで{ござる！#0A0A}！{wait}",
-  "en": "",
+  "en": "Benkei: Now is our chance! Let us escape from here!!{wait}",
   "notes": ""
  },
  {
   "id": "0B9774",
   "size": 441,
   "jp": "{イタコ#0921}「おお！ よく もどった！{wait}{clr}{    #035F}エッ？ おまえたちの前に 出てきたカゲ？{n}{    #035F}空のかなたへ とんで行ったぞ！{wait}{b8:300D}{clr}{法界坊#0902}「イズモの国の {『空桶洞』#0367}は{n}{    #035F}{『すてられ島』#0662}という島に 通じておる。{wait}{clr}{    #035F}やつは そこへ行ったのじゃろう。{n}{    #035F}そこに ヤツの体が ねむっておる。{wait}{ba}{b8:030D}{clr}{name93}「すぐ おいかけよう！{n}{ジロキチ#0903}を たすけなきゃ！{wait}{ba}{b8:300D}{p9a}{法界坊#0902}「おまえたちは たびをつづけろ！{n}{    #035F}これは わしの仕事{じゃ！#0A58}{wait}{ba}{b8:0F0D}{clr}{name94}「なに言ってんの！{n}みんなで 行くわよ！{n}ねっ {name93}！{wait}{ba}{b8:030D}{p9a}{name93}「もどろう！！ イズモの国へ！{wait}",
-  "en": "",
+  "en": "Itako: Oh! So you made it back!{wait}{clr}Eh? The shadow that came out in front of you? It flew off beyond the sky!{wait}{b8:300D}{clr}Hokaibo: The 'Karaoke Cave' in the Land of Izumo connects to an island called 'Forsaken Isle'.{wait}{clr}That must be where he went. His body lies sleeping there.{wait}{ba}{b8:030D}{clr}{name93}: Let's go after him right away! We have to save Jirokichi!{wait}{ba}{b8:300D}{p9a}Hokaibo: You all continue your journey! This is my job!{wait}{ba}{b8:0F0D}{clr}{name94}: What are you talking about! We're all going! Right, {name93}?{wait}{ba}{b8:030D}{p9a}{name93}: Let's go back!! To the Land of Izumo!{wait}",
   "notes": ""
  },
  {
   "id": "0B9938",
   "size": 128,
   "jp": "{法界坊#0902}の命をねらう {ドーマン#0916}の正体とは‥‥？{n}そして {ジロキチ#0903}の行方は{‥‥‥#065F}？{wait}{clr}全てのナゾを ときあかすため{n}{name93}座は イズモの国へ もどっていった{‥‥‥#065F}。{wait}",
-  "en": "",
+  "en": "What is the true identity of Doman, who seeks Hokaibo's life...? And what has become of Jirokichi...?{wait}{clr}To unravel every mystery, the {name93} Troupe headed back to the Land of Izumo...{wait}",
   "notes": ""
  },
  {
   "id": "0B99CF",
   "size": 32,
   "jp": "{法界坊#0902}「{すてられ島#09A2}は{n}{    #035F}{『空桶洞』#0367}の{おんせん#0A15}が 入口なの{じゃ！#0A58}{wait}",
-  "en": "",
+  "en": "Hokaibo: The entrance to Forsaken Isle is the hot spring in the 'Karaoke Cave'!{wait}",
   "notes": ""
  },
  {
   "id": "0B9A10",
   "size": 113,
   "jp": "{清姫「#090B}オ{ホホホ#0A2E}ーッ！{n}{   #052F}よくここまで 来たわね。{wait}{clr}{   #052F}今度は 誰にもジャマは させん！{n}{   #052F}心おきなく しまつしてくれるわ！！{wait}",
-  "en": "",
+  "en": "Kiyohime: Ohohohoho! So you made it this far.{wait}{clr}This time, no one shall interfere! I'll dispose of you to my heart's content!!{wait}",
   "notes": ""
  },
  {
   "id": "0B9A8D",
   "size": 248,
   "jp": "{清姫「#090B}み 見たな！{n}{   #052F}ウロコに おおわれた このカオを！{wait}{clr}{name93}「{‥‥‥#065F}{wait}{p9a}{清姫「#090B}さあ！{n}{   #052F}とどめをさすがいい！{wait}{clr}{name94}「{name93}！ やめて！{wait}{p9a}{清姫「#090B}くくっ！ な なさけを かけるのか！{n}{   #052F}この{清姫#0929}に！{wait}{clr}{   #052F}よし！ そのなさけ あまんじてうけよう！{n}{   #052F}つぎに会った時 コウカイするがいい！！{wait}",
-  "en": "",
+  "en": "Kiyohime: Y-you saw it! This face, covered in scales!{wait}{clr}{name93}: ...{wait}{p9a}Kiyohime: Well! Go on, finish me off!{wait}{clr}{name94}: {name93}! Stop!{wait}{p9a}Kiyohime: Ngh! Y-you would show mercy?! To me, Kiyohime?!{wait}{clr}Very well! I shall humbly accept that mercy! The next time we meet, you shall regret it!!{wait}",
   "notes": ""
  },
  {
   "id": "0B9B98",
   "size": 161,
   "jp": "{ベンケイ#0900}「あの手の女は コワイでござるゾ{‥‥‥#065F}{n}{     #034F}今 しとめなかったのは{‥‥‥#065F}{wait}{ba}{b8:0F0D}{clr}{name94}「でも{‥‥ #0A2C}あの{‥‥‥#065F} ゴメンなさい！{n}おなじ女として どうしても{n}こうげき{‥‥ #0A2C}してほしくなかった‥‥{wait}",
-  "en": "",
+  "en": "Benkei: Women of that sort are fearsome, I say... Not finishing her off just now...{wait}{ba}{b8:0F0D}{clr}{name94}: But... um... I'm sorry! As a fellow woman, I just... didn't want you to attack her...{wait}",
   "notes": ""
  },
  {
   "id": "0B9C43",
   "size": 85,
   "jp": "{フジムスメ#0904}「{name94}はんの {気持ち#0A21}も わかりますェ。{n}{      #034E}{name93}はん 気ィわるーせんと{n}{      #034E}さきに すすみまひょ。{wait}",
-  "en": "",
+  "en": "Fuji Musume: I understand how {name94} feels, you see. {name93}, don't take it ill, dear, and let us press on.{wait}",
   "notes": ""
  },
  {
   "id": "0B9CA1",
   "size": 245,
   "jp": "{辰五郎#0906}「あの手の女は コワイっスよ{‥‥‥#065F}{n}{    #035F}今 しとめなかったのは{‥‥‥#065F}{wait}{ba}{b8:0F0D}{clr}{name94}「でも{‥‥ #0A2C}あの{‥‥ #0A2C}ゴメンなさい！{n}おなじ女として どうしても{n}こうげき{‥‥ #0A2C}してほしくなかった‥‥{wait}{ba}{b8:480D}{p9a}{フジムスメ#0904}「{name94}はんの {気持ち#0A21}も わかりますェ。{n}{      #034E}{name93}はん 気ィわるーせんと{n}{      #034E}さきに すすみまひょ。{wait}",
-  "en": "",
+  "en": "Tatsugoro: Women like that are scary, y'know... Not finishing her off just now...{wait}{ba}{b8:0F0D}{clr}{name94}: But... um... I'm sorry! As a fellow woman, I just... didn't want you to attack her...{wait}{ba}{b8:480D}{p9a}Fuji Musume: I understand how {name94} feels, you see. {name93}, don't take it ill, dear, and let us press on.{wait}",
   "notes": ""
  },
  {
   "id": "0B9D9F",
   "size": 85,
   "jp": "{辰五郎#0906}「{name94}どのの {気持ち#0A21}も わかるっス。{n}{    #035F}{name93}どの 気を悪くしないで{n}{    #035F}さきに すすみやしょう！{wait}",
-  "en": "",
+  "en": "Tatsugoro: I get how Miss {name94} feels too. Sir {name93}, don't take it wrong, let's push on!{wait}",
   "notes": ""
  },
  {
   "id": "0B9DFC",
   "size": 77,
   "jp": "{清姫「#090B}オ{ホホホ#0A2E}ーッ{n}{   #052F}そんな 力で {天資#0909}さまにたてつくとは{n}{   #052F}おそれおおい！ オ{ホホホ#0A2E}ッ！！{wait}",
-  "en": "",
+  "en": "Kiyohime: Ohohohoho! Defying Tensai-sama with such feeble power? How presumptuous! Ohohoho!!{wait}",
   "notes": ""
  },
  {
   "id": "0B9E52",
   "size": 45,
   "jp": "{name93}「うん。 {‥‥‥#065F}{n}さあ つぎの国 ムツへ {行こう#0A69}！！{wait}",
-  "en": "",
+  "en": "{name93}: Yeah. ... Now, on to the next land, Mutsu!!{wait}",
   "notes": ""
  },
  {
   "id": "0B9EA3",
   "size": 243,
   "jp": "{イタコ#0921}「なるほどね{‥‥ #0A2C}死んでいった {あなた#0A17}方の{n}{    #035F}友だちを よびだしてほしい‥‥というのね。{wait}{clr}{    #035F}わかったわ。 やってみましょう。{wait}{clr}{    #035F}まずは {じらいや#0901} という男の子ね{‥‥‥#065F}{wait}{b8:780D}{clr}{じらいや#0901}「{ケッ！#0A60} {おいら#0AAB}ぁ こっちで スゲエ{しゅぎょう#0A4D}{n}{     #034F}したんだ！ {ジロキチ#0903}大センセイに {歌武器#0A09}も{n}{     #034F}{おしえて#0450}もらってるんだ！{wait}",
-  "en": "",
+  "en": "Itako: I see... You want me to call up your friends who have passed on... is that it?{wait}{clr}Very well. Let us give it a try.{wait}{clr}First, a boy named Jiraiya...{wait}{b8:780D}{clr}Jiraiya: Heh! I've been doing some awesome training over here! Grand Master Jirokichi's even teaching me song weapons!{wait}",
   "notes": ""
  },
  {
   "id": "0B9FA1",
   "size": 111,
   "jp": "{イタコ#0921}「つぎは {お七#0907}さん という女の人{‥‥‥#065F}{wait}{b8:9C0D}{clr}{お七#0907}「よかったよ {辰さん#0ABE}が ぶじで！！{n}{   #052F}みんな {辰さん#0ABE}を よろしく たのむよっ！{wait}",
-  "en": "",
+  "en": "Itako: Next, a woman named Oshichi-san...{wait}{b8:9C0D}{clr}Oshichi: I'm so glad Tatsu-san is safe!! Everyone, please take good care of Tatsu-san for me!{wait}",
   "notes": ""
  },
  {
   "id": "0BA016",
   "size": 156,
   "jp": "{イタコ#0921}「つぎは {お七#0907}さん という女の人{‥‥‥#065F}{wait}{b8:9C0D}{clr}{お七#0907}「ああ みんな{‥‥‥#065F}！ よく ぶじで{‥‥‥#065F}{wait}{clr}{   #052F}{辰さん#0ABE}も いきているはず{だよ。#0A01}{n}{   #052F}{『氷雪町』#0663}に行ってみてよ。{n}{   #052F}そこに {辰さん#0ABE}は いるはずだから。{wait}",
-  "en": "",
+  "en": "Itako: Next, a woman named Oshichi-san...{wait}{b8:9C0D}{clr}Oshichi: Oh, everyone...! You all made it safely...{wait}{clr}Tatsu-san should be alive too. Try going to 'Hyosetsu Town'. Tatsu-san should be there.{wait}",
   "notes": ""
  },
  {

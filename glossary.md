@@ -89,5 +89,7 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 - {name93}/{name94}: no honorific suffix glued on; use "Sir {name93}" style or rephrase.
 - 泣き所町 -> Nakidokoro Town (pun on Benkei's weak spot lost; revisit).
 - Wave 2 terms: 関所 -> checkpoint. キョウ -> Kyo. アワの国 -> Land of Awa. イズモの国 -> Land of Izumo. 楽屋シップ -> Dressing Room Ship. 空桶洞 -> Karaoke Cave. セーブじぞう -> Save Jizo. じらい草 -> landmine grass. バツユマのかんざし -> Batsuyuma Hairpin. どこでも木戸 -> Anywhere Gate. {name93}座 -> the {name93} Troupe. 町 names: いの町 I Town, ろの町 Ro Town, はの町 Ha Town, にの町 Ni Town. Danjo's tic -> ", squeak!". Fu/En/Rai/Hyo-chan -> Fu-chan etc.
+- Wave 3 terms: 火薬島 -> Gunpowder Island. 野火ヶ原 -> Wildfire Plain. ドウカばし -> Fuse Bridge. 氷川洞 -> Hikawa Cave. 氷川の氷 -> Hikawa Ice. 港区/寺院区/都区/工業区 -> Port/Temple/Capital/Industrial District. ヒノクニ -> Hinokuni. エゾ -> Ezo. ムツ -> Mutsu. 長刀 -> naginata. 氏神一番 -> Ujigami Ichiban. デュエット -> duet. アソ町 -> Aso Town. 二股村 -> Futamata Village. じゆうの大仏 -> Liberty Buddha. 回復じぞう -> Healing Jizo. 辰五郎 -> Tatsugoro (Rock/Oshichi nickname 辰さん/辰っつぁん -> Tatsu / Tatsu-san). Tokubei's tic -> ", ook!" (laugh "Ukikikiki"). Hokaibo-dono / Sir {name93} for Benkei's どの. Fuji Musume: genteel Kyoto voice ("dear", "you see").
+- Song titles in double quotes, no note glyphs (checker is ASCII-only).
 - Glyph fixes: 0x17F = 座 (not 庭), 0xE5 = 一 (not ―).
 - Pending rulings: モ大エ (Mo-Daiku vs Mozaiku), 体力/声力 (HP / Voice?), ♪ in song titles (font has ♪ at 0x160; checker currently ASCII-only).

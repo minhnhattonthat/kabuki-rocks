@@ -1774,203 +1774,203 @@
   "id": "09ED77",
   "size": 90,
   "jp": "「ワシャ {ヒノクニ#0997}のもんじゃが かえるにかえれん{バイ。#0A3B}{n} まあ {まつり#0A39}でも見て 気をとりなおそうかのォ。{wait}",
-  "en": "",
+  "en": "I hail from Hinokuni, but I cain't go home even if I want to. Well, maybe I'll watch the festival an' cheer myself up.{wait}",
   "notes": ""
  },
  {
   "id": "09EDE3",
   "size": 217,
   "jp": "「{キョウ#066E}は 四つの区から できとるんどす。{n} {ポート#0676}と {関所#0674}がある{『港区』#0375} 北にある{『寺院区』#0374}{n} 地下にある{『工業区』#0373} そして ここ{『都区』#0372}。{wait}{clr} ふだんは 寺院区と工業区には 入れしまへん。{n} それから {ヒノクニ#0997}に行ける{ポート#0676}へは{n} 南西のたて物の中から 行けまんなぁ{wait}",
-  "en": "",
+  "en": "Kyo is made up of four districts. The 'Port District' with the port and checkpoint, the 'Temple District' to the north, the 'Industrial District' underground, and this one here, the 'Capital District'.{wait}{clr}Normally you can't get into the Temple District or the Industrial District. And the port to Hinokuni, you can reach from inside the building to the southwest, don't you know.{wait}",
   "notes": ""
  },
  {
   "id": "09EECE",
   "size": 209,
   "jp": "「工業区は かつて いろいろな物を 作ってお{ました。#0A5E}{n} そんで それを オエドや他の国へ{n} おくっていたんどす。{wait}{clr} せやけど 今じゃ 工業区は 誰も入れんように{n} なってしもた。{n} 入口が とじられたまんまどっしゃろ？{wait}",
-  "en": "",
+  "en": "The Industrial District once made all sorts of things, and sent them off to Oedo and other lands.{wait}{clr}But these days nobody can get into the Industrial District. The entrance has stayed shut all this time, y'see?{wait}",
   "notes": ""
  },
  {
   "id": "09EFB1",
   "size": 84,
   "jp": "「{ギオンまつり#0A38}か{‥‥ #0A2C}こりゃ ひともうけ できそやな。{n} へっへっへっ {やっぱり#0A1D} ゼニやね {世の中#0A10}ゼニや！！{wait}",
-  "en": "",
+  "en": "The Gion Festival, eh... Looks like I can make a killing. Heh heh heh, it's all about the coin! Money makes the world go round!!{wait}",
   "notes": ""
  },
  {
   "id": "09F017",
   "size": 147,
   "jp": "「この宿屋{‥‥ #0A2C}なんだか あやしさ{バクハツ#0A46}どすなぁ。{n} 泊まるの やめよかな{‥‥‥#065F}{wait}{clr} せやけど ここの宿屋のオヤジ{‥‥‥#065F}{n} {キョウ#066E}のことなら なんでも しってるらしいェ。{wait}",
-  "en": "",
+  "en": "This inn... it's suspicious as all get-out, don't you think. Maybe I won't stay...{wait}{clr}But the old man who runs this inn... they say he knows anything and everything about Kyo.{wait}",
   "notes": ""
  },
  {
   "id": "09F0B7",
   "size": 62,
   "jp": "「{キョウ#066E}から {ヒノクニ#0997}へ行く{関所#0674}へは{n} 左はじの へやから 行けるんどす。{wait}",
-  "en": "",
+  "en": "The checkpoint from Kyo to Hinokuni, you reach it from the room at the far left.{wait}",
   "notes": ""
  },
  {
   "id": "09F0F8",
   "size": 25,
   "jp": "「ようこそ おいでやす。{wait}",
-  "en": "",
+  "en": "Welcome, welcome, do come in.{wait}",
   "notes": ""
  },
  {
   "id": "09F114",
   "size": 46,
   "jp": "「{カラオケボックス#0A3F}は えいぎょう禁止だ。{n} かえれ かえれ！{wait}",
-  "en": "",
+  "en": "Karaoke boxes are banned from doing business. Go home, go home!{wait}",
   "notes": ""
  },
  {
   "id": "09F154",
   "size": 109,
   "jp": "「工業区には {ジロキチ#0903}っちゅう {とうぞく#0A95}が{n} いるんやて。{wait}{clr} ヤツは 悪いヤツからだけ 物をぬすむ{n} 『ぎぞく』なんやて。{wait}",
-  "en": "",
+  "en": "They say there's a thief named Jirokichi in the Industrial District.{wait}{clr}He only steals from bad people. A 'noble thief', they say.{wait}",
   "notes": ""
  },
  {
   "id": "09F1C9",
   "size": 90,
   "jp": "「ここは じゃきょうの宿屋の オーナーの家どす。{n} {あなた#0A17}も あの宿屋に とまるといいどすェ。{wait}",
-  "en": "",
+  "en": "This is the house of the owner of the dark cult's inn. You ought to stay at that inn too, you know.{wait}",
   "notes": ""
  },
  {
   "id": "09F226",
   "size": 64,
   "jp": "「この家のそばにある マンホールから{n} 工業区へ 行けるんどす。{wait}",
-  "en": "",
+  "en": "From the manhole beside this house, you can get to the Industrial District.{wait}",
   "notes": ""
  },
  {
   "id": "09F269",
   "size": 76,
   "jp": "「{まつり#0A39}が メチャクチャに されてしもたぁ！！{n} みんな {天資#0909}のドアホのせいや！！{wait}",
-  "en": "",
+  "en": "The festival's been turned into a total mess!! It's all that big dope Tensai's fault!!{wait}",
   "notes": ""
  },
  {
   "id": "09F2B8",
   "size": 64,
   "jp": "「{天資#0909}なら {まつり#0A39}を 荒すだけ 荒した後{n} オエドに かえってしもた。{wait}",
-  "en": "",
+  "en": "Tensai? After wrecking the festival every which way, he went back to Oedo.{wait}",
   "notes": ""
  },
  {
   "id": "09F330",
   "size": 97,
   "jp": "「{キョウの関所#0376}を 守っとるのは {タケヒラ#0914}というヤツ。{n} 弱そうに見えるが じつは{n} おっそろしいヤツらしいどっせ。{wait}",
-  "en": "",
+  "en": "The one guarding Kyo's checkpoint is a fellow named Takehira. He looks weak, but they say he's actually a terrifying guy.{wait}",
   "notes": ""
  },
  {
   "id": "09F394",
   "size": 93,
   "jp": "「{歌しばい#065A}{‥‥ #0A2C}{ギオンまつり#0A38}‥‥{n} {天資#0909}のヤツは どうして あんなに{n} 人が 楽しんでいることを ジャマするんやろ？{wait}",
-  "en": "",
+  "en": "Song plays... the Gion Festival... Why does Tensai have to get in the way of everything people enjoy?{wait}",
   "notes": ""
  },
  {
   "id": "09F3F4",
   "size": 35,
   "jp": "「あ～あ 何もかも やる気ゼロ！！{wait}",
-  "en": "",
+  "en": "Ahh... I've got zero motivation for anything!!{wait}",
   "notes": ""
  },
  {
   "id": "09F41A",
   "size": 39,
   "jp": "「{山車（だし）#0A3A}は みんな ブッこわされてしもた！{wait}",
-  "en": "",
+  "en": "The floats all got smashed to bits!{wait}",
   "notes": ""
  },
  {
   "id": "09F444",
   "size": 22,
   "jp": "「つまんない！{n} {つまんな～～～～～い！#0A37}！{wait}",
-  "en": "",
+  "en": "Boring! Bo-o-o-o-oring!!{wait}",
   "notes": ""
  },
  {
   "id": "09F45D",
   "size": 67,
   "jp": "「なんだ！{n} けっきょく {まつり#0A39}が おわっても{n} {関所#0674}には 入れんバイ！！{wait}",
-  "en": "",
+  "en": "What the!? Even with the festival over, I still cain't get through the checkpoint!!{wait}",
   "notes": ""
  },
  {
   "id": "09F4A3",
   "size": 111,
   "jp": "「{五ェ門#090A}と {清姫#0929}は {天資#0909}の手下の中でも もっとも{n} 強い！ と言われているんや。{n} その強さは ハンパやないらしいで！！{wait}",
-  "en": "",
+  "en": "They say Goemon and Kiyohime are the strongest of all Tensai's underlings! Word is their strength is no joke!!{wait}",
   "notes": ""
  },
  {
   "id": "09F515",
   "size": 122,
   "jp": "「ここの宿屋のオヤジな むかし 工業区で{n} はたらいておいやしたそうで。{wait}{clr} 工業区について 何か しってるかもしれまへん。{wait}",
-  "en": "",
+  "en": "The old man who runs the inn here, they say he used to work in the Industrial District long ago.{wait}{clr}He might know something about the Industrial District.{wait}",
   "notes": ""
  },
  {
   "id": "09F592",
   "size": 99,
   "jp": "「今年の{ギオンまつり#0A38}は ブチこわし やったけど{n} らい年には もっと スゴイ{まつり#0A39}になるさかい{n} また きてや！！{wait}",
-  "en": "",
+  "en": "This year's Gion Festival got wrecked, but next year's will be an even more amazing festival, so come again!!{wait}",
   "notes": ""
  },
  {
   "id": "09F5F8",
   "size": 21,
   "jp": "「もうかってまっか？{wait}",
-  "en": "",
+  "en": "Business booming?{wait}",
   "notes": ""
  },
  {
   "id": "09F61A",
   "size": 82,
   "jp": "「ここは 初心者の方だけでは 入れません。{n} {歌武器#0A09}けいけん者と ごいっしょでないと{‥‥。#0A24}{wait}",
-  "en": "",
+  "en": "Beginners can't enter on their own. Only together with someone experienced in song weapons...{wait}",
   "notes": ""
  },
  {
   "id": "09F678",
   "size": 78,
   "jp": "「いらっしゃいませ！ 歌いほうだいで100両です。{n} 歌っていかれますか？{n}{choice:09F758}",
-  "en": "",
+  "en": "Welcome! All-you-can-sing is 100 ryo. Will you sing?{choice:09F758}",
   "notes": ""
  },
  {
   "id": "09F6CE",
   "size": 90,
   "jp": " では かいだんを おりて 一番大きなボックスを{n} おつかい下さい。 どうぞ ごゆっくり。{wait}",
-  "en": "",
+  "en": "Then please go down the stairs and use the biggest box. Please enjoy yourselves.{wait}",
   "notes": ""
  },
  {
   "id": "09F758",
   "size": 61,
   "jp": "{clr} そうですか。{n} では またのご来店を おまちしております。{wait}",
-  "en": "",
+  "en": "{clr}I see. We look forward to your next visit.{wait}",
   "notes": ""
  },
  {
   "id": "09F798",
   "size": 84,
   "jp": " ざんねんながら お金が 足りないようです。{n} またの ご来店を おまちしおります。{wait}",
-  "en": "",
+  "en": "Unfortunately, it seems you don't have enough money. We look forward to your next visit.{wait}",
   "notes": ""
  },
  {
   "id": "09F7EF",
   "size": 21,
   "jp": "「歌いましたか？{n}{choice:09F822}",
-  "en": "",
+  "en": "Did you sing?{choice:09F822}",
   "notes": ""
  },
  {
@@ -1984,98 +1984,98 @@
   "id": "09F824",
   "size": 31,
   "jp": "「下におりて お楽しみ下さい。{wait}",
-  "en": "",
+  "en": "Please go downstairs and enjoy yourselves.{wait}",
   "notes": ""
  },
  {
   "id": "09F904",
   "size": 23,
   "jp": "カギが かかっている。{wait}",
-  "en": "",
+  "en": "It's locked.{wait}",
   "notes": ""
  },
  {
   "id": "09F923",
   "size": 82,
   "jp": "「前の将軍？ それなら 『じゆうの大仏』の中に{n} いるけど{‥‥ #0A2C}{たましい#0A30}を ぬかれち{まって#0ABC}るゼ。{wait}",
-  "en": "",
+  "en": "The former shogun? He's inside the 'Liberty Buddha', but... his soul's been sucked out.{wait}",
   "notes": ""
  },
  {
   "id": "09F97D",
   "size": 149,
   "jp": "「{あたし#0A19}の お父さんも お母さんも そとに出ていた時に{n} {天資#0909}に {たましい#0A30}を ぬかれてしまったの{‥‥‥#065F}‥{wait}{clr} もう あのまま お父さんも お母さんも{n} 動かないの‥‥？{wait}",
-  "en": "",
+  "en": "My dad and mom were outside when Tensai sucked their souls out...{wait}{clr}Will Dad and Mom stay like that forever, never moving...?{wait}",
   "notes": ""
  },
  {
   "id": "09FA1A",
   "size": 172,
   "jp": "「{あなた#0A17}がた イズモから 来たんですか？{n} そうですか{‥‥ #0A2C}さぞや つらいたび だったでしょう。{wait}{clr} {あなた#0A17}がたなら もしかしたら {天資#0909}を{n} たおせるかもしれません{‥‥‥#065F}！{n} そんな気がします。{wait}",
-  "en": "",
+  "en": "Did you folks come from Izumo? I see... it must have been a hard journey.{wait}{clr}Maybe you could be the ones to defeat Tensai...! I have that feeling.{wait}",
   "notes": ""
  },
  {
   "id": "09FACE",
   "size": 140,
   "jp": "「前の{将軍さま#0A2B}が おさめていたころは このオエドは{n} どこも はなやかな 楽しい町だったんだ。{wait}{clr} だけど 今じゃ このとおりの ゴーストタウンさ{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "Back when the former shogun ruled, Oedo was a bright, fun town wherever you went.{wait}{clr}But now it's a ghost town, as you can see...{wait}",
   "notes": ""
  },
  {
   "id": "09FB5D",
   "size": 259,
   "jp": "「あっ よびました？{n} 私 オエドの事なら 何でも しってるんで。{wait}{clr} そういえば！ 人に しられていない{洞くつ#0A1E}が{n} オエドに あるって しってます？{n}{choice:09FC62}{clr} あっ それってどこです？{wait}{clr} ああ～っ！ そっか{ーーー#0A2F}ー！！{n} 私も さいしょから そこじゃないかと{n} {思って#0A75}たんですが{wait}",
-  "en": "",
+  "en": "Oh, you called? I know everything there is to know about Oedo.{wait}{clr}Come to think of it! Did you know there's a cave in Oedo that nobody knows about?{choice:09FC62}{clr}Oh, so where is it?{wait}{clr}Ahh! Of course!! I had a feeling it was there all along, too.{wait}",
   "notes": ""
  },
  {
   "id": "09FC62",
   "size": 273,
   "jp": "{clr} いやっ ちゅうか どこにあるかは しらないんですが{n} まあ 全ての町を しらべてもらって もんだいないんで。{wait}{clr} ようは 自分で さがすの めんどうなんで{n} かわりに さがしてもらっても よい？{wait}{clr}よい？{delay:3C}よい？{n}{choice:09FD75}{clr} あっ そうです？{n} さがすとして 何分ぐらいかかります？{wait}",
-  "en": "",
+  "en": "{clr}No, I mean, I don't actually know where it is, but if you search every town, you'll be fine.{wait}{clr}Basically, looking for it myself is a pain, so could you look for it for me?{wait}{clr}Could you?{delay:3C} Could you?{choice:09FD75}{clr}Oh, you will? So if you look, about how many minutes will it take?{wait}",
   "notes": ""
  },
  {
   "id": "09FD75",
   "size": 65,
   "jp": "{clr} いぢわるぅ～っ！！{n} そういう事言うと テメエよばわりするよ。{wait}",
-  "en": "",
+  "en": "{clr}Meanie!! Talk like that and I'll start calling you a jerk.{wait}",
   "notes": ""
  },
  {
   "id": "09FDBE",
   "size": 119,
   "jp": "「このごろ {天資#0909}が すがたを 見せないなぁ。{n} また どこかの国で やりたいほうだいの事を{n} やってるのかもしれんなぁ‥‥{wait}",
-  "en": "",
+  "en": "Haven't seen Tensai around lately. Maybe he's off in some other land doing whatever he pleases again...{wait}",
   "notes": ""
  },
  {
   "id": "09FE3D",
   "size": 109,
   "jp": "「{天資#0909}は {オエドじょう#09B3} にいます。{n} きっと あそこで つぎに {たましい#0A30}をぬく人間を{n} えらんでるんです{‥‥‥#065F}ああ！ おそろしい！！{wait}",
-  "en": "",
+  "en": "Tensai is in Oedo Castle. I bet he's up there choosing the next person to have their soul sucked out... Ah! How terrifying!!{wait}",
   "notes": ""
  },
  {
   "id": "09FEB2",
   "size": 135,
   "jp": "「それぞれの町から {オエドじょう#09B3} にかかる{n} 四本のハシのうち 本物は 1本だけです。{wait}{clr} 他の3本は {天資#0909}の{まやかし#0A99}が かけられています。{n} {気をつけ#0A63}て下さい。{wait}",
-  "en": "",
+  "en": "Of the four bridges leading from each town to Oedo Castle, only one is real.{wait}{clr}The other three are under Tensai's illusion. Be careful.{wait}",
   "notes": ""
  },
  {
   "id": "09FF41",
   "size": 68,
   "jp": "「{天資#0909}は おしろの 一番上に いるであろう。{n} えてして そんなもの{じゃ。#0A31}{wait}",
-  "en": "",
+  "en": "Tensai is likely at the very top of the castle. That's how these things usually go.{wait}",
   "notes": ""
  },
  {
   "id": "09FF8D",
   "size": 66,
   "jp": "「{『はの町』#0671}には 大きな大仏さまが あるの。{n} このオエドの 名物なのよ。{wait}",
-  "en": "",
+  "en": "There's a big Great Buddha in 'Ha Town'. It's Oedo's famous landmark.{wait}",
   "notes": ""
  }
 ]
