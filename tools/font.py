@@ -91,6 +91,7 @@ def encode_tile(rows):
 
 
 EXT_BASE = {1: 0x400, 2: 0x600, 3: 0x800}  # first new glyph code per tile page (build.py install_glyph_ext)
+LAST_FREE = []  # set by patch_font: BG3 tiles left unused
 
 
 def kanji_by_use(rom):
@@ -250,6 +251,11 @@ def patch_font(rom: bytearray, extra=(), extra_out=None) -> dict[str, bytes]:
             break
         else:
             raise ValueError("font full: no free tiles for a label cell")
+
+    # tiles nothing uses after all placements (pool for the runtime tiny-text renderer)
+    global LAST_FREE
+    LAST_FREE = [p << 8 | b for p in (1, 2, 3) for b in range(0xFF)
+                 if b not in placed[p] and (p << 8 | b) not in keep and (p << 8 | b) not in VOLATILE]
 
     for i, off in enumerate(FONT_BLOCKS):
         new = lz.compress(bytes(chr_[i * 0x2000:(i + 1) * 0x2000]))
