@@ -21,7 +21,7 @@ import text  # noqa: E402
 import wrap  # noqa: E402
 from script_ops import off  # noqa: E402
 
-EXP_BANKS = range(0x30, 0x40)  # LoROM 30:8000-3F:FFFF = file 0x180000-0x1FFFFF
+EXP_BANKS = range(0x30, 0x3F)  # LoROM 30:8000-3E:FFFF; bank $3F is reserved for QA debug scripts
 ROM_SIZE = 0x200000
 DICT_BANK = 0x30
 
@@ -164,7 +164,7 @@ def patch_dictionary(rom, entries):
     return len(table) + len(lo) + len(hi)
 
 
-def build(out, marker=False, reloc_jp=False, qa=None):
+def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
     """qa: {id: text} overrides (stress lines for the width gate)."""
     rom = bytearray(text.ROM.read_bytes())
     entries = text.load()
@@ -208,9 +208,25 @@ def build(out, marker=False, reloc_jp=False, qa=None):
             dentries = json.loads((ROOT / "script" / "dict.json").read_text(encoding="utf-8"))
             if any(e["en"] for e in dentries):
                 patch_dictionary(rom, dentries)
+    if debug:
+        patch_debug_start(rom, bytes.fromhex(debug.replace(" ", "")))
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     Path(out).write_bytes(rom)
     return rom, len(todo)
+
+
+SCRIPT_TABLE = 0x03978E  # 3 bytes per script id; id 0 runs right after "new game"
+DEBUG_AT = 0x3F8000  # last expansion bank: debug scripts only (QA builds, never in a release)
+
+
+def patch_debug_start(rom, script):
+    """QA only: script id 0 (the new-game script) runs `script` (raw event-script bytes) instead."""
+    if len(rom) < ROM_SIZE:
+        rom += b"\xff" * (ROM_SIZE - len(rom))
+    o = off(DEBUG_AT)
+    rom[o:o + len(script)] = script
+    t = off(SCRIPT_TABLE)
+    rom[t:t + 3] = DEBUG_AT.to_bytes(3, "little")
 
 
 if __name__ == "__main__":
@@ -219,6 +235,8 @@ if __name__ == "__main__":
     ap.add_argument("--marker", action="store_true")
     ap.add_argument("--reloc-jp", action="store_true", help="relocate the Japanese runs unchanged (mechanism test)")
     ap.add_argument("--qa", action="append", default=[], metavar="ID=TEXT", help="override one run (stress lines)")
+    ap.add_argument("--debug", metavar="HEX", help="QA build: new game runs these event-script bytes "
+                    "(e.g. 'A4 30 75 B5 1B C8 00 0A 0A 0B FF'); see docs/re/debug.md")
     a = ap.parse_args()
-    rom, n = build(a.out, a.marker, a.reloc_jp, dict(q.split("=", 1) for q in a.qa))
+    rom, n = build(a.out, a.marker, a.reloc_jp, dict(q.split("=", 1) for q in a.qa), a.debug)
     print(f"{a.out}: {len(rom):#x} bytes, {n} runs relocated")
