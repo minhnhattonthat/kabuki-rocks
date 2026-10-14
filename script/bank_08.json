@@ -1738,7 +1738,7 @@
  {
   "id": "08F82A",
   "size": 177,
-  "jp": "「オエドの町は ぜんぶで四つです。{n} ここが {『いの町』#066F}。{n} 西へ行けば {『ろの町』#0670}。 東に行けば {『にの町』#0672}。{wait}{clr} {『ろの町』#0670}か {『にの町』#0672}を 通って 北へ行くと{n} {『はの町』#0671}に つきます。{n} この{『いの町』#066F}の ちょうど 反封がわです。{wait}",
+  "jp": "「オエドの町は ぜんぶで四つです。{n} ここが {『いの町』#066F}。{n} 西へ行けば {『ろの町』#0670}。 東に行けば {『にの町』#0672}。{wait}{clr} {『ろの町』#0670}か {『にの町』#0672}を 通って 北へ行くと{n} {『はの町』#0671}に つきます。{n} この{『いの町』#066F}の ちょうど 反対がわです。{wait}",
   "en": "Oedo has four towns in all. This is 'I Town'. Go west for 'Ro Town', or east for 'Ni Town'.{wait}{clr}Go north through 'Ro Town' or 'Ni Town' and you'll reach 'Ha Town'. It's on the exact opposite side from this 'I Town'.{wait}",
   "notes": ""
  },

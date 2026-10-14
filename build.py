@@ -9,6 +9,7 @@ untouched, so a build with no English is byte-identical to the original (tests/t
 --marker replaces every run with "[id]" marker text (phase 4 tour).
 """
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -22,13 +23,14 @@ from script_ops import off  # noqa: E402
 
 EXP_BANKS = range(0x30, 0x40)  # LoROM 30:8000-3F:FFFF = file 0x180000-0x1FFFFF
 ROM_SIZE = 0x200000
+DICT_BANK = 0x30
 
 
 class Space:
     """Bump allocator in the expansion banks; a block never crosses a bank (text is read via [$27],y)."""
 
     def __init__(self):
-        self.bank, self.pos = EXP_BANKS[0], 0x8000
+        self.bank, self.pos = DICT_BANK + 2, 0x8000  # banks $30-$31 hold the English dictionary
 
     def alloc(self, n):
         if n > 0x8000:
@@ -82,6 +84,86 @@ def patch_names(rom, space):
     assert NAME_INIT + 6 + 0x24 == 0x00A012
 
 
+DICT_LOOKUP = 0x00BC31  # `LDA $2F0000,x` in 00:BBEE: reads the word pointer; becomes JML to dict_tail
+DICT_READERS = (0x00E11D, 0x00E139, 0x039669, 0x0394E3)  # `LDA $2F0000,x` word readers; become JSL dict_read
+DICT_SEL = 0x7FFFF8  # WRAM word: 0 = words in bank $30, 1 = bank $31 (never written in the original; RAM scan)
+SPLIT_CODE = 0x0600  # codes below live in bank $30, the rest in bank $31 (the bank-$31 words follow the code)
+DICT_BASES = 0x003C38  # 8 words: pointer-table base per code group (00:BC38)
+DICT_BASE_9XX = 0x003C0B  # `LDA #$F30B` operand: base for codes >= 0x980 (00:BC0A)
+
+
+def patch_dictionary(rom, entries):
+    """Move the dictionary out of bank $2F (English does not fit one bank) into banks $30 and $31.
+
+    Bank $30: the pointer tables (same group/index scheme as the original, dictwords.GROUPS) and the words for
+    codes < SPLIT_CODE. Bank $31: two small routines, then the words for the other codes. Japanese words are
+    copied where `en` is empty. 00:BBEE's pointer read becomes a JML to dict_tail, which also stores which bank
+    the word is in (DICT_SEL); the four word readers become JSL dict_read, which reads from that bank."""
+    import dictwords
+    en = {e["id"]: e["en"] for e in entries}
+    code_at = 0x318000
+    helper = bytes([0xAF, DICT_SEL & 0xFF, DICT_SEL >> 8 & 0xFF, DICT_SEL >> 16,  # dict_read: LDA.l DICT_SEL
+                    0xD0, 0x05,                                                   # BNE hi
+                    0xBF, 0x00, 0x00, 0x30, 0x6B,                                 # LDA $300000,x ; RTL
+                    0xBF, 0x00, 0x00, 0x31, 0x6B])                                # hi: LDA $310000,x ; RTL
+    sel = [0x8F, DICT_SEL & 0xFF, DICT_SEL >> 8 & 0xFF, DICT_SEL >> 16]           # STA.l DICT_SEL
+    tail = bytes([0xBF, 0x00, 0x00, 0x30, 0x48, 0xAA,                             # dict_tail: LDA $300000,x ; PHA ; TAX
+                  0xC0, SPLIT_CODE & 0xFF, SPLIT_CODE >> 8, 0xB0, 0x09,           # CPY #SPLIT ; BCS hi
+                  0xA9, 0x00, 0x00, *sel, 0x80, 0x07,                             # LDA #0 ; STA.l ; BRA done
+                  0xA9, 0x01, 0x00, *sel,                                         # hi: LDA #1 ; STA.l
+                  0x68, 0x28, 0x6B])                                              # done: PLA ; PLP ; RTL
+    tail_at = code_at + len(helper)
+    pos = 0x8000
+    tables = []
+    for base, first, n in dictwords.GROUPS:
+        tables.append(pos)
+        pos += 2 * n
+    lo, hi = bytearray(), bytearray()
+    lo_base, hi_base = pos, 0x8000 + len(helper) + len(tail)
+    words = {}  # (bank, word bytes) -> offset
+    ptrs = {}
+    for base, first, n in dictwords.GROUPS:
+        for i in range(n):
+            code = first + i
+            s = en.get(f"{code:04X}", "")
+            if s:
+                b = text.encode(s, text.EN.enc)
+                ws = [int.from_bytes(b[k:k + 2], "big") for k in range(0, len(b), 2)]
+            else:
+                ws = dictwords.word(rom, code)
+            ws[-1] |= 0x8000
+            data = b"".join(w.to_bytes(2, "little") for w in ws)
+            blob, start = (lo, lo_base) if code < SPLIT_CODE else (hi, hi_base)
+            if (code < SPLIT_CODE, data) not in words:
+                words[(code < SPLIT_CODE, data)] = start + len(blob)
+                blob += data
+            ptrs[code] = words[(code < SPLIT_CODE, data)]
+    for name, end in (("$30", lo_base + len(lo)), ("$31", hi_base + len(hi))):
+        if end > 0x10000:
+            raise ValueError(f"dictionary does not fit bank {name}: {end - 0x10000:#x} bytes over")
+    table = bytearray()
+    for base, first, n in dictwords.GROUPS:
+        for i in range(n):
+            table += ptrs[first + i].to_bytes(2, "little")
+    o = off(0x30 << 16 | 0x8000)
+    rom[o:o + len(table) + len(lo)] = table + lo
+    o = off(code_at)
+    rom[o:o + len(helper) + len(tail) + len(hi)] = helper + tail + hi
+    g0, g1, g2, g3, g5, g6, g6b, g7 = tables
+    for k, v in enumerate((g0, g1, g2, g3, g3, g5, g6, g7)):
+        rom[DICT_BASES + 2 * k:DICT_BASES + 2 * k + 2] = v.to_bytes(2, "little")
+    assert rom[DICT_BASE_9XX - 1] == 0xA9
+    rom[DICT_BASE_9XX:DICT_BASE_9XX + 2] = g6b.to_bytes(2, "little")
+    o = off(DICT_LOOKUP)
+    assert rom[o:o + 4] == b"\xbf\x00\x00\x2f"
+    rom[o:o + 4] = bytes([0x5C, tail_at & 0xFF, tail_at >> 8 & 0xFF, tail_at >> 16])
+    for a in DICT_READERS:
+        o = off(a)
+        assert rom[o:o + 4] == b"\xbf\x00\x00\x2f", hex(a)
+        rom[o:o + 4] = bytes([0x22, code_at & 0xFF, code_at >> 8 & 0xFF, code_at >> 16])
+    return len(table) + len(lo) + len(hi)
+
+
 def build(out, marker=False, reloc_jp=False, qa=None):
     """qa: {id: text} overrides (stress lines for the width gate)."""
     rom = bytearray(text.ROM.read_bytes())
@@ -123,6 +205,9 @@ def build(out, marker=False, reloc_jp=False, qa=None):
             o = off(CHOICE_CURSOR)
             assert rom[o:o + 3] == b"\xa9\x2e\x01"
             rom[o + 1:o + 3] = int.from_bytes(text.EN.enc["▶"], "big").to_bytes(2, "little")
+            dentries = json.loads((ROOT / "script" / "dict.json").read_text(encoding="utf-8"))
+            if any(e["en"] for e in dentries):
+                patch_dictionary(rom, dentries)
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     Path(out).write_bytes(rom)
     return rom, len(todo)

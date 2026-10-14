@@ -21,7 +21,13 @@ Skill: translate-retro-game (H:/translation/kabuki-rocks/.claude/skills/translat
 - English is unwrapped in JSON; build/lint wrap to 3 lines x 28 cells and add pages ({wait}{clr}). Speaker style `Name: text`. {name93}=Rock {name94}=Makki are substituted as text by the build (a name code at a line start triggers the JP hanging indent).
 - No earlier English patch found (web search 2026-10-15).
 
-## Status (2026-10-15)
+## Status update (2026-10-15, later)
+- Dialogue: all 1194 non-empty script runs translated and merged (script/bank_XX.json); credits/profile cards hand-laid with explicit {n} (bank 2D only). Dictionary: 1283/1331 words translated (script/dict.json), inserted by build.py `patch_dictionary` into banks $30/$31 (pointer tables + <$600 words in $30; reader routines + rest in $31; selector byte 7F:FFF8). `python -X utf8 tools/release.py --ver 0.1` -> release/KabukiRocks_EN_v0.1.bps (local only, never published).
+- Tools added: dictbatch.py, redecode.py, sysmsg.py (RAM-script message call sites), lua/glyphlog.lua (log glyph draws + callers), release.py.
+- NOT done (needs savestates/saves from the user to reach the screens): field menu labels and all window layouts (labels are literal glyph arrays in bank 04, e.g. 04:BACB/BAD1; windows are 3-4 cells wide), item/equip/status/battle/shop screens, ~34 RAM-script system messages stitched from fragments (docs: tools/sysmsg.py), party name table 1E:B3CA, menu cursors (0x12E/0x12F sites), `{name93}` rename (names are currently written as text by the build; a rename prompt exists at 0888FA), battle-message fragment spacing, graphics text survey beyond the intro, wrapper widow pages, 16 empty runs.
+- Glyph table fixes found by translators: 0x17F=座, 0xE5=一, 0x155=対; runtime glyphs 0x227-0x231 inferred (tbl/jp.tbl). 0x229 guessed 尺.
+
+## Status (2026-10-15, earlier)
 - Done: phases 0-4 for dialogue (identity build, extract + roundtrip, jump-out relocation, English font, width gate, marker build). Pilot: prologue 14 runs in bank_08 (088015-088638), boots clean.
 - Next: user approves pilot style -> docs/style-reference.md + translator brief -> 34 batches (`work/tl/bNNN.tsv`). Then dictionary insertion (names/items/menus; bank $2F, menus need wider windows or small font), RAM-script system messages (00:90C2), menu cursor sites still using 0x12E/0x12F (docs/re/font.md), window-1 / choice widths, graphics survey past the intro (needs saves).
 - Known: untranslated JP shows wrong glyphs for 12 sacrificed kanji and old punctuation 0x127-0x12F in builds with the English font.
