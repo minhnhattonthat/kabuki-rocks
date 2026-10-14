@@ -44,22 +44,37 @@ def jump(a):
     return bytes([0x86, a & 0xFF, a >> 8 & 0xFF, a >> 16])
 
 
-def build(out, marker=False, encode=None, reloc_jp=False):
+CTRL_TOKEN = re.compile(r"\{\w+(?::[0-9A-F]+)?\}")
+
+
+def marker_text(e):
+    """'(ID)' then the run's control codes in order, so waits, choices and jumps keep working."""
+    return f"({e['id']})" + "".join(CTRL_TOKEN.findall(e["jp"]))
+
+
+def build(out, marker=False, reloc_jp=False, qa=None):
+    """qa: {id: text} overrides (stress lines for the width gate)."""
     rom = bytearray(text.ROM.read_bytes())
     entries = text.load()
+    qa = qa or {}
     todo = []
     for e in entries:
         if e["size"] == 0:
             continue
-        s = f"[{e['id']}]" if marker else e["jp"] if reloc_jp else e["en"]
+        if e["id"] in qa:
+            s, enc = qa[e["id"]], text.EN.enc
+        elif reloc_jp:
+            s, enc = e["jp"], text.JP.enc
+        else:
+            s, enc = (marker_text(e) if marker else e["en"]), text.EN.enc
         if s:
-            todo.append((e, s))
+            todo.append((e, s, enc))
     if todo:
         rom += b"\xff" * (ROM_SIZE - len(rom))
         space = Space()
-        for e, s in todo:
+        for e, s, enc in todo:
             a = int(e["id"], 16)
-            body = (encode or text.encode)(s)
+            body = text.encode(s, enc)
             if not re.search(r"\{jump:[0-9A-F]{6}\}$", s):
                 body += jump(a + e["size"])
             dst = space.alloc(len(body))
@@ -75,6 +90,7 @@ if __name__ == "__main__":
     ap.add_argument("--out", default=str(ROOT / "build" / "kabuki_en.sfc"))
     ap.add_argument("--marker", action="store_true")
     ap.add_argument("--reloc-jp", action="store_true", help="relocate the Japanese runs unchanged (mechanism test)")
+    ap.add_argument("--qa", action="append", default=[], metavar="ID=TEXT", help="override one run (stress lines)")
     a = ap.parse_args()
-    rom, n = build(a.out, a.marker, reloc_jp=a.reloc_jp)
+    rom, n = build(a.out, a.marker, a.reloc_jp, dict(q.split("=", 1) for q in a.qa))
     print(f"{a.out}: {len(rom):#x} bytes, {n} runs relocated")

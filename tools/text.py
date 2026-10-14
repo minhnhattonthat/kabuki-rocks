@@ -22,6 +22,7 @@ from tbl import Table  # noqa: E402
 ROM = ROOT / "rom" / "Kabuki Rocks (Japan).sfc"
 SCRIPT = ROOT / "script"
 JP = Table.load(ROOT / "tbl" / "jp.tbl")
+EN = Table.load(ROOT / "tbl" / "en.tbl")
 CTRL = {code[0]: (name, argc) for code, (name, argc) in JP.ctrl.items()}
 CTRL_ENC = {name: (code, argc) for code, (name, argc) in CTRL.items()}
 PTR_CTRL = {"jump", "choice"}

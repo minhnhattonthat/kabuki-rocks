@@ -26,15 +26,13 @@ def test_relocated_run_jumps_back(tmp_path, monkeypatch):
     """A relocated run: start becomes `86 ptr`, the copy is the encoded text + jump to the next op."""
     entries = text.load()
     e = next(x for x in entries if x["size"] >= 8)
-    entries = [dict(x, en=x["jp"] if x is e else "") for x in entries]
+    entries = [dict(x, en="HELLO{wait}" if x is e else "") for x in entries]
     monkeypatch.setattr(text, "load", lambda: entries)
     rom, n = build.build(tmp_path / "one.sfc")
     a = int(e["id"], 16)
     o = build.off(a)
     assert n == 1 and len(rom) == build.ROM_SIZE and rom[o] == 0x86
     dst = rom[o + 1] | rom[o + 2] << 8 | rom[o + 3] << 16
-    body = text.encode(e["jp"])
+    body = text.encode("HELLO{wait}", text.EN.enc)
     d = build.off(dst)
-    assert rom[d:d + len(body)] == body
-    if not e["jp"].endswith("}") or "{jump:" not in e["jp"][-14:]:
-        assert rom[d + len(body):d + len(body) + 4] == build.jump(a + e["size"])
+    assert rom[d:d + len(body) + 4] == body + build.jump(a + e["size"])

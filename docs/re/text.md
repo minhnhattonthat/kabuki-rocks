@@ -59,3 +59,13 @@ Full table, arg layouts and parser: `tools/script_ops.py` (`python -X utf8 tools
 - Still to extract: RAM-script strings (00:90C2 sources, above); other glyph users 04:B727/B766/BB9C, 05:BA7F-BAC1, 05:EF19, 0F:C76E, 02:F091, 07:8CC5 (menus/battle).
 - No free space in the 1.5 MB ROM. Build expands to 2 MB; banks $30-$3F (file 0x180000+) are free.
 - Insertion (build.py): English goes to the expansion area, the run start becomes `86 lo hi bk`, English ends with `86` back to the op after the run. Every non-empty run is >= 4 bytes and no runs overlap. `build.py --reloc-jp` (all Japanese relocated this way) plays the intro identically.
+
+## Names
+- {name93} = 7E:614D, {name94} = 7E:6159: 6-word slots (12 bytes). Written by immediate `LDX #/STX` pairs at 00:9FE8-00:A00F (ロック, マッキー); patch that code for English (needs a copy loop if the name is longer than the JP one).
+- Party name table 1E:B3CA (11 pointers, LE words, last | 0x8000): ロック マッキー ベンケイ じらいや 法界坊 ジロキチ フジムスメ 夕風 辰五郎 お七 景清. Used by 1E code (menus?); slot sizes there not yet measured.
+
+## Width gate (measured 2026-10-15, marker build, intro box 08:8079)
+- Dialogue window 2 (op 8C): 3 lines x 28 cells (8 px), first cell at x=16. Cell 28 sits under the right border; the {wait} arrow takes the last cell of its line.
+- Longer lines do not clip: the window buffer is column-major and wraps, so the overflow overwrites the first cells of other lines. tools/lint.py enforces 28/3/27-before-wait.
+- Line starts are fine with plain text (no indentation needed). Extra pages ({wait}{clr}) are free since text is relocated.
+- Not yet measured: window 1 (ops 87-89/8B), choices (9D), RAM-script system messages, menus.

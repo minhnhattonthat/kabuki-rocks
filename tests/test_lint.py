@@ -1,0 +1,31 @@
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "tools"))
+import lint  # noqa: E402
+
+JP = "{name94}「あいう{jump:088000}"
+
+
+def errs(en, jp=JP):
+    return lint.check({"id": "0", "jp": jp, "en": en})
+
+
+def test_clean():
+    assert errs("{name94} HELLO{wait}{clr}BYE{jump:088000}") == []
+
+
+def test_lost_jump_and_name():
+    assert any("control codes" in x for x in errs("HELLO"))
+
+
+def test_too_wide_and_too_many_lines():
+    long = "A" * 29
+    assert any("over 28" in x for x in errs("{name94}" + long + "{jump:088000}"))
+    assert any("3 lines" in x for x in errs("{name94}A{n}B{n}C{n}D{jump:088000}"))
+    assert any("arrow" in x for x in errs("{name94}" + "A" * 22 + "{wait}{jump:088000}"))  # 6 (name) + 22 = 28
+
+
+def test_japanese_left():
+    assert any("Japanese" in x for x in errs("{name94}あ{jump:088000}"))
