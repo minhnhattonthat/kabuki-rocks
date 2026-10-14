@@ -16,7 +16,8 @@ Skill: translate-retro-game (H:/translation/kabuki-rocks/.claude/skills/translat
 
 ## Rulings
 - Edit source files (.py .lua .asm .tbl .json) only with the file-edit tool; scripts read and analyse, never `.replace()` and write back.
-- Honorifics / name order / credits / romanization: TBD (ask user).
+- Honorifics kept, hyphenated; JP name order. Romanization: official English, else Hepburn. Credits: English. No abbreviations (engine work first). Plans pre-approved. Details: glossary.md.
+- No earlier English patch found (web search 2026-10-15).
 
 ## Status
 - Done: Step 0 (tools, hooks, check). Original boots in Mesen (title ~f1080).
