@@ -14,6 +14,12 @@ Caller sets source $1C/$1E (24-bit), dest $1F/$21, size $22, DP=$0400.
 - `tools/font.py sheet OUT.png --from 0 --to 1FF [--vram DUMP]` renders labelled glyphs. Table: `tbl/jp.tbl`.
 - Latin A-Z (0xBA-0xD3) and digits (0xB0-0xB9) exist, uppercase only.
 
+## English font
+- `assets/font_en.txt` (8x16 bitmaps) -> `font.patch_font(rom)`: ASCII c -> code 0x100+(c-0x20), extras … ♪ — é ★ ▶ at 0x15F-0x164; returns the char -> code map. Review: `tools/font.py en-sheet OUT.png [--text ...]`.
+- Real table ranges: page 1 = codes 0xB0-0x138, page 2 = 0x140-0x1B8. Codes 0x139-0x13F (Y Z [ \ ] ^ _) read the entries of 0x140-0x146 (` a-f), so each such byte must be free in both pages; `font.SACRIFICE` lists the 12 low-use page-2 kanji given up for that.
+- Identical halves share one tile (blank halves too). BG3 tiles 0x2E0-0x2FF are rewritten at run time (VRAM dump), never used.
+- Engine draws 0x12E (▶) / 0x12F (◀) as cursors (e.g. 03:93EF `LDA #$012E; JSL $00BA9D`); those codes are now N / O.
+
 ## Dictionary (codes >= 0x300)
 `tools/dictwords.py`: group g = (code>>8)-3, base word at 00:BC38+2g (g=6 and code>=0x980: base F30B, idx-0x80; 0x6xx-0x7xx share a 9-bit index), pointer = word at 2F:(base+2*idx), string = LE words in bank $2F, last word has bit 15 set. Holds names, items, places, battle messages, menu strings (~2000 codes, many unused/garbage).
 

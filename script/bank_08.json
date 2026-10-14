@@ -3,98 +3,98 @@
   "id": "088015",
   "size": 96,
   "jp": "{女中「#0926}今日も いい天気ですね。{n}{   #052F}{甚五郎#0922}（じんごろう）さま。{delay:78}{clr}{甚五郎#0922}「{‥‥‥#065F}ああ。 {天下太平#0A04}（てんかたいへい）だな。{delay:5A}",
-  "en": "",
+  "en": "Maid: Lovely weather again today, Jingoro-sama.{delay:78}{clr}Jingoro: ...Yes. All is at peace under heaven.{delay:5A}",
   "notes": ""
  },
  {
   "id": "088079",
   "size": 20,
   "jp": "{ネムリン#0918}「フンギャー！！{delay:5A}",
-  "en": "",
+  "en": "Nemurin: Fngyaaah!!{delay:5A}",
   "notes": ""
  },
  {
   "id": "08809E",
   "size": 58,
   "jp": "{女中「#0926}スズメが 前を歩いても おきなかった{n}{   #052F}{ネムリン#0918}が おきた！？{wait}",
-  "en": "",
+  "en": "Maid: Sparrows could walk right past Nemurin without waking him... and now he's awake?!{wait}",
   "notes": ""
  },
  {
   "id": "0880E1",
   "size": 28,
   "jp": "{甚五郎#0922}「{‥‥‥#065F}また 世があれるな{‥‥‥#065F}{delay:5A}",
-  "en": "",
+  "en": "Jingoro: ...The world will fall into chaos again...{delay:5A}",
   "notes": ""
  },
  {
   "id": "088119",
   "size": 130,
   "jp": "{name93}「おい {name94}！{n}{歌しばい#065A}が そろそろ はじまるぜェ{wait}{clr}それから{ お前#0A1B} 足ぶみ やめろよな{wait}{ba}{b8:0F0D}{p9a}{name94}「ふん！ ほっといてよ！{n}こうふんしてんだから！！{wait}",
-  "en": "",
+  "en": "{name93}: Hey, {name94}! The song play's about to start!{wait}{clr}And quit stomping your feet, will ya?{wait}{ba}{b8:0F0D}{p9a}{name94}: Hmph! Leave me alone! I'm all worked up!!{wait}",
   "notes": ""
  },
  {
   "id": "088235",
   "size": 87,
   "jp": "客「おとわ屋！{delay:78}{clr}{役者A「#0919}{五ェ門#090A}（ごえもん）。 余は たいくつ{じゃ。#0A31}{n}{    #035F}何か {面白い#0A00}あそびは ないかのオ。{wait}",
-  "en": "",
+  "en": "Audience: Otowaya!{delay:78}{clr}Actor A: Goemon. We are bored. Is there no amusing pastime to be had?{wait}",
   "notes": ""
  },
  {
   "id": "088298",
   "size": 89,
   "jp": "{役者B「#091A}{天資#0909}（てんさい）さま{n}{    #035F}町では今 {歌しばい#065A}なるものが はやっております。{n}{    #035F}ごらんになりますか？{wait}",
-  "en": "",
+  "en": "Actor B: Tensai-sama, a thing called the \"song play\" is all the rage in town just now. Would you care to see one?{wait}",
   "notes": ""
  },
  {
   "id": "0882F8",
   "size": 39,
   "jp": "{役者A「#0919}{歌しばい#065A}？ それは {面白い#0A00}のか？{wait}{clr}{役者B「#091A}さようで{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "Actor A: A song play? Is it amusing?{wait}{clr}Actor B: Indeed it is...{wait}",
   "notes": ""
  },
  {
   "id": "088331",
   "size": 82,
   "jp": "{役者A「#0919}{面白い#0A00}のか{‥‥ #0A2C}では {歌しばい#065A}は 禁止{じゃ！#0A58}{n}{    #035F}余の他の者が 楽しむ事など ゆるさん！！{wait}{clr}{役者B「#091A}ハッ！{wait}",
-  "en": "",
+  "en": "Actor A: Amusing, is it... Then song plays are banned! We shall allow no one but Ourselves to enjoy anything!!{wait}{clr}Actor B: Yes, my lord!{wait}",
   "notes": ""
  },
  {
   "id": "08838A",
   "size": 37,
   "jp": "{役者A「#0919}それから {モンスター#0A8B}も ころしてはいかん！{wait}",
-  "en": "",
+  "en": "Actor A: And furthermore, no one may kill monsters either!{wait}",
   "notes": ""
  },
  {
   "id": "0883B6",
   "size": 219,
   "jp": "{役者B「#091A}エッ？{wait}{clr}{役者A「#0919}下々の者は 近ごろ うかれすぎておる。{n}{    #035F}もっと くるしむべきだとは思わぬか？{wait}{clr}{役者B「#091A}ハッ！{n}{    #035F}『{モンスターあわれみの令#065B}』でございますな‥‥{wait}{clr}{役者A「#0919}ウムッ。 それでは さっそく おふれを出せィ！{delay:5A}{clr}役者C「まて まて まて～ィ！ {天資#0909}！！{delay:5A}",
-  "en": "",
+  "en": "Actor B: Eh?{wait}{clr}Actor A: The common folk have been far too merry of late. Do you not think they ought to suffer more?{wait}{clr}Actor B: Yes, my lord! You mean... the \"Edict of Mercy for Monsters\"...{wait}{clr}Actor A: Mm. Then issue the decree at once!{delay:5A}{clr}Actor C: Hold it, hold it, hold it riiight there! Tensai!!{delay:5A}",
   "notes": ""
  },
  {
   "id": "0884A8",
   "size": 203,
   "jp": "客「{まって#0ABC}ました！{delay:3C}{clr}客「さたけ屋！！{delay:3C}{clr}役者C「世界のへいわを ゆるがす にっくきやつ！{n}{    #035F}将軍といえども ゆるしちゃ おけねえ！{wait}{clr}{    #035F}せいぎのサムライ このカンタロウが{n}{    #035F}あっ せいばい してくれるうゥ～！！{wait}",
-  "en": "",
+  "en": "Audience: We've been waiting!{delay:3C}{clr}Audience: Satakeya!!{delay:3C}{clr}Actor C: Vile wretch who shakes the peace of the world! Shogun or no shogun, I cannot let this stand!{wait}{clr}Samurai of justice, I, Kantaro, shall strike thee dooown riiight here!!{wait}",
   "notes": ""
  },
  {
   "id": "0885AB",
   "size": 130,
   "jp": "兵士「お上に たてつく {歌しばい#065A}は 禁止である！{n}{   #052F}{天資#0909}さまを バカにした者どもは 死刑！{wait}{clr}兵士「{きさま#0A29}らも すぐに この場を たちされい！！{wait}",
-  "en": "",
+  "en": "Soldier: Song plays that defy the authorities are banned! All who mock Tensai-sama shall be put to death!{wait}{clr}Soldier: You lot, clear out of this place at once!!{wait}",
   "notes": ""
  },
  {
   "id": "088638",
   "size": 47,
   "jp": "兵士「何をしておる{！！！#0A54}！{wait}{clr}役者C「はっ はい！！{wait}",
-  "en": "",
+  "en": "Soldier: What do you think you're doing!!!!{wait}{clr}Actor C: Y-yes, sir!!{wait}",
   "notes": ""
  },
  {

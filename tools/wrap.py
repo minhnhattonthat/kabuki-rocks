@@ -64,7 +64,8 @@ def wrap_segment(toks, width_last):
             continue
         ww = sum(width(t) for t in word)
         need = ww + (1 if cur else 0)
-        if cur and w + need > WIDTH:
+        limit = WIDTH - 1 if len(lines) % LINES == LINES - 1 else WIDTH  # page-ending line carries the arrow
+        if cur and w + need > limit:
             lines.append(cur); cur, w, need = [], 0, ww
         cur = cur + ([" "] if cur else []) + word
         w += need
