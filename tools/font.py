@@ -88,14 +88,90 @@ def encode_tile(rows):
     return bytes(out)
 
 
-def patch_font(rom: bytearray) -> dict[str, bytes]:
+def kanji_by_use(rom):
+    """Page-1/2 kanji codes not taken by the English font, least used in the original script first."""
+    import text  # local: font is imported by text-free tools too
+    use = {}
+    for it in text.runs(rom).values():
+        r, i = it.args, 0
+        while i < len(r):
+            if r[i] < 0x80:
+                w = r[i] << 8 | r[i + 1]
+                use[w] = use.get(w, 0) + 1
+                i += 2
+            else:
+                i += 1 + (text.CTRL[r[i]][1] if r[i] in text.CTRL else 0)
+    en = load_en()
+    busy = still_drawn(rom)
+    cands = [c for c in list(range(0xE6, 0x139)) + list(range(0x165, 0x1B9))
+             if c not in en and c not in SACRIFICE and c not in busy and is_real(rom, c)]
+    return sorted(cands, key=lambda c: (use.get(c, 0), c))
+
+
+GLYPH_CALLS = (b"\x20\x1d\xb7", b"\x20\x25\xb7", b"\x22\x7b\xb7\x04", b"\x22\x7f\xb7\x04", b"\x22\x64\xb7\x04",
+               b"\x22\x8f\xf0\x02", b"\x22\x84\xf0\x02", b"\x22\x9d\xba\x00")
+
+
+def still_drawn(rom):
+    """Glyph codes the English build may still draw: loaded as an immediate shortly before a glyph routine call
+    (e.g. the money unit 両), or part of Japanese that is not translated yet (labels, code strings, dictionary)."""
+    import json
+    import re
+    busy = set()
+    for m in re.finditer(rb"\xa9(.)([\x00-\x02])", bytes(rom[:0x178000]), re.S):
+        tail = rom[m.end():m.end() + 8]
+        if any(c in tail for c in GLYPH_CALLS):
+            busy.add(m[1][0] | m[2][0] << 8)
+    root = ROOT / "script"
+
+    def add_text(s):
+        for ch in s:
+            code = JP_CODE.get(ch)
+            if code is not None:
+                busy.add(code)
+    if (root / "labels.json").exists():
+        import labels as lab
+        for e in json.loads((root / "labels.json").read_text(encoding="utf-8")):
+            if not e["en"]:
+                busy.update(lab.words(rom, int(e["id"], 16), e["cells"] * e["count"]))
+    for name in ("code.json", "dict.json"):
+        if (root / name).exists():
+            for e in json.loads((root / name).read_text(encoding="utf-8")):
+                if not e["en"]:
+                    add_text(e["jp"])
+    return busy
+
+
+def _jp_codes():
+    out = {}
+    for line in (ROOT / "tbl" / "jp.tbl").read_text(encoding="utf-8").splitlines():
+        k, sep, v = line.partition("=")
+        if sep and len(k) == 4 and len(v) == 1:
+            out.setdefault(v, int(k, 16))
+    return out
+
+
+JP_CODE = _jp_codes()
+
+
+def patch_font(rom: bytearray, extra=(), extra_out=None) -> dict[str, bytes]:
     """Write the English glyphs of assets/font_en.txt into the ROM font; return {char: 2-byte BE code}.
 
     Each half reuses an identical tile already placed in its page, else the tile its table entry
     already points to, else a free tile of that page (one no kept code uses). Codes 139-13F share
     their table entry with 140-146 (page 1's table ends at 138), so those pairs need a byte that is
-    free in both pages."""
+    free in both pages.
+    extra: more 8x16 cells (16 rows of 8 palette indices, e.g. render_label output) that get the codes of the
+    least-used kanji (kanji_by_use); their codes are appended to extra_out in order."""
     glyphs = load_en()
+    if extra:
+        cands = kanji_by_use(rom)
+        if len(extra) > len(cands):
+            raise ValueError(f"{len(extra)} label cells but only {len(cands)} spare glyph codes")
+        for i, cell in enumerate(extra):
+            glyphs[cands[i]] = (f"<label{i}>", cell)
+            if extra_out is not None:
+                extra_out.append(cands[i])
     chr_ = bytearray(tiles(rom))
     sizes = (FONT_BLOCKS[1] - FONT_BLOCKS[0], lz.decompress(rom, FONT_BLOCKS[1], 0x2000)[1])
     keep = {t for c in range(0x300) if c not in glyphs and c not in SACRIFICE and is_real(rom, c)
@@ -129,7 +205,8 @@ def patch_font(rom: bytearray) -> dict[str, bytes]:
         new = lz.compress(bytes(chr_[i * 0x2000:(i + 1) * 0x2000]))
         assert len(new) <= sizes[i], f"font block {i}: {len(new):#x} > {sizes[i]:#x}"
         rom[off:off + len(new)] = new
-    return {ch: code.to_bytes(2, "big") for code, (ch, _) in glyphs.items()} | {" ": SPACE.to_bytes(2, "big")}
+    return {ch: code.to_bytes(2, "big") for code, (ch, _) in glyphs.items()
+            if not ch.startswith("<label")} | {" ": SPACE.to_bytes(2, "big")}
 
 
 def tile_pixels(chr_, n):
@@ -270,7 +347,7 @@ def tiny_sheet(out, zoom=4):
                 if p:
                     g.putpixel((gx + 1, gy + 1), GAME_RGB[1])
         grid.paste(g.resize((5 * zoom, 7 * zoom), Image.NEAREST), (x, y))
-        dr.text((x, y + 7 * zoom + 1), c, fill=(255, 255, 160))
+        dr.text((x, y + 7 * zoom + 1), c if c.isascii() else f"{ord(c):X}", fill=(255, 255, 160))
     labels = [label_image(render_label(*s)) for s in TINY_SAMPLES]
     h = grid.height + sum(16 * 3 + 8 for _ in labels) + 8
     img = Image.new("RGB", (max(grid.width, 16 + max(4 * im.width for im in labels) + 16), h), (60, 60, 60))

@@ -1,0 +1,23 @@
+[
+ {"id": "02E14E", "cells": 3, "count": 5, "en": ["Attack", "Song/Weapon", "Item", "Forte", "Run"], "notes": "battle commands (table 02:E144, count X=3 at 02:8345)"},
+ {"id": "02F078", "cells": 3, "count": 2, "en": ["Run", "Guard"], "term": true, "notes": "battle: read as $F078 + offset (02:E1E7); bit-15 terminated"},
+ {"id": "04825A", "cells": 3, "count": 6, "en": ["Song/Weapon", "Item", "Forte", "Equip", "Status", "Config"], "notes": "field menu commands (04:811B)"},
+ {"id": "048835", "cells": 12, "count": 1, "en": [], "notes": "04:82F8, CPX #$18 (meaning unknown yet: see on screen)"},
+ {"id": "048811", "cells": 8, "count": 1, "en": ["Reorder"], "notes": "item menu (04:B6B6)"},
+ {"id": "048823", "cells": 8, "count": 1, "en": ["Done"], "notes": "item menu"},
+ {"id": "04A55D", "cells": 4, "count": 1, "en": ["Equip"], "notes": "equip submenu (04:968A)"},
+ {"id": "04A565", "cells": 7, "count": 1, "en": ["Trade with/ally"], "notes": "equip submenu (04:96AF)"},
+ {"id": "04A578", "cells": 6, "count": 1, "en": ["Unequip"], "notes": "04:9F8D"},
+ {"id": "04B491", "cells": 2, "count": 4, "en": [], "notes": "equipment categories (04:B481, X stride 4): weapon/armor/footwear/instrument; 2 cells too small for full words - needs a wider slot"},
+ {"id": "04B4C3", "cells": 8, "count": 1, "en": ["Trade equipment"], "notes": "04:B4B4"},
+ {"id": "04B822", "cells": 3, "count": 4, "en": ["Battle", "Remedy", "Other", "Equip-/ment"], "notes": "item tabs (04:B7E7)"},
+ {"id": "04B8B2", "cells": 3, "count": 4, "en": ["Own/Song", "Attack", "Remedy", "Other"], "notes": "song tabs (04:B883)"},
+ {"id": "04BACB", "cells": 3, "count": 1, "en": ["ryo/actor"], "notes": "rank after a number: 1両役者 (04:B9EE, 04:A738)"},
+ {"id": "04C05A", "cells": 5, "count": 1, "en": ["Trade-in"], "notes": "shop (04:C04B)"},
+ {"id": "04CE89", "cells": 2, "count": 4, "en": ["Buy", "Sell", "Exit", "Help"], "notes": "shop commands (04:CD66)"},
+ {"id": "04D48D", "cells": 2, "count": 4, "en": [], "notes": "04:D391, X = n*4: Attack/Defense/Speed/Singing; 2 cells too small - needs a wider slot"},
+ {"id": "04D5DF", "cells": 5, "count": 1, "en": [], "notes": "04:D5A1 のをやめる (fragment)"},
+ {"id": "04DD1D", "cells": 6, "count": 1, "en": [], "notes": "04:DCCA 持っていた.."},
+ {"id": "04DE17", "cells": 5, "count": 1, "en": ["Trade/total"], "notes": "shop (04:DE08)"},
+ {"id": "04E16C", "cells": 2, "count": 6, "en": [], "notes": "shop categories (04:E133, X = n*4); the shop title is word,space,word,space,屋 - needs a 5-cell hook"}
+]

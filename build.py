@@ -197,7 +197,15 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             rom[off(a):off(a) + 4] = jump(dst)
         if not reloc_jp:
             patch_names(rom, space)
-            font.patch_font(rom)
+            plan = label_plan()
+            uniq = {}  # identical baked cells share one glyph code
+            for _, cells in plan:
+                for c in cells:
+                    if isinstance(c, list):
+                        uniq.setdefault(repr(c), c)
+            codes = []
+            font.patch_font(rom, extra=list(uniq.values()), extra_out=codes)
+            write_labels(rom, plan, dict(zip(uniq, codes)))
             # the yes/no cursor glyph 0x12E (▶) is now "N": point it at the English ▶
             o = off(CHOICE_CURSOR)
             assert rom[o:o + 3] == b"\xa9\x2e\x01"
@@ -209,6 +217,7 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             if cpath.exists():
                 patch_codestr(rom, json.loads(cpath.read_text(encoding="utf-8")))
             patch_fixed(rom)
+            patch_menutiles(rom)
     if debug:
         patch_debug_start(rom, bytes.fromhex(debug.replace(" ", "")))
     Path(out).parent.mkdir(parents=True, exist_ok=True)
@@ -219,7 +228,8 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
 CODESTR_BANK = 0x3B  # English for strings that live in code banks (script/code.json)
 # not relocatable this way: 078D81 is a false hit (07:81A4 is LDA #$81 / STA $4200); 02F078/02F07E are read as
 # $F078 + offset (fixed 6-byte slots; labels); banks $05/$0F use other readers (prologue, composer) - TODO
-CODESTR_SKIP_IDS = {"078D81", "02F078", "02F07E"}
+# 04AD5F/0FCA01: their only "reference" is an 8-bit LDX/LDY #imm misread as 16-bit (04:EEBE is LDX #$5F)
+CODESTR_SKIP_IDS = {"078D81", "02F078", "02F07E", "04AD5F", "0FCA01"}
 CODESTR_SKIP_BANKS = {0x05, 0x0F}
 CODESTR_HELPERS = 0x3C8000  # one reader helper per source bank
 
@@ -280,6 +290,75 @@ def patch_codestr(rom, entries):
     o = off(CODESTR_HELPERS)
     rom[o:o + len(helpers)] = helpers
     return sum(len(v) for v in by_bank.values())
+
+
+def label_plan():
+    """[(addr, cells)] for every translated label in script/labels.json. Each cell is either a 2-byte glyph code
+    (label fits the normal font) or an 8x16 pixel cell to bake with the tiny font (font.render_label)."""
+    p = ROOT / "script" / "labels.json"
+    plan = []
+    for e in json.loads(p.read_text(encoding="utf-8")) if p.exists() else []:
+        if not e["en"]:
+            continue
+        assert len(e["en"]) == e["count"], e["id"]
+        for i, s in enumerate(e["en"]):
+            n = e["cells"]
+            addr = int(e["id"], 16) + 2 * n * i
+            if "/" not in s and len(s) <= n:
+                pad = n - len(s)
+                s2 = " " * (pad // 2) + s + " " * (pad - pad // 2)
+                cells = [int.from_bytes(text.EN.enc[ch], "big") for ch in s2]
+            else:
+                cells = font.render_label(s, n, 2 if "/" in s else 1)
+            plan.append(((addr, e.get("term", False)), cells))
+    return plan
+
+
+def write_labels(rom, plan, code_of):
+    """code_of: repr(baked cell) -> glyph code."""
+    for (addr, term), cells in plan:
+        ws = [code_of[repr(c)] if isinstance(c, list) else c for c in cells]
+        if term:
+            ws[-1] |= 0x8000
+        o = off(addr)
+        rom[o:o + 2 * len(ws)] = b"".join(w.to_bytes(2, "little") for w in ws)
+
+
+# Menu overlay tiles (8x8 small kanji written straight into the menu tilemap, e.g. 04:BA01): decompressed by
+# 00:B9B3 from bank $1F into BG tiles 0x380-0x3BF (0x400-byte blocks) and 0x3C0-0x3DF (0x200-byte blocks),
+# one variant per window style ($0804 & 3; tables 00:BA85 / 00:BA8B).
+MENU_TILE_BLOCKS = [(0x1FAB82, 0x380, 0x400), (0x1FAF2C, 0x380, 0x400),
+                    (0x1FB31B, 0x3C0, 0x200), (0x1FB50E, 0x3C0, 0x200), (0x1FB705, 0x3C0, 0x200)]
+MENU_TILES = {  # tile -> two tiny-font characters (tools/font.py load_tiny); shared tiles change everywhere
+    0x3BE: " H", 0x3AE: " V", 0x3C1: "P ",                     # 体力 -> HP, 声力 -> VP (力 is shared)
+    0x3C0: "Ne", 0x3AC: "xt", 0x3D0: " r", 0x3D1: "an", 0x3BC: "k ", 0x3BD: "in",  # 次の役者まで -> Next rank in
+}
+
+
+def tiny_tile(two):
+    """8x8 2bpp tile (bg 3, ink 1) with two tiny-font characters on rows 1-6."""
+    glyphs = font.load_tiny()
+    rows = [[3] * 8 for _ in range(8)]
+    for i, ch in enumerate(two):
+        for y, r in enumerate(glyphs[ch]):
+            for x, p in enumerate(r):
+                if p:
+                    rows[1 + y][4 * i + x] = 1
+    return font.encode_tile(rows)
+
+
+def patch_menutiles(rom):
+    import lz
+    for src, first, size in MENU_TILE_BLOCKS:
+        o = off(src)
+        raw, used = lz.decompress(rom, o, size)
+        raw = bytearray(raw)
+        for t, two in MENU_TILES.items():
+            if first <= t < first + size // 16:
+                raw[(t - first) * 16:(t - first + 1) * 16] = tiny_tile(two)
+        new = lz.compress(bytes(raw))
+        assert len(new) <= used, f"menu tiles at {src:06X}: {len(new):#x} > {used:#x}"
+        rom[o:o + len(new)] = new
 
 
 FIXED_AT = 0x3C9000  # fixed-count strings (no terminator), see FIXED
