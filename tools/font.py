@@ -20,7 +20,9 @@ TABLE = 0x3C48  # 00:BC48 byte-pair table: (top, bottom) tile byte per glyph cod
 FONT_EN = ROOT / "assets" / "font_en.txt"
 FONT_TINY = ROOT / "assets" / "font_tiny.txt"  # 3x5 label font, two letters per 8-px cell
 PIX = {".": 3, "#": 1, "+": 2}  # font_en.txt pixel chars -> palette index
-VOLATILE = range(0x2E0, 0x300)  # BG3 tiles the game overwrites at run time (VRAM dump work/qa/ppu1)
+# BG3 tiles the game overwrites at run time: 0x2E0-0x2FF (VRAM dump work/qa/ppu1), 0x380-0x3FF (menu overlay
+# tiles, 00:B9B3)
+VOLATILE = set(range(0x2E0, 0x300)) | set(range(0x380, 0x400))
 # Page-2 kanji whose tiles the English glyphs may take. Codes 139-13F share table entries with 140-146,
 # so each of those 14 bytes must be free in page 1 and page 2; these are the least-used kanji (script
 # uses 3-20 each) sitting at bytes the English page 1 leaves free. 勇 16E, 王 195, 氏 196, 法 197,
@@ -89,7 +91,7 @@ def encode_tile(rows):
 
 
 def kanji_by_use(rom):
-    """Page-1/2 kanji codes not taken by the English font, least used in the original script first."""
+    """Page-1/2 kanji codes not taken by the English font and not still drawn, most used in the script first."""
     import text  # local: font is imported by text-free tools too
     use = {}
     for it in text.runs(rom).values():
@@ -103,9 +105,19 @@ def kanji_by_use(rom):
                 i += 1 + (text.CTRL[r[i]][1] if r[i] in text.CTRL else 0)
     en = load_en()
     busy = still_drawn(rom)
-    cands = [c for c in list(range(0xE6, 0x139)) + list(range(0x165, 0x1B9))
+    # page 3 (0x1C0-0x1EF) only when both tiles sit below 0x380 (menus load overlay tiles at 0x380+)
+    users = {}
+    for c in range(0x300):
+        if c != SPACE and is_real(rom, c):
+            for t in set(glyph_tiles(rom, c)):
+                users[t] = users.get(t, 0) + 1
+    page3 = [c for c in range(0x1C0, 0x1F0)
+             if all(t < 0x380 and users.get(t, 0) == 1 for t in glyph_tiles(rom, c))]
+    cands = [c for c in list(range(0xE6, 0x139)) + list(range(0x165, 0x1B9)) + page3
              if c not in en and c not in SACRIFICE and c not in busy and is_real(rom, c)]
-    return sorted(cands, key=lambda c: (use.get(c, 0), c))
+    # most used in the (now English) dialogue first: rarely-used kanji tend to be menu kanji (持 金 代 単 価)
+    # still drawn from arrays not catalogued yet
+    return sorted(cands, key=lambda c: (-use.get(c, 0), c))
 
 
 GLYPH_CALLS = (b"\x20\x1d\xb7", b"\x20\x25\xb7", b"\x22\x7b\xb7\x04", b"\x22\x7f\xb7\x04", b"\x22\x64\xb7\x04",
@@ -118,11 +130,18 @@ def still_drawn(rom):
     import json
     import re
     busy = set()
+    root = ROOT / "script"
+    replaced = set()  # LDA sites rewritten by translated "imm" labels
+    if (root / "labels.json").exists():
+        import immlabels
+        groups = {immlabels.cpu(g[0][0]): g for g in immlabels.phrases(bytes(rom))}
+        for e in json.loads((root / "labels.json").read_text(encoding="utf-8")):
+            if e.get("kind") == "imm" and e["en"] and int(e["id"], 16) in groups:
+                replaced.update(o for o, _ in groups[int(e["id"], 16)])
     for m in re.finditer(rb"\xa9(.)([\x00-\x02])", bytes(rom[:0x178000]), re.S):
         tail = rom[m.end():m.end() + 8]
-        if any(c in tail for c in GLYPH_CALLS):
+        if m.start() not in replaced and any(c in tail for c in GLYPH_CALLS):
             busy.add(m[1][0] | m[2][0] << 8)
-    root = ROOT / "script"
 
     def add_text(s):
         for ch in s:
@@ -176,7 +195,7 @@ def patch_font(rom: bytearray, extra=(), extra_out=None) -> dict[str, bytes]:
     sizes = (FONT_BLOCKS[1] - FONT_BLOCKS[0], lz.decompress(rom, FONT_BLOCKS[1], 0x2000)[1])
     keep = {t for c in range(0x300) if c not in glyphs and c not in SACRIFICE and is_real(rom, c)
             for t in glyph_tiles(rom, c)}
-    placed = {1: {}, 2: {}}  # page -> {byte: tile data}
+    placed = {1: {}, 2: {}, 3: {}}  # page -> {byte: tile data}
     groups = {}  # table offset -> [(page, (top data, bottom data))]
     for code, (_, rows) in sorted(glyphs.items()):
         page, x = entry(rom, code)

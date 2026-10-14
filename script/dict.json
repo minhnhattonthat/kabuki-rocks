@@ -2716,7 +2716,7 @@
   "ptr": "BD79",
   "len": 7,
   "jp": "うろつきゾウリ",
-  "en": "Prowling Sandal",
+  "en": "Stray Sandal",
   "notes": ""
  },
  {
@@ -2772,7 +2772,7 @@
   "ptr": "BDBD",
   "len": 7,
   "jp": "きしゅうミカン",
-  "en": "Kishu Mandarin",
+  "en": "Mandarinja",
   "notes": ""
  },
  {
@@ -2796,7 +2796,7 @@
   "ptr": "BDE1",
   "len": 6,
   "jp": "おおかみ一刀",
-  "en": "Lone Wolf Blade",
+  "en": "Lone Wolf",
   "notes": ""
  },
  {
@@ -2820,7 +2820,7 @@
   "ptr": "BDFF",
   "len": 4,
   "jp": "サザエ1",
-  "en": "Turban Shell 1",
+  "en": "Sea Snail 1",
   "notes": ""
  },
  {
@@ -2836,7 +2836,7 @@
   "ptr": "BE11",
   "len": 4,
   "jp": "きんし郎",
-  "en": "Kinshiro the Germ",
+  "en": "Germshiro",
   "notes": ""
  },
  {
@@ -2844,7 +2844,7 @@
   "ptr": "BE19",
   "len": 6,
   "jp": "むらさき子兵",
-  "en": "Purple Kid Soldier",
+  "en": "Kid Purple",
   "notes": ""
  },
  {
@@ -2908,7 +2908,7 @@
   "ptr": "BE69",
   "len": 7,
   "jp": "くぎしカネヤン",
-  "en": "Nailsmith Kaneyan",
+  "en": "Nail Kaneyan",
   "notes": ""
  },
  {
@@ -2916,7 +2916,7 @@
   "ptr": "BE77",
   "len": 5,
   "jp": "らいじゅう",
-  "en": "Thunder Beast",
+  "en": "Thunderbeast",
   "notes": ""
  },
  {
@@ -2924,7 +2924,7 @@
   "ptr": "BE81",
   "len": 4,
   "jp": "野ざらし",
-  "en": "Bleached Bones",
+  "en": "Bare Bones",
   "notes": ""
  },
  {
@@ -2932,7 +2932,7 @@
   "ptr": "BE89",
   "len": 9,
   "jp": "おうしゅう青リンゴ",
-  "en": "Oshu Green Apple",
+  "en": "Grudge Apple",
   "notes": ""
  },
  {
@@ -2972,7 +2972,7 @@
   "ptr": "BEBF",
   "len": 4,
   "jp": "サザエ2",
-  "en": "Turban Shell 2",
+  "en": "Sea Snail 2",
   "notes": ""
  },
  {
@@ -3004,7 +3004,7 @@
   "ptr": "BEE3",
   "len": 5,
   "jp": "アサガオ1",
-  "en": "Morning Glory 1",
+  "en": "Bindweed 1",
   "notes": ""
  },
  {
@@ -3012,7 +3012,7 @@
   "ptr": "BEED",
   "len": 8,
   "jp": "うえたオオカミ2",
-  "en": "Starving Wolf 2",
+  "en": "Gaunt Wolf 2",
   "notes": ""
  },
  {
@@ -3028,7 +3028,7 @@
   "ptr": "BF05",
   "len": 5,
   "jp": "ドラミドラ",
-  "en": "Doremi Dragon",
+  "en": "Doremi Drake",
   "notes": ""
  },
  {
@@ -3044,7 +3044,7 @@
   "ptr": "BF15",
   "len": 3,
   "jp": "山ぞく",
-  "en": "Mountain Bandit",
+  "en": "Hill Bandit",
   "notes": ""
  },
  {
@@ -3052,7 +3052,7 @@
   "ptr": "BF1B",
   "len": 4,
   "jp": "エビ兵士",
-  "en": "Shrimp Soldier",
+  "en": "Shrimp Grunt",
   "notes": ""
  },
  {
@@ -3060,7 +3060,7 @@
   "ptr": "BF23",
   "len": 4,
   "jp": "水色子兵",
-  "en": "Sky Blue Kid Soldier",
+  "en": "Kid Sky Blue",
   "notes": ""
  },
  {
@@ -3068,7 +3068,7 @@
   "ptr": "BF2B",
   "len": 6,
   "jp": "死のアキンド",
-  "en": "Merchant of Death",
+  "en": "Death Dealer",
   "notes": ""
  },
  {
@@ -3108,7 +3108,7 @@
   "ptr": "BF5B",
   "len": 4,
   "jp": "電動死神",
-  "en": "Electric Grim Reaper",
+  "en": "Volt Reaper",
   "notes": ""
  },
  {
@@ -3116,7 +3116,7 @@
   "ptr": "BF63",
   "len": 9,
   "jp": "グレートラットロボ",
-  "en": "Great Rat Robo",
+  "en": "Great Ratbot",
   "notes": ""
  },
  {
@@ -3124,7 +3124,7 @@
   "ptr": "BF75",
   "len": 6,
   "jp": "あばれダイコ",
-  "en": "Rampaging Drum",
+  "en": "Rampage Drum",
   "notes": ""
  },
  {
@@ -3140,7 +3140,7 @@
   "ptr": "BF89",
   "len": 4,
   "jp": "ヨロイ兵",
-  "en": "Armored Soldier",
+  "en": "Armor Grunt",
   "notes": ""
  },
  {
@@ -3156,7 +3156,7 @@
   "ptr": "BF99",
   "len": 6,
   "jp": "ふうりん火山",
-  "en": "Wind Chime Volcano",
+  "en": "Bell Volcano",
   "notes": ""
  },
  {
@@ -3196,7 +3196,7 @@
   "ptr": "BFCD",
   "len": 4,
   "jp": "サザエ4",
-  "en": "Turban Shell 4",
+  "en": "Sea Snail 4",
   "notes": ""
  },
  {
@@ -3212,7 +3212,7 @@
   "ptr": "BFE3",
   "len": 10,
   "jp": "テノール・ドラミドラ",
-  "en": "Tenor Doremi Dragon",
+  "en": "Tenor Drake",
   "notes": ""
  },
  {
@@ -3220,7 +3220,7 @@
   "ptr": "BFF7",
   "len": 6,
   "jp": "もえるスズメ",
-  "en": "Burning Sparrow",
+  "en": "Fire Sparrow",
   "notes": ""
  },
  {
@@ -3236,7 +3236,7 @@
   "ptr": "C00D",
   "len": 6,
   "jp": "クリようがん",
-  "en": "Lava Chestnut",
+  "en": "Hot Chestnut",
   "notes": ""
  },
  {
@@ -3276,7 +3276,7 @@
   "ptr": "C03B",
   "len": 9,
   "jp": "おぬし ちゃんと ",
-  "en": "You weren't properly",
+  "en": "You weren't",
   "notes": ""
  },
  {
@@ -3292,7 +3292,7 @@
   "ptr": "C055",
   "len": 5,
   "jp": "みどり子兵",
-  "en": "Green Kid Soldier",
+  "en": "Kid Green",
   "notes": ""
  },
  {
@@ -3300,7 +3300,7 @@
   "ptr": "C05F",
   "len": 5,
   "jp": "青みクマ鳥",
-  "en": "Bluish Bearbird",
+  "en": "Bluebearbird",
   "notes": ""
  },
  {
@@ -3348,7 +3348,7 @@
   "ptr": "C09F",
   "len": 5,
   "jp": "月りん仮面",
-  "en": "Moon Ring Mask",
+  "en": "Lunar Mask",
   "notes": ""
  },
  {
@@ -3356,7 +3356,7 @@
   "ptr": "C0A9",
   "len": 5,
   "jp": "日りん仮面",
-  "en": "Sun Ring Mask",
+  "en": "Solar Mask",
   "notes": ""
  },
  {
@@ -3388,7 +3388,7 @@
   "ptr": "C0DD",
   "len": 7,
   "jp": "くらましテング",
-  "en": "Vanishing Tengu",
+  "en": "Dazzle Tengu",
   "notes": ""
  },
  {
@@ -3420,7 +3420,7 @@
   "ptr": "C105",
   "len": 5,
   "jp": "とどコオル",
-  "en": "Frozen Sea Lion",
+  "en": "Ice Sea Lion",
   "notes": ""
  },
  {
@@ -3428,7 +3428,7 @@
   "ptr": "C10F",
   "len": 10,
   "jp": "きいておらんじゃろ？",
-  "en": "listening, were you?",
+  "en": "listening?",
   "notes": ""
  },
  {
@@ -3452,7 +3452,7 @@
   "ptr": "C135",
   "len": 7,
   "jp": "ほえーるクジラ",
-  "en": "Wailing Whale",
+  "en": "Wailer Whale",
   "notes": ""
  },
  {
@@ -3460,7 +3460,7 @@
   "ptr": "C143",
   "len": 4,
   "jp": "ハリがみ",
-  "en": "Pin-Up Notice",
+  "en": "Pin Poster",
   "notes": ""
  },
  {
@@ -3476,7 +3476,7 @@
   "ptr": "C155",
   "len": 6,
   "jp": "たんこう武士",
-  "en": "Coal Miner Samurai",
+  "en": "Coal Samurai",
   "notes": ""
  },
  {
@@ -3484,7 +3484,7 @@
   "ptr": "C161",
   "len": 6,
   "jp": "クグツうねり",
-  "en": "Writhing Puppet",
+  "en": "Wriggler",
   "notes": ""
  },
  {
@@ -3492,7 +3492,7 @@
   "ptr": "C16D",
   "len": 7,
   "jp": "ねりこんにゃく",
-  "en": "Kneaded Konnyaku",
+  "en": "Konjac Blob",
   "notes": ""
  },
  {
@@ -3500,7 +3500,7 @@
   "ptr": "C17B",
   "len": 6,
   "jp": "ソーラン武士",
-  "en": "Soran Samurai",
+  "en": "Sea Samurai",
   "notes": ""
  },
  {
@@ -3508,7 +3508,7 @@
   "ptr": "C187",
   "len": 7,
   "jp": "つづいて だい",
-  "en": "Next up, question",
+  "en": "And question",
   "notes": ""
  },
  {
@@ -3524,7 +3524,7 @@
   "ptr": "C19F",
   "len": 5,
   "jp": "シャコ兵士",
-  "en": "Mantis Shrimp Soldier",
+  "en": "Mantis Grunt",
   "notes": ""
  },
  {
@@ -3532,7 +3532,7 @@
   "ptr": "C1A9",
   "len": 4,
   "jp": "サザエ3",
-  "en": "Turban Shell 3",
+  "en": "Sea Snail 3",
   "notes": ""
  },
  {
@@ -3564,7 +3564,7 @@
   "ptr": "C1CF",
   "len": 7,
   "jp": "ダイダラボッチ",
-  "en": "Daidarabotchi",
+  "en": "Bigfoot",
   "notes": ""
  },
  {
@@ -3588,7 +3588,7 @@
   "ptr": "C1F5",
   "len": 4,
   "jp": "人面グモ",
-  "en": "Human-Faced Spider",
+  "en": "Face Spider",
   "notes": ""
  },
  {
@@ -3612,7 +3612,7 @@
   "ptr": "C213",
   "len": 5,
   "jp": "上体ソラシ",
-  "en": "Sol-La-Ti Backbend",
+  "en": "Limbo-La-Ti",
   "notes": ""
  },
  {
@@ -3620,7 +3620,7 @@
   "ptr": "C21D",
   "len": 9,
   "jp": "ダイダラボッチ2 ",
-  "en": "Daidarabotchi 2",
+  "en": "Bigfoot 2",
   "notes": ""
  },
  {
@@ -3652,7 +3652,7 @@
   "ptr": "C24F",
   "len": 8,
   "jp": "トモエかまいたち",
-  "en": "Tomoe Sickle Weasel",
+  "en": "Swirl Weasel",
   "notes": ""
  },
  {
@@ -3676,7 +3676,7 @@
   "ptr": "C26B",
   "len": 6,
   "jp": "クグツりゅう",
-  "en": "Puppet Dragon",
+  "en": "Puppet Wyrm",
   "notes": ""
  },
  {
@@ -3684,7 +3684,7 @@
   "ptr": "C277",
   "len": 9,
   "jp": "ダイダラボッチつま",
-  "en": "Daidarabotchi's Wife",
+  "en": "Lady Bigfoot",
   "notes": ""
  },
  {
@@ -3692,7 +3692,7 @@
   "ptr": "C289",
   "len": 7,
   "jp": "四幕のヨロイ兵",
-  "en": "Act 4 Armored Soldier",
+  "en": "Act 4 Armor",
   "notes": ""
  },
  {
@@ -3708,7 +3708,7 @@
   "ptr": "C29F",
   "len": 6,
   "jp": "くびなが雪女",
-  "en": "Longneck Snow Woman",
+  "en": "Snow Giraffe",
   "notes": ""
  },
  {
@@ -3724,7 +3724,7 @@
   "ptr": "C2B1",
   "len": 6,
   "jp": "いっかく千金",
-  "en": "Jackpot Unicorn",
+  "en": "Fortunicorn",
   "notes": ""
  },
  {
@@ -3732,7 +3732,7 @@
   "ptr": "C2BD",
   "len": 6,
   "jp": "シモフリ野郎",
-  "en": "Marbled Meathead",
+  "en": "Wagyu Hunk",
   "notes": ""
  },
  {
@@ -3756,7 +3756,7 @@
   "ptr": "C2DF",
   "len": 8,
   "jp": "クグツあかうねり",
-  "en": "Red Writhing Puppet",
+  "en": "Red Wriggler",
   "notes": ""
  },
  {
@@ -3772,7 +3772,7 @@
   "ptr": "C2FB",
   "len": 5,
   "jp": "人ぐいエイ",
-  "en": "Man-Eating Ray",
+  "en": "Maneater Ray",
   "notes": ""
  },
  {
@@ -3788,7 +3788,7 @@
   "ptr": "C315",
   "len": 8,
   "jp": "くぐつしウメマツ",
-  "en": "Puppeteer Umematsu",
+  "en": "Umematsu",
   "notes": ""
  },
  {
@@ -3796,7 +3796,7 @@
   "ptr": "C325",
   "len": 7,
   "jp": "なまはげゾンビ",
-  "en": "Namahage Zombie",
+  "en": "Zombie Oni",
   "notes": ""
  },
  {
@@ -3812,7 +3812,7 @@
   "ptr": "C33D",
   "len": 4,
   "jp": "メタル兵",
-  "en": "Metal Soldier",
+  "en": "Iron Grunt",
   "notes": ""
  },
  {
@@ -3820,7 +3820,7 @@
   "ptr": "C345",
   "len": 5,
   "jp": "さつりく兵",
-  "en": "Slaughter Soldier",
+  "en": "Killer Grunt",
   "notes": ""
  },
  {
@@ -3828,7 +3828,7 @@
   "ptr": "C34F",
   "len": 7,
   "jp": "メタル兵 カイ",
-  "en": "Metal Soldier Kai",
+  "en": "Iron Grunt 2",
   "notes": ""
  },
  {
@@ -3836,7 +3836,7 @@
   "ptr": "C35D",
   "len": 4,
   "jp": "やみひめ",
-  "en": "Dark Princess",
+  "en": "Dark Maiden",
   "notes": ""
  },
  {
@@ -3844,7 +3844,7 @@
   "ptr": "C365",
   "len": 8,
   "jp": "アオイのつかい手",
-  "en": "Hollyhock Wielder",
+  "en": "Crest Bearer",
   "notes": ""
  },
  {
@@ -3852,7 +3852,7 @@
   "ptr": "C375",
   "len": 4,
   "jp": "金ごう兵",
-  "en": "Adamant Soldier",
+  "en": "Steel Grunt",
   "notes": ""
  },
  {
@@ -3876,7 +3876,7 @@
   "ptr": "C38D",
   "len": 6,
   "jp": "そう頭鬼テル",
-  "en": "Twin-Head Oni Teru",
+  "en": "Headcase Oni",
   "notes": ""
  },
  {
@@ -3884,7 +3884,7 @@
   "ptr": "C399",
   "len": 3,
   "jp": "デバ鬼",
-  "en": "Bucktooth Oni",
+  "en": "Toothy Oni",
   "notes": ""
  },
  {
@@ -3900,7 +3900,7 @@
   "ptr": "C3A9",
   "len": 9,
   "jp": "とろけるモンスター",
-  "en": "Melting Monster",
+  "en": "Melt Monster",
   "notes": ""
  },
  {
@@ -6788,7 +6788,7 @@
   "ptr": "E06F",
   "len": 11,
   "jp": "たちは ふいをつかれた",
-  "en": " and party were caught off guard",
+  "en": " got ambushed!",
   "notes": ""
  },
  {
@@ -6796,7 +6796,7 @@
   "ptr": "E085",
   "len": 14,
   "jp": "たちは てきに気づいていない",
-  "en": " and party haven't noticed the enemy",
+  "en": " hasn't noticed!",
   "notes": ""
  },
  {
@@ -6828,7 +6828,7 @@
   "ptr": "E0D7",
   "len": 13,
   "jp": "は いたい所を つかれた！",
-  "en": " was hit where it hurts!",
+  "en": " was weak to it!",
   "notes": ""
  },
  {
@@ -6836,7 +6836,7 @@
   "ptr": "E0F1",
   "len": 12,
   "jp": "に ダメージを あたえた",
-  "en": " was dealt damage",
+  "en": " took damage",
   "notes": ""
  },
  {
@@ -6860,7 +6860,7 @@
   "ptr": "E133",
   "len": 7,
   "jp": "を とっちめた",
-  "en": " got a good thrashing",
+  "en": " got a thrashing",
   "notes": ""
  },
  {
@@ -6908,7 +6908,7 @@
   "ptr": "E195",
   "len": 13,
   "jp": "は ばくすい してしまった",
-  "en": " fell into a deep sleep",
+  "en": " conked out",
   "notes": ""
  },
  {
@@ -6916,7 +6916,7 @@
   "ptr": "E1AF",
   "len": 12,
   "jp": "は 愛のどれいに なった",
-  "en": " became a slave to love",
+  "en": " is love's slave",
   "notes": ""
  },
  {
@@ -6924,7 +6924,7 @@
   "ptr": "E1C7",
   "len": 12,
   "jp": "は 動ようを かくせない",
-  "en": " is visibly rattled",
+  "en": " is all shook up",
   "notes": ""
  },
  {
@@ -6940,7 +6940,7 @@
   "ptr": "E1F3",
   "len": 15,
   "jp": "は のどに ポリープが できた",
-  "en": " got a polyp on the throat",
+  "en": " grew a polyp!",
   "notes": ""
  },
  {
@@ -6948,7 +6948,7 @@
   "ptr": "E211",
   "len": 11,
   "jp": "は 前かがみに なった",
-  "en": " was left hunched over",
+  "en": " is hunched over",
   "notes": ""
  },
  {
@@ -6988,7 +6988,7 @@
   "ptr": "E273",
   "len": 12,
   "jp": "の サマーソルトキック！",
-  "en": " does a somersault kick!",
+  "en": " flip-kicks!",
   "notes": ""
  },
  {
@@ -7036,7 +7036,7 @@
   "ptr": "E2F9",
   "len": 9,
   "jp": "は ひき金をひいた",
-  "en": " pulled the trigger",
+  "en": " hit the trigger",
   "notes": ""
  },
  {
@@ -7044,7 +7044,7 @@
   "ptr": "E30B",
   "len": 8,
   "jp": "の まわしげり！",
-  "en": " does a roundhouse kick!",
+  "en": " roundhouses!",
   "notes": ""
  },
  {
@@ -7060,7 +7060,7 @@
   "ptr": "E32D",
   "len": 9,
   "jp": "の声力が 回復した",
-  "en": "'s Voice recovered",
+  "en": "'s Voice is back",
   "notes": ""
  },
  {
@@ -7068,7 +7068,7 @@
   "ptr": "E33F",
   "len": 11,
   "jp": "は ぶたいに 復帰した",
-  "en": " returned to the stage",
+  "en": " is back onstage",
   "notes": ""
  },
  {
@@ -7076,7 +7076,7 @@
   "ptr": "E355",
   "len": 10,
   "jp": "は 石化が 回復した",
-  "en": " is no longer stone",
+  "en": " is flesh again",
   "notes": ""
  },
  {
@@ -7100,7 +7100,7 @@
   "ptr": "E391",
   "len": 14,
   "jp": "は 本当の愛を 思い出した！",
-  "en": " remembered true love!",
+  "en": " remembers love!",
   "notes": ""
  },
  {
@@ -7108,7 +7108,7 @@
   "ptr": "E3AD",
   "len": 14,
   "jp": "は おちつきを とりもどした",
-  "en": " regained composure",
+  "en": " calmed down",
   "notes": ""
  },
  {
@@ -7116,7 +7116,7 @@
   "ptr": "E3C9",
   "len": 8,
   "jp": "の 毒が 消えた",
-  "en": " is no longer poisoned",
+  "en": " is poison-free",
   "notes": ""
  },
  {
@@ -7124,7 +7124,7 @@
   "ptr": "E3D9",
   "len": 12,
   "jp": "は ポリープが 回復した",
-  "en": " is cured of the polyp",
+  "en": " lost the polyp",
   "notes": ""
  },
  {
@@ -7132,7 +7132,7 @@
   "ptr": "E3F1",
   "len": 12,
   "jp": "は 前かがみが 回復した",
-  "en": " is no longer hunched over",
+  "en": " straightened up",
   "notes": ""
  },
  {
@@ -7140,7 +7140,7 @@
   "ptr": "E409",
   "len": 15,
   "jp": "は おん度へん化に 強くなった",
-  "en": " now resists heat and cold",
+  "en": " is weatherproof",
   "notes": ""
  },
  {
@@ -7148,7 +7148,7 @@
   "ptr": "E427",
   "len": 11,
   "jp": "は 電気に 強くなった",
-  "en": " now resists electricity",
+  "en": " is shockproof",
   "notes": ""
  },
  {
@@ -7180,7 +7180,7 @@
   "ptr": "E475",
   "len": 11,
   "jp": "の声力を かっぱらった",
-  "en": "'s Voice was swiped",
+  "en": " had Voice taken",
   "notes": ""
  },
  {
@@ -7188,7 +7188,7 @@
   "ptr": "E48B",
   "len": 15,
   "jp": "の下がっていた能力が もどった",
-  "en": "'s lowered stats were restored",
+  "en": " regained stats",
   "notes": ""
  },
  {
@@ -7196,7 +7196,7 @@
   "ptr": "E4A9",
   "len": 15,
   "jp": "の上がっていた能力が もどった",
-  "en": "'s raised stats returned to normal",
+  "en": "'s boosts faded",
   "notes": ""
  },
  {
@@ -7204,7 +7204,7 @@
   "ptr": "E4C7",
   "len": 12,
   "jp": "に 必中の精霊が 宿った",
-  "en": " now hosts a Sure-Hit Spirit",
+  "en": " can't miss now!",
   "notes": ""
  },
  {
@@ -7220,7 +7220,7 @@
   "ptr": "E4ED",
   "len": 11,
   "jp": "は 歌を はねかえした",
-  "en": " reflected the song",
+  "en": " echoed the song",
   "notes": ""
  },
  {
@@ -7228,7 +7228,7 @@
   "ptr": "E503",
   "len": 9,
   "jp": "たちは にげだした",
-  "en": " and party ran away",
+  "en": " and pals fled",
   "notes": ""
  },
  {
@@ -7244,7 +7244,7 @@
   "ptr": "E535",
   "len": 8,
   "jp": "は 石化している",
-  "en": " is turned to stone",
+  "en": " is petrified",
   "notes": ""
  },
  {
@@ -7260,7 +7260,7 @@
   "ptr": "E555",
   "len": 11,
   "jp": "は ばくすい している",
-  "en": " is in a deep sleep",
+  "en": " is sound asleep",
   "notes": ""
  },
  {
@@ -7268,7 +7268,7 @@
   "ptr": "E56B",
   "len": 12,
   "jp": "は 毒のダメージをうけた",
-  "en": " took poison damage",
+  "en": " suffers poison",
   "notes": ""
  },
  {
@@ -7276,7 +7276,7 @@
   "ptr": "E583",
   "len": 16,
   "jp": "そ、それは まるみえスコープ！？",
-  "en": "Th-that's the See-All Scope!?",
+  "en": "Th-that's a See-All Scope!?",
   "notes": ""
  },
  {
@@ -7284,7 +7284,7 @@
   "ptr": "E5A3",
   "len": 16,
   "jp": "なんだよォ見るなよォやめろよォー",
-  "en": "Hey, quit it! Don't look! Stoooop!",
+  "en": "Whaaat? Don't look! Stoooop!",
   "notes": ""
  },
  {
@@ -7316,7 +7316,7 @@
   "ptr": "E60D",
   "len": 16,
   "jp": "なぞの マスクマンが あらわれた",
-  "en": "A mysterious Masked Man appeared",
+  "en": "A mystery Masked Man appears",
   "notes": ""
  },
  {
@@ -7324,7 +7324,7 @@
   "ptr": "E62D",
   "len": 14,
   "jp": "天資「ホホホッ やりますねぇ",
-  "en": "Tensai: Ohohoho! Not bad at all",
+  "en": "Tensai: Hohoho! Impressive!",
   "notes": ""
  },
  {
@@ -7332,7 +7332,7 @@
   "ptr": "E649",
   "len": 16,
   "jp": "天資「しかし、まだまだですよ！！",
-  "en": "Tensai: But that is far from enough!!",
+  "en": "Tensai: But not enough yet!!",
   "notes": ""
  },
  {
@@ -7340,7 +7340,7 @@
   "ptr": "E669",
   "len": 16,
   "jp": "生きのいい霊が のこっています！",
-  "en": "A lively spirit still lingers!",
+  "en": "A lively spirit lingers on!",
   "notes": ""
  },
  {
@@ -7348,7 +7348,7 @@
   "ptr": "E689",
   "len": 16,
   "jp": "すばらしい！ 力がわいてきます！",
-  "en": "Splendid! Power is welling up!",
+  "en": "Superb! Power is welling up!",
   "notes": ""
  },
  {
@@ -7356,7 +7356,7 @@
   "ptr": "E6A9",
   "len": 8,
   "jp": "の ローキック！",
-  "en": " does a low kick!",
+  "en": " low-kicks!",
   "notes": ""
  },
  {
@@ -7364,7 +7364,7 @@
   "ptr": "E6B9",
   "len": 9,
   "jp": "の かかとおとし！",
-  "en": " does an axe kick!",
+  "en": " axe-kicks!",
   "notes": ""
  },
  {
@@ -7372,7 +7372,7 @@
   "ptr": "E6CB",
   "len": 14,
   "jp": "の しんくう とびひざげり！",
-  "en": " does a vacuum flying knee!",
+  "en": "'s Vacuum Knee!",
   "notes": ""
  },
  {
@@ -7380,7 +7380,7 @@
   "ptr": "E6E7",
   "len": 11,
   "jp": "の ハイヒールキック！",
-  "en": " does a high-heel kick!",
+  "en": " kicks in heels!",
   "notes": ""
  },
  {
@@ -7388,7 +7388,7 @@
   "ptr": "E6FD",
   "len": 14,
   "jp": "は 大きなアワを はきだした",
-  "en": " spat out a big bubble",
+  "en": " spat a bubble!",
   "notes": ""
  },
  {
@@ -7396,7 +7396,7 @@
   "ptr": "E719",
   "len": 13,
   "jp": "の 近くでアワが はじけた",
-  "en": " was hit by a bursting bubble",
+  "en": " got bubbled!",
   "notes": ""
  },
  {
@@ -7404,7 +7404,7 @@
   "ptr": "E733",
   "len": 16,
   "jp": "の わきから 大五郎がおどりでた",
-  "en": " lets Daigoro leap out!",
+  "en": " sends Daigoro!",
   "notes": ""
  },
  {
@@ -7412,7 +7412,7 @@
   "ptr": "E753",
   "len": 14,
   "jp": "「つ・る・か・めっ・はぁー！",
-  "en": ": Tsu-ru-ka-me-HAAA!",
+  "en": ": Tsuru-kame-HA!",
   "notes": ""
  },
  {
@@ -7436,7 +7436,7 @@
   "ptr": "E797",
   "len": 16,
   "jp": "は クッキーが まえばに当たった",
-  "en": " took a cookie to the front teeth",
+  "en": " chipped a tooth",
   "notes": ""
  },
  {
@@ -7452,7 +7452,7 @@
   "ptr": "E7C7",
   "len": 12,
   "jp": "は りゅうさんを はいた",
-  "en": " spat sulfuric acid",
+  "en": " spat vitriol!",
   "notes": ""
  },
  {
@@ -7460,7 +7460,7 @@
   "ptr": "E7DF",
   "len": 12,
   "jp": "は ニトロえきを はいた",
-  "en": " spat nitroglycerin",
+  "en": " spat nitro!",
   "notes": ""
  },
  {
@@ -7468,7 +7468,7 @@
   "ptr": "E7F7",
   "len": 16,
   "jp": "は あらかじめワナをしかけていた",
-  "en": " had set a trap in advance",
+  "en": " had set a trap!",
   "notes": ""
  },
  {
@@ -7476,7 +7476,7 @@
   "ptr": "E817",
   "len": 13,
   "jp": "は ワナにかかってしまった",
-  "en": " fell into the trap",
+  "en": " fell for it!",
   "notes": ""
  },
  {
@@ -7484,7 +7484,7 @@
   "ptr": "E831",
   "len": 16,
   "jp": "「くらえ！100両のバクダンやぁ",
-  "en": ": Take this! A 100-ryo bomb!",
+  "en": ": 100-ryo bomb!",
   "notes": ""
  },
  {
@@ -7492,7 +7492,7 @@
   "ptr": "E851",
   "len": 16,
   "jp": "「くらえ！500両のバクダンやぁ",
-  "en": ": Take this! A 500-ryo bomb!",
+  "en": ": 500-ryo bomb!",
   "notes": ""
  },
  {
@@ -7500,7 +7500,7 @@
   "ptr": "E871",
   "len": 7,
   "jp": "の 体当り攻撃",
-  "en": " does a body slam",
+  "en": " body-slams!",
   "notes": ""
  },
  {
@@ -7508,7 +7508,7 @@
   "ptr": "E87F",
   "len": 13,
   "jp": "「かがくにんぽう 火の鳥！",
-  "en": ": Science Ninja Art: Firebird!",
+  "en": ": Ninja Phoenix!",
   "notes": ""
  },
  {
@@ -7524,7 +7524,7 @@
   "ptr": "E8B1",
   "len": 10,
   "jp": "の れんぞく うち！",
-  "en": " fires a barrage!",
+  "en": " rapid-fires!",
   "notes": ""
  },
  {
@@ -7540,7 +7540,7 @@
   "ptr": "E8D3",
   "len": 8,
   "jp": "は 冷気をはいた",
-  "en": " breathed icy air",
+  "en": " blew icy air",
   "notes": ""
  },
  {
@@ -7548,7 +7548,7 @@
   "ptr": "E8E3",
   "len": 14,
   "jp": "は きいろい いきを はいた",
-  "en": " let out a yellow gas",
+  "en": " blew yellow gas",
   "notes": ""
  },
  {
@@ -7564,7 +7564,7 @@
   "ptr": "E915",
   "len": 14,
   "jp": "は 毒のほうしを ふりまいた",
-  "en": " scattered poison spores",
+  "en": " spread poison!",
   "notes": ""
  },
  {
@@ -7572,7 +7572,7 @@
   "ptr": "E931",
   "len": 13,
   "jp": "は セメントを ふりまいた",
-  "en": " scattered cement",
+  "en": " sprayed cement",
   "notes": ""
  },
  {
@@ -7580,7 +7580,7 @@
   "ptr": "E94B",
   "len": 14,
   "jp": "「私 あのこと しってるのよ",
-  "en": ": I know your secret...",
+  "en": ": I know secrets",
   "notes": ""
  },
  {
@@ -7588,7 +7588,7 @@
   "ptr": "E967",
   "len": 12,
   "jp": "は 守りを かためている",
-  "en": " is standing guard",
+  "en": " is on guard",
   "notes": ""
  },
  {
@@ -7596,7 +7596,7 @@
   "ptr": "E97F",
   "len": 16,
   "jp": "のまわりに どしゃぶり雨がふった",
-  "en": " got caught in a downpour",
+  "en": " got drenched!",
   "notes": ""
  },
  {
@@ -7604,7 +7604,7 @@
   "ptr": "E99F",
   "len": 15,
   "jp": "「あっUFOだ！ほらっアレ！！",
-  "en": ": Ooh, a UFO! Look, there!!",
+  "en": ": Look, a UFO!!",
   "notes": ""
  },
  {
@@ -7612,7 +7612,7 @@
   "ptr": "E9BD",
   "len": 12,
   "jp": "は 空を見上げてしまった",
-  "en": " looked up at the sky",
+  "en": " looked skyward",
   "notes": ""
  },
  {
@@ -7620,7 +7620,7 @@
   "ptr": "E9D5",
   "len": 14,
   "jp": "は マイムマイムを おどった",
-  "en": " danced the Mayim Mayim",
+  "en": " did Mayim Mayim",
   "notes": ""
  },
  {
@@ -7628,7 +7628,7 @@
   "ptr": "E9F1",
   "len": 13,
   "jp": "は つられて おどりだした",
-  "en": " got swept up and danced too",
+  "en": " danced along!",
   "notes": ""
  },
  {
@@ -7636,7 +7636,7 @@
   "ptr": "EA0B",
   "len": 10,
   "jp": "の カゲしばり攻撃！",
-  "en": "'s Shadow Bind attack!",
+  "en": "'s Shadow Bind!",
   "notes": ""
  },
  {
@@ -7644,7 +7644,7 @@
   "ptr": "EA1F",
   "len": 14,
   "jp": "は カゲを ふまれてしまった",
-  "en": " had its shadow pinned",
+  "en": " is shadow-bound",
   "notes": ""
  },
  {
@@ -7652,7 +7652,7 @@
   "ptr": "EA3B",
   "len": 14,
   "jp": "は むずかしいクイズを出した",
-  "en": " posed a tricky quiz",
+  "en": " posed a stumper",
   "notes": ""
  },
  {
@@ -7660,7 +7660,7 @@
   "ptr": "EA57",
   "len": 15,
   "jp": "は しんけんに かんがえこんだ",
-  "en": " thought really, really hard",
+  "en": " pondered deeply",
   "notes": ""
  },
  {
@@ -7676,7 +7676,7 @@
   "ptr": "EA8D",
   "len": 9,
   "jp": "は 大声を出した！",
-  "en": " let out a huge shout!",
+  "en": " shouted loudly!",
   "notes": ""
  },
  {
@@ -7692,7 +7692,7 @@
   "ptr": "EAAF",
   "len": 16,
   "jp": "は ギャグ（と思われる）を言った",
-  "en": " told a joke (we think)",
+  "en": " told a joke(?)",
   "notes": ""
  },
  {
@@ -7700,7 +7700,7 @@
   "ptr": "EACF",
   "len": 9,
   "jp": "の 時が 止まった",
-  "en": "'s time stood still",
+  "en": " froze in time",
   "notes": ""
  },
  {
@@ -7732,7 +7732,7 @@
   "ptr": "EB23",
   "len": 11,
   "jp": "「かわりみのじゅつ！！",
-  "en": ": Substitution Technique!!",
+  "en": ": Substitution!!",
   "notes": ""
  },
  {
@@ -7764,7 +7764,7 @@
   "ptr": "EB5F",
   "len": 10,
   "jp": "の ノーガード戦法！",
-  "en": "'s No-Guard Tactic!",
+  "en": " goes No-Guard!",
   "notes": ""
  },
  {
@@ -7772,7 +7772,7 @@
   "ptr": "EB73",
   "len": 10,
   "jp": "は つかれて動けない",
-  "en": " is too tired to move",
+  "en": " is too tired...",
   "notes": ""
  },
  {
@@ -7780,7 +7780,7 @@
   "ptr": "EB87",
   "len": 16,
   "jp": "はいきなり 思い出しわらいをした",
-  "en": " suddenly laughed at a memory",
+  "en": " got the giggles",
   "notes": ""
  },
  {
@@ -7788,7 +7788,7 @@
   "ptr": "EBA7",
   "len": 9,
   "jp": "は 力をためている",
-  "en": " is building up power",
+  "en": " is charging up",
   "notes": ""
  },
  {
@@ -7804,7 +7804,7 @@
   "ptr": "EBD1",
   "len": 11,
   "jp": "は 雨ごいを はじめた",
-  "en": " began praying for rain",
+  "en": " prayed for rain",
   "notes": ""
  },
  {
@@ -7812,7 +7812,7 @@
   "ptr": "EBE7",
   "len": 10,
   "jp": "の ふくが はだけた",
-  "en": "'s clothes slipped open",
+  "en": "'s robe slipped!",
   "notes": ""
  },
  {
@@ -7820,7 +7820,7 @@
   "ptr": "EBFB",
   "len": 16,
   "jp": "のわきから むねがチラッと見えた",
-  "en": "'s chest peeked out the side",
+  "en": "'s chest peeked!",
   "notes": ""
  },
  {
@@ -7836,7 +7836,7 @@
   "ptr": "EC31",
   "len": 13,
   "jp": "は 目玉を くるくる回した",
-  "en": " spun its eyeballs around",
+  "en": " spun its eyes!",
   "notes": ""
  },
  {
@@ -7844,7 +7844,7 @@
   "ptr": "EC4B",
   "len": 12,
   "jp": "は カミナリを おとした",
-  "en": " called down lightning",
+  "en": " cast lightning",
   "notes": ""
  },
  {
@@ -7852,7 +7852,7 @@
   "ptr": "EC63",
   "len": 10,
   "jp": "「バーンナックゥー！",
-  "en": ": Burn Knuuuckle!",
+  "en": ": Burn Knuuckle!",
   "notes": ""
  },
  {
@@ -7860,7 +7860,7 @@
   "ptr": "EC77",
   "len": 11,
   "jp": "は うまく ごまかした",
-  "en": " slickly played it off",
+  "en": " slyly fudged it",
   "notes": ""
  },
  {
@@ -7868,7 +7868,7 @@
   "ptr": "EC8D",
   "len": 13,
   "jp": "は つむじかぜを おこした",
-  "en": " whipped up a whirlwind",
+  "en": " spun a twister!",
   "notes": ""
  },
  {
@@ -7900,7 +7900,7 @@
   "ptr": "ECE5",
   "len": 13,
   "jp": "は ばくすい してしまった",
-  "en": " fell fast asleep",
+  "en": " zonked out",
   "notes": ""
  },
  {
@@ -7908,7 +7908,7 @@
   "ptr": "ECFF",
   "len": 12,
   "jp": "は 愛のどれいに なった",
-  "en": " became a slave to love",
+  "en": " is lovestruck!",
   "notes": ""
  },
  {
@@ -7916,7 +7916,7 @@
   "ptr": "ED17",
   "len": 12,
   "jp": "は 動ようを かくせない",
-  "en": " is visibly shaken",
+  "en": " looks rattled",
   "notes": ""
  },
  {
@@ -7932,7 +7932,7 @@
   "ptr": "ED43",
   "len": 15,
   "jp": "は ポリープが のどに できた",
-  "en": " got a polyp in the throat",
+  "en": " got a polyp!",
   "notes": ""
  },
  {
@@ -7940,7 +7940,7 @@
   "ptr": "ED61",
   "len": 11,
   "jp": "の 攻撃力が 上がった",
-  "en": "'s Attack went up",
+  "en": "'s Attack rose",
   "notes": ""
  },
  {
@@ -7948,7 +7948,7 @@
   "ptr": "ED77",
   "len": 11,
   "jp": "の 守備力が 上がった",
-  "en": "'s Defense went up",
+  "en": "'s Defense rose",
   "notes": ""
  },
  {
@@ -7964,7 +7964,7 @@
   "ptr": "EDA3",
   "len": 11,
   "jp": "の 攻撃力が 下がった",
-  "en": "'s Attack went down",
+  "en": "'s Attack fell",
   "notes": ""
  },
  {
@@ -7972,7 +7972,7 @@
   "ptr": "EDB9",
   "len": 11,
   "jp": "の 守備力が 下がった",
-  "en": "'s Defense went down",
+  "en": "'s Defense fell",
   "notes": ""
  },
  {
@@ -7980,7 +7980,7 @@
   "ptr": "EDCF",
   "len": 11,
   "jp": "の 素早さが 下がった",
-  "en": "'s Speed went down",
+  "en": "'s Speed fell",
   "notes": ""
  },
  {
@@ -7988,7 +7988,7 @@
   "ptr": "EDE5",
   "len": 10,
   "jp": "の 体力が 回復した",
-  "en": "'s HP was restored",
+  "en": "'s HP recovered",
   "notes": ""
  },
  {
@@ -7996,7 +7996,7 @@
   "ptr": "EDF9",
   "len": 10,
   "jp": "の 声力が 回復した",
-  "en": "'s Voice was restored",
+  "en": "'s Voice is back",
   "notes": ""
  },
  {
@@ -8020,7 +8020,7 @@
   "ptr": "EE35",
   "len": 13,
   "jp": "は 本当の愛を 思い出した",
-  "en": " remembered true love",
+  "en": " remembers love",
   "notes": ""
  },
  {
@@ -8028,7 +8028,7 @@
   "ptr": "EE4F",
   "len": 8,
   "jp": "の 毒が 消えた",
-  "en": "'s poison wore off",
+  "en": "'s poison faded",
   "notes": ""
  },
  {
@@ -8036,7 +8036,7 @@
   "ptr": "EE5F",
   "len": 12,
   "jp": "は ポリープが 回復した",
-  "en": " was cured of the polyp",
+  "en": " is polyp-free",
   "notes": ""
  },
  {
@@ -8044,7 +8044,7 @@
   "ptr": "EE77",
   "len": 12,
   "jp": "の 声力を かっぱらった",
-  "en": "'s Voice got swiped",
+  "en": " lost some Voice",
   "notes": ""
  },
  {
@@ -8052,7 +8052,7 @@
   "ptr": "EE8F",
   "len": 13,
   "jp": "は 炎と冷気に 強くなった",
-  "en": " now resists fire and cold",
+  "en": " is weatherproof",
   "notes": ""
  },
  {
@@ -8060,7 +8060,7 @@
   "ptr": "EEA9",
   "len": 11,
   "jp": "は 電気に 強くなった",
-  "en": " now resists electricity",
+  "en": " is shockproof",
   "notes": ""
  },
  {
@@ -8068,7 +8068,7 @@
   "ptr": "EEBF",
   "len": 16,
   "jp": "の 下がっていた能力が もどった",
-  "en": "'s lowered stats recovered",
+  "en": " recovered stats",
   "notes": ""
  },
  {
@@ -8076,7 +8076,7 @@
   "ptr": "EEDF",
   "len": 16,
   "jp": "の 上がっていた能力が もどった",
-  "en": "'s raised stats wore off",
+  "en": "'s boosts ended",
   "notes": ""
  },
  {
@@ -8084,7 +8084,7 @@
   "ptr": "EEFF",
   "len": 11,
   "jp": "は 歌を はねかえした",
-  "en": " bounced the song back",
+  "en": " echoed the song",
   "notes": ""
  },
  {
@@ -8108,7 +8108,7 @@
   "ptr": "EF3D",
   "len": 12,
   "jp": "は 毒のダメージをうけた",
-  "en": " took poison damage",
+  "en": " suffers poison",
   "notes": ""
  },
  {
@@ -8132,7 +8132,7 @@
   "ptr": "EF89",
   "len": 15,
   "jp": "「みんな、もうひとガンバリよ！",
-  "en": ": Everyone, one more push!",
+  "en": ": One more push!",
   "notes": ""
  },
  {
@@ -8140,7 +8140,7 @@
   "ptr": "EFA7",
   "len": 16,
   "jp": "は さいごの気力を ふりしぼった",
-  "en": " mustered one last burst",
+  "en": " dug deep!",
   "notes": ""
  },
  {
@@ -8148,7 +8148,7 @@
   "ptr": "EFC7",
   "len": 16,
   "jp": "の みみには 声がとどかなかった",
-  "en": " couldn't hear the voice",
+  "en": " didn't hear it",
   "notes": ""
  },
  {
@@ -8180,7 +8180,7 @@
   "ptr": "F019",
   "len": 9,
   "jp": "「しゃけパーンチ！",
-  "en": ": Salmon Puuunch!",
+  "en": ": Salmon Puunch!",
   "notes": ""
  },
  {
@@ -8188,7 +8188,7 @@
   "ptr": "F02B",
   "len": 7,
   "jp": "「つばめ返し！",
-  "en": ": Swallow Return!",
+  "en": ": Swallow Cut!",
   "notes": ""
  },
  {
@@ -8196,7 +8196,7 @@
   "ptr": "F039",
   "len": 10,
   "jp": "「えんげつさっぽう！",
-  "en": ": Full Moon Slash!",
+  "en": ": Full Moon Cut!",
   "notes": ""
  },
  {
@@ -8212,7 +8212,7 @@
   "ptr": "F061",
   "len": 11,
   "jp": "「おっと、気をつけなっ",
-  "en": ": Whoops, watch yourself!",
+  "en": ": Whoa, careful!",
   "notes": ""
  },
  {
@@ -8228,7 +8228,7 @@
   "ptr": "F087",
   "len": 11,
   "jp": "「ちぇっ、しけてやがる",
-  "en": ": Tch, slim pickings.",
+  "en": ": Tch, slim haul",
   "notes": ""
  },
  {
@@ -8244,7 +8244,7 @@
   "ptr": "F0BD",
   "len": 11,
   "jp": "「うっ！ こ、これは！",
-  "en": ": Ugh! Th-this is...!",
+  "en": ": Ugh! Th-this!",
   "notes": ""
  },
  {
@@ -8260,7 +8260,7 @@
   "ptr": "F0F3",
   "len": 16,
   "jp": "「神通力が‥‥ うす‥れる‥‥‥",
-  "en": ": My divine power fades...",
+  "en": ": Power... wanes",
   "notes": ""
  },
  {
@@ -8268,7 +8268,7 @@
   "ptr": "F113",
   "len": 15,
   "jp": "「頭が スーッとするようだ‥‥",
-  "en": ": My head feels so clear...",
+  "en": ": So refreshing",
   "notes": ""
  },
  {

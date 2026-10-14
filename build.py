@@ -218,6 +218,8 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
                 patch_codestr(rom, json.loads(cpath.read_text(encoding="utf-8")))
             patch_fixed(rom)
             patch_menutiles(rom)
+            patch_name_limits(rom)
+            patch_tab_spacers(rom)
     if debug:
         patch_debug_start(rom, bytes.fromhex(debug.replace(" ", "")))
     Path(out).parent.mkdir(parents=True, exist_ok=True)
@@ -297,30 +299,61 @@ def label_plan():
     (label fits the normal font) or an 8x16 pixel cell to bake with the tiny font (font.render_label)."""
     p = ROOT / "script" / "labels.json"
     plan = []
+    imm = None
     for e in json.loads(p.read_text(encoding="utf-8")) if p.exists() else []:
         if not e["en"]:
+            continue
+        if e.get("kind") == "imm":
+            if imm is None:
+                import immlabels
+                imm = {immlabels.cpu(g[0][0]): g for g in immlabels.phrases(text.ROM.read_bytes())}
+            g = imm[int(e["id"], 16)]
+            assert len(g) == e["count"], (e["id"], len(g))
+            split = e.get("split", [e["count"]])
+            cells, k = [], 0
+            for n, s in zip(split, e["en"]):
+                if s is None:  # keep the original glyphs
+                    cells += [g[k + i][1] for i in range(n)]
+                else:
+                    cells += label_cells(s, n)
+                k += n
+            plan.append((("imm", [immlabels.cpu(o) for o, _ in g]), cells))
             continue
         assert len(e["en"]) == e["count"], e["id"]
         for i, s in enumerate(e["en"]):
             n = e["cells"]
             addr = int(e["id"], 16) + 2 * n * i
-            if "/" not in s and len(s) <= n:
-                pad = n - len(s)
-                s2 = " " * (pad // 2) + s + " " * (pad - pad // 2)
-                cells = [int.from_bytes(text.EN.enc[ch], "big") for ch in s2]
-            else:
-                cells = font.render_label(s, n, 2 if "/" in s else 1)
-            plan.append(((addr, e.get("term", False)), cells))
+            plan.append(((addr, e.get("term", False)), label_cells(s, n)))
     return plan
+
+
+def label_cells(s, n):
+    """n cells for label text s: raw [XXXX] codes, the normal font if it fits, else baked tiny-font cells."""
+    if s.startswith("["):
+        b = text.encode(s, text.EN.enc)
+        cells = [int.from_bytes(b[k:k + 2], "big") for k in range(0, len(b), 2)]
+        assert len(cells) == n, s
+        return cells
+    if "/" not in s and len(s) <= n:
+        pad = n - len(s)
+        s2 = " " * (pad // 2) + s + " " * (pad - pad // 2)
+        return [int.from_bytes(text.EN.enc[ch], "big") for ch in s2]
+    return font.render_label(s, n, 2 if "/" in s else 1)
 
 
 def write_labels(rom, plan, code_of):
     """code_of: repr(baked cell) -> glyph code."""
-    for (addr, term), cells in plan:
+    for (where, term), cells in plan:
         ws = [code_of[repr(c)] if isinstance(c, list) else c for c in cells]
+        if where == "imm":  # one `LDA #code` per cell
+            for site, w in zip(term, ws):
+                o = off(site)
+                assert rom[o] == 0xA9, hex(site)
+                rom[o + 1:o + 3] = w.to_bytes(2, "little")
+            continue
         if term:
             ws[-1] |= 0x8000
-        o = off(addr)
+        o = off(where)
         rom[o:o + 2 * len(ws)] = b"".join(w.to_bytes(2, "little") for w in ws)
 
 
@@ -359,6 +392,27 @@ def patch_menutiles(rom):
         new = lz.compress(bytes(raw))
         assert len(new) <= used, f"menu tiles at {src:06X}: {len(new):#x} > {used:#x}"
         rom[o:o + len(new)] = new
+
+
+NAME_MAX_SITES = (0x04BBDF, 0x04BC02)  # `LDA #$0006`: glyph limit when drawing a party name (04:BBC9)
+# `LDA #$02FF ; JSR $B71D` after every cell of the selected item/song tab ("戦 闘 用"): spaced-out kana/kanji
+# would tear baked English labels apart ("Re me dy"), so the selected tab is drawn solid like the others
+TAB_SPACERS = (0x04B7F0, 0x04B88C)
+
+
+def patch_tab_spacers(rom):
+    for site in TAB_SPACERS:
+        o = off(site)
+        assert rom[o:o + 6] == b"\xa9\xff\x02\x20\x1d\xb7", hex(site)
+        rom[o:o + 6] = b"\xea" * 6
+
+
+def patch_name_limits(rom):
+    """English party names run to 11 letters (Fuji Musume); the status rows have room for 12."""
+    for site in NAME_MAX_SITES:
+        o = off(site)
+        assert rom[o:o + 3] == b"\xa9\x06\x00", hex(site)
+        rom[o + 1] = 0x0C
 
 
 FIXED_AT = 0x3C9000  # fixed-count strings (no terminator), see FIXED
