@@ -1,0 +1,15 @@
+rom/
+build/
+work/
+dist/
+release/
+__pycache__/
+.pytest_cache/
+*.mss
+*.srm
+# third-party binaries (the repo's own tools/*.py are tracked)
+tools/mesen2/
+tools/asar/
+# installed skill copies (skills-lock.json records the source)
+.agents/
+.claude/skills/

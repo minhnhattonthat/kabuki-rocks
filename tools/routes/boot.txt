@@ -1,0 +1,6 @@
+# Cold boot to title screen (Atlus logo ~f360, title ~f1080)
+600 -
+6 start
+300 -
+6 start
+600 -
