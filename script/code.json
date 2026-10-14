@@ -2148,5 +2148,44 @@
    ]
   ],
   "notes": ""
+ },
+ {
+  "id": "04949F",
+  "len": 8,
+  "jp": "歌武器を作曲する",
+  "en": "Compose a song weapon",
+  "refs": [
+   [
+    "049473",
+    "table"
+   ]
+  ],
+  "notes": "added by hand"
+ },
+ {
+  "id": "04E666",
+  "len": 15,
+  "jp": "方向キー上下‥‥カーソルいどう",
+  "en": "D-pad Up/Down....Move the cursor",
+  "refs": [
+   [
+    "04E652",
+    "table"
+   ]
+  ],
+  "notes": "added by hand"
+ },
+ {
+  "id": "04E684",
+  "len": 13,
+  "jp": "決定ボタン‥‥‥数をふやす",
+  "en": "Confirm....Raise the amount",
+  "refs": [
+   [
+    "04E654",
+    "table"
+   ]
+  ],
+  "notes": "added by hand"
  }
 ]

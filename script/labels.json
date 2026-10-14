@@ -19,7 +19,7 @@
  {"id": "04D5DF", "cells": 5, "count": 1, "en": [], "notes": "04:D5A1 のをやめる (fragment)"},
  {"id": "04DD1D", "cells": 6, "count": 1, "en": [], "notes": "04:DCCA 持っていた.."},
  {"id": "04DE17", "cells": 5, "count": 1, "en": ["Total"], "notes": "shop (04:DE08)"},
- {"id": "04E16C", "cells": 2, "count": 6, "en": [], "notes": "shop categories (04:E133, X = n*4); the shop title is word,space,word,space,屋 - needs a 5-cell hook"},
+ {"id": "04E16C", "cells": 2, "count": 6, "en": ["[01F0][02FF]", "[01F4][02FF]", "[01F5][02FF]", "[01F6][02FF]", "Item", "Tea"], "notes": "shop categories (04:E133, X = n*4); the shop title is word,space,word,space,屋 - needs a 5-cell hook"},
  {"id": "04CD86", "kind": "imm", "count": 3, "en": ["Money"], "notes": "持ち金 (shop)"},
  {"id": "04CEDE", "kind": "imm", "count": 3, "en": [" Buy"], "notes": "を買う after the category (shop title)"},
  {"id": "04D731", "kind": "imm", "count": 6, "en": ["Sell"], "notes": "持ち物を売る"},
@@ -53,5 +53,9 @@
  {"id": "07A8A0", "kind": "imm", "count": 6, "split": [1, 5], "en": [null, " was sung!"], "notes": "♪を唱えた！"},
  {"id": "07AF73", "kind": "imm", "count": 6, "split": [1, 5], "en": [null, " was sung!"], "notes": "♪を唱えた！"},
  {"id": "07E42A", "kind": "imm", "count": 6, "split": [1, 5], "en": [null, " was sung!"], "notes": "♪を唱えた！"},
- {"id": "07F044", "kind": "imm", "count": 6, "split": [1, 5], "en": [null, " was sung!"], "notes": "♪を唱えた！"}
+ {"id": "07F044", "kind": "imm", "count": 6, "split": [1, 5], "en": [null, " was sung!"], "notes": "♪を唱えた！"},
+ {"id": "WALK", "kind": "hook", "cells": 6, "count": 3, "en": ["Cautious", "Hunt Foes", "Investigate"], "notes": "walking styles けいかいする/てきをさがす/ちょうさする (04:AE47; 8-bit kana strings at 04:AE01)"},
+ {"id": "EQUIPNONE", "kind": "hook", "cells": 9, "count": 1, "en": [" none equipped"], "notes": "は装備していません after the category icon (04:B619)"},
+ {"id": "EQUIPTITLE", "kind": "hook", "cells": 3, "count": 1, "en": ["Equip"], "notes": "装 備 title (04:B465)"},
+ {"id": "SHOPTITLE", "kind": "hook", "cells": 5, "count": 6, "en": ["Arms", "Armor", "Shoes", "Music", "Items", "Tea"], "notes": "shop title 武器屋 防具屋 着物屋 楽器屋 道具屋 茶屋 (04:E133, X = type*4)"}
 ]

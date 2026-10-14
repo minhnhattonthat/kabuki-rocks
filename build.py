@@ -203,9 +203,14 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
                 for c in cells:
                     if isinstance(c, list):
                         uniq.setdefault(repr(c), c)
-            codes = []
-            font.patch_font(rom, extra=list(uniq.values()), extra_out=codes)
+            ext = []
+            font.patch_font(rom, extra=list(uniq.values()), extra_out=ext)
+            install_glyph_ext(rom, ext)
+            codes = [c for c, _, _, _ in ext]
             write_labels(rom, plan, dict(zip(uniq, codes)))
+            # for QA (tools/jpscreen.py): glyph codes that now hold baked English label cells
+            (ROOT / "build").mkdir(exist_ok=True)
+            (ROOT / "build" / "baked_codes.json").write_text(json.dumps(codes), encoding="utf-8")
             # the yes/no cursor glyph 0x12E (▶) is now "N": point it at the English ▶
             o = off(CHOICE_CURSOR)
             assert rom[o:o + 3] == b"\xa9\x2e\x01"
@@ -303,6 +308,10 @@ def label_plan():
     for e in json.loads(p.read_text(encoding="utf-8")) if p.exists() else []:
         if not e["en"]:
             continue
+        if e.get("kind") == "hook":
+            for s in e["en"]:
+                plan.append((("hook", e["id"]), label_cells(s, e["cells"])))
+            continue
         if e.get("kind") == "imm":
             if imm is None:
                 import immlabels
@@ -327,6 +336,95 @@ def label_plan():
     return plan
 
 
+GLYPH_TABLE_EXT = 0x3D0000  # bank holding the extended copy of the glyph tile-pair table (at its old offset BC48)
+PAGE_FN = 0x3D8000  # page selector for 00:BAEF / 00:BB6A that also knows the new label codes (font.EXT_BASE)
+PAGE_SITES = (0x00BB0D, 0x00BB88)  # LDX #3 / CPY #$1C0 / ... page selection (21 bytes each)
+TABLE_READS = (0x00BB3B, 0x00BB49, 0x00BBCF, 0x00BBDD)  # LDA $00BC48,x / LDA $00BC49,x
+
+
+def install_glyph_ext(rom, ext):
+    """Label glyph codes beyond the original set: code c on page p uses table index (c - SUB[p])*2 + ADD[p]
+    exactly like the originals, read from a copy of 00:BC48 in GLYPH_TABLE_EXT that has room past its end."""
+    sub = [int.from_bytes(rom[0x3B5A + 2 * p:0x3B5C + 2 * p], "little") for p in range(4)]
+    add = [int.from_bytes(rom[0x3B62 + 2 * p:0x3B64 + 2 * p], "little") for p in range(4)]
+    base = GLYPH_TABLE_EXT | 0xBC48
+    o = off(base)
+    rom[o:o + 0x5C8] = rom[0x3C48:0x3C48 + 0x5C8]  # original entries (page 3 runs to code 0x2FF)
+    for code, p, top, bot in ext:
+        idx = (code - sub[p]) * 2 + add[p]
+        assert idx >= 0x5C8 and (base & 0xFFFF) + idx + 1 < 0x10000, hex(code)
+        rom[o + idx:o + idx + 2] = bytes([top, bot])
+    for site in TABLE_READS:
+        so = off(site)
+        assert rom[so] == 0xBF and rom[so + 3] == 0x00, hex(site)
+        rom[so + 3] = GLYPH_TABLE_EXT >> 16
+    b1, b2, b3 = font.EXT_BASE[1], font.EXT_BASE[2], font.EXT_BASE[3]
+    fn = bytes([0xC0, b3 & 0xFF, b3 >> 8, 0xB0, 0x28,          # CPY #ext3 ; BCS p3 (idx 45)
+                0xC0, b2 & 0xFF, b2 >> 8, 0xB0, 0x1F,          # CPY #ext2 ; BCS p2 (idx 41)
+                0xC0, b1 & 0xFF, b1 >> 8, 0xB0, 0x16,          # CPY #ext1 ; BCS p1 (idx 37)
+                0xA2, 0x03, 0x00, 0xC0, 0xC0, 0x01, 0xB0, 0x0D,  # the original selection
+                0xCA, 0xC0, 0x40, 0x01, 0xB0, 0x07,
+                0xCA, 0xC0, 0xB0, 0x00, 0xB0, 0x01, 0xCA, 0x6B,  # ... ; RTL
+                0xA2, 0x01, 0x00, 0x6B,                        # p1: LDX #1 ; RTL
+                0xA2, 0x02, 0x00, 0x6B,                        # p2: LDX #2 ; RTL
+                0xA2, 0x03, 0x00, 0x6B])                       # p3: LDX #3 ; RTL
+    rom[off(PAGE_FN):off(PAGE_FN) + len(fn)] = fn
+    for site in PAGE_SITES:
+        so = off(site)
+        assert rom[so:so + 21] == bytes.fromhex("a20300c0c001b00dcac04001b007cac0b000b001ca"), hex(site)
+        rom[so:so + 21] = bytes([0x22, PAGE_FN & 0xFF, PAGE_FN >> 8 & 0xFF, PAGE_FN >> 16]) + b"\xea" * 17
+
+
+HOOK_AT = 0x3CA000  # hook code + 16-bit label strings for routines that read 8-bit kana strings
+# name -> (site, original bytes there (asserted), how the site calls the printer)
+HOOKS = {  # name -> (site, original bytes, mode, bytes run before the JSL, RTS after the JSL?)
+    # walking style (04:AE40): X = style*2 indexes the byte-string table 04:ADFB; prints, then returns
+    "WALK": (0x04AE47, bytes.fromhex("bffbad04aae220bf000004c2203009"), "table", b"", True),
+    # 「は装備していません」 after an equipment category (04:B619: 9 bytes from 04:B62D, then RTS at B62C)
+    "EQUIPNONE": (0x04B619, bytes.fromhex("a20000bf2db60429ff00201db7e8e00900d0f0"), "single", b"", False),
+    # equip title 「装 備」: LDA #$F3 ; LDY #$1098 ; JSR $B71D ; INY INY ; LDA #$F4 ; JMP $B71D (tail)
+    "EQUIPTITLE": (0x04B465, bytes.fromhex("a9f300a09810201db7c8c8a9f4004c1db7"), "single", b"\xa0\x98\x10", True),
+    # shop title 「武 器 屋」 (04:E12B: X = shop type*4, Y set): 5 cells, then return
+    "SHOPTITLE": (0x04E133, bytes.fromhex("bf6ce104201db7a9ff02"), "table4", b"", True),
+}
+
+
+def install_hooks(rom, strings):
+    """strings: {hook name: [list of glyph words per label]}. Writes the strings, a printer per hook, the patch."""
+    pos = HOOK_AT
+    for name, labels in strings.items():
+        site, orig, how, pre, rts = HOOKS[name]
+        o = off(site)
+        assert rom[o:o + len(orig)] == orig, name
+        addrs = []
+        for ws in labels:
+            ws = list(ws)
+            ws[-1] |= 0x8000
+            data = b"".join(w.to_bytes(2, "little") for w in ws)
+            rom[off(pos):off(pos) + len(data)] = data
+            addrs.append(pos & 0xFFFF)
+            pos += len(data)
+        bank = HOOK_AT >> 16
+        loop = bytes([0xBF, 0x00, 0x00, bank, 0x30, 0x08,         # loop: LDA bank:0000,x ; BMI last
+                      0x22, 0x7B, 0xB7, 0x04, 0xE8, 0xE8, 0x80, 0xF2,  # JSL $04B77B ; INX INX ; BRA loop
+                      0x29, 0xFF, 0x7F, 0x22, 0x7B, 0xB7, 0x04, 0x6B])  # last: AND #$7FFF ; JSL ; RTL
+        if how in ("table", "table4"):
+            tbl = pos
+            for a in addrs:
+                rom[off(pos):off(pos) + 2] = a.to_bytes(2, "little")
+                pos += 2 if how == "table" else 4  # table4: X is index*4 at the site
+            code = bytes([0xBF, tbl & 0xFF, tbl >> 8 & 0xFF, bank, 0xAA]) + loop  # LDA tbl,x ; TAX ; loop
+        else:
+            code = bytes([0xA2, addrs[0] & 0xFF, addrs[0] >> 8]) + loop          # LDX #string ; loop
+        entry = pos
+        rom[off(pos):off(pos) + len(code)] = code
+        pos += len(code)
+        call = bytes([0x22, entry & 0xFF, entry >> 8 & 0xFF, entry >> 16])
+        patch = pre + call + (b"\x60" if rts else b"")
+        assert len(patch) <= len(orig), name
+        rom[o:o + len(orig)] = patch + b"\xea" * (len(orig) - len(patch))
+
+
 def label_cells(s, n):
     """n cells for label text s: raw [XXXX] codes, the normal font if it fits, else baked tiny-font cells."""
     if s.startswith("["):
@@ -343,8 +441,12 @@ def label_cells(s, n):
 
 def write_labels(rom, plan, code_of):
     """code_of: repr(baked cell) -> glyph code."""
+    hooks = {}
     for (where, term), cells in plan:
         ws = [code_of[repr(c)] if isinstance(c, list) else c for c in cells]
+        if where == "hook":
+            hooks.setdefault(term, []).append(ws)
+            continue
         if where == "imm":  # one `LDA #code` per cell
             for site, w in zip(term, ws):
                 o = off(site)
@@ -355,6 +457,8 @@ def write_labels(rom, plan, code_of):
             ws[-1] |= 0x8000
         o = off(where)
         rom[o:o + 2 * len(ws)] = b"".join(w.to_bytes(2, "little") for w in ws)
+    if hooks:
+        install_hooks(rom, hooks)
 
 
 # Menu overlay tiles (8x8 small kanji written straight into the menu tilemap, e.g. 04:BA01): decompressed by

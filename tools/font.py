@@ -90,6 +90,9 @@ def encode_tile(rows):
     return bytes(out)
 
 
+EXT_BASE = {1: 0x400, 2: 0x600, 3: 0x800}  # first new glyph code per tile page (build.py install_glyph_ext)
+
+
 def kanji_by_use(rom):
     """Page-1/2 kanji codes not taken by the English font and not still drawn, most used in the script first."""
     import text  # local: font is imported by text-free tools too
@@ -180,21 +183,15 @@ def patch_font(rom: bytearray, extra=(), extra_out=None) -> dict[str, bytes]:
     already points to, else a free tile of that page (one no kept code uses). Codes 139-13F share
     their table entry with 140-146 (page 1's table ends at 138), so those pairs need a byte that is
     free in both pages.
-    extra: more 8x16 cells (16 rows of 8 palette indices, e.g. render_label output) that get the codes of the
-    least-used kanji (kanji_by_use); their codes are appended to extra_out in order."""
+    extra: more 8x16 cells (16 rows of 8 palette indices, e.g. render_label output). They get NEW glyph codes
+    (EXT_BASE per page) on the tiles of kanji no text draws any more (kanji_by_use); for each cell
+    (code, page, top byte, bottom byte) is appended to extra_out. build.py installs the mapping (EXT_* below)."""
     glyphs = load_en()
-    if extra:
-        cands = kanji_by_use(rom)
-        if len(extra) > len(cands):
-            raise ValueError(f"{len(extra)} label cells but only {len(cands)} spare glyph codes")
-        for i, cell in enumerate(extra):
-            glyphs[cands[i]] = (f"<label{i}>", cell)
-            if extra_out is not None:
-                extra_out.append(cands[i])
+    freed = set(kanji_by_use(rom)) if extra else set()
     chr_ = bytearray(tiles(rom))
     sizes = (FONT_BLOCKS[1] - FONT_BLOCKS[0], lz.decompress(rom, FONT_BLOCKS[1], 0x2000)[1])
-    keep = {t for c in range(0x300) if c not in glyphs and c not in SACRIFICE and is_real(rom, c)
-            for t in glyph_tiles(rom, c)}
+    keep = {t for c in range(0x300) if c not in glyphs and c not in SACRIFICE and c not in freed
+            and is_real(rom, c) for t in glyph_tiles(rom, c)}
     placed = {1: {}, 2: {}, 3: {}}  # page -> {byte: tile data}
     groups = {}  # table offset -> [(page, (top data, bottom data))]
     for code, (_, rows) in sorted(glyphs.items()):
@@ -219,6 +216,40 @@ def patch_font(rom: bytearray, extra=(), extra_out=None) -> dict[str, bytes]:
     for x, h, m in sorted(later, key=lambda t: -len(t[2])):
         if not put(x, h, m, range(0xFF)):
             raise ValueError(f"no free tile for table entry {x:#x} half {h}; add kanji to SACRIFICE")
+
+    # label cells: new codes, tiles from what is free in pages 1-3 (deduplicated per page)
+    counters = dict(EXT_BASE)
+
+    def tile_for(p, d, pending):
+        for b, v in list(placed[p].items()) + list(pending.items()):
+            if v == d:
+                return b
+        return next((b for b in range(0xFF) if b not in placed[p] and b not in pending
+                     and (p << 8 | b) not in keep and (p << 8 | b) not in VOLATILE), None)
+
+    for cell in extra:
+        top, bot = encode_tile(cell[:8]), encode_tile(cell[8:])
+        for p in (1, 2, 3):
+            if counters[p] >= EXT_BASE[p] + 0x100:
+                continue
+            pending = {}
+            bt = tile_for(p, top, pending)
+            if bt is None:
+                continue
+            pending[bt] = top
+            bb = tile_for(p, bot, pending)
+            if bb is None:
+                continue
+            pending[bb] = bot
+            for b, d in pending.items():
+                placed[p][b] = d
+                chr_[(p << 8 | b) * 16:(p << 8 | b) * 16 + 16] = d
+            if extra_out is not None:
+                extra_out.append((counters[p], p, bt, bb))
+            counters[p] += 1
+            break
+        else:
+            raise ValueError("font full: no free tiles for a label cell")
 
     for i, off in enumerate(FONT_BLOCKS):
         new = lz.compress(bytes(chr_[i * 0x2000:(i + 1) * 0x2000]))

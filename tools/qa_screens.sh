@@ -11,8 +11,10 @@ GIVE="A4 30 75 B5 1B B5 2B B5 3C A2 44 A2 43 A2 42 A2 45"
 mkdir -p $OUT work/states
 rm -f $OUT/*.png
 shot() {  # name rom state route frames
-  python -X utf8 $SKILL/emu.py "$2" --out work/qa/_s --state-in "$3" --route-str "$4" --frames "$5" >/dev/null
+  python -X utf8 $SKILL/emu.py "$2" --out work/qa/_s --state-in "$3" --route-str "$4" --frames "$5" \
+    --script tools/lua/glyphlog.lua --script tools/lua/battleglyph.lua >/dev/null
   cp work/qa/_s/final.png "$OUT/$1.png"
+  cp work/qa/_s/log.txt "$OUT/$1.log"
 }
 python -X utf8 build.py "$@" --out build/qa_field.sfc --debug "$GIVE C8 00 0A 0A 0B BC 09 FF" >/dev/null
 python -X utf8 $SKILL/emu.py build/qa_field.sfc --out work/qa/_s --route-str "$BOOT;500 -" --frames 2400 \
@@ -39,3 +41,5 @@ python -X utf8 $SKILL/emu.py build/qa_battle.sfc --out work/qa/_s --route-str "$
 shot 20_battle build/qa_battle.sfc work/states/qa_battle.mss "30 -" 60
 shot 21_battlecmd build/qa_battle.sfc work/states/qa_battle.mss "120 -;6 a;40 -" 200
 python -X utf8 $SKILL/sheet.py "$OUT/*.png" --cols 4 --div 1 --out $OUT/sheet.png
+python -X utf8 tools/jpscreen.py $OUT/*.log > $OUT/japanese.txt || true
+echo "japanese left: $OUT/japanese.txt ($(grep -c '^  ' $OUT/japanese.txt) callers)"
