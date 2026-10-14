@@ -1,6 +1,6 @@
 """Dictionary words: text codes >= 0x300 expand to a glyph list in bank $2F (00:BBEE + printer 03:94DD).
 
-    python -X utf8 tools/dictwords.py            # dump every word that decodes
+    python -X utf8 tools/dictwords.py dump [--force]   # script/dict.json
 """
 import sys
 from pathlib import Path
@@ -38,15 +38,39 @@ def word(rom, code, maxlen=64):
     raise ValueError(f"dictionary word {code:#x} unterminated")
 
 
-if __name__ == "__main__":
+# (pointer table base in bank $2F, first code, entries): a table ends where the first word data starts.
+GROUPS = [(0xA74F, 0x300, 255), (0xB789, 0x400, 83), (0xBC2F, 0x500, 158), (0xC3F5, 0x600, 349),
+          (0xDEAD, 0x800, 190), (0xF13B, 0x900, 45), (0xF30B, 0x980, 60), (0xF5BD, 0xA00, 191)]
+DATA_END = 0xFDC0  # shortcut: end of the last word (max pointer 0xFDB3 + its length); verify before reusing space
+
+
+def codes():
+    return [c for _, first, n in GROUPS for c in range(first, first + n)]
+
+
+def dump(force=False):
+    import json
     sys.path.insert(0, str(ROOT / ".claude/skills/translate-retro-game/scripts"))
     from tbl import Table
     t = Table.load(ROOT / "tbl/jp.tbl")
     rom = (ROOT / "rom/Kabuki Rocks (Japan).sfc").read_bytes()
-    for code in range(0x300, 0xB00):
-        try:
-            ws = word(rom, code)
-        except (ValueError, IndexError):
-            continue
-        s = "".join(t.dec.get(w.to_bytes(2, "big"), f"[{w:03X}]") for w in ws)
-        print(f"{code:04X} {entry_addr(rom, code):04X} {s}")
+    out = []
+    for code in codes():
+        ws = word(rom, code)
+        s = "".join(t.dec.get(w.to_bytes(2, "big"), f"[{w:04X}]") for w in ws)
+        out.append({"id": f"{code:04X}", "ptr": f"{entry_addr(rom, code):04X}", "len": len(ws), "jp": s, "en": "",
+                    "notes": ""})
+    p = ROOT / "script" / "dict.json"
+    if p.exists() and not force:
+        sys.exit(f"{p} exists; --force overwrites English")
+    with open(p, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(out, f, ensure_ascii=False, indent=1)
+        f.write("\n")
+    print(f"{p.name}: {len(out)} words")
+
+
+if __name__ == "__main__":
+    if sys.argv[1:2] == ["dump"]:
+        dump("--force" in sys.argv)
+    else:
+        print(__doc__)
