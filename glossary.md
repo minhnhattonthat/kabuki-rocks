@@ -88,3 +88,6 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 - Nameless 「 lines: no speaker prefix, no stray opening quote.
 - {name93}/{name94}: no honorific suffix glued on; use "Sir {name93}" style or rephrase.
 - 泣き所町 -> Nakidokoro Town (pun on Benkei's weak spot lost; revisit).
+- Wave 2 terms: 関所 -> checkpoint. キョウ -> Kyo. アワの国 -> Land of Awa. イズモの国 -> Land of Izumo. 楽屋シップ -> Dressing Room Ship. 空桶洞 -> Karaoke Cave. セーブじぞう -> Save Jizo. じらい草 -> landmine grass. バツユマのかんざし -> Batsuyuma Hairpin. どこでも木戸 -> Anywhere Gate. {name93}座 -> the {name93} Troupe. 町 names: いの町 I Town, ろの町 Ro Town, はの町 Ha Town, にの町 Ni Town. Danjo's tic -> ", squeak!". Fu/En/Rai/Hyo-chan -> Fu-chan etc.
+- Glyph fixes: 0x17F = 座 (not 庭), 0xE5 = 一 (not ―).
+- Pending rulings: モ大エ (Mo-Daiku vs Mozaiku), 体力/声力 (HP / Voice?), ♪ in song titles (font has ♪ at 0x160; checker currently ASCII-only).

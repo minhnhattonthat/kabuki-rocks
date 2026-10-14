@@ -583,7 +583,7 @@
  {
   "id": "08A6B4",
   "size": 123,
-  "jp": "役人「この{『魔ぬけの森』#0364}は ―度入ったら{n}{   #052F}二度と出られない 魔の森。{wait}{clr}{   #052F}お上にさからった バツだ。{n}{   #052F}さあ 死ぬまで さまようがよい{！！！#0A54}{wait}",
+  "jp": "役人「この{『魔ぬけの森』#0364}は 一度入ったら{n}{   #052F}二度と出られない 魔の森。{wait}{clr}{   #052F}お上にさからった バツだ。{n}{   #052F}さあ 死ぬまで さまようがよい{！！！#0A54}{wait}",
   "en": "Official: The 'Witless Woods' is a demon forest. Once you go in, you never come out again.{wait}{clr}That's your punishment for defying the authorities. Now wander there until you die!!!{wait}",
   "notes": ""
  },
@@ -618,7 +618,7 @@
  {
   "id": "08A96B",
   "size": 85,
-  "jp": "「{じらいや#0901} という ぬすっとの{こぞう#0A26}は{n} {この森#0A79}を出た ただ―人の男で{n} しらんヤツは いないズラ。{wait}",
+  "jp": "「{じらいや#0901} という ぬすっとの{こぞう#0A26}は{n} {この森#0A79}を出た ただ一人の男で{n} しらんヤツは いないズラ。{wait}",
   "en": "That young thief Jiraiya is the only man who ever got out of this forest. Ain't a soul around who don't know him.{wait}",
   "notes": ""
  },
@@ -632,7 +632,7 @@
  {
   "id": "08AA7A",
   "size": 170,
-  "jp": "「ボクは {じらいや#0901}{にいちゃん#0A73}の ―の子分なんだ。{n} エッ？ どんな{にいちゃん#0A73}だったかって？{n} とっても やさしかったんだけど{‥‥‥#065F}。{wait}{clr} 右へ行け と言われれば 左へ行っちゃう{n} ひねくれ者だったよ。{wait}",
+  "jp": "「ボクは {じらいや#0901}{にいちゃん#0A73}の 一の子分なんだ。{n} エッ？ どんな{にいちゃん#0A73}だったかって？{n} とっても やさしかったんだけど{‥‥‥#065F}。{wait}{clr} 右へ行け と言われれば 左へ行っちゃう{n} ひねくれ者だったよ。{wait}",
   "en": "I'm Big Bro Jiraiya's number one henchman! Huh? What was he like? He was really nice, but...{wait}{clr}Tell him to go right and he'd go left. He always did the opposite!{wait}",
   "notes": ""
  },
@@ -814,14 +814,14 @@
  {
   "id": "08B66C",
   "size": 415,
-  "jp": "{甚五郎#0922}「役者とは 人々にユメを あたえる者。{n}{    #035F}他人どころか 自分をも{n}{    #035F}だますような{しばい#0AAA}は イカン！{wait}{clr}{    #035F}{のォ～#0A6D} {ベンケイ#0900}。{wait}{b8:180D}{clr}{ベンケイ#0900}「{‥‥‥#065F}。{wait}{ba}{clr}{甚五郎#0922}「{name93}よ。 今こそ話そう 父の事を。{n}{wait}{clr}{    #035F}お前がうまれる前の世は ひどかった。{n}{    #035F}{モンスター#0A8B}が はびこり{n}{    #035F}お上は何もせず しふくをこやすばかり。{wait}{clr}{    #035F}そんな世をかえようと {スケノブ#091D}は たびだった。{n}{    #035F}この世を正すには けん力の座につくのが―番！{n}{    #035F}{スケノブ#091D}は そう思い 役者の力を いかし！{wait}{clr}{    #035F}将軍の {カゲ武者#0A0B}となったの{じゃ！#0A58}！{wait}",
+  "jp": "{甚五郎#0922}「役者とは 人々にユメを あたえる者。{n}{    #035F}他人どころか 自分をも{n}{    #035F}だますような{しばい#0AAA}は イカン！{wait}{clr}{    #035F}{のォ～#0A6D} {ベンケイ#0900}。{wait}{b8:180D}{clr}{ベンケイ#0900}「{‥‥‥#065F}。{wait}{ba}{clr}{甚五郎#0922}「{name93}よ。 今こそ話そう 父の事を。{n}{wait}{clr}{    #035F}お前がうまれる前の世は ひどかった。{n}{    #035F}{モンスター#0A8B}が はびこり{n}{    #035F}お上は何もせず しふくをこやすばかり。{wait}{clr}{    #035F}そんな世をかえようと {スケノブ#091D}は たびだった。{n}{    #035F}この世を正すには けん力の座につくのが一番！{n}{    #035F}{スケノブ#091D}は そう思い 役者の力を いかし！{wait}{clr}{    #035F}将軍の {カゲ武者#0A0B}となったの{じゃ！#0A58}！{wait}",
   "en": "Jingoro: An actor is one who gives people dreams. A play that fools not only others but even oneself will not do!{wait}{clr}Is that not so, Benkei?{wait}{b8:180D}{clr}Benkei: ......{wait}{ba}{clr}Jingoro: {name93}. Now is the time to tell you about your father.{wait}{clr}Before you were born, the world was a terrible place. Monsters ran rampant, and the authorities did nothing but line their own pockets.{wait}{clr}Sukenobu set out to change that world. To set this world right, the best way was to sit in the halls of power! So Sukenobu thought, and putting his actor's skills to use...{wait}{clr}he became the Shogun's body double!!{wait}",
   "notes": ""
  },
  {
   "id": "08B812",
   "size": 676,
-  "jp": "{name93}「{父ちゃん#0A93}が{‥‥ #0A2C}{カゲ武者#0A0B}に{‥‥‥#065F}。{wait}{ba}{p9a}{甚五郎#0922}「{スケノブ#091D}は{カゲ武者#0A0B}として {世の中#0A10}をへいわに治め{n}{    #035F}本物の将軍は{あそび#0A56}ほうけていた という事{じゃ。#0A31}{wait}{clr}{    #035F}―ヶ月前までの 太平の世は {スケノブ#091D}のおかげ{n}{    #035F}なの{じゃ。#0A31} わが子が そして 人々が しあわせに{n}{    #035F}すごせるために {スケノブ#091D}は 家を出たの{じゃ。#0A31}{wait}{b8:000D}{clr}{name93}「{母ちゃん#0AA8}は その事を しってたのか？{wait}{ba}{p9a}{甚五郎#0922}「うむ。 だからこそ 死のまぎわでさえ{n}{    #035F}えがおで この世をさられたの{じゃ。#0A31}{wait}{b8:000D}{clr}{name93}「‥‥そうだったのか{‥‥‥#065F}。{wait}{ba}{b8:0F0D}{p9a}{name94}「―ヶ月前 将軍が {天資#0909}に{n}かわったのは‥‥{name93}のお父さんは{n}どうなったの！ {甚五郎#0922}さん！！{wait}{ba}{p9a}{甚五郎#0922}「わからぬ{‥‥ #0A2C}だが {天資#0909}の右うで {五ェ門#090A}が{n}{    #035F}ウラで動いたらしい。 もうすでに{‥‥‥#065F}{n}{    #035F}かもしれぬ。{wait}{b8:000D}{clr}{name93}「{！！！#0A54}{wait}{ba}{b8:0F0D}{p9a}{name94}「そ そんなァ～！{wait}{ba}{b8:180D}{p9a}{ベンケイ#0900}「！！ 今の話しが本当なら{n}{     #034F}{せっしゃ#0A1A}が そんけいしていた将軍は{n}{     #034F}おぬしの父上なのでござるか！{wait}",
+  "jp": "{name93}「{父ちゃん#0A93}が{‥‥ #0A2C}{カゲ武者#0A0B}に{‥‥‥#065F}。{wait}{ba}{p9a}{甚五郎#0922}「{スケノブ#091D}は{カゲ武者#0A0B}として {世の中#0A10}をへいわに治め{n}{    #035F}本物の将軍は{あそび#0A56}ほうけていた という事{じゃ。#0A31}{wait}{clr}{    #035F}一ヶ月前までの 太平の世は {スケノブ#091D}のおかげ{n}{    #035F}なの{じゃ。#0A31} わが子が そして 人々が しあわせに{n}{    #035F}すごせるために {スケノブ#091D}は 家を出たの{じゃ。#0A31}{wait}{b8:000D}{clr}{name93}「{母ちゃん#0AA8}は その事を しってたのか？{wait}{ba}{p9a}{甚五郎#0922}「うむ。 だからこそ 死のまぎわでさえ{n}{    #035F}えがおで この世をさられたの{じゃ。#0A31}{wait}{b8:000D}{clr}{name93}「‥‥そうだったのか{‥‥‥#065F}。{wait}{ba}{b8:0F0D}{p9a}{name94}「一ヶ月前 将軍が {天資#0909}に{n}かわったのは‥‥{name93}のお父さんは{n}どうなったの！ {甚五郎#0922}さん！！{wait}{ba}{p9a}{甚五郎#0922}「わからぬ{‥‥ #0A2C}だが {天資#0909}の右うで {五ェ門#090A}が{n}{    #035F}ウラで動いたらしい。 もうすでに{‥‥‥#065F}{n}{    #035F}かもしれぬ。{wait}{b8:000D}{clr}{name93}「{！！！#0A54}{wait}{ba}{b8:0F0D}{p9a}{name94}「そ そんなァ～！{wait}{ba}{b8:180D}{p9a}{ベンケイ#0900}「！！ 今の話しが本当なら{n}{     #034F}{せっしゃ#0A1A}が そんけいしていた将軍は{n}{     #034F}おぬしの父上なのでござるか！{wait}",
   "en": "{name93}: My dad... the body double...{wait}{ba}{p9a}Jingoro: As the body double, Sukenobu ruled the land in peace, while the real shogun did nothing but play.{wait}{clr}The peaceful age that lasted until a month ago was all thanks to Sukenobu. He left home so that his child, and all the people, could live in happiness.{wait}{b8:000D}{clr}{name93}: Did Mom know about this?{wait}{ba}{p9a}Jingoro: Mm. That is why, even at death's door, she left this world with a smile.{wait}{b8:000D}{clr}{name93}: ...So that's how it was...{wait}{ba}{b8:0F0D}{p9a}{name94}: A month ago the shogun was replaced by Tensai... Then what happened to the father of {name93}?! Jingoro-san!!{wait}{ba}{p9a}Jingoro: I do not know... But it seems Tensai's right-hand man, Goemon, was working in the shadows. He may already be...{wait}{b8:000D}{clr}{name93}: !!!{wait}{ba}{b8:0F0D}{p9a}{name94}: N-no waaay!{wait}{ba}{b8:180D}{p9a}Benkei: !! If what was just said be true, then the shogun I so revered was your honored father?!{wait}",
   "notes": ""
  },
@@ -842,7 +842,7 @@
  {
   "id": "08BB3D",
   "size": 404,
-  "jp": "{甚五郎#0922}「{name93}！！{wait}{clr}{    #035F}この世を くらやみに かえようとしている{n}{    #035F}{天資#0909}をたおし{ お前#0A1B}の父・{スケノブ#091D}がつくった{n}{    #035F}へいわな世を とりもどせ！{wait}{clr}{    #035F}めざす{天資#0909}は オエドにいるが{n}{    #035F}オエドに行くには ふねが ひつようになる。{wait}{clr}{    #035F}わしは ―足さきに {『四布町』#0366}（しっぷちょう）で{n}{    #035F}ふねを スタンバイしておく。{wait}{clr}{    #035F}{『四布町』#0366}へ行くには 西にある{『魔の山』#0365}をこえて{n}{    #035F}さらに 西へ行かねばならん{‥‥‥#065F}。{wait}{clr}{    #035F}しかし{ お前#0A1B}なら できるはず{じゃ！#0A58}！{n}{    #035F}役者として {千両役者#0A25}をめざせ！！{n}{    #035F}{name93}よ！{wait}",
+  "jp": "{甚五郎#0922}「{name93}！！{wait}{clr}{    #035F}この世を くらやみに かえようとしている{n}{    #035F}{天資#0909}をたおし{ お前#0A1B}の父・{スケノブ#091D}がつくった{n}{    #035F}へいわな世を とりもどせ！{wait}{clr}{    #035F}めざす{天資#0909}は オエドにいるが{n}{    #035F}オエドに行くには ふねが ひつようになる。{wait}{clr}{    #035F}わしは 一足さきに {『四布町』#0366}（しっぷちょう）で{n}{    #035F}ふねを スタンバイしておく。{wait}{clr}{    #035F}{『四布町』#0366}へ行くには 西にある{『魔の山』#0365}をこえて{n}{    #035F}さらに 西へ行かねばならん{‥‥‥#065F}。{wait}{clr}{    #035F}しかし{ お前#0A1B}なら できるはず{じゃ！#0A58}！{n}{    #035F}役者として {千両役者#0A25}をめざせ！！{n}{    #035F}{name93}よ！{wait}",
   "en": "Jingoro: {name93}!!{wait}{clr}Defeat Tensai, who seeks to plunge this world into darkness, and take back the peaceful world your father Sukenobu built!{wait}{clr}Tensai, your target, is in Oedo, but to get to Oedo you will need a ship.{wait}{clr}I shall go on ahead to 'Shippu Town' and have a ship on standby.{wait}{clr}To reach 'Shippu Town', you must cross 'Demon Mountain' to the west, then go farther west still...{wait}{clr}But you can surely do it!! As an actor, aim to be a thousand-ryo star!! {name93}!{wait}",
   "notes": ""
  },
@@ -1031,7 +1031,7 @@
  {
   "id": "08CA12",
   "size": 84,
-  "jp": "{name94}「？ {こんな所#0A68}に おじい{ちゃん#0AB5}―人で{n}何をしているのかしら？{wait}{p9a}{name93}「{おんせん#0A15}にでも 入りに来てんだろ。{wait}",
+  "jp": "{name94}「？ {こんな所#0A68}に おじい{ちゃん#0AB5}一人で{n}何をしているのかしら？{wait}{p9a}{name93}「{おんせん#0A15}にでも 入りに来てんだろ。{wait}",
   "en": "{name94}: ? What's an old man doing all alone in a place like this?{wait}{p9a}{name93}: Probably came to soak in the hot springs.{wait}",
   "notes": ""
  },
@@ -1073,14 +1073,14 @@
  {
   "id": "08CD3A",
   "size": 151,
-  "jp": "{name93}「クッ！ {ジジイ#0A70}！{n}もう―度 しょうぶしろィ！{wait}{p9a}{法界坊#0902}「{どひゃひゃ#0A57}！ ムリするでない！{n}{    #035F}この{『空桶洞』#0367}には {おんせん#0A15}が わいておる。{n}{    #035F}そこで {しゅぎょう#0A4D}でも するのじゃな！{wait}{clr}{    #035F}{どひゃひゃ#0A57}ひゃ！！{wait}",
+  "jp": "{name93}「クッ！ {ジジイ#0A70}！{n}もう一度 しょうぶしろィ！{wait}{p9a}{法界坊#0902}「{どひゃひゃ#0A57}！ ムリするでない！{n}{    #035F}この{『空桶洞』#0367}には {おんせん#0A15}が わいておる。{n}{    #035F}そこで {しゅぎょう#0A4D}でも するのじゃな！{wait}{clr}{    #035F}{どひゃひゃ#0A57}ひゃ！！{wait}",
   "en": "{name93}: Ngh! Old man! Fight me one more time!{wait}{p9a}Hokaibo: Dohyahya! Don't push yourself! Hot springs bubble up here in the 'Karaoke Cave.' Go do some training in them!{wait}{clr}Dohyahyahya!!{wait}",
   "notes": ""
  },
  {
   "id": "08CE0A",
   "size": 220,
-  "jp": "{じらいや#0901}「{ケッ！#0A60} こんな{おんせん#0A15}で {歌武器#0A09}が{n}{     #034F}おぼえられるのかよ～。{wait}{ba}{b8:030D}{clr}{name93}「入ってみようゼ！ こんよく だし{‥‥‥#065F}{wait}{ba}{b8:0C0D}{p9a}{name94}「{‥‥‥#065F}{あたし#0A19}は 後で入るわ。{wait}{ba}{b8:030D}{p9a}{name93}「{モンスター#0A8B}が出てきて ―人だと{n}あぶねぇぞ。{wait}{ba}{b8:0C0D}{p9a}{name94}「{モンスター#0A8B}より {あんた#0A16}たちの方が{n}よっぽど あぶないわよ！{wait}",
+  "jp": "{じらいや#0901}「{ケッ！#0A60} こんな{おんせん#0A15}で {歌武器#0A09}が{n}{     #034F}おぼえられるのかよ～。{wait}{ba}{b8:030D}{clr}{name93}「入ってみようゼ！ こんよく だし{‥‥‥#065F}{wait}{ba}{b8:0C0D}{p9a}{name94}「{‥‥‥#065F}{あたし#0A19}は 後で入るわ。{wait}{ba}{b8:030D}{p9a}{name93}「{モンスター#0A8B}が出てきて 一人だと{n}あぶねぇぞ。{wait}{ba}{b8:0C0D}{p9a}{name94}「{モンスター#0A8B}より {あんた#0A16}たちの方が{n}よっぽど あぶないわよ！{wait}",
   "en": "Jiraiya: Tch! Like anybody can learn song weapons in some hot spring.{wait}{ba}{b8:030D}{clr}{name93}: Let's hop in! It's mixed bathing, after all...{wait}{ba}{b8:0C0D}{p9a}{name94}: ...I'll go in later.{wait}{ba}{b8:030D}{p9a}{name93}: If monsters show up, it's dangerous to be alone.{wait}{ba}{b8:0C0D}{p9a}{name94}: You guys are way more dangerous than any monster!{wait}",
   "notes": ""
  },
@@ -1227,7 +1227,7 @@
  {
   "id": "08DA21",
   "size": 189,
-  "jp": "酒屋「これが じまんの『{こしのかんぱい#0311}』{だよ。#0A01}{n}{   #052F}{上人さま#0A34}が 大すきな 酒{だよ。#0A01}{n}{   #052F}世話になった おれいに ―本あげるよ。{wait}{clr}{   #052F}{上人さま#0A34} {だいじょうぶ#0A2A}かって？{n}{   #052F}もう あびるほどは のまれてないですからね。{n}{   #052F}ほどほどなら {だいじょうぶ#0A2A}ですって。{wait}",
+  "jp": "酒屋「これが じまんの『{こしのかんぱい#0311}』{だよ。#0A01}{n}{   #052F}{上人さま#0A34}が 大すきな 酒{だよ。#0A01}{n}{   #052F}世話になった おれいに 一本あげるよ。{wait}{clr}{   #052F}{上人さま#0A34} {だいじょうぶ#0A2A}かって？{n}{   #052F}もう あびるほどは のまれてないですからね。{n}{   #052F}ほどほどなら {だいじょうぶ#0A2A}ですって。{wait}",
   "en": "Brewer: This here's my pride and joy, 'Koshi no Kanpai'. It's His Holiness's favorite sake. You've done a lot for me, so here's a bottle as thanks.{wait}{clr}Will His Holiness be all right, you ask? He's not drinking enough to bathe in anymore. In moderation, he'll be just fine.{wait}",
   "notes": ""
  },
@@ -1255,7 +1255,7 @@
  {
   "id": "08DBB8",
   "size": 137,
-  "jp": "{シャクネツのエン#0910}「あら よくここまで きたわね♥{n}{         #034B}ワ♥タ♥シは {ええからだ四天王#092A}の―人{n}{         #034B}{シャクネツのエン#0910}♥{wait}{clr}{         #034B}あつーい 恋♥がしたいの。{n}{         #034B}おあいてしてくださる？{n}{         #034B}ウッフーン♥{wait}",
+  "jp": "{シャクネツのエン#0910}「あら よくここまで きたわね♥{n}{         #034B}ワ♥タ♥シは {ええからだ四天王#092A}の一人{n}{         #034B}{シャクネツのエン#0910}♥{wait}{clr}{         #034B}あつーい 恋♥がしたいの。{n}{         #034B}おあいてしてくださる？{n}{         #034B}ウッフーン♥{wait}",
   "en": "En of the Scorching Heat: My, you made it all this way, darling. Li'l ol' me is one of the Bodacious Four Heavenly Kings... En of the Scorching Heat!{wait}{clr}I want a red-hot romance. Won't you be my partner? Oooh-hoo!{wait}",
   "notes": ""
  },
@@ -1276,7 +1276,7 @@
  {
   "id": "08DD1E",
   "size": 103,
-  "jp": "{シッコクのライ#090F}「ホ～ッ エンをやっつけるとは やるね。{n}{        #034C}オレは {ええからだ四天王#092A}の―人{n}{        #034C}{シッコクのライ#090F}！{wait}{clr}{        #034C}どっからでも かかっておいで！{wait}",
+  "jp": "{シッコクのライ#090F}「ホ～ッ エンをやっつけるとは やるね。{n}{        #034C}オレは {ええからだ四天王#092A}の一人{n}{        #034C}{シッコクのライ#090F}！{wait}{clr}{        #034C}どっからでも かかっておいで！{wait}",
   "en": "Rai of the Jet Black: Whoa, you beat En? Not bad. I'm one of the Bodacious Four Heavenly Kings... Rai of the Jet Black!{wait}{clr}Come at me any way you want!{wait}",
   "notes": ""
  },
@@ -1297,7 +1297,7 @@
  {
   "id": "08DE5C",
   "size": 150,
-  "jp": "{コウセンのフウ#0911}「お{にいちゃん#0A73}！{n}{        #034C}{name93}って言うんでしょ？{n}{        #034C}うわーい！ 会いたかったんだ！ ウフフッ{wait}{clr}{        #034C}{あたし#0A19}？{n}{        #034C}{あたし#0A19}はフウ{ちゃん#0AB5}。 四天王の―人よ。{n}{        #034C}さあ 戦いましょ！ いくよ～！{wait}",
+  "jp": "{コウセンのフウ#0911}「お{にいちゃん#0A73}！{n}{        #034C}{name93}って言うんでしょ？{n}{        #034C}うわーい！ 会いたかったんだ！ ウフフッ{wait}{clr}{        #034C}{あたし#0A19}？{n}{        #034C}{あたし#0A19}はフウ{ちゃん#0AB5}。 四天王の一人よ。{n}{        #034C}さあ 戦いましょ！ いくよ～！{wait}",
   "en": "Fu of the Kosen: Big brother! You're {name93}, right? Yaaay! I wanted to meet you! Teehee!{wait}{clr}Me? I'm Fu-chan. One of the Four Heavenly Kings. Now let's fight! Here I come!{wait}",
   "notes": ""
  },
@@ -1381,7 +1381,7 @@
  {
   "id": "08E207",
   "size": 225,
-  "jp": "{シャクネツのエン#0910}「あら また会ったわね♥{n}{         #034B}さすがに4人を あいてにしただけあるわ{n}{         #034B}強くなったみたいね♥{wait}{clr}{シッコクのライ#090F}「でも まだまだ{‥‥‥#065F}だな。{wait}{clr}{コウセンのフウ#0911}「そうね 5かいだての塔 だからって{n}{        #034C}また ―人ずつ出てくるって{n}{        #034C}かんがえてるでしょう。 ウフフッ。{wait}",
+  "jp": "{シャクネツのエン#0910}「あら また会ったわね♥{n}{         #034B}さすがに4人を あいてにしただけあるわ{n}{         #034B}強くなったみたいね♥{wait}{clr}{シッコクのライ#090F}「でも まだまだ{‥‥‥#065F}だな。{wait}{clr}{コウセンのフウ#0911}「そうね 5かいだての塔 だからって{n}{        #034C}また 一人ずつ出てくるって{n}{        #034C}かんがえてるでしょう。 ウフフッ。{wait}",
   "en": "En of the Scorching Heat: My, we meet again, darling. No wonder, after taking on all four of us. Looks like you've gotten stronger.{wait}{clr}Rai of the Jet Black: But still not strong enough... yeah.{wait}{clr}Fu of the Kosen: Right. Bet you think that since it's a five-story tower, we'll come out one at a time again. Teehee!{wait}",
   "notes": ""
  },
@@ -1403,490 +1403,490 @@
   "id": "08E440",
   "size": 499,
   "jp": "{セイガのヒョウ#0912}「{おねがい#0AB3}が あります！{n}{        #034C}どうか {上人さま#0A34}を おすくい下さい！{wait}{b8:000D}{clr}{name93}「エッ！？ {ナルカミ#090E}を？{wait}{ba}{p9a}{セイガのヒョウ#0912}「{上人さま#0A34}は {クロツカ#0913}に ワルヨイの酒を{n}{        #034C}のまされ ずっとヨッパライっぱなしです。{wait}{clr}{シッコクのライ#090F}「オレたちは これ以上 {上人さま#0A34}が{n}{        #034C}よわぬようにするため {酒づくり#0A5B}に{n}{        #034C}必ような物を 全て かくしたんだ！{wait}{clr}{シャクネツのエン#0910}「{上人さま#0A34}が 正気にもどらねば{n}{         #034B}{このまま#0A59} 雨がふらずに アワの国は{n}{         #034B}さばくに なってしまうの{‥‥‥#065F}{wait}{clr}{コウセンのフウ#0911}「{おねがい#0AB3}！ {上人さま#0A34}を {たすけて#0AAD}！{wait}{b8:000D}{clr}{name93}「{‥‥‥#065F}よしっ わかった！{n}オレたち{name93}座にまかせなって！{wait}{ba}{p9a}{セイガのヒョウ#0912}「{ありがとう#0AB4}ございます！！{n}{        #034C}{あなた#0A17}がたなら きっと{上人さま#0A34}を{n}{        #034C}正気にもどせる と思います！！{wait}",
-  "en": "",
+  "en": "Hyo of the Seiga: We have a request! Please, save His Holiness!{wait}{b8:000D}{clr}{name93}: Huh!? Save Narukami?{wait}{ba}{p9a}Hyo of the Seiga: Kurotsuka made His Holiness drink Mean-Drunk Sake, and he's been plastered ever since.{wait}{clr}Rai of the Jet Black: So His Holiness can't get any drunker, we hid everything you need to brew sake!{wait}{clr}En of the Scorching Heat: Unless His Holiness comes to his senses, no rain will fall, and the Land of Awa will turn into a desert...{wait}{clr}Fu of the Kosen: Please! Help His Holiness!{wait}{b8:000D}{clr}{name93}: ...All right, got it! Leave it to us, the {name93} Troupe!{wait}{ba}{p9a}Hyo of the Seiga: Thank you so much!! I'm sure you can bring His Holiness back to his senses!!{wait}",
   "notes": ""
  },
  {
   "id": "08E63D",
   "size": 48,
   "jp": "{コウセンのフウ#0911}「お{にいちゃん#0A73}たちなら きっと{n}{        #034C}{上人さま#0A34}を {たすけて#0AAD}くれるよね。{wait}",
-  "en": "",
+  "en": "Fu of the Kosen: You'll save His Holiness for sure, right, big brother?{wait}",
   "notes": ""
  },
  {
   "id": "08E677",
   "size": 46,
   "jp": "{シッコクのライ#090F}「たのんだぜ！{n}{        #034C}{お前たち#0A98}だけが たよりなんだ！！{wait}",
-  "en": "",
+  "en": "Rai of the Jet Black: We're counting on you! You're the only hope we've got!!{wait}",
   "notes": ""
  },
  {
   "id": "08E6AF",
   "size": 69,
   "jp": "{シャクネツのエン#0910}「ウフフッ♥{n}{         #034B}どんどん強くなるわね {ボウヤ#0AAE}♥{n}{         #034B}強い男ってステキだわ♥{wait}",
-  "en": "",
+  "en": "En of the Scorching Heat: Ufufu! You just keep getting stronger, little boy. Strong men are simply divine.{wait}",
   "notes": ""
  },
  {
   "id": "08E70F",
   "size": 169,
   "jp": "{シャクネツのエン#0910}「ゆだん大てきよ♥{wait}{clr}{シッコクのライ#090F}「{ハハハ#0A4A}ッ 四天王の強さ 思いしったか！{wait}{clr}{コウセンのフウ#0911}「こまめに セーブしとこうね！{wait}{clr}{セイガのヒョウ#0912}「{あたし#0A19}たちを たおさぬかぎり{n}{        #034C}{上人さま#0A34}には 会えないよ！{n}{        #034C}出なおしといで！！{wait}",
-  "en": "",
+  "en": "En of the Scorching Heat: Never let your guard down, darling.{wait}{clr}Rai of the Jet Black: Hahaha! Now you know the strength of the Four Heavenly Kings!{wait}{clr}Fu of the Kosen: Remember to save often, okay!{wait}{clr}Hyo of the Seiga: Until you beat us, you won't get to see His Holiness! Go back and try again!!{wait}",
   "notes": ""
  },
  {
   "id": "08E7DC",
   "size": 113,
   "jp": "{ナルカミ#090E}「ヒック なんら おまえらちは？{wait}{clr}{     #034F}{name93}座？ ヒック おもしろそーだな。{n}{     #034F}よーし あいてしてやるぞーい！ ヒック{wait}",
-  "en": "",
+  "en": "Narukami: Hic! Whaddya want, you lot?{wait}{clr}The {name93} Troupe? Hic! Shoundsh fun. Awright, I'll take you on! Hic!{wait}",
   "notes": ""
  },
  {
   "id": "08E859",
   "size": 58,
   "jp": "{ナルカミ#090E}「‥‥自分は どうしていたのだろう‥‥？{n}{     #034F}思い出せん{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "Narukami: ...What has become of me...? I cannot remember...{wait}",
   "notes": ""
  },
  {
   "id": "08E8A4",
   "size": 13,
   "jp": "{ナルカミ#090E}「エッ？！{wait}",
-  "en": "",
+  "en": "Narukami: Huh?!{wait}",
   "notes": ""
  },
  {
   "id": "08E8C3",
   "size": 13,
   "jp": "{ナルカミ#090E}「ナニ？！{wait}",
-  "en": "",
+  "en": "Narukami: What?!{wait}",
   "notes": ""
  },
  {
   "id": "08E8E2",
   "size": 19,
   "jp": "{ナルカミ#090E}「{‥‥‥#065F}ホ {ホント#0A5A}か？！{wait}",
-  "en": "",
+  "en": "Narukami: ...R-really?!{wait}",
   "notes": ""
  },
  {
   "id": "08E905",
   "size": 33,
   "jp": "{ナルカミ#090E}「{お前たち#0A98}{‥‥ #0A2C}すまぬ！ {しんぱい#0A28}をかけたな。{wait}",
-  "en": "",
+  "en": "Narukami: All of you... forgive me! I have caused you worry.{wait}",
   "notes": ""
  },
  {
   "id": "08E931",
   "size": 71,
   "jp": "{ナルカミ#090E}「{name93}とやら {ありがとう#0AB4}。{n}{     #034F}{お前たち#0A98}の おかげだ！{wait}{clr}{     #034F}さっそく {ハレルヤ#0AAC}をやめさせよう！！{wait}",
-  "en": "",
+  "en": "Narukami: {name93}, was it? Thank you. It is all thanks to you!{wait}{clr}Let us put a stop to the Hallelujah at once!!{wait}",
   "notes": ""
  },
  {
   "id": "08E994",
   "size": 156,
   "jp": "{ナルカミ#090E}「うーむ ゆるせぬは {クロツカ#0913}！{n}{     #034F}ワルヨイの酒を のませるとは{n}{     #034F}ひきょうなマネを しおって！！{wait}{clr}{     #034F}{しかし #0A4E}自分の不しまつでもある{‥‥‥#065F}{n}{     #034F}自分も{ お前#0A1B}たちとともに 戦うぞ！{wait}",
-  "en": "",
+  "en": "Narukami: Hmm, Kurotsuka I cannot forgive! Plying me with Mean-Drunk Sake... what a cowardly trick!!{wait}{clr}Yet the blunder was my own as well... I too shall fight alongside you!{wait}",
   "notes": ""
  },
  {
   "id": "08EA32",
   "size": 246,
   "jp": "四天王「動いては いけません {上人さま#0A34}！！{wait}{clr}{ナルカミ#090E}「だが{‥‥‥#065F} うっ{‥‥‥#065F}{wait}{clr}{     #034F}い いかん 20日よいだ{‥‥‥#065F}‥{n}{     #034F}すまぬ {name93}よ。{n}{     #034F}{クロツカ#0913}を たおしてくれ！{wait}{clr}{     #034F}{クロツカ#0913}は 西のとうげを こえた{関所#0674}に{n}{     #034F}いるはず。{wait}{clr}{     #034F}この塔の1Fのトビラは あけておく。{n}{     #034F}そこから 西へ行けるはずだ。{wait}",
-  "en": "",
+  "en": "Four Heavenly Kings: You mustn't move, Your Holiness!!{wait}{clr}Narukami: But... ugh...{wait}{clr}Th-this won't do... a twenty-day hangover... Forgive me, {name93}. Defeat Kurotsuka!{wait}{clr}Kurotsuka should be at the checkpoint past the western mountain pass.{wait}{clr}I shall leave the door on this tower's first floor open. From there you should be able to head west.{wait}",
   "notes": ""
  },
  {
   "id": "08EB4A",
   "size": 64,
   "jp": "{ナルカミ#090E}「サァケェー 酒 もっともってこい！{n}{     #034F}ヒック ゲヘヘヘヘッ。{wait}",
-  "en": "",
+  "en": "Narukami: Shaaake! Sake! Bring me more! Hic! Geheheheh.{wait}",
   "notes": ""
  },
  {
   "id": "08EB8E",
   "size": 82,
   "jp": "{ナルカミ#090E}「{クロツカ#0913}は {関所#0674}にいるはず。{n}{     #034F}たのんだぞ {name93}！{n}{     #034F}しばらくは 酒は コリゴリじゃわい{‥‥。#0A24}{wait}",
-  "en": "",
+  "en": "Narukami: Kurotsuka should be at the checkpoint. I am counting on you, {name93}! I have had my fill of sake for a while...{wait}",
   "notes": ""
  },
  {
   "id": "08EBE8",
   "size": 175,
   "jp": "{ナルカミ#090E}「おお {name93}よ よくぞきた！{n}{     #034F}{あの時は 世話になったのぉ。#0652}{wait}{clr}{     #034F}ンッ！ そ それは {こしのかんぱい#0311}！{n}{     #034F}エッ わしに くれるのか！ よし！ では{n}{     #034F}{クロツカ#0913}をたおしてくれた おれいもかねて{wait}{clr}{     #034F}これを おまえに あげよう！！{wait}",
-  "en": "",
+  "en": "Narukami: Oh, {name93}, welcome, welcome! You did me a great service back then.{wait}{clr}Hm! Th-that is Koshi no Kanpai! What, you are giving it to me! Very well! Then, also as thanks for defeating Kurotsuka,{wait}{clr}I shall give you this!!{wait}",
   "notes": ""
  },
  {
   "id": "08ECA0",
   "size": 32,
   "jp": "{name93}は 体力サンダルを手に入れた！{wait}",
-  "en": "",
+  "en": "{name93} got the 'Stamina Sandals'!{wait}",
   "notes": ""
  },
  {
   "id": "08ECC5",
   "size": 85,
   "jp": "{ナルカミ#090E}「せっかくだが {持ち物#0A90}がいっぱい{じゃ。#0A31}{n}{     #034F}何かを すてるか 売るかして また{n}{     #034F}くるがよい。{wait}",
-  "en": "",
+  "en": "Narukami: A pity, but your belongings are full. Throw something away or sell something, then come again.{wait}",
   "notes": ""
  },
  {
   "id": "08ED1D",
   "size": 33,
   "jp": "{ナルカミ#090E}「おお {name93}よ よくぞきた！{n}{     #034F}{あの時は 世話になったのぉ。#0652}{wait}",
-  "en": "",
+  "en": "Narukami: Oh, {name93}, welcome, welcome! You did me a great service back then.{wait}",
   "notes": ""
  },
  {
   "id": "08ED47",
   "size": 23,
   "jp": "カギが かかっている。{wait}",
-  "en": "",
+  "en": "It's locked.{wait}",
   "notes": ""
  },
  {
   "id": "08ED6D",
   "size": 86,
-  "jp": "「悪魔が つどいし 邪きょうの宿屋へ ようこそ。{n} ―泊10両じゃが 泊まるかね？{n}{choice:08EECE}",
-  "en": "",
+  "jp": "「悪魔が つどいし 邪きょうの宿屋へ ようこそ。{n} 一泊10両じゃが 泊まるかね？{n}{choice:08EECE}",
+  "en": "Welcome to the inn of the dark cult, where devils gather. It's 10 ryo a night. Will you stay?{choice:08EECE}",
   "notes": ""
  },
  {
   "id": "08EDCB",
   "size": 93,
   "jp": " では ゆっくりと やすむといい。{n} くれぐれも 悪魔に {たましい#0A30}を{n} のっとられないように {気をつけ#0A63}て{‥‥。#0A24}{wait}",
-  "en": "",
+  "en": "Then rest well. And take great care that no devil steals away your soul...{wait}",
   "notes": ""
  },
  {
   "id": "08EEAB",
   "size": 21,
   "jp": "「また 来るといい{‥‥。#0A24}{wait}",
-  "en": "",
+  "en": "Come again...{wait}",
   "notes": ""
  },
  {
   "id": "08EECE",
   "size": 28,
   "jp": "{clr}「では また 来るといい。{wait}",
-  "en": "",
+  "en": "{clr}Very well. Come again.{wait}",
   "notes": ""
  },
  {
   "id": "08EEED",
   "size": 37,
   "jp": "「ざんねんじゃが 金が足りないよう{じゃ。#0A31}{wait}",
-  "en": "",
+  "en": "Sadly, it seems you are short of money.{wait}",
   "notes": ""
  },
  {
   "id": "08EF3D",
   "size": 97,
   "jp": "「{甚五郎#0922}さんとこの いつもねているネコ‥‥{n} {ネムリン#0918}が おきてからというもの{n} 悪い事ばかり おこるな～。{wait}",
-  "en": "",
+  "en": "Ever since Nemurin woke up -- Jingoro-san's cat, the one that's always asleep -- it's been nothing but trouble.{wait}",
   "notes": ""
  },
  {
   "id": "08EFA6",
   "size": 52,
   "jp": "「この{『花町』#0361}から 北へ行くと{n} {『泣き所町』#0363}っていう町が あるよ。{wait}",
-  "en": "",
+  "en": "Head north from this 'Hana Town' and there's a town called 'Nakidokoro Town'.{wait}",
   "notes": ""
  },
  {
   "id": "08EFEC",
   "size": 143,
   "jp": "「町のそとは {モンスター#0A8B}が いっぱい。{n} 町の中は 兵士が いっぱい。{wait}{clr} なんでも あの兵士たちは 役者がりを するために{n} {この町#0A71}に 入ってきたんだって。{wait}",
-  "en": "",
+  "en": "Outside town, monsters everywhere. Inside town, soldiers everywhere.{wait}{clr}Word is, those soldiers came into this town to hunt down actors.{wait}",
   "notes": ""
  },
  {
   "id": "08F088",
   "size": 119,
   "jp": "「{モンスター#0A8B}を やっつけると {おひねり#0A02}が{n} とんでくるのよ。{wait}{clr} えっ？！ {おひねり#0A02}を しらないの？{n} お金を かみに入れて ひねったものよ。{wait}",
-  "en": "",
+  "en": "When you beat monsters, ohineri come flying at you.{wait}{clr}Huh?! You don't know what ohineri are? It's money wrapped up and twisted in paper.{wait}",
   "notes": ""
  },
  {
   "id": "08F111",
   "size": 187,
   "jp": "「{しばい小屋#0A11}にいた役者は ほとんど つかまったってさ。{n} でも 何人かは うまくにげだしたんだって。{wait}{clr} にげた役者たちが みんな つかまるまで{n} オレたちも 町のそとへ出られないんだ。 トホホ‥‥{wait}",
-  "en": "",
+  "en": "They say most of the actors at the playhouse got caught. But a few of them got away.{wait}{clr}Until every runaway actor's caught, the rest of us can't leave town either. Sheesh...{wait}",
   "notes": ""
  },
  {
   "id": "08F1D4",
   "size": 162,
   "jp": "「たびを と中で やめたくなったら{n} セーブ{じぞう#0A0E}に 会ってからにしなされ。{wait}{clr} 他にも 色々な {じぞう#0A0E}が{n} おるから さがしてみなされ。{n} 見分け方は {じぞう#0A0E}の 『色』じゃよ。{wait}",
-  "en": "",
+  "en": "If you want to quit your journey partway, see a Save Jizo first.{wait}{clr}There are all sorts of other jizo too, so go look for them. You tell them apart by the jizo's 'color'.{wait}",
   "notes": ""
  },
  {
   "id": "08F279",
   "size": 98,
   "jp": "「{この町#0A71}にも やっと {じぞう#0A0E}ずしチェーンが できたよ。{n} でも お店がはじまるのは まだ さきなんだって。{wait}",
-  "en": "",
+  "en": "A Jizo Sushi chain finally opened in this town too. But they say the shop won't start business for a while yet.{wait}",
   "notes": ""
  },
  {
   "id": "08F2E8",
   "size": 111,
   "jp": "「初めのうちは あんまり遠くへ 行くな。{n} 町の近くで {モンスター#0A8B}と戦って {おひねり#0A02}を{n} かせいで 強い武器を買うといいぞィ。{wait}",
-  "en": "",
+  "en": "Don't go too far at first. Fight monsters near town, earn ohineri, and buy strong weapons, ya hear.{wait}",
   "notes": ""
  },
  {
   "id": "08F35C",
   "size": 97,
   "jp": "「{甚五郎#0922}さんは この {れんダコわく星#0A0F}の中でも{n} ピカイチの実力を持つ {発明家#065C}。{n} 何で こんな小さな町に いるんだろ？{wait}",
-  "en": "",
+  "en": "Jingoro-san is the top inventor on all of Planet Rendako. What's he doing in a little town like this?{wait}",
   "notes": ""
  },
  {
   "id": "08F3C7",
   "size": 13,
   "jp": "{ネムリン#0918}「ニャー！{wait}",
-  "en": "",
+  "en": "Nemurin: Meow!{wait}",
   "notes": ""
  },
  {
   "id": "08F3D7",
   "size": 9,
   "jp": "{ネムリン#0918}「{‥‥‥#065F}‥{wait}",
-  "en": "",
+  "en": "Nemurin: ...{wait}",
   "notes": ""
  },
  {
   "id": "08F3E8",
   "size": 46,
   "jp": "兵士「ん？ ジャマだ {こぞう#0A26}！{n}{   #052F}あっちへ行け！！{wait}",
-  "en": "",
+  "en": "Soldier: Hm? Outta the way, kid! Get lost!!{wait}",
   "notes": ""
  },
  {
   "id": "08F419",
   "size": 45,
   "jp": "兵士「出発まで もうしばらく 時間があるな。{wait}",
-  "en": "",
+  "en": "Soldier: Still a while before we head out.{wait}",
   "notes": ""
  },
  {
   "id": "08F449",
   "size": 69,
   "jp": "「いやな{世の中#0A10}だねぇ{‥‥。#0A24}{n} このさき いったい どうなっちまうのかねぇ‥‥{n}{wait}",
-  "en": "",
+  "en": "What awful times... Whatever's going to become of us...{wait}",
   "notes": ""
  },
  {
   "id": "08F491",
   "size": 60,
   "jp": "「いっ いいえ！{n} {私は #0A86}役者などではありません！ 本当です！！{wait}",
-  "en": "",
+  "en": "N-no! I'm not an actor or anything! Honest!!{wait}",
   "notes": ""
  },
  {
   "id": "08F4D0",
   "size": 34,
   "jp": "「あら？ {name93}に よくにてるわねェ{‥‥。#0A24}{wait}",
-  "en": "",
+  "en": "Oh? You look an awful lot like {name93}...{wait}",
   "notes": ""
  },
  {
   "id": "08F4F5",
   "size": 95,
   "jp": "町人「この{まやかし#0A99}の こべやは 他の町への{n}{   #052F}近道と きいてたんだが・・・。{n}{   #052F}まよっちまったよ・・・{wait}",
-  "en": "",
+  "en": "Townsman: I heard this illusion room was a shortcut to other towns... Now I'm lost...{wait}",
   "notes": ""
  },
  {
   "id": "08F557",
   "size": 204,
   "jp": "町人「{あんた#0A16}らも まいごかい？ しょうがねえなあ{wait}{clr}{   #052F}{いの町#09AF}へ 行くには 下{n}{   #052F}{ろの町#09B0}へ 行くには 左・上・左{n}{   #052F}{はの町#09B1}への ルートは ただいま そうさく中だ。{wait}{clr}{   #052F}{にの町#09B2}へ 行くには 右・上・右・右{n}{   #052F}よ{ーーー#0A2F}ーく おぼえておけよ！{wait}",
-  "en": "",
+  "en": "Townsman: You lost too? Can't be helped.{wait}{clr}To get to I Town: down. To Ro Town: left, up, left. The route to Ha Town is still being searched for.{wait}{clr}To get to Ni Town: right, up, right, right. Remember that reeeal good!{wait}",
   "notes": ""
  },
  {
   "id": "08F626",
   "size": 62,
   "jp": "町人「いったい どの町から いけば{n}{   #052F}{天資#0909}の所へ 行けるんだ！？{wait}",
-  "en": "",
+  "en": "Townsman: Which town do you have to go through to reach Tensai, anyway!?{wait}",
   "notes": ""
  },
  {
   "id": "08F669",
   "size": 244,
   "jp": "{   #052F}「はっ はっ はっ{n}{    #035F}やっと ここまで たどりついたか{n}{    #035F}{まって#0ABC} いたぞ こわっぱども{！！！#0A54}{wait}{clr}{    #035F}よの名 は {天資#0909}{n}{    #035F}ざんねんだが{ お前#0A1B}たちには{n}{    #035F}ここで 死んでもらう！！{delay:78}{wait}{clr}{    #035F}はっ はっ はっ うそ{じゃ！#0A58}{wait}{clr}{    #035F}こうして 人を おどかすのが{n}{    #035F}わしの しゅみ なのじゃ{wait}",
-  "en": "",
+  "en": "Ha ha ha... So you've finally made it this far. We have been waiting for you, you brats!!!{wait}{clr}Our name is Tensai. Regrettably, you shall die here!!{delay:78}{wait}{clr}Ha ha ha, just kidding!{wait}{clr}Scaring people like this is a little hobby of mine.{wait}",
   "notes": ""
  },
  {
   "id": "08F767",
   "size": 80,
   "jp": "「オエドは ゴーストタウンに なっちまった。{n} はなやかだった オエドは もう{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "Oedo's turned into a ghost town. The glamorous Oedo of old is gone...{wait}",
   "notes": ""
  },
  {
   "id": "08F7BF",
   "size": 99,
   "jp": "「動かない人々は {天資#0909}に {たましい#0A30}を{n} すいとられてしまったの。{n} 今度は {あたし#0A19}の番かと思うと こわくて‥‥！{wait}",
-  "en": "",
+  "en": "The people who don't move had their souls sucked out by Tensai. When I think I might be next, I'm so scared...!{wait}",
   "notes": ""
  },
  {
   "id": "08F82A",
   "size": 177,
   "jp": "「オエドの町は ぜんぶで四つです。{n} ここが {『いの町』#066F}。{n} 西へ行けば {『ろの町』#0670}。 東に行けば {『にの町』#0672}。{wait}{clr} {『ろの町』#0670}か {『にの町』#0672}を 通って 北へ行くと{n} {『はの町』#0671}に つきます。{n} この{『いの町』#066F}の ちょうど 反封がわです。{wait}",
-  "en": "",
+  "en": "Oedo has four towns in all. This is 'I Town'. Go west for 'Ro Town', or east for 'Ni Town'.{wait}{clr}Go north through 'Ro Town' or 'Ni Town' and you'll reach 'Ha Town'. It's on the exact opposite side from this 'I Town'.{wait}",
   "notes": ""
  },
  {
   "id": "08F8E3",
   "size": 112,
   "jp": "「へんな男が {オエドじょう#09B3}の方へ 行ったよ。{n} 6本のウデが どうとか{‥‥ #0A2C}って言ってたかな。{wait}{clr} 何だか {気持ち#0A21}悪い 男だったよ{‥‥‥#065F}{wait}",
-  "en": "",
+  "en": "A weird man went toward Oedo Castle. He said something about... six arms, I think.{wait}{clr}He was kind of a creepy guy...{wait}",
   "notes": ""
  },
  {
   "id": "08F95B",
   "size": 151,
   "jp": "「イズモから きたの？{n} ずいぶん とおい所から きたのね。{wait}{clr} でも {このまま#0A59} イズモへ かえった方がいいんじゃない？{n} オエドにいたら ころされちゃうわよ。{wait}",
-  "en": "",
+  "en": "You came from Izumo? That's an awfully long way.{wait}{clr}But wouldn't you be better off going straight back to Izumo? Stay in Oedo and you'll get killed.{wait}",
   "notes": ""
  },
  {
   "id": "08F9FA",
   "size": 41,
   "jp": "{楽屋シップ#0A12}に のるためには カギがひつようです。{wait}",
-  "en": "",
+  "en": "You need a key to board the Dressing Room Ship.{wait}",
   "notes": ""
  },
  {
   "id": "08FA4F",
   "size": 138,
   "jp": "しつじ「{name93}さまが宝箱を お取りになりましたら{n}{    #035F}ガラスケースの中に小さい宝箱を おきますので{n}{    #035F}それで 回収じょうきょうが はあくできます。{wait}",
-  "en": "",
+  "en": "Butler: Whenever you take a treasure chest, Sir {name93}, I shall place a small chest inside the glass case, so you can keep track of your collection.{wait}",
   "notes": ""
  },
  {
   "id": "08FADC",
   "size": 82,
   "jp": "「{あんた#0A16}たちなら きっと {天資#0909}をたおしてくれる！{n} そう{思って#0A75}たよ！ しんじていたんだよ！！{wait}",
-  "en": "",
+  "en": "I knew you'd beat Tensai for sure! I just knew it! I believed in you!!{wait}",
   "notes": ""
  },
  {
   "id": "08FB31",
   "size": 75,
   "jp": "「ついに へいわな {世の中#0A10}に なりましたね！{n} みんな {name93}さんの おかげです！！{wait}",
-  "en": "",
+  "en": "Peace has finally come to the world! It's all thanks to you, {name93}!!{wait}",
   "notes": ""
  },
  {
   "id": "08FB7F",
   "size": 43,
   "jp": "「ボクも 大きくなったら {千両役者#0A25}になるんだ！！{wait}",
-  "en": "",
+  "en": "When I grow up, I'm gonna be a thousand-ryo star too!!{wait}",
   "notes": ""
  },
  {
   "id": "08FBAD",
   "size": 59,
   "jp": "「わ～い！ {千両役者#0A25}の{name93}さんだ！！{n} サインもらっちゃおうかな！！{wait}",
-  "en": "",
+  "en": "Wow! It's the thousand-ryo star, {name93}!! Maybe I'll get an autograph!!{wait}",
   "notes": ""
  },
  {
   "id": "08FBEB",
   "size": 70,
   "jp": "「りっぱな 役者に なったものじゃのぉ。{n} 以前とは 見ちがえるよう{じゃ。#0A31}{wait}",
-  "en": "",
+  "en": "My, you've become a fine actor. I hardly recognize you.{wait}",
   "notes": ""
  },
  {
   "id": "08FC34",
   "size": 47,
   "jp": "「{世の中#0A10} {天下太平#0A04}です{じゃ。#0A31}{n} みんな {name93}さんの おかげです{じゃ。#0A31}{wait}",
-  "en": "",
+  "en": "All's peaceful under heaven, it is. All thanks to you, {name93}, it is.{wait}",
   "notes": ""
  },
  {
   "id": "08FC66",
   "size": 17,
   "jp": "「よっ！ {千両役者#0A25}！！{wait}",
-  "en": "",
+  "en": "Yo! Thousand-ryo star!!{wait}",
   "notes": ""
  },
  {
   "id": "08FC7A",
   "size": 111,
   "jp": "「{あんた#0A16} 何か やりのこしたことは ないかい？{n} 宝箱は ぜんぶ あつめたかい？{n} まだまだ やることは あるはず{だよ。#0A01}{wait}",
-  "en": "",
+  "en": "Say, isn't there something you left undone? Did you collect all the treasure chests? There must still be plenty to do.{wait}",
   "notes": ""
  },
  {
   "id": "08FCEC",
   "size": 78,
   "jp": "「これから {歌しばい#065A}を 見に行くんです。{n} もう {歌しばい#065A}禁止令は なくなりましたからね。{wait}",
-  "en": "",
+  "en": "I'm off to see a song play. The song play ban is gone now, after all.{wait}",
   "notes": ""
  },
  {
   "id": "08FD3D",
   "size": 66,
   "jp": "「さてと{‥‥ #0A2C}となり町へ行って 男でも{n} ナンパしてこようかしら！ {フフフッ#0A2D}{wait}",
-  "en": "",
+  "en": "Well now... maybe I'll go to the next town and pick up a man! Hee hee hee!{wait}",
   "notes": ""
  },
  {
   "id": "08FD82",
   "size": 99,
   "jp": "「ボクも強くなって {モンスター#0A8B}を たおすんだ！{n} そして {おひねり#0A02}を たくさん かせいで{n} 大金持ちになるんだ！！{wait}",
-  "en": "",
+  "en": "I'm gonna get strong and beat monsters too! Then I'll earn lots of tips and get super rich!!{wait}",
   "notes": ""
  },
  {
   "id": "08FDE8",
   "size": 103,
   "jp": "「ねえ ねえ！ いっしょに あそぼうよ！{wait}{clr} えっ！？ いそがしいから ダメなの？{wait}{clr} つまんない！ {つまんな～～～～～い！#0A37}！{wait}",
-  "en": "",
+  "en": "Hey, hey! Come play with me!{wait}{clr}What!? You can't 'cause you're busy?{wait}{clr}No fair! No faaaaaair!!{wait}",
   "notes": ""
  },
  {
   "id": "08FE52",
   "size": 49,
   "jp": "「年をとると トイレが 近くなっていかんのォ‥‥{wait}",
-  "en": "",
+  "en": "Get old and you're running to the toilet all the time. Blasted thing...{wait}",
   "notes": ""
  },
  {
   "id": "08FE86",
   "size": 74,
   "jp": "「{歌しばい#065A}ってのは ナイスでグーな モンなんだねぇ‥‥{n} {あたし#0A19}ゃ しらなかったよ。{wait}",
-  "en": "",
+  "en": "So a song play's a nice-and-groovy kind of thing, huh... I never knew.{wait}",
   "notes": ""
  },
  {
   "id": "08FED3",
   "size": 102,
   "jp": "「わたしは 世界中の 宝箱を あつめて回ってる者です。{n} ですが なかなか 見つからなくて{‥‥ #0A2C}トホホ‥‥{wait}",
-  "en": "",
+  "en": "I travel around collecting treasure chests from all over the world. But they're so hard to find... Boo hoo...{wait}",
   "notes": ""
  },
  {
   "id": "08FF3C",
   "size": 137,
   "jp": "「さ～てと 仕事 仕事！{n} ちょっくら 家でも たててくるかな！{wait}{clr} でも {モンスター#0A8B}を やっつけてた方が{n} 金になるような 気がするんだよなぁ‥‥{wait}",
-  "en": "",
+  "en": "Welp, work, work! Guess I'll go build a house or something!{wait}{clr}But I get the feeling beating up monsters would pay better...{wait}",
   "notes": ""
  },
  {
   "id": "08FFCD",
   "size": 25,
   "jp": "出演者が いっぱいです。{wait}",
-  "en": "",
+  "en": "The cast is full.{wait}",
   "notes": ""
  },
  {
