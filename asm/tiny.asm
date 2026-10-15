@@ -19,6 +19,7 @@ lorom
 !TMP = $7FE022
 !TRIES = $7FE024
 !SLOT = $7FE026
+!MODE = $7FE028     ; 0: field menus (04:B71D/B725 conventions), 1: battle (02:F08F)
 !KEY = $7A31
 !CAP = $0060        ; slots uploaded per frame (16 bytes each)
 
@@ -38,10 +39,12 @@ tiny71d:            ; loops that drew with JSR $B71D: attribute $1C00
 tiny725:            ; loops that drew with JSR $B725: attribute already in $0709
     PHP
     REP #$30
+    LDA #$0000
+    STA.l !MODE
     LDA $060C
     AND #$00FF
     CMP #$0005
-    BCC .tiny
+    BCC tiny_body
 .plain:             ; other screen modes (battle): the original per-glyph drawing
     JSL !DICT_READ
     PHA
@@ -57,7 +60,12 @@ tiny725:            ; loops that drew with JSR $B725: attribute already in $0709
 .done:
     PLP
     RTL
-.tiny:
+tiny_f08f:          ; battle loops that drew with JSL $02F08F (attribute in $0709)
+    PHP
+    REP #$30
+    LDA #$0001
+    STA.l !MODE
+tiny_body:
     JSR init
     LDA #$FFFF
     STA.l !PEND
@@ -95,11 +103,6 @@ tiny725:            ; loops that drew with JSR $B725: attribute already in $0709
     JSR flush
     PLP
     RTL
-
-tiny_item:          ; 04:B65A: X = item number * 2
-    LDA $2FA74F,x
-    TAX
-    JMP tiny71d
 
 ; A = glyph code -> carry set and A = offset into TINY_FONT, or carry clear and A unchanged
 tiny_index:
@@ -287,11 +290,33 @@ init:
 .ok:
     RTS
 
-draw_glyph:         ; A = glyph code: what 04:B725 does
+draw_glyph:         ; A = glyph code: what 04:B725 (field) or 02:F08F (battle) does
+    PHA
+    LDA.l !MODE
+    BEQ +
+    PLA
+    JSL $02F08F
+    RTS
++:
+    PLA
     PHY
     JSL $00BA9D
     PLY
-store:              ; $0800/$0802 -> tilemap buffer at Y (04:B72D)
+store:              ; $0800/$0802 -> tilemap buffer at Y (04:B72D; battle: 02:F08F)
+    LDA.l !MODE
+    BEQ .field
+    LDA $0802
+    AND #$03FF
+    ORA.l $000709
+    STA $27C0,y
+    LDA $0800
+    AND #$03FF
+    ORA.l $000709
+    STA $2780,y
+    INY
+    INY
+    RTS
+.field:
     LDA $060C
     AND #$00FF
     CMP #$0006
@@ -411,7 +436,7 @@ font_reload:
 
 print "tiny71d=", hex(tiny71d)
 print "tiny725=", hex(tiny725)
-print "tiny_item=", hex(tiny_item)
+print "tiny_f08f=", hex(tiny_f08f)
 print "nmi_upload=", hex(nmi_upload)
 print "font_reload=", hex(font_reload)
 print "end=", hex(pc())

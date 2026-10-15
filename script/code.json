@@ -1042,20 +1042,52 @@
     "ldx"
    ]
   ],
-  "notes": ""
+  "notes": "config options 04AD53-04AD88 are printed in one loop (LDX #$AD53 ... CPX #$AD89 at 04:ABDA): keep them in order here"
+ },
+ {
+  "id": "04AD59",
+  "len": 3,
+  "jp": "歩き方",
+  "en": "Walk",
+  "refs": [],
+  "notes": "config option (walking style)"
  },
  {
   "id": "04AD5F",
   "len": 5,
   "jp": "歩くはやさ",
-  "en": "Walking Speed",
+  "en": "Speed",
+  "refs": [],
+  "notes": "config option (walking speed); 04:EEBE `LDX #$5F` is 8-bit, not a reference"
+ },
+ {
+  "id": "04AD69",
+  "len": 5,
+  "jp": "避け補正",
+  "en": "Dodge",
+  "refs": [],
+  "notes": "config option 避け補正"
+ },
+ {
+  "id": "04AD73",
+  "len": 4,
+  "jp": "サウンド",
+  "en": "Sound",
+  "refs": [],
+  "notes": "config option"
+ },
+ {
+  "id": "04AD7B",
+  "len": 7,
+  "jp": "コントローラー",
+  "en": "Buttons",
   "refs": [
    [
-    "04EEBE",
-    "ldx"
+    "04ABDA",
+    "end"
    ]
   ],
-  "notes": ""
+  "notes": "config option; its end is the loop's CPX"
  },
  {
   "id": "04B136",
@@ -1237,7 +1269,7 @@
   "id": "04E69E",
   "len": 13,
   "jp": "キャンセル‥‥‥数をへらす",
-  "en": "Cancel......Lower the amount",
+  "en": "Cancel......Lower amount",
   "refs": [
    [
     "04E656",
@@ -1250,7 +1282,7 @@
   "id": "04E6B8",
   "len": 26,
   "jp": "方向キー左右‥‥べつの しゅるいのリストを ひょうじ",
-  "en": "Left/Right....Other lists",
+  "en": "Left/Right..Other lists",
   "refs": [
    [
     "04E658",
@@ -1263,7 +1295,7 @@
   "id": "04E6EC",
   "len": 13,
   "jp": "（売る時のみ つかいます）",
-  "en": "(Used only when selling)",
+  "en": "(Selling only)",
   "refs": [
    [
     "04E5C5",
@@ -1289,7 +1321,7 @@
   "id": "04E734",
   "len": 23,
   "jp": "  決定ボタンと キャンセルボタンで 決める。",
-  "en": "   and set how many with Confirm and Cancel.",
+  "en": "   and choose how many.",
   "refs": [
    [
     "04E65C",
@@ -1302,7 +1334,7 @@
   "id": "04E762",
   "len": 28,
   "jp": "2‥他にも ほしい商品が ある時は つづけて その商品に",
-  "en": "2. If you want other items too, point at them",
+  "en": "2. For more items, point at",
   "refs": [
    [
     "04E65E",
@@ -1315,7 +1347,7 @@
   "id": "04E79A",
   "len": 21,
   "jp": "  カーソルを合わせ ほしい数を 決める。",
-  "en": "   and set how many.",
+  "en": "   them and choose how many.",
   "refs": [
    [
     "04E660",
@@ -1328,7 +1360,7 @@
   "id": "04E7C4",
   "len": 23,
   "jp": "3‥ほしい商品と ほしい数が すべて決まったら",
-  "en": "3. Once all items and amounts are set,",
+  "en": "3. When everything is set,",
   "refs": [
    [
     "04E662",
@@ -1341,7 +1373,7 @@
   "id": "04E7F2",
   "len": 26,
   "jp": "  『決定』に カーソルを合わせ 決定ボタンをおす。",
-  "en": "   point at 'Confirm' and press Confirm.",
+  "en": "   pick 'Done' and confirm.",
   "refs": [
    [
     "04E664",
@@ -2153,7 +2185,7 @@
   "id": "04949F",
   "len": 8,
   "jp": "歌武器を作曲する",
-  "en": "Compose a song weapon",
+  "en": "Compose a song",
   "refs": [
    [
     "049473",
@@ -2166,7 +2198,7 @@
   "id": "04E666",
   "len": 15,
   "jp": "方向キー上下‥‥カーソルいどう",
-  "en": "D-pad Up/Down....Move the cursor",
+  "en": "Up/Down.....Move cursor",
   "refs": [
    [
     "04E652",
@@ -2179,7 +2211,7 @@
   "id": "04E684",
   "len": 13,
   "jp": "決定ボタン‥‥‥数をふやす",
-  "en": "Confirm....Raise the amount",
+  "en": "Confirm.....Raise amount",
   "refs": [
    [
     "04E654",

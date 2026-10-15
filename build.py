@@ -57,6 +57,9 @@ def marker_text(e):
 
 
 CHOICE_CURSOR = 0x0393EF  # LDA #$012E in the text printer's yes/no handler
+# other `LDA #$012E` (▶) glyph sites: equip compare arrows (00:DF9E, JSL $04B764), cursors (00:E26E, 1E:CEB9).
+# Bank 05's #$012E/#$012F go into an object list (05:EFA1), not the font.
+ARROW_SITES = (0x00DF9E, 0x00E26E, 0x1ECEB9)
 # shortcut: other `LDA #$012E/$012F` cursor sites (menus, docs/re/font.md) still draw N/O; fix with the menus
 NAMES = {"name93": "Rock", "name94": "Makki"}  # glossary.md; widths in tools/wrap.py NAME_LEN
 NAME_INIT = 0x009FE8  # LDX #imm / STX $614D.. pairs up to 00:A011, then REP #$30 at 00:A012
@@ -212,12 +215,12 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             (ROOT / "build").mkdir(exist_ok=True)
             (ROOT / "build" / "baked_codes.json").write_text(json.dumps(codes), encoding="utf-8")
             # the yes/no cursor glyph 0x12E (▶) is now "N": point it at the English ▶
-            o = off(CHOICE_CURSOR)
-            assert rom[o:o + 3] == b"\xa9\x2e\x01"
-            rom[o + 1:o + 3] = int.from_bytes(text.EN.enc["▶"], "big").to_bytes(2, "little")
+            for site in (CHOICE_CURSOR,) + ARROW_SITES:
+                o = off(site)
+                assert rom[o:o + 3] == b"\xa9\x2e\x01", hex(site)
+                rom[o + 1:o + 3] = int.from_bytes(text.EN.enc["▶"], "big").to_bytes(2, "little")
             dentries = json.loads((ROOT / "script" / "dict.json").read_text(encoding="utf-8"))
-            if any(e["en"] for e in dentries):
-                patch_dictionary(rom, dentries)
+            dict_end = patch_dictionary(rom, dentries) if any(e["en"] for e in dentries) else 0
             cpath = ROOT / "script" / "code.json"
             if cpath.exists():
                 patch_codestr(rom, json.loads(cpath.read_text(encoding="utf-8")))
@@ -225,7 +228,7 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             patch_menutiles(rom)
             patch_name_limits(rom)
             patch_tab_spacers(rom)
-            patch_tiny(rom)
+            patch_tiny(rom, dict_end)
     if debug:
         patch_debug_start(rom, debug_bytes(debug))
     Path(out).parent.mkdir(parents=True, exist_ok=True)
@@ -237,7 +240,7 @@ CODESTR_BANK = 0x3B  # English for strings that live in code banks (script/code.
 # not relocatable this way: 078D81 is a false hit (07:81A4 is LDA #$81 / STA $4200); 02F078/02F07E are read as
 # $F078 + offset (fixed 6-byte slots; labels); banks $05/$0F use other readers (prologue, composer) - TODO
 # 04AD5F/0FCA01: their only "reference" is an 8-bit LDX/LDY #imm misread as 16-bit (04:EEBE is LDX #$5F)
-CODESTR_SKIP_IDS = {"078D81", "02F078", "02F07E", "04AD5F", "0FCA01"}
+CODESTR_SKIP_IDS = {"078D81", "02F078", "02F07E", "0FCA01"}
 CODESTR_SKIP_BANKS = {0x05, 0x0F}
 CODESTR_HELPERS = 0x3C8000  # one reader helper per source bank
 
@@ -282,6 +285,11 @@ def patch_codestr(rom, entries):
             rom[off(CODESTR_BANK << 16 | pos):off(CODESTR_BANK << 16 | pos) + len(blob)] = blob
             for site, kind in e["refs"]:
                 o = off(int(site, 16)) + (0 if kind == "table" else 1)
+                if kind == "end":  # CPX #end of a run of consecutive strings printed in a loop (04:ABDA)
+                    old_end, new_end = old + 2 * e["len"], new + len(blob)
+                    assert int.from_bytes(rom[o:o + 2], "little") == old_end, (e["id"], site)
+                    rom[o:o + 2] = new_end.to_bytes(2, "little")
+                    continue
                 assert int.from_bytes(rom[o:o + 2], "little") == old, (e["id"], site)
                 rom[o:o + 2] = new.to_bytes(2, "little")
             pos += len(blob)
@@ -308,6 +316,8 @@ def label_plan():
     imm = None
     for e in json.loads(p.read_text(encoding="utf-8")) if p.exists() else []:
         if not e["en"]:
+            continue
+        if e.get("kind") in ("tiny", "tinyrows", "tinytable"):  # build.py patch_tiny
             continue
         if e.get("kind") == "hook":
             for s in e["en"]:
@@ -380,16 +390,50 @@ ASAR = ROOT / "tools" / "asar" / "asar.exe"  # gitignored binary (Asar 1.91)
 TINY_AT = 0x3E8000  # asm/tiny.asm: item names in the field lists drawn in the tiny font at run time
 TINY_FONT = 0x3E9000  # its letters: 8 bytes per glyph code from 0x100
 TINY_CODES = 0x65  # codes 0x100-0x164 (ASCII + extras)
-# item-name loops `JSL DICT_READ ; BMI ; JSR $B71D|$B725 ; INX ; INX ; BRA` -> JSL entry + what follows the loop
-TINY_SITES = {0x049FE9: ("tiny71d", b"\x20\x1d\xb7", b"\x80\x0d"),  # item list (BRA $9FFC)
-              0x04BEA7: ("tiny725", b"\x20\x25\xb7", b"\x80\x0d"),  # item list with greyed entries (BRA $BEBA)
-              0x04C3FB: ("tiny725", b"\x20\x25\xb7", b"\x60"),      # equipment candidates (ended in JMP $B725)
-              0x04DF22: ("tiny71d", b"\x20\x1d\xb7", b"\x80\x0d"),  # shop list (BRA $DF35)
-              0x04E118: ("tiny71d", b"\x20\x1d\xb7", b"\x60")}      # shop (the loop ended the routine: RTS)
+# item-name loops `JSL DICT_READ ; BMI ; draw ; INX ; INX ; BRA` -> JSL entry + what follows the loop
+_B71D, _B725 = b"\x30\x07\x20\x1d\xb7\xe8\xe8\x80\xf3", b"\x30\x07\x20\x25\xb7\xe8\xe8\x80\xf3"
+TINY_SITES = {0x049FE9: ("tiny71d", _B71D, b"\x80\x0d"),  # item list (BRA $9FFC)
+              0x04BEA7: ("tiny725", _B725, b"\x80\x0d"),  # item list with greyed entries (BRA $BEBA)
+              0x04C3FB: ("tiny725", _B725, b"\x60"),      # song weapon list (ended in JMP $B725)
+              # equip/exchange slots (04:B65F), item and song description headers (04:C000, 04:C4F8)
+              0x04C4FB: ("tiny71d", _B71D, b"\x60"),
+              0x04DF22: ("tiny71d", _B71D, b"\x80\x0d"),  # shop list (BRA $DF35)
+              0x04E118: ("tiny71d", _B71D, b"\x60"),      # shop (the loop ended the routine: RTS)
+              # 00:E133 (dictionary word A at Y, e.g. the Forte description 04:9449); in battle it stays per-glyph
+              0x00E139: ("tiny71d", b"\x30\x08\x22\x7b\xb7\x04\xe8\xe8\x80\xf2", b"\x6b"),
+              # battle item and song lists (name pointer in $07E5; JSL $02F08F per glyph): BRA $DF4F
+              0x02DF3A: ("tiny_f08f", b"\x30\x08\x22\x8f\xf0\x02\xe8\xe8\x80\xf2", b"\x80\x0f")}
+# whole English phrases drawn by the tiny renderer instead of glyph-by-glyph code (labels.json kind "tiny", id =
+# site): original bytes there, tilemap position, entry; the bytes become LDY #pos ; LDX #string ; JSL entry
+TINY_HOOKS = {
+    # shop confirm menu (04:D59B): はい / いいえ / 売る|買う + のをやめる
+    "04D5AF": (bytes.fromhex("a0241ba91900201db7a90100201db7"), 0x1B24, "tiny71d"),
+    "04D5BE": (bytes.fromhex("a0a41ba90100201db7a90100201db7a90300201db7"), 0x1BA4, "tiny71d"),
+    "04D4B6": (bytes.fromhex("a0241ca94101201db7a92800201db7"), 0x1C24, "tiny71d"),
+    "04D4E1": (bytes.fromhex("a0241ca94001201db7a90200201db7"), 0x1C24, "tiny71d"),
+    "04ABB9": (bytes.fromhex("a0b608a97102201db7c8c8a9b001201db7"), 0x08B6, "tiny71d"),  # config title 設 定
+    # battle song header 消費 / 効果 (02:BE24, attribute set just before)
+    "02BE24": (bytes.fromhex("a9fb00a06610228ff002a90202228ff002"), 0x1066, "tiny_f08f"),
+    "02BE35": (bytes.fromhex("a90502a07210228ff002a91a01228ff002"), 0x1072, "tiny_f08f"),
+}
 
 
-def patch_tiny(rom):
-    """Item names in the field lists two letters per cell, rendered at run time (asm/tiny.asm, font.TINY_POOL)."""
+# a routine that printed fixed rows of labels -> one tiny string per row (labels.json kind "tinyrows", id = its
+# entry, which is replaced by JSL + RTL): original bytes there, Y step between rows. Generated code at TINY_ROWS_AT.
+TINY_ROWS = {"04A993": (bytes.fromhex("84e3a90900"), 0x80)}  # status screen stat names (04:A99D loop, 9 rows)
+TINY_ROWS_AT = 0x3CB000
+# a printer of strings picked through pointer tables (X = address of the table entry) -> LDA table,x ; TAX ;
+# JSL entry ; BRA on (labels.json kind "tinytable": "keys" = table entry addresses, "en"): original bytes, entry,
+# where to continue. Tables at TINY_TABLE_AT.
+TINY_TABLES = {  # config values (04:AD8D): 8-bit kana strings through 04:ADFB/AE13/AE25/AE30
+    "04ADCA": (bytes.fromhex("bf000004" "aa" "e220" "bf000004" "c220" "3009" "29ff00" "2025b7" "e8" "80ed"
+                             "297f00" "2025b7"), "tiny725", 0x04ADE8)}
+TINY_TABLE_AT = 0x3CB800
+
+
+def patch_tiny(rom, dict_end=0):
+    """Item names in the field lists two letters per cell, rendered at run time (asm/tiny.asm, font.TINY_POOL).
+    dict_end: bytes used in DICT_OVERFLOW; the TINY_HOOKS strings go after them (DICT_READ reads them there)."""
     import subprocess
     char = {int.from_bytes(v, "big"): ch for ch, v in text.EN.enc.items() if len(v) == 2}
     tiny = font.load_tiny()
@@ -419,17 +463,74 @@ def patch_tiny(rom):
         return bytes([0x22, sym[name] & 0xFF, sym[name] >> 8 & 0xFF, sym[name] >> 16])
 
     read = bytes([0x22, DICT_READ & 0xFF, DICT_READ >> 8 & 0xFF, DICT_READ >> 16])
-    for site, (entry, draw, after) in TINY_SITES.items():
+    for site, (entry, loop, after) in TINY_SITES.items():
         o = off(site)
-        assert rom[o:o + 13] == read + b"\x30\x07" + draw + b"\xe8\xe8\x80\xf3", hex(site)
+        assert rom[o:o + 4 + len(loop)] == read + loop, hex(site)
         rom[o:o + 4 + len(after)] = jsl(entry) + after
-    patches = {0x04B65A: (bytes.fromhex("bf4fa72faa4cfbc4"), jsl("tiny_item") + b"\x60\xea\xea\xea"),  # equip list
-               0x0082A8: (bytes.fromhex("a9808d1521"), jsl("nmi_upload") + b"\xea"),  # NMI: upload the cells
+    patches = {0x0082A8: (bytes.fromhex("a9808d1521"), jsl("nmi_upload") + b"\xea"),  # NMI: upload the cells
                0x00B817: (bytes.fromhex("221e8e00"), jsl("font_reload"))}  # font reload: upload them again
     for site, (old, new) in patches.items():
         o = off(site)
         assert rom[o:o + len(old)] == old and len(new) == len(old), hex(site)
         rom[o:o + len(new)] = new
+    import lint
+    pos = dict_end
+
+    def put(s, cells, what):
+        """English string s into DICT_OVERFLOW (where DICT_READ finds it); returns its pointer."""
+        nonlocal pos
+        assert lint.tiny_cells(s, font.load_tiny()) <= cells, (what, s)
+        b = text.encode(s, text.EN.enc)
+        ws = [int.from_bytes(b[k:k + 2], "big") for k in range(0, len(b), 2)]
+        ws[-1] |= 0x8000
+        data = b"".join(w.to_bytes(2, "little") for w in ws)
+        assert pos + len(data) <= 0x8000, "tiny strings overflow bank DICT_OVERFLOW"
+        o = off(DICT_OVERFLOW << 16 | 0x8000 | pos)
+        rom[o:o + len(data)] = data
+        pos += len(data)
+        return pos - len(data)
+
+    rows_at = TINY_ROWS_AT
+    for e in json.loads((ROOT / "script" / "labels.json").read_text(encoding="utf-8")):
+        if e.get("kind") == "tiny" and e["en"]:
+            p = put(e["en"][0], e["cells"], e["id"])
+            old, ypos, entry = TINY_HOOKS[e["id"]]
+            so = off(int(e["id"], 16))
+            assert rom[so:so + len(old)] == old, e["id"]
+            new = bytes([0xA0, ypos & 0xFF, ypos >> 8, 0xA2, p & 0xFF, p >> 8]) + jsl(entry)
+            rom[so:so + len(old)] = new + b"\xea" * (len(old) - len(new))
+        elif e.get("kind") == "tinyrows" and e["en"]:
+            old, step = TINY_ROWS[e["id"]]
+            so = off(int(e["id"], 16))
+            assert rom[so:so + len(old)] == old, e["id"]
+            code = bytearray(b"\x5a")  # PHY (Y = first row)
+            for i, s in enumerate(e["en"]):
+                p = put(s, e["cells"], e["id"])
+                code += b"\x7a\x5a"  # PLY ; PHY
+                if i:
+                    code += bytes([0x98, 0x18, 0x69, i * step & 0xFF, i * step >> 8, 0xA8])  # TYA CLC ADC # TAY
+                code += bytes([0xA2, p & 0xFF, p >> 8]) + jsl("tiny71d")  # LDX #string ; JSL
+            code += b"\x7a\x6b"  # PLY ; RTL
+            assert rom[off(rows_at):off(rows_at) + len(code)] == b"\xff" * len(code)
+            rom[off(rows_at):off(rows_at) + len(code)] = code
+            rom[so:so + len(old)] = bytes([0x22, rows_at & 0xFF, rows_at >> 8 & 0xFF, rows_at >> 16, 0x6B]) \
+                + b"\xea" * (len(old) - 5)
+            rows_at += len(code)
+        elif e.get("kind") == "tinytable" and e["en"]:
+            old, entry, cont = TINY_TABLES[e["id"]]
+            site = int(e["id"], 16)
+            so = off(site)
+            assert rom[so:so + len(old)] == old, e["id"]
+            keys = {int(k, 16) & 0xFFFF: s for k, s in zip(e["keys"], e["en"])}
+            lo = min(keys)
+            for a, s in keys.items():
+                t = off(TINY_TABLE_AT + a - lo)
+                assert rom[t:t + 2] == b"\xff\xff", hex(a)
+                rom[t:t + 2] = put(s, e["cells"], e["id"]).to_bytes(2, "little")
+            base = TINY_TABLE_AT - lo  # LDA base,x with X = the old table entry address
+            new = bytes([0xBF, base & 0xFF, base >> 8 & 0xFF, base >> 16, 0xAA]) + jsl(entry)
+            new += bytes([0x80, cont - (site + len(new) + 2)])
+            rom[so:so + len(old)] = new + b"\xea" * (len(old) - len(new))
 
 
 HOOK_AT = 0x3CA000  # hook code + 16-bit label strings for routines that read 8-bit kana strings
@@ -520,17 +621,27 @@ def write_labels(rom, plan, code_of):
 
 # Menu overlay tiles (8x8 small kanji written straight into the menu tilemap, e.g. 04:BA01): decompressed by
 # 00:B9B3 from bank $1F into BG tiles 0x380-0x3BF (0x400-byte blocks) and 0x3C0-0x3DF (0x200-byte blocks),
-# one variant per window style ($0804 & 3; tables 00:BA85 / 00:BA8B).
+# one variant per window style ($0804 & 3; tables 00:BA85 = AB82 AF2C AF2C, 00:BA8B = B31B B50E B705). The variants
+# hold different glyphs at some indexes, so a tile is changed only where it equals the default-style block's tile.
 MENU_TILE_BLOCKS = [(0x1FAB82, 0x380, 0x400), (0x1FAF2C, 0x380, 0x400),
                     (0x1FB31B, 0x3C0, 0x200), (0x1FB50E, 0x3C0, 0x200), (0x1FB705, 0x3C0, 0x200)]
-MENU_TILES = {  # tile -> two tiny-font characters (tools/font.py load_tiny); shared tiles change everywhere
+MENU_TILE_REF = {0x380: 0x1FAF2C, 0x3C0: 0x1FB50E}  # default style (field menus, shop)
+MENU_TILES = {  # tile -> two tiny-font characters (tools/font.py load_tiny), or 8 rows of 8 pixels ('#' = ink)
     0x3BE: " H", 0x3AE: " V", 0x3C1: "P ",                     # 体力 -> HP, 声力 -> VP (力 is shared)
     0x3C0: "Ne", 0x3AC: "xt", 0x3D0: " r", 0x3D1: "an", 0x3BC: "k ", 0x3BD: "in",  # 次の役者まで -> Next rank in
+    0x3AD: "  ",                                               # 個 after a count: nothing
+    0x3AB: "Fr", 0x3BB: "ee",                                  # 空き (free inventory slots) -> Free
+    0x3D3: "  ",                                               # status: 1回×13 (hits × power) -> 1 ×13    # equip window stat column 攻 守 早: Attack / Defense / Speed as the weapon, armor and footwear icons
+    0x3C6: ["......##", ".....##.", "....##..", ".#.##...", "..##....", ".#.#....", "#.......", "........"],
+    0x3D6: [".##..##.", ".######.", "########", ".######.", "..####..", "..####..", "..#..#..", "........"],
+    0x3D5: ["...##...", "...##...", "...###..", "..#####.", ".######.", "########", "........", "........"],
 }
 
 
 def tiny_tile(two):
-    """8x8 2bpp tile (bg 3, ink 1) with two tiny-font characters on rows 1-6."""
+    """8x8 2bpp tile (bg 3, ink 1): two tiny-font characters on rows 1-6, or 8 rows of pixel art."""
+    if isinstance(two, list):
+        return font.encode_tile([[1 if p == "#" else 3 for p in r] for r in two])
     glyphs = font.load_tiny()
     rows = [[3] * 8 for _ in range(8)]
     for i, ch in enumerate(two):
@@ -543,13 +654,16 @@ def tiny_tile(two):
 
 def patch_menutiles(rom):
     import lz
+    ref = {first: lz.decompress(rom, off(src), size)[0] for first, src in MENU_TILE_REF.items()
+           for s, f, size in MENU_TILE_BLOCKS if s == src}
     for src, first, size in MENU_TILE_BLOCKS:
         o = off(src)
         raw, used = lz.decompress(rom, o, size)
         raw = bytearray(raw)
-        for t, two in MENU_TILES.items():
-            if first <= t < first + size // 16:
-                raw[(t - first) * 16:(t - first + 1) * 16] = tiny_tile(two)
+        for t, art in MENU_TILES.items():
+            k = (t - first) * 16
+            if first <= t < first + size // 16 and raw[k:k + 16] == ref[first][k:k + 16]:
+                raw[k:k + 16] = tiny_tile(art)
         new = lz.compress(bytes(raw))
         assert len(new) <= used, f"menu tiles at {src:06X}: {len(new):#x} > {used:#x}"
         rom[o:o + len(new)] = new
@@ -559,6 +673,7 @@ NAME_MAX_SITES = (0x04BBDF, 0x04BC02)  # `LDA #$0006`: glyph limit when drawing 
 # `LDA #$02FF ; JSR $B71D` after every cell of the selected item/song tab ("戦 闘 用"): spaced-out kana/kanji
 # would tear baked English labels apart ("Re me dy"), so the selected tab is drawn solid like the others
 TAB_SPACERS = (0x04B7F0, 0x04B88C)
+BATTLE_TAB_SPACERS = (0x02FDDB, 0x0FFB1F)  # same in battle: `LDA #$02FF ; JSL $02F084` (item / song tabs)
 
 
 def patch_tab_spacers(rom):
@@ -566,6 +681,10 @@ def patch_tab_spacers(rom):
         o = off(site)
         assert rom[o:o + 6] == b"\xa9\xff\x02\x20\x1d\xb7", hex(site)
         rom[o:o + 6] = b"\xea" * 6
+    for site in BATTLE_TAB_SPACERS:
+        o = off(site)
+        assert rom[o:o + 7] == b"\xa9\xff\x02\x22\x84\xf0\x02", hex(site)
+        rom[o:o + 7] = b"\xea" * 7
 
 
 def patch_name_limits(rom):
