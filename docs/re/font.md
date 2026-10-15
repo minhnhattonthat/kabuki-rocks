@@ -40,6 +40,10 @@ Dialogue box: 2 lines of 16 px, ~28 cells of 8 px (measure in the width gate).
   7F:D000 (7F:D000-FABF is never written by the game: tools/lua/wramuse.lua); the NMI frame-ready branch (00:82A8)
   DMAs dirty slots (channel 7, <= $600 bytes per frame) to VRAM $6000+tile*8. The font loader (00:B7F6, reloads page
   0 on every menu open/close) re-dirties the whole pool when it loads to VRAM $6000.
-- Battle mode ($060C >= 5) keeps the per-glyph drawing.
+- Battle lists (02:DF3A) use the `tiny_f08f` entry (02:F08F store, `$0709` attribute); other battle-mode
+  ($060C >= 5) callers keep the per-glyph drawing.
+- labels.json kinds driven by patch_tiny: `tiny` (one phrase at a site: LDY/LDX/JSL), `tinyrows` (a routine that
+  printed rows -> generated code at 3C:B000), `tinytable` (pointer-table printers: new table at 3C:B800; config
+  values, button functions). Strings live in bank $30 after the dictionary overflow (DICT_READ reads them).
 - Inventory: 7E:5E85, one item id per slot (FF = empty); script op A2 does not add to it, A0 tests it. QA fills it
   with tools/lua/poke.lua (tools/qa_screens.sh).

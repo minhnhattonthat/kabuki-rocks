@@ -113,6 +113,137 @@ def patch_sysmsg(rom, space):
                 rom[so + 1] = at
 
 
+PLACARD = 0x24AE58  # battle: empty party slot placard 出演者求む (compressed 4bpp, 6x6 tiles, OBJ 16x16 x 9)
+PLACARD_ROWS = [0, 3, 1, 4, 2, 5]  # screen tile row -> tile row in the block (16x16 sprites: top halves first)
+
+
+def patch_placard(rom):
+    """Redraw the placard's paper (x 11-35, y 5-42) as ACTORS / WANTED, tiny font at double height."""
+    import lz
+    o = off(PLACARD)
+    raw, used = lz.decompress(rom, o, 0x480)
+    raw = bytearray(raw)
+    img = [[0] * 48 for _ in range(48)]
+    for cy in range(6):
+        for cx in range(6):
+            b = raw[(PLACARD_ROWS[cy] * 6 + cx) * 32:][:32]
+            for y in range(8):
+                for x in range(8):
+                    bit = 7 - x
+                    img[cy * 8 + y][cx * 8 + x] = sum((b[k + 2 * y] >> bit & 1) << n
+                                                      for n, k in enumerate((0, 1, 16, 17)))
+    for y in range(5, 43):
+        for x in range(11, 36):
+            img[y][x] = 0xF  # paper
+    tiny = font.load_tiny()
+    for top, word in ((11, "ACTORS"), (27, "WANTED")):
+        x0 = 11 + (25 - (4 * len(word) - 1)) // 2
+        for i, ch in enumerate(word):
+            for gy, row in enumerate(tiny[ch][1:]):  # caps use glyph rows 1-5
+                for gx, p in enumerate(row):
+                    if p:
+                        img[top + 2 * gy][x0 + 4 * i + gx] = img[top + 2 * gy + 1][x0 + 4 * i + gx] = 1  # ink
+    for cy in range(6):
+        for cx in range(6):
+            t = bytearray(32)
+            for y in range(8):
+                for x in range(8):
+                    c = img[cy * 8 + y][cx * 8 + x]
+                    for n, k in enumerate((0, 1, 16, 17)):
+                        t[k + 2 * y] |= (c >> n & 1) << (7 - x)
+            k = (PLACARD_ROWS[cy] * 6 + cx) * 32
+            raw[k:k + 32] = t
+    new = lz.compress(bytes(raw))
+    assert len(new) <= used, f"placard: {len(new):#x} > {used:#x}"
+    rom[o:o + len(new)] = new
+
+
+CAPS = {  # 4x7 capitals (W, M 5 wide; I, T 3) for the title graphics
+    "A": ".##.|#..#|#..#|####|#..#|#..#|#..#", "C": ".##.|#..#|#...|#...|#...|#..#|.##.",
+    "D": "###.|#..#|#..#|#..#|#..#|#..#|###.", "E": "####|#...|#...|###.|#...|#...|####",
+    "G": ".##.|#..#|#...|#.##|#..#|#..#|.###", "I": "###|.#.|.#.|.#.|.#.|.#.|###",
+    "L": "#...|#...|#...|#...|#...|#...|####", "M": "#...#|##.##|#.#.#|#.#.#|#...#|#...#|#...#",
+    "N": "#..#|##.#|##.#|#.##|#.##|#..#|#..#", "O": ".##.|#..#|#..#|#..#|#..#|#..#|.##.",
+    "R": "###.|#..#|#..#|###.|#.#.|#..#|#..#", "S": ".###|#...|#...|.##.|...#|...#|###.",
+    "T": "###|.#.|.#.|.#.|.#.|.#.|.#.", "U": "#..#|#..#|#..#|#..#|#..#|#..#|.##.",
+    "W": "#...#|#...#|#...#|#.#.#|#.#.#|##.##|#...#", " ": "..|..|..|..|..|..|..",
+}
+TITLE_TILES = 0x18D26D  # BG1 tiles of the title (compressed, $28A0 bytes, tile 0 = BG1 tile 0)
+TITLE_MENU = [("NEW GAME", [[0x115, 0x116, 0x11D, 0x11E, 0x121, 0x122], [0x117, 0x118, 0x11F, 0x120, 0x123, 0x124]]),
+              ("CONTINUE", [[0x119, 0x11A, 0x10C, 0x10D, 0x10E, 0x10F], [0x11B, 0x11C, 0x110, 0x111, 0x112, 0x113]])]
+# the BG1 map stream (19:8xxx) has `85 n1..n6` runs per menu row; 再公演 reused 公演's tiles, so its row moves to
+# the tiles $10C-$113 the title leaves unused
+TITLE_MAP_EDITS = [(bytes.fromhex("85191a1d1e2122"), bytes.fromhex("85191a0c0d0e0f")),
+                   (bytes.fromhex("851b1c1f202324"), bytes.fromhex("851b1c10111213"))]
+# vertical curtain text れっど / あとらす (BG3 2bpp tiles, uncompressed in bank $18): file offset per tile, top down
+TITLE_CURTAINS = [("RED", [0xC00A0, 0xC0130, 0xC00B0, 0xC0140]),
+                  ("ATLUS", [0xC0150, 0xC0160, 0xC0170, 0xC0180, 0xC0190, 0xC00C0])]
+
+
+def caps_mask(word):
+    """[rows][cols] 0/1 of `word` in CAPS with 1-px gaps."""
+    glyphs = [CAPS[ch].split("|") for ch in word]
+    w = sum(len(g[0]) for g in glyphs) + len(glyphs) - 1
+    rows = [[0] * w for _ in range(7)]
+    x = 0
+    for g in glyphs:
+        for y, r in enumerate(g):
+            for dx, p in enumerate(r):
+                rows[y][x + dx] = p == "#"
+        x += len(g[0]) + 1
+    return rows
+
+
+def patch_title(rom):
+    """Title screen: menu 初公演 / 再公演 -> NEW GAME / CONTINUE (fill C, outline E like the kanji), curtain
+    texts れっど / あとらす -> RED / ATLUS."""
+    import lz
+    o = off(TITLE_TILES)
+    raw, used = lz.decompress(rom, o, 0x28A0)
+    raw = bytearray(raw)
+    for word, tiles in TITLE_MENU:
+        m = caps_mask(word)
+        x0, y0 = (48 - len(m[0])) // 2, 5
+        img = [[0] * 48 for _ in range(16)]
+        for y in range(7):
+            for x in range(len(m[0])):
+                if m[y][x]:
+                    for dy in (-1, 0, 1):
+                        for dx in (-1, 0, 1):
+                            if img[y0 + y + dy][x0 + x + dx] == 0:
+                                img[y0 + y + dy][x0 + x + dx] = 0xE  # outline
+        for y in range(7):
+            for x in range(len(m[0])):
+                if m[y][x]:
+                    img[y0 + y][x0 + x] = 0xC  # fill
+        for ty, row in enumerate(tiles):
+            for tx, t in enumerate(row):
+                b = bytearray(32)
+                for y in range(8):
+                    for x in range(8):
+                        c = img[ty * 8 + y][tx * 8 + x]
+                        for n, k in enumerate((0, 1, 16, 17)):
+                            b[k + 2 * y] |= (c >> n & 1) << (7 - x)
+                raw[t * 32:t * 32 + 32] = b
+    new = lz.compress(bytes(raw))
+    assert len(new) <= used, f"title tiles: {len(new):#x} > {used:#x}"
+    rom[o:o + len(new)] = new
+    for old, new in TITLE_MAP_EDITS:
+        k = rom.find(old, off(0x198000), off(0x1A0000))
+        assert k >= 0 and rom.find(old, k + 1, off(0x1A0000)) < 0, old.hex()
+        rom[k:k + len(new)] = new
+    for word, offs in TITLE_CURTAINS:
+        for i, fo in enumerate(offs):
+            rows = [[3] * 8 for _ in range(8)]  # curtain colour
+            if i < len(word):
+                m = caps_mask(word[i])
+                for y in range(7):
+                    for x in range(len(m[0])):
+                        if m[y][x]:
+                            rows[y][(8 - len(m[0])) // 2 + x] = 1  # ink
+            rom[fo:fo + 16] = font.encode_tile(rows)
+
+
 CHOICE_STORES = 0x03940B  # text printer yes/no (03:93E6): は い at cells 1-2, い い え at 9-11 (cells $80 apart)
 CHOICE_AT = 0x3CBC00
 CHOICE_ORIG = bytes.fromhex("daa91900229dba00faa5009d0028a5029d0228daa90100229dba00faa5009d80289d002c9d802ca5029d8228"
@@ -274,6 +405,8 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
         if not reloc_jp:
             patch_sysmsg(rom, space)  # before the font: kana it no longer uses join the tiny-text pool
             patch_choice(rom)
+            patch_placard(rom)
+            patch_title(rom)
             patch_names(rom, space)
             plan = label_plan()
             uniq = {}  # identical baked cells share one glyph code

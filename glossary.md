@@ -88,6 +88,11 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 - Nameless 「 lines: no speaker prefix, no stray opening quote.
 - {name93}/{name94}: no honorific suffix glued on; use "Sir {name93}" style or rephrase.
 - 泣き所町 -> Nakidokoro Town (pun on Benkei's weak spot lost; revisit).
+- UI (2026-10-15): 初公演 / 再公演 -> NEW GAME / CONTINUE; 出演者求む (empty party slot) -> ACTORS WANTED; 補助歌 tab
+  -> Assist; 消費声力 / 効果範囲 -> VP Cost / Range: (battle: Cost / Area); 空き -> Free; 個 dropped; 両 kept as the
+  money sign; stat kanji 攻 守 早 (equip window) and the shop stat bar -> weapon / armor / footwear (/ mic) icons
+  (no room for words); config: Walk, Speed, Dodge (避け補正: On / Off), Sound (Stereo / Mono), Buttons; ウラいたこ ->
+  Shadow Itako; 楽屋シップ -> Dressing Room Ship.
 - Item names are drawn in the tiny font in the field lists: at most 10 cells (icon + 18 letters, or 20 letters;
   `tools/lint.py` checks). Rewordings for that (2026-10-15): たねがしま～ -> Matchlock (Pocket Matchlock, Matchlock
   Tokarev/Magnum/Bazooka/Tank); 千両役者の剣/ヨロイ/タビ -> Thousand-Ryo Sword/Armor/Tabi (ties to "thousand-ryo

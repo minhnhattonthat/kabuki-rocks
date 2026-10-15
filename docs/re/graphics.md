@@ -1,11 +1,18 @@
-# Graphics-text survey (phase 1, partial)
+# Graphics-text survey
 
-Reached so far: boot logos, title, intro play + theatre (free play from `work/states/theater_free.mss`), field menu (`work/states/field_menu.mss`, X button).
+Reached: boot logos, title, intro, field menus (all sub-screens), shops, battle, the 131 maps of the warp tour
+(work/qa/maps3: no Japanese signage seen at full-screen scale). Not reached: ending, game over, save screens beyond
+the Save Jizo dialogue.
 
-| Screen | Element | Kind | Status |
+| Screen | Element | Source | Status |
 |---|---|---|---|
-| Boot | ATLUS / RED logos | sprite/BG art, Latin | keep |
-| Title | "KABUKI ROCKS!" logo | BG art, already English | keep |
-| Field menu | name, 1両役者 rank, 体力/声力 labels, 次の役者まで, commands 歌武器 道具 十八番 装備 状態 設定, けいかいする, money 両 | **font text** (BG3 glyph codes, incl. runtime 0x2xx kanji: 状態 0x272/0x273, 設定 0x271/0x1B0) | text work: command column is 3-4 cells wide -> needs a wider window or small font |
+| Boot | ATLUS / RED logos | art, Latin | keep |
+| Title | KABUKI ROCKS! logo, (c) ATLUS/RED | BG1 art, Latin | keep |
+| Title | menu 初公演 / 再公演 | BG1 16x16 kanji, tiles in compressed block 18:D26D (tile 0 = BG1 tile 0); map = byte stream at 19:8xxx (`85 n1..n6` per row) | NEW GAME / CONTINUE (build.py patch_title; 再公演 row moved to unused tiles $10C-$113) |
+| Title | curtain text れっど / あとらす (vertical) | BG3 2bpp, raw tiles in bank $18 (file 0xC00A0...) | RED / ATLUS (patch_title) |
+| Battle | empty party slot placard 出演者求む | OBJ 16x16 x 9, compressed 24:AE58 (6x6 tiles, rows interleaved 0,3,1,4,2,5) | ACTORS / WANTED (patch_placard) |
+| Menus | 8x8 overlay kanji (体力 声力 次の役者まで 攻守早 個 空き 回) | overlay tile blocks 1F:AB82.. (build.py MENU_TILES, per window style) | English / icons / blank |
+| Menus | money and rank unit 両 | glyph 0xE8, overlay 0x3C3 | kept as the currency sign |
 
-Not yet reached: shops, inns, item/equip/status sub-screens, battle (commands, messages, enemy names), save/load, name entry (if any), ending/credits. Need a save or long route; ask the user for SRAM saves.
+Tools: `--script tools/lua/lzlog.lua` logs every decompression (source, destination, size); probes/snes_dmalog.lua
+the DMA into VRAM; `vramfind.py` for raw tiles.

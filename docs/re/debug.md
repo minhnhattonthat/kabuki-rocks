@@ -6,6 +6,10 @@ redirected to the given event-script bytes at 3F:8000 (bank $3F is reserved for 
 
 Useful ops (tools/script_ops.py):
 - `A4 lo hi` add money (A4 30 75 = 30000). `B5 xx` party join (seen: 1B 2B 3C 40 5B 6B 7B 8B AB 10 20 50). `A2 xx` item-related but does NOT fill the inventory (seen 11 19 3A 42-46 AB); `A0 xx PTR` jumps if item xx is owned. To own items, poke the inventory (7E:5E85, FF = empty) with tools/lua/poke.lua.
+- `80 42` sets event flag $42 (enables the Song Weapon menu). Song weapons per member: 7E:51EB + member*$AB, 4 tabs
+  x 24 ids. tools/qa_screens.sh pokes inventory, counts and songs.
+- System messages (RAM scripts) can't be reached by a script jump; `python -X utf8 tools/qa_sysmsg.py` runs each
+  through the game's own copy/run path with tools/lua/callstub.lua (main-thread stub in 7F:E100).
 - `@` in the hex = the 3-byte address of the byte after it (a jump target that just continues), e.g. `D2 40 00 @ FF`.
 - `C8 map b x y` warp, then `BC 09` (fade in). `8F n` wait n frames. `FF` end (player gets control).
 - `D2 lo hi PTR24` battle (seen ids 4000 497C 887B 937C 107D 507D ... ); PTR = where to continue (e.g. the FF after it).
