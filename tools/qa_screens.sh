@@ -33,6 +33,8 @@ for d in 0 1 2 3 4 5 6; do  # menu entries (presses closer than ~20 frames get d
   shot "0${n}_sub$d" build/qa_field.sfc work/states/qa_field.mss "$r;6 a;60 -;6 a;60 -" 500
   n=$((n+1))
 done
+r="20 -;6 x;60 -;6 down;24 -;6 down;24 -;6 down;24 -;6 down;24 -;6 down;24 -;6 down;24 -;6 a;80 -"
+shot 0F_buttons build/qa_field.sfc work/states/qa_field.mss "$r;6 down;24 -;6 down;24 -;6 down;24 -;6 down;24 -;6 a;80 -" 700
 ITEMS="20 -;6 x;40 -;6 down;12 -;6 down;12 -;6 down;12 -;6 a;60 -;6 a;60 -"
 shot 08_items2 build/qa_field.sfc work/states/qa_field.mss "$ITEMS;6 right;40 -" 400
 shot 09_items3 build/qa_field.sfc work/states/qa_field.mss "$ITEMS;6 right;40 -;6 right;40 -" 400

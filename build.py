@@ -65,6 +65,79 @@ NAMES = {"name93": "Rock", "name94": "Makki"}  # glossary.md; widths in tools/wr
 NAME_INIT = 0x009FE8  # LDX #imm / STX $614D.. pairs up to 00:A011, then REP #$30 at 00:A012
 
 
+def patch_sysmsg(rom, space):
+    """System messages (script/sysmsg.json): script bytes copied by 00:90C7 into 7F:4000 and run there. Each
+    template is rewritten in place as: text op, then per English segment `86 ptr` (text jump) to the segment in
+    the expansion area, which jumps back into 7F:4000 right after; a {slot} is a glyph word the code stores into
+    the copy (its `STA $7F40xx` operands are repointed); then the original ops after the text."""
+    import sysmsg
+    p = ROOT / "script" / "sysmsg.json"
+    for e in json.loads(p.read_text(encoding="utf-8")) if p.exists() else []:
+        if not e["en"]:
+            continue
+        bank, y = int(e["site"], 16) >> 16, int(e["y"], 16)
+        o, data = sysmsg.stream(rom, bank, y)
+        op, run, tail = sysmsg.split(data)
+        s = e["en"]
+        for k, v in NAMES.items():
+            s = s.replace("{" + k + "}", v)
+        slots = e.get("slots", [])
+        assert s.count("{slot}") == len(slots), e["site"]
+        for _, width in slots:  # wrap with each slot as a word of its widest value
+            s = s.replace("{slot}", "~" * width, 1)
+        choice = s.endswith("{n}")  # a choice follows on the next line: the text must fit the first two lines
+        segs = wrap.wrap(s[:-3]) + "{n}" if choice else wrap.wrap(s)
+        assert not choice or (segs.count("{n}") <= 2 and "{clr}" not in segs), (e["site"], segs)
+        for _, width in slots:
+            segs = segs.replace("~" * width, "\0", 1)
+        segs = segs.split("\0")
+        tpl = bytearray([op])
+        offs = []
+        for i, seg in enumerate(segs):
+            if seg:
+                body = text.encode(seg, text.EN.enc) + jump(0x7F4000 + len(tpl) + 4)
+                dst = space.alloc(len(body))
+                rom[off(dst):off(dst) + len(body)] = body
+                tpl += jump(dst)
+            if i < len(slots):
+                offs.append(len(tpl))
+                tpl += b"\x00\x00"
+        tpl += tail + b"\xff"  # tail ends with the first FF of the FFFF the copier stops at
+        assert len(tpl) <= len(data) + 1, (e["site"], len(tpl), len(data))
+        assert all(tpl[k:k + 2] != b"\xff\xff" for k in range(len(tpl) - 2)), e["site"]
+        rom[o:o + len(tpl)] = tpl
+        for (sites, _), at in zip(slots, offs):
+            for site in sites:
+                so = off(int(site, 16))
+                assert rom[so] == 0x8F and rom[so + 2:so + 4] == b"\x40\x7f", site  # STA $7F40xx
+                rom[so + 1] = at
+
+
+CHOICE_STORES = 0x03940B  # text printer yes/no (03:93E6): は い at cells 1-2, い い え at 9-11 (cells $80 apart)
+CHOICE_AT = 0x3CBC00
+CHOICE_ORIG = bytes.fromhex("daa91900229dba00faa5009d0028a5029d0228daa90100229dba00faa5009d80289d002c9d802ca5029d8228"
+                            "9d022c9d822cdaa90300229dba00faa5009d002da5029d022d")
+
+
+def patch_choice(rom):
+    """Every Yes/No choice: 'Yes' after the first cursor cell, 'No' after the second (generated code, JSL)."""
+    o = off(CHOICE_STORES)
+    assert rom[o:o + len(CHOICE_ORIG)] == CHOICE_ORIG
+    code = bytearray()
+    for cell, ch in [(1, "Y"), (2, "e"), (3, "s"), (9, "N"), (10, "o"), (11, " ")]:
+        a = 0x2780 + cell * 0x80
+        g = int.from_bytes(text.EN.enc[ch], "big")
+        code += bytes([0xDA, 0xA9, g & 0xFF, g >> 8, 0x22, 0x9D, 0xBA, 0x00, 0xFA,  # PHX ; LDA #g ; JSL $00BA9D ; PLX
+                       0xAD, 0x00, 0x08, 0x9D, a & 0xFF, a >> 8,                    # LDA $0800 ; STA top,x
+                       0xAD, 0x02, 0x08, 0x9D, (a + 2) & 0xFF, (a + 2) >> 8])       # LDA $0802 ; STA bottom,x
+    code += b"\x6b"
+    c = off(CHOICE_AT)
+    assert rom[c:c + len(code)] == b"\xff" * len(code)
+    rom[c:c + len(code)] = code
+    rom[o:o + len(CHOICE_ORIG)] = bytes([0x22, CHOICE_AT & 0xFF, CHOICE_AT >> 8 & 0xFF, CHOICE_AT >> 16]) \
+        + b"\xea" * (len(CHOICE_ORIG) - 4)
+
+
 def patch_names(rom, space):
     """Replace the hard-coded JP name init with JSL to a loop copying both 6-word slots (7E:614D, 7E:6159)."""
     data = b""
@@ -199,6 +272,8 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             rom[off(dst):off(dst) + len(body)] = body
             rom[off(a):off(a) + 4] = jump(dst)
         if not reloc_jp:
+            patch_sysmsg(rom, space)  # before the font: kana it no longer uses join the tiny-text pool
+            patch_choice(rom)
             patch_names(rom, space)
             plan = label_plan()
             uniq = {}  # identical baked cells share one glyph code
@@ -412,22 +487,31 @@ TINY_HOOKS = {
     "04D4B6": (bytes.fromhex("a0241ca94101201db7a92800201db7"), 0x1C24, "tiny71d"),
     "04D4E1": (bytes.fromhex("a0241ca94001201db7a90200201db7"), 0x1C24, "tiny71d"),
     "04ABB9": (bytes.fromhex("a0b608a97102201db7c8c8a9b001201db7"), 0x08B6, "tiny71d"),  # config title 設 定
+    # button config title: string 04:AD7B (コントローラー, read directly) + 設定
+    "04AEAC": (bytes.fromhex("a20000a0aa08bf7bad04300720" "1db7e8e880f329ff7f201db7a97102201db7a9b001201db7"),
+               0x08AA, "tiny71d"),
     # battle song header 消費 / 効果 (02:BE24, attribute set just before)
     "02BE24": (bytes.fromhex("a9fb00a06610228ff002a90202228ff002"), 0x1066, "tiny_f08f"),
     "02BE35": (bytes.fromhex("a90502a07210228ff002a91a01228ff002"), 0x1072, "tiny_f08f"),
 }
 
 
-# a routine that printed fixed rows of labels -> one tiny string per row (labels.json kind "tinyrows", id = its
-# entry, which is replaced by JSL + RTL): original bytes there, Y step between rows. Generated code at TINY_ROWS_AT.
-TINY_ROWS = {"04A993": (bytes.fromhex("84e3a90900"), 0x80)}  # status screen stat names (04:A99D loop, 9 rows)
+# code that printed fixed rows of labels -> one tiny string per row (labels.json kind "tinyrows", id = where it
+# starts): original bytes there (replaced by JSL generated code, + RTL if `ret`), row positions (Y of the first row
+# with Y passed in and a step, or a list), ret. Generated code at TINY_ROWS_AT.
+TINY_ROWS = {
+    "04A993": (bytes.fromhex("84e3a90900"), 0x80, True),  # status screen stat names (04:A99D loop, 9 rows)
+    # button config: おわる / スタート / セレクト = first letter (table 04:B056) + inline (Y, string) pairs at 04:B05F
+    "04AEFD": (bytes.fromhex("a25fb0a05c09bf000004a8e8e820aab2e077b090f1"), [0x095C, 0x0BDC, 0x0C5C], False),
+}
 TINY_ROWS_AT = 0x3CB000
-# a printer of strings picked through pointer tables (X = address of the table entry) -> LDA table,x ; TAX ;
-# JSL entry ; BRA on (labels.json kind "tinytable": "keys" = table entry addresses, "en"): original bytes, entry,
-# where to continue. Tables at TINY_TABLE_AT.
-TINY_TABLES = {  # config values (04:AD8D): 8-bit kana strings through 04:ADFB/AE13/AE25/AE30
-    "04ADCA": (bytes.fromhex("bf000004" "aa" "e220" "bf000004" "c220" "3009" "29ff00" "2025b7" "e8" "80ed"
-                             "297f00" "2025b7"), "tiny725", 0x04ADE8)}
+# a printer of strings picked through a pointer table (labels.json kind "tinytable": "keys" = the X values at the
+# `LDA long,x` that fetches the pointer, "en"): that LDA reads a new table of English string pointers instead, and
+# the string loop that follows becomes JSL entry ; BRA cont. {id = the LDA: (loop start, cont, entry)}
+TINY_TABLES = {
+    "04ADCA": (0x04ADCF, 0x04ADE8, "tiny725"),  # config values (04:AD8D): 8-bit kana strings via 04:ADFB.. tables
+    "04B104": (0x04B10A, 0x04B11D, "tiny725"),  # button functions (04:B0D5), X = function * 2
+}
 TINY_TABLE_AT = 0x3CB800
 
 
@@ -490,7 +574,7 @@ def patch_tiny(rom, dict_end=0):
         pos += len(data)
         return pos - len(data)
 
-    rows_at = TINY_ROWS_AT
+    rows_at, table_at = TINY_ROWS_AT, TINY_TABLE_AT
     for e in json.loads((ROOT / "script" / "labels.json").read_text(encoding="utf-8")):
         if e.get("kind") == "tiny" and e["en"]:
             p = put(e["en"][0], e["cells"], e["id"])
@@ -500,37 +584,41 @@ def patch_tiny(rom, dict_end=0):
             new = bytes([0xA0, ypos & 0xFF, ypos >> 8, 0xA2, p & 0xFF, p >> 8]) + jsl(entry)
             rom[so:so + len(old)] = new + b"\xea" * (len(old) - len(new))
         elif e.get("kind") == "tinyrows" and e["en"]:
-            old, step = TINY_ROWS[e["id"]]
+            old, rows, ret = TINY_ROWS[e["id"]]
             so = off(int(e["id"], 16))
             assert rom[so:so + len(old)] == old, e["id"]
-            code = bytearray(b"\x5a")  # PHY (Y = first row)
+            code = bytearray(b"\x5a")  # PHY (Y = first row when rows is a step)
             for i, s in enumerate(e["en"]):
                 p = put(s, e["cells"], e["id"])
-                code += b"\x7a\x5a"  # PLY ; PHY
-                if i:
-                    code += bytes([0x98, 0x18, 0x69, i * step & 0xFF, i * step >> 8, 0xA8])  # TYA CLC ADC # TAY
+                if isinstance(rows, list):
+                    code += bytes([0xA0, rows[i] & 0xFF, rows[i] >> 8])  # LDY #row
+                else:
+                    code += b"\x7a\x5a"  # PLY ; PHY
+                    if i:
+                        code += bytes([0x98, 0x18, 0x69, i * rows & 0xFF, i * rows >> 8, 0xA8])  # TYA CLC ADC TAY
                 code += bytes([0xA2, p & 0xFF, p >> 8]) + jsl("tiny71d")  # LDX #string ; JSL
             code += b"\x7a\x6b"  # PLY ; RTL
             assert rom[off(rows_at):off(rows_at) + len(code)] == b"\xff" * len(code)
             rom[off(rows_at):off(rows_at) + len(code)] = code
-            rom[so:so + len(old)] = bytes([0x22, rows_at & 0xFF, rows_at >> 8 & 0xFF, rows_at >> 16, 0x6B]) \
-                + b"\xea" * (len(old) - 5)
+            call = bytes([0x22, rows_at & 0xFF, rows_at >> 8 & 0xFF, rows_at >> 16]) + (b"\x6b" if ret else b"")
+            rom[so:so + len(old)] = call + b"\xea" * (len(old) - len(call))
             rows_at += len(code)
         elif e.get("kind") == "tinytable" and e["en"]:
-            old, entry, cont = TINY_TABLES[e["id"]]
-            site = int(e["id"], 16)
-            so = off(site)
-            assert rom[so:so + len(old)] == old, e["id"]
-            keys = {int(k, 16) & 0xFFFF: s for k, s in zip(e["keys"], e["en"])}
-            lo = min(keys)
-            for a, s in keys.items():
-                t = off(TINY_TABLE_AT + a - lo)
-                assert rom[t:t + 2] == b"\xff\xff", hex(a)
+            loop, cont, entry = TINY_TABLES[e["id"]]
+            so = off(int(e["id"], 16))
+            assert rom[so] == 0xBF, e["id"]  # LDA long,x
+            keys = {int(k, 16): s for k, s in zip(e["keys"], e["en"])}
+            lo, hi = min(keys), max(keys)
+            for x, s in keys.items():
+                t = off(table_at + x - lo)
+                assert rom[t:t + 2] == b"\xff\xff", hex(x)
                 rom[t:t + 2] = put(s, e["cells"], e["id"]).to_bytes(2, "little")
-            base = TINY_TABLE_AT - lo  # LDA base,x with X = the old table entry address
-            new = bytes([0xBF, base & 0xFF, base >> 8 & 0xFF, base >> 16, 0xAA]) + jsl(entry)
-            new += bytes([0x80, cont - (site + len(new) + 2)])
-            rom[so:so + len(old)] = new + b"\xea" * (len(old) - len(new))
+            base = table_at - lo  # LDA base,x reads table_at + (X - lo)
+            rom[so + 1:so + 4] = base.to_bytes(3, "little")
+            table_at += hi - lo + 2
+            lo_ = off(loop)
+            new = jsl(entry) + bytes([0x80, cont - (loop + 6)])
+            rom[lo_:off(cont)] = new + b"\xea" * (cont - loop - len(new))
 
 
 HOOK_AT = 0x3CA000  # hook code + 16-bit label strings for routines that read 8-bit kana strings

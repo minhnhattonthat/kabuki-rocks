@@ -43,6 +43,21 @@ def stream(rom, bank, y):
     return o, rom[o:o + n + 1]
 
 
+def split(data):
+    """(text op, text run bytes, the script ops after the run) of a message stream that starts with a text op."""
+    assert data[0] in TEXT_OPS, data[:4].hex()
+    i = 1
+    while i < len(data):
+        c = data[i]
+        if c < 0x80:
+            i += 2
+        elif c in script_ops.TEXT_LEN:
+            i += script_ops.TEXT_LEN[c]
+        else:
+            break
+    return data[0], data[1:i], data[i:]
+
+
 def codes(rom):
     """Every glyph code the system messages draw (they are not relocated or translated yet)."""
     out = set()

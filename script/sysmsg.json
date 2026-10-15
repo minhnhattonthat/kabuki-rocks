@@ -1,0 +1,21 @@
+[
+ {"site": "0091F2", "y": "9827", "jp": "ジロキチは 宝箱のカギをチョイチョイっとあけた。{wait}{clr}", "en": "Jirokichi picked the chest's lock in a jiffy.{wait}{clr}"},
+ {"site": "00925C", "y": "9727", "jp": "宝箱には モンスターが ふうじられていた！{wait}", "en": "A monster was sealed inside the treasure chest!{wait}"},
+ {"site": "009538", "y": "9756", "jp": "宝箱は からっぽだった。{wait}", "en": "The treasure chest was empty.{wait}"},
+ {"site": "00996B", "y": "99B3", "jp": "ジロキチは、トビラのカギを チョイチョイとあけた。{wait}", "en": "Jirokichi picked the door's lock in a jiffy.{wait}"},
+ {"site": "00A375", "y": "A388", "jp": "♪みちのくひとりたび♫のこうかがなくなった{delay}{wait}", "en": "The effect of 'Lone Trip Up North' wore off.{delay:10}{wait}"},
+ {"site": "01980A", "y": "9875", "jp": "ほう よくこんな所まで きたのォ～。 もし ここから{n}そとへ出たいのならば 出してやろう。 そとへ出るか？{n}", "en": "Oh ho, you made it this far! Shall I send you outside?{n}", "notes": "a Yes/No choice follows (9D)"},
+ {"site": "01981D", "y": "990B", "jp": "そうか。 まあ ムリにとは言わんが。{wait}", "en": "I see. Well, I won't force you.{wait}"},
+ {"site": "01982E", "y": "98E4", "jp": "よ～し わかった。 まかせておけ。{wait}", "en": "All righty. Leave it to me.{wait}"},
+ {"site": "01E411", "y": "E4FC", "jp": "[item]を 見つけた。{wait}", "en": "Found {slot}!{wait}", "slots": [[["01E429"], 21]]},
+ {"site": "01E43D", "y": "E511", "jp": "[item]を 見つけた。{n}しかし、持ち物がいっぱいです。何かすてますか？{n}", "en": "Found {slot}! Inventory full. Discard one?{n}", "slots": [[["01E455"], 21]], "notes": "a choice follows (9D)"},
+ {"site": "01E4A2", "y": "E556", "jp": "[item]を すてて、{n}[item]を 手に入れた。{wait}", "en": "Threw away {slot} and got {slot}!{wait}", "slots": [[["01E4BA"], 21], [["01E4D1"], 21]]},
+ {"site": "039639", "y": "9685", "jp": "たましい「‥‥‥{wait}", "en": "Soul: ......{wait}"},
+ {"site": "03964F", "y": "969A", "jp": "『お前は ウラいたこ！ たましいを とりこもうと いうのか？{n}", "en": "So you're a Shadow Itako! Do you mean to take my soul?{n}", "notes": "a choice follows (9D)"},
+ {"site": "1EE2A2", "y": "E2CA", "jp": "このあたりに のこっている宝箱は、あと[digit][digit]箱です。{wait}", "en": "Treasure chests left around here: {slot}{slot}.{wait}", "slots": [[["1EE2B5"], 1], [["1EE2BD"], 1]]},
+ {"site": "1EE325", "y": "E365", "jp": "{name93}たちは まるみえスコープをつかった！！{wait}", "en": "{name93} and company used the See-All Scope!!{wait}"},
+ {"site": "1EE357", "y": "E383", "jp": "いやなモザイクが消えて まる見えになった！！{wait}", "en": "The pesky mosaic vanished. Now everything's in plain view!!{wait}"},
+ {"site": "1EE3D3", "y": "E3E1", "jp": "宝箱には アイテムが入っています{wait}", "en": "There's an item in the treasure chest.{wait}"},
+ {"site": "2BF262", "y": "F566", "jp": "ディスクチェンジャーがあります。{n}歌いますか？{n}", "en": "There's a disc changer here. Will you sing?{n}", "notes": "a choice follows (9D)"},
+ {"site": "2BF28A", "y": "F51D", "jp": "{name93}は 楽屋シップの なかまをよんだ{wait}", "en": "{name93} called the crew of the Dressing Room Ship.{wait}"}
+]
