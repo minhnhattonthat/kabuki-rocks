@@ -12,6 +12,14 @@ def errs(en, jp=JP):
     return lint.check({"id": "0", "jp": jp, "en": en})
 
 
+def test_tiny_cells():
+    tiny = set("abcdefgh ")
+    assert lint.tiny_cells("abc", tiny) == 2
+    assert lint.tiny_cells("[01F0]abcd", tiny) == 3  # icon cell + 2
+    assert lint.tiny_cells("abécd", tiny) == 3  # letter missing from the tiny font: full cell, pairing restarts
+    assert lint.tiny_cells("aéb", tiny) == 3
+
+
 def test_clean():
     assert errs("{name94} HELLO{wait}{clr}BYE{jump:088000}") == []
 

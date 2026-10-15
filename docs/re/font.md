@@ -25,3 +25,21 @@ Caller sets source $1C/$1E (24-bit), dest $1F/$21, size $22, DP=$0400.
 
 ## Text box
 Dialogue box: 2 lines of 16 px, ~28 cells of 8 px (measure in the width gate).
+
+## Tiny text in lists (asm/tiny.asm, build.py patch_tiny, needs tools/asar/asar.exe)
+- Menu lines go to the WRAM tilemap buffer 7E:2780 (top row) / 27C0 (bottom), Y = row*$80 + col*2, one glyph at a
+  time through 04:B71D (attribute $1C00) / 04:B725 (attribute in $0709, $0C00 = greyed) -> 00:BA9D.
+- Item-name loops (`LDA $2F0000,x ; BMI ; JSR $B71D|$B725`) at 04:9FE9, BEA7, C3FB (song names, untested), DF22
+  (shop list), E118 (shop message line) and 04:B65A (equip/exchange) become JSL tiny71d/tiny725: two 3x5 letters
+  per cell in the cell's top tile (rows 2-7), bottom tile blank $3FF; icons and letters the tiny font lacks take a
+  full cell.
+- Cells use BG3 page-0 tiles: `font.patch_font` packs the kana tiles that something may still draw (still_drawn +
+  sysmsg.codes) from tile 1 up and blanks the other kana; the rest of page 0 is the pool (114 tiles now; ~228 once
+  the system messages are translated). Tile 0 is BG3's transparent fill: never touch it.
+- Slots: next fit, skipping slots the tilemap buffer still shows (OWNER table). Pixels go to a WRAM mirror at
+  7F:D000 (7F:D000-FABF is never written by the game: tools/lua/wramuse.lua); the NMI frame-ready branch (00:82A8)
+  DMAs dirty slots (channel 7, <= $600 bytes per frame) to VRAM $6000+tile*8. The font loader (00:B7F6, reloads page
+  0 on every menu open/close) re-dirties the whole pool when it loads to VRAM $6000.
+- Battle mode ($060C >= 5) keeps the per-glyph drawing.
+- Inventory: 7E:5E85, one item id per slot (FF = empty); script op A2 does not add to it, A0 tests it. QA fills it
+  with tools/lua/poke.lua (tools/qa_screens.sh).

@@ -68,6 +68,35 @@ def check(e):
     return errs
 
 
+ITEM_CELLS = 10  # item-name slot in the field lists (04:DF35 price at +$14), drawn by asm/tiny.asm
+
+
+def tiny_cells(s, tiny):
+    """Cells asm/tiny.asm uses for s: two tiny letters per cell; a [code] token or a letter missing from the
+    tiny font takes a full cell and restarts the pairing."""
+    n = run = 0
+    for tok in re.findall(r"\[[0-9A-F]{4}\]|.", s):
+        if len(tok) == 1 and tok in tiny:
+            run += 1
+        else:
+            n, run = n + (run + 1) // 2 + 1, 0
+    return n + (run + 1) // 2
+
+
+def item_errors():
+    """Item names (dictionary 0x300-0x34F, and every icon-prefixed equipment name) must fit ITEM_CELLS."""
+    import json
+    import font
+    tiny = font.load_tiny()
+    out = []
+    for e in json.loads((text.ROOT / "script" / "dict.json").read_text(encoding="utf-8")):
+        c = int(e["id"], 16)
+        if e["en"] and (0x300 <= c < 0x350 or (c < 0x400 and e["en"].startswith("[01F"))):
+            if tiny_cells(e["en"], tiny) > ITEM_CELLS:
+                out.append(f"dict {e['id']}: item name {e['en']!r} over {ITEM_CELLS} tiny cells")
+    return out
+
+
 def main():
     entries = text.load()
     done = [e for e in entries if e["en"]]
@@ -76,6 +105,9 @@ def main():
         for err in check(e):
             n += 1
             print(f"{e['id']}: {err}")
+    for err in item_errors():
+        n += 1
+        print(err)
     print(f"lint: {len(done)}/{len(entries)} runs translated, {n} errors")
     return 1 if n else 0
 

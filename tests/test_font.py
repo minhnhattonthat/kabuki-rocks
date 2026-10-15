@@ -33,10 +33,17 @@ def test_english_glyphs_render_from_ROM(roms):
     assert cmap[" "] == b"\x02\xff"
 
 
-def test_kana_and_kept_codes_unchanged(roms):
+def test_kept_codes_unchanged_and_tiny_pool_free(roms):
+    """Kana something may still draw and every kept code look the same; no kana touches the tiny-text pool."""
+    import sysmsg
     orig, rom, _ = roms
     chr0, chr1 = font.tiles(orig), font.tiles(rom)
     glyphs = font.load_en()
-    for code in range(0x300):
-        if code < 0xB0 or (code not in glyphs and code not in font.SACRIFICE and font.is_real(orig, code)):
+    live = font.still_drawn(bytearray(orig)) | sysmsg.codes(orig)
+    first, n = font.TINY_POOL
+    assert first + n == 0x100 and n >= 64
+    for code in filter(lambda c: font.is_real(orig, c), range(0x300)):
+        if code < 0xB0:
+            assert all(t < first or t == 0x3FF for t in font.glyph_tiles(rom, code)), f"{code:X}"
+        if code in live if code < 0xB0 else code not in glyphs and code not in font.SACRIFICE:
             assert render(rom, chr1, code) == render(orig, chr0, code), f"{code:X}"

@@ -43,6 +43,30 @@ def stream(rom, bank, y):
     return o, rom[o:o + n + 1]
 
 
+def codes(rom):
+    """Every glyph code the system messages draw (they are not relocated or translated yet)."""
+    out = set()
+    for a, y in sites(rom):
+        if y is None:
+            continue
+        data, i = stream(rom, a >> 16, y)[1], 0
+        while i < len(data):
+            if data[i] not in TEXT_OPS:
+                i += 1
+                continue
+            i += 1
+            while i < len(data):
+                c = data[i]
+                if c < 0x80 and i + 1 < len(data):
+                    out.add(c << 8 | data[i + 1])
+                    i += 2
+                elif c in script_ops.TEXT_LEN:
+                    i += script_ops.TEXT_LEN[c]
+                else:
+                    break
+    return out
+
+
 def readable(rom, data):
     out, i = [], 0
     while i < len(data):

@@ -290,7 +290,7 @@
   "id": "10DD14",
   "size": 15,
   "jp": "二足のわらじ{を 手に入れた！#0A8E}{wait}",
-  "en": "Got the 'Double-Duty Sandals'!{wait}",
+  "en": "Got the 'Two-Hat Sandals'!{wait}",
   "notes": ""
  },
  {
@@ -311,7 +311,7 @@
   "id": "10DD62",
   "size": 19,
   "jp": "丸めたしんぶんし{を 手に入れた！#0A8E}{wait}",
-  "en": "Got the 'Rolled-Up Newspaper'!{wait}",
+  "en": "Got the 'Rolled Newspaper'!{wait}",
   "notes": ""
  },
  {
@@ -346,7 +346,7 @@
   "id": "10DE27",
   "size": 30,
   "jp": "{オタッカー「#0A8C}二足のわらじ{を わたしたいんだけど#0A8F}{n}{      #034E}{持ち物が いっぱい#065D}だ{ね、何か すてる？#0A91}{n}{choice:10DF0A}",
-  "en": "Otakker: I'd like to give you the 'Double-Duty Sandals', but your inventory's full. Throw something away?{choice:10DF0A}",
+  "en": "Otakker: I'd like to give you the 'Two-Hat Sandals', but your inventory's full. Throw something away?{choice:10DF0A}",
   "notes": ""
  },
  {
@@ -367,7 +367,7 @@
   "id": "10DE9A",
   "size": 34,
   "jp": "{オタッカー「#0A8C}丸めたしんぶんし{を わたしたいんだけど#0A8F}{n}{      #034E}{持ち物が いっぱい#065D}だ{ね、何か すてる？#0A91}{n}{choice:10DF3D}",
-  "en": "Otakker: I'd like to give you the 'Rolled-Up Newspaper', but your inventory's full. Throw something away?{choice:10DF3D}",
+  "en": "Otakker: I'd like to give you the 'Rolled Newspaper', but your inventory's full. Throw something away?{choice:10DF3D}",
   "notes": ""
  },
  {

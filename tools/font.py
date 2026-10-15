@@ -91,7 +91,7 @@ def encode_tile(rows):
 
 
 EXT_BASE = {1: 0x400, 2: 0x600, 3: 0x800}  # first new glyph code per tile page (build.py install_glyph_ext)
-LAST_FREE = []  # set by patch_font: BG3 tiles left unused
+TINY_POOL = (0, 0)  # set by patch_font: (first BG3 tile, count) of page 0 left for the runtime tiny text
 
 
 def kanji_by_use(rom):
@@ -252,10 +252,29 @@ def patch_font(rom: bytearray, extra=(), extra_out=None) -> dict[str, bytes]:
         else:
             raise ValueError("font full: no free tiles for a label cell")
 
-    # tiles nothing uses after all placements (pool for the runtime tiny-text renderer)
-    global LAST_FREE
-    LAST_FREE = [p << 8 | b for p in (1, 2, 3) for b in range(0xFF)
-                 if b not in placed[p] and (p << 8 | b) not in keep and (p << 8 | b) not in VOLATILE]
+    # page 0 (kana): the tiles of codes something may still draw, packed from tile 1 up (tile 0 is BG3's
+    # transparent fill); the other kana codes go blank and tiles from there to 0xFF are the tiny-text pool
+    import sysmsg
+    live = still_drawn(rom) | sysmsg.codes(rom)
+    real0 = {c: entry(rom, c)[1] for c in range(0xB0) if is_real(rom, c)}
+    move = {}
+    for c, x in real0.items():
+        if c in live:
+            for b in rom[TABLE + x:TABLE + x + 2]:
+                if b not in (0, 0xFF):
+                    move.setdefault(b, len(move) + 1)
+    old = bytes(chr_[:0x1000])
+    for x in real0.values():
+        for h in (0, 1):
+            b = rom[TABLE + x + h]
+            if b:
+                rom[TABLE + x + h] = move.get(b, 0xFF)
+    for b, n in move.items():
+        chr_[n * 16:n * 16 + 16] = old[b * 16:b * 16 + 16]
+    first = len(move) + 1
+    chr_[first * 16:0x1000] = b"\xff" * (0x1000 - first * 16)  # background colour 3
+    global TINY_POOL
+    TINY_POOL = (first, 0x100 - first)
 
     for i, off in enumerate(FONT_BLOCKS):
         new = lz.compress(bytes(chr_[i * 0x2000:(i + 1) * 0x2000]))

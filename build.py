@@ -225,8 +225,9 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             patch_menutiles(rom)
             patch_name_limits(rom)
             patch_tab_spacers(rom)
+            patch_tiny(rom)
     if debug:
-        patch_debug_start(rom, bytes.fromhex(debug.replace(" ", "")))
+        patch_debug_start(rom, debug_bytes(debug))
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     Path(out).write_bytes(rom)
     return rom, len(todo)
@@ -373,6 +374,62 @@ def install_glyph_ext(rom, ext):
         so = off(site)
         assert rom[so:so + 21] == bytes.fromhex("a20300c0c001b00dcac04001b007cac0b000b001ca"), hex(site)
         rom[so:so + 21] = bytes([0x22, PAGE_FN & 0xFF, PAGE_FN >> 8 & 0xFF, PAGE_FN >> 16]) + b"\xea" * 17
+
+
+ASAR = ROOT / "tools" / "asar" / "asar.exe"  # gitignored binary (Asar 1.91)
+TINY_AT = 0x3E8000  # asm/tiny.asm: item names in the field lists drawn in the tiny font at run time
+TINY_FONT = 0x3E9000  # its letters: 8 bytes per glyph code from 0x100
+TINY_CODES = 0x65  # codes 0x100-0x164 (ASCII + extras)
+# item-name loops `JSL DICT_READ ; BMI ; JSR $B71D|$B725 ; INX ; INX ; BRA` -> JSL entry + what follows the loop
+TINY_SITES = {0x049FE9: ("tiny71d", b"\x20\x1d\xb7", b"\x80\x0d"),  # item list (BRA $9FFC)
+              0x04BEA7: ("tiny725", b"\x20\x25\xb7", b"\x80\x0d"),  # item list with greyed entries (BRA $BEBA)
+              0x04C3FB: ("tiny725", b"\x20\x25\xb7", b"\x60"),      # equipment candidates (ended in JMP $B725)
+              0x04DF22: ("tiny71d", b"\x20\x1d\xb7", b"\x80\x0d"),  # shop list (BRA $DF35)
+              0x04E118: ("tiny71d", b"\x20\x1d\xb7", b"\x60")}      # shop (the loop ended the routine: RTS)
+
+
+def patch_tiny(rom):
+    """Item names in the field lists two letters per cell, rendered at run time (asm/tiny.asm, font.TINY_POOL)."""
+    import subprocess
+    char = {int.from_bytes(v, "big"): ch for ch, v in text.EN.enc.items() if len(v) == 2}
+    tiny = font.load_tiny()
+    tbl = bytearray(8 * TINY_CODES)
+    for i in range(TINY_CODES):
+        g = tiny.get(char.get(0x100 + i))
+        if g:
+            tbl[8 * i:8 * i + 7] = bytes(sum(p << (7 - x) for x, p in enumerate(r)) for r in g) + b"\x01"
+    rom[off(TINY_FONT):off(TINY_FONT) + len(tbl)] = tbl
+    t0, n = font.TINY_POOL
+    defs = {"CODE": TINY_AT, "POOL_T0": t0, "POOL_N": n, "DICT_READ": DICT_READ, "TINY_FONT": TINY_FONT,
+            "TINY_N": TINY_CODES}
+    tmp = ROOT / "build" / "_tiny.sfc"
+    tmp.parent.mkdir(exist_ok=True)
+    tmp.write_bytes(rom)
+    r = subprocess.run([str(ASAR), "--fix-checksum=off", "--no-title-check",
+                        *(f"-D{k}=${v:X}" for k, v in defs.items()), str(ROOT / "asm" / "tiny.asm"), str(tmp)],
+                       capture_output=True, text=True)
+    if r.returncode:
+        raise RuntimeError("asar: " + r.stdout + r.stderr)
+    sym = {k: int(v, 16) for k, v in (line.split("=") for line in r.stdout.split())}
+    assert sym["end"] <= TINY_FONT, "asm/tiny.asm runs into TINY_FONT"
+    rom[:] = tmp.read_bytes()
+    tmp.unlink()
+
+    def jsl(name):
+        return bytes([0x22, sym[name] & 0xFF, sym[name] >> 8 & 0xFF, sym[name] >> 16])
+
+    read = bytes([0x22, DICT_READ & 0xFF, DICT_READ >> 8 & 0xFF, DICT_READ >> 16])
+    for site, (entry, draw, after) in TINY_SITES.items():
+        o = off(site)
+        assert rom[o:o + 13] == read + b"\x30\x07" + draw + b"\xe8\xe8\x80\xf3", hex(site)
+        rom[o:o + 4 + len(after)] = jsl(entry) + after
+    patches = {0x04B65A: (bytes.fromhex("bf4fa72faa4cfbc4"), jsl("tiny_item") + b"\x60\xea\xea\xea"),  # equip list
+               0x0082A8: (bytes.fromhex("a9808d1521"), jsl("nmi_upload") + b"\xea"),  # NMI: upload the cells
+               0x00B817: (bytes.fromhex("221e8e00"), jsl("font_reload"))}  # font reload: upload them again
+    for site, (old, new) in patches.items():
+        o = off(site)
+        assert rom[o:o + len(old)] == old and len(new) == len(old), hex(site)
+        rom[o:o + len(new)] = new
 
 
 HOOK_AT = 0x3CA000  # hook code + 16-bit label strings for routines that read 8-bit kana strings
@@ -544,6 +601,18 @@ def patch_fixed(rom):
 
 SCRIPT_TABLE = 0x03978E  # 3 bytes per script id; id 0 runs right after "new game"
 DEBUG_AT = 0x3F8000  # last expansion bank: debug scripts only (QA builds, never in a release)
+
+
+def debug_bytes(s):
+    """Hex event-script bytes; '@' stands for the 3-byte address of the byte after it (a jump target that just
+    continues, e.g. `A0 01 @` = give item 01 whether or not the inventory is full)."""
+    out = bytearray()
+    for tok in s.split():
+        if tok == "@":
+            out += (DEBUG_AT + len(out) + 3).to_bytes(3, "little")
+        else:
+            out += bytes.fromhex(tok)
+    return bytes(out)
 
 
 def patch_debug_start(rom, script):

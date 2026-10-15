@@ -21,6 +21,10 @@ Skill: translate-retro-game (H:/translation/kabuki-rocks/.claude/skills/translat
 - English is unwrapped in JSON; build/lint wrap to 3 lines x 28 cells and add pages ({wait}{clr}). Speaker style `Name: text`. {name93}=Rock {name94}=Makki are substituted as text by the build (a name code at a line start triggers the JP hanging indent).
 - No earlier English patch found (web search 2026-10-15).
 
+## Status (2026-10-15, latest)
+- Done since: menu labels (script/labels.json, baked tiny-font cells, extended glyph table bank $3D, kana-string hooks $3C:A000), code strings (script/code.json -> bank $3B), QA debug builds (`build.py --debug HEX`, docs/re/debug.md), `sh tools/qa_screens.sh` (contact sheet + Japanese report in work/qa/screens/), runtime tiny text for item/song/shop lists (asm/tiny.asm, needs tools/asar/asar.exe; docs/re/font.md "Tiny text"). Item names <= 10 tiny cells (lint).
+- Open: Japanese left on screens (stat kanji 攻守早, 攻撃力, 個 counts, 空き, 武器 header, shop 年来力; see work/qa/screens/japanese.txt), 0x12E/0x12F cursor sites drawn as N/O (攻撃力 16N 16), shop help text overlap (04:B2B2), RAM system messages (tools/sysmsg.py; translating them also doubles the tiny pool), battle item/song lists (bank 02, per-glyph), song list hook 04:C3FB unverified in-game, graphics text.
+
 ## Status update (2026-10-15, later)
 - Dialogue: all 1194 non-empty script runs translated and merged (script/bank_XX.json); credits/profile cards hand-laid with explicit {n} (bank 2D only). Dictionary: 1283/1331 words translated (script/dict.json), inserted by build.py `patch_dictionary` into banks $30/$31 (pointer tables + <$600 words in $30; reader routines + rest in $31; selector byte 7F:FFF8). `python -X utf8 tools/release.py --ver 0.1` -> release/KabukiRocks_EN_v0.1.bps (local only, never published).
 - Tools added: dictbatch.py, redecode.py, sysmsg.py (RAM-script message call sites), lua/glyphlog.lua (log glyph draws + callers), release.py.

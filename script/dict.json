@@ -476,7 +476,7 @@
   "ptr": "AC1D",
   "len": 8,
   "jp": "控えカーゴのフエ",
-  "en": "Standby Cargo Whistle",
+  "en": "Standby Cargo Flute",
   "notes": ""
  },
  {
@@ -1036,7 +1036,7 @@
   "ptr": "B019",
   "len": 9,
   "jp": "[01F0]かけだし役者の剣",
-  "en": "[01F0]Rookie Actor's Sword",
+  "en": "[01F0]Bit Player's Sword",
   "notes": ""
  },
  {
@@ -1140,7 +1140,7 @@
   "ptr": "B0A9",
   "len": 8,
   "jp": "[01F1]ウマおいのムチ",
-  "en": "[01F1]Horse Driver's Whip",
+  "en": "[01F1]Packhorse Whip",
   "notes": ""
  },
  {
@@ -1244,7 +1244,7 @@
   "ptr": "B171",
   "len": 10,
   "jp": "[01F3]ポケットたねがしま",
-  "en": "[01F3]Pocket Tanegashima",
+  "en": "[01F3]Pocket Matchlock",
   "notes": ""
  },
  {
@@ -1252,7 +1252,7 @@
   "ptr": "B185",
   "len": 10,
   "jp": "[01F3]たねがしまトカレフ",
-  "en": "[01F3]Tanegashima Tokarev",
+  "en": "[01F3]Matchlock Tokarev",
   "notes": ""
  },
  {
@@ -1260,7 +1260,7 @@
   "ptr": "B199",
   "len": 10,
   "jp": "[01F3]たねがしまマグナム",
-  "en": "[01F3]Tanegashima Magnum",
+  "en": "[01F3]Matchlock Magnum",
   "notes": ""
  },
  {
@@ -1268,7 +1268,7 @@
   "ptr": "B1AD",
   "len": 10,
   "jp": "[01F3]たねがしまバズーカ",
-  "en": "[01F3]Tanegashima Bazooka",
+  "en": "[01F3]Matchlock Bazooka",
   "notes": ""
  },
  {
@@ -1300,7 +1300,7 @@
   "ptr": "B1ED",
   "len": 5,
   "jp": "[01F0]成仏の剣",
-  "en": "[01F0]Rest-in-Peace Sword",
+  "en": "[01F0]Sword of Repose",
   "notes": ""
  },
  {
@@ -1332,7 +1332,7 @@
   "ptr": "B21B",
   "len": 7,
   "jp": "[01F1]冬将軍のムチ",
-  "en": "[01F1]General Winter Whip",
+  "en": "[01F1]General Frost Whip",
   "notes": ""
  },
  {
@@ -1340,7 +1340,7 @@
   "ptr": "B229",
   "len": 7,
   "jp": "[01F0]千両役者の剣",
-  "en": "[01F0]Thousand-Ryo Star Sword",
+  "en": "[01F0]Thousand-Ryo Sword",
   "notes": ""
  },
  {
@@ -1356,7 +1356,7 @@
   "ptr": "B247",
   "len": 8,
   "jp": "[01F2]酒ふねの石づち",
-  "en": "[01F2]Sakafune Stonehammer",
+  "en": "[01F2]Sakafune Stonemaul",
   "notes": ""
  },
  {
@@ -1364,7 +1364,7 @@
   "ptr": "B257",
   "len": 9,
   "jp": "[01F3]封戦車たねがしま",
-  "en": "[01F3]Tanegashima Tank",
+  "en": "[01F3]Matchlock Tank",
   "notes": ""
  },
  {
@@ -1388,7 +1388,7 @@
   "ptr": "B289",
   "len": 8,
   "jp": "[01F4]気合いのたすき",
-  "en": "[01F4]Fighting Spirit Sash",
+  "en": "[01F4]Sash of Guts",
   "notes": ""
  },
  {
@@ -1548,7 +1548,7 @@
   "ptr": "B3A9",
   "len": 9,
   "jp": "[01F4]千両役者のヨロイ",
-  "en": "[01F4]Thousand-Ryo Star Armor",
+  "en": "[01F4]Thousand-Ryo Armor",
   "notes": ""
  },
  {
@@ -1564,7 +1564,7 @@
   "ptr": "B3CB",
   "len": 9,
   "jp": "[01F4]天下太平のヨロイ",
-  "en": "[01F4]Peaceful Realm Armor",
+  "en": "[01F4]Peaceful Armor",
   "notes": ""
  },
  {
@@ -1652,7 +1652,7 @@
   "ptr": "B46D",
   "len": 7,
   "jp": "[01F5]二足のわらじ",
-  "en": "[01F5]Double-Duty Sandals",
+  "en": "[01F5]Two-Hat Sandals",
   "notes": ""
  },
  {
@@ -1668,7 +1668,7 @@
   "ptr": "B48B",
   "len": 8,
   "jp": "[01F5]千両役者のタビ",
-  "en": "[01F5]Thousand-Ryo Star Tabi",
+  "en": "[01F5]Thousand-Ryo Tabi",
   "notes": ""
  },
  {
@@ -1684,7 +1684,7 @@
   "ptr": "B4A9",
   "len": 8,
   "jp": "[01F5]天下太平の具足",
-  "en": "[01F5]Peaceful Realm Greaves",
+  "en": "[01F5]Peaceful Greaves",
   "notes": ""
  },
  {
@@ -1764,7 +1764,7 @@
   "ptr": "B549",
   "len": 10,
   "jp": "[01F7]楽太郎のキーボード",
-  "en": "[01F7]Gakutaro's Keyboard",
+  "en": "[01F7]Gakutaro Keyboard",
   "notes": ""
  },
  {
@@ -2020,7 +2020,7 @@
   "ptr": "B759",
   "len": 9,
   "jp": "[01F0]丸めたしんぶんし",
-  "en": "[01F0]Rolled-Up Newspaper",
+  "en": "[01F0]Rolled Newspaper",
   "notes": ""
  },
  {
