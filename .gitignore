@@ -13,3 +13,9 @@ tools/asar/
 # installed skill copies (skills-lock.json records the source)
 .agents/
 .claude/skills/
+.venv/
+*.sav
+*.state
+*.sstate
+*.ppst
+evidence/private/

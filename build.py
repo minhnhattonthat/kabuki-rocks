@@ -16,6 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "tools"))
+import check_rom  # noqa: E402
 import font  # noqa: E402
 import text  # noqa: E402
 import wrap  # noqa: E402
@@ -1228,5 +1229,6 @@ if __name__ == "__main__":
     ap.add_argument("--debug", metavar="HEX", help="QA build: new game runs these event-script bytes "
                     "(e.g. 'A4 30 75 B5 1B C8 00 0A 0A 0B FF'); see docs/re/debug.md")
     a = ap.parse_args()
+    check_rom.check()
     rom, n = build(a.out, a.marker, a.reloc_jp, dict(q.split("=", 1) for q in a.qa), a.debug)
     print(f"{a.out}: {len(rom):#x} bytes, {n} runs relocated")
