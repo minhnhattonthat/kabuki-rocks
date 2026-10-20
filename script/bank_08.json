@@ -710,7 +710,7 @@
   "id": "08AF3C",
   "size": 97,
   "jp": "{clr}{     #034F}{つづいて だい#0564}4の しつもん{じゃ！#0A58}{wait}{clr}{     #034F}アクション・ゲームをしていると{n}{     #034F}体も いっしょに動いてしまう？{n}{choice:08AF9D}{jump:08AFF0}",
-  "en": "{clr}Next up, question four!{wait}{clr}When you play an action game, does your body move along with it?{choice:08AF9D}{jump:08AFF0}",
+  "en": "{clr}Next up, question four!{wait}{clr}When you play action games, does your body move too?{choice:08AF9D}{jump:08AFF0}",
   "notes": ""
  },
  {
@@ -997,7 +997,7 @@
   "id": "08C8AB",
   "size": 128,
   "jp": "{clr}{     #034F}おいおい いいのかよ～？ {おいら#0AAB}がいると{n}{     #034F}べんりだゼ！ 仲間にするかい？{n}{choice:08C95E}{clr}{     #034F}{ケッ！#0A60} じゃあ {あんた#0A16}のこと {アニキ#0A6F}って{n}{     #034F}よんでやるゼ！！{wait}",
-  "en": "{clr}Whoa, whoa, you sure about that? I'm real handy to have around! Gonna let me join?{choice:08C95E}{clr}Tch! Then from now on I'll call ya Big Bro!!{wait}",
+  "en": "{clr}Whoa, you sure? I'm real handy to have around! Gonna let me join?{choice:08C95E}{clr}Tch! Then from now on I'll call ya Big Bro!!{wait}",
   "notes": ""
  },
  {

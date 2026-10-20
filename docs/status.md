@@ -2,7 +2,7 @@
 
 Updated at the end of every session. Keep it to what the next session needs; history is in git.
 
-- **Phase:** 8 (QA in the emulator), release prep started. Last local patch: release/KabukiRocks_EN_v0.3.zip (bps + README.txt, patched CRC32 46df1a3b, smoke ok; not published).
+- **Phase:** 9 (release gate run 2026-10-20). Last local patch: release/KabukiRocks_EN_v0.3.zip (bps + README.txt, patched CRC32 46df1a3b, smoke ok; not published).
 - **Done:**
   - Dialogue: all 1194 non-empty event-script runs translated (`script/bank_XX.json`); credits/profile cards hand-laid (bank 2D). 16 runs are empty.
   - Dictionary: 1283/1331 words (`script/dict.json`, banks $30/$31).
@@ -10,11 +10,13 @@ Updated at the end of every session. Keep it to what the next session needs; his
   - System messages: all 34 RAM-script copier call sites (`sysmsg.json` whole templates incl. the table-driven walking-style popup 00:9C64; `sysfrag.json` fragments after a name/item/amount).
   - Graphics: title menu, curtains, battle placard, 18 chapter cards (`cards.json`), 7 town shop signs (`assets/signs.txt`).
   - Playtests 2026-10-19/20 logged and fixed in `docs/bugs.md`.
-- **Next (release gate, skill phase 9):**
-  - Debug tool (`tools/debug/`, phase 2) does not exist yet: scenes are reached from user savestates and `build.py --debug`.
-  - Visual-QA gate (`qa_gate.py`) has no manifest yet.
-  - `jp_left.py build/kabuki_en_cs.sfc --orig rom/... --tbl tbl/jp.tbl` reports 6311 unchanged runs: mostly the original copies of relocated text (e.g. the sysfrag fragments at 00:96F9-) and false hits in code; needs `--range`/`--known` before it means anything.
-  - Not surveyed: ending, game over, save screens; graphics text beyond the intro and towns.
+  - Release gate (2026-10-20): debug tour `tools/debug/tour.py` reaches 30 scenes from cold boot (cards 1-17, battle, game over, credits, ending, save jizo, chest exchange, composer, jizo map, travel, bank-$0F modes); 75 sheets in `work/qa/manifest.tsv`, reviewer verdicts in `work/qa/verdicts/`; `tools/release.py` now runs `qa_gate.py check` and asserts the debug bank is empty.
+  - Leftover-Japanese scan: `tools/jp_known.py > work/jp_known.txt`, then `jp_left.py build/kabuki_en.sfc --orig rom/... --tbl tbl/jp.tbl --le16 --known work/jp_known.txt`: ~730 runs left, the sentence-like ones checked by hand (dead copies or handled by the dictionary / FIXED); the rest are data that happens to decode.
+  - Gate result: `qa_gate.py check` 70/75 ok; the 5 open sheets are the known items below (composer x2, exchange, jizo map, travel), so `tools/release.py` stops until they are fixed or accepted.
+- **Next:**
+  - Travel-menu / jizo-map place names (labels.json 05FD2F, `en_todo`): need a run-time tiny drawer at 05:BA72; the baked font has no room (font budget: 124 baked cells used, ~14 spare once those kanji free up).
+  - Composer button bar graphic (CLEAR もとす えんそう とうろく おわる): not located.
+  - Standby Cargo menu and sound-test help (code.json 1ED4D6-1ED55A, 04CC89) translated but not seen in the emulator.
   - Still open from earlier notes: party name table 1E:B3CA, `{name93}` rename prompt (0888FA), battle-message fragment spacing, menu cursor sites 0x12E/0x12F.
 - **Open bugs** (`docs/bugs.md`):
   - Shop Sell help line garbage / wrong descriptions (steps 0013-0021): likely a QA inventory poke; re-check on a real save.

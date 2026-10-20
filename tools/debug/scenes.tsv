@@ -1,0 +1,36 @@
+# Scene list for tools/debug/tour.py. Columns (TAB): name, frames, mash (A every N frames, 0 = none), shot every N frames,
+# event-script hex run as the new-game script (build.py --debug syntax; `86 lo hi bk` = jump into the game's own script),
+# route ("-" = boot to NEW GAME), battery save ("-" = none), optional extra emu.py arguments (e.g. a Lua stub).
+# Screens no script op opens are entered with tools/lua/callstub.lua (JSL from the main loop at frame AT).
+# Scripted battles: D2 id id PTR jumps to PTR on a loss; the game's own scripts then run 99 (reset -> game over).
+# Chapter cards: op `DC nn` (card nn, 01-12), entered at the game's own DC op so the chapter's opening plays after it.
+intro	9000	200	50	86 00 80 08	1100 -;6 start;200 -;6 start;200 -;6 a;200 -	-
+continue	2400	0	100	FF	1100 -;6 start;400 -;6 down;60 -;6 a;900 -	work/states/user_kabuki_en.srm
+card01	4200	150	60	86 00 81 08	-	-
+card02	4200	150	60	86 86 C4 08	-	-
+card03	4200	150	60	86 31 9D 09	-	-
+card04	4200	150	60	86 3B EB 08	-	-
+card05	4200	150	60	86 23 A0 09	-	-
+card06	4200	150	60	86 56 E1 0A	-	-
+card07	4200	150	60	86 18 A8 09	-	-
+card08	4200	150	60	86 49 BB 0A	-	-
+card09	4200	150	60	86 78 D0 0A	-	-
+card10	4200	150	60	86 BB 99 0B	-	-
+card11	4200	150	60	86 B4 8B 0B	-	-
+card12	4800	150	60	86 84 9E 0B	-	-
+card14	4200	150	60	86 DB C3 0B	-	-
+card15	4200	150	60	86 CC D8 0B	-	-
+card16	4200	150	60	86 D1 DE 0B	-	-
+card17	4200	150	60	86 4E CE 2D	-	-
+battle	6000	60	60	A4 30 75 B5 1B B5 2B C8 00 0A 0A 0B BC 09 D2 40 00 @ BC 09 FF	-	-
+gameover	7000	40	100	B5 1B C8 00 0A 0A 0B BC 09 D2 53 80 10 80 3F FF 99	-	-
+savejizo	3600	90	40	C8 00 0A 0A 0B BC 09 86 2A CA 09	-	-
+exchange	4000	120	30	A4 30 75 B5 1B C8 00 0A 0A 0B BC 09 E1 F2 FF	-	-
+jizomap	4000	120	30	B5 1B C8 00 0A 0A 0B BC 09 E1 F4 FF	-	-
+composer	3600	100	30	B5 1B C8 00 0A 0A 0B BC 09 FF	1100 -;6 start;200 -;6 start;200 -;600 -	-	--script tools/lua/callstub.lua --var AT=2300 --var HOOK=0x008608 --var 'STUB="08c23022efae0f285c088600"'
+travel	3600	0	30	B5 1B C8 00 0A 0A 0B BC 09 FF	1100 -;6 start;200 -;6 start;200 -;1200 -;6 down;60 -;6 down;60 -;6 a;120 -;6 down;60 -;6 a;200 -;6 up;60 -;6 up;60 -	-	--script tools/lua/callstub.lua --var AT=2300 --var HOOK=0x008608 --var 'STUB="08c230a900002232b905285c088600"'
+mode1	4000	120	30	B5 1B C8 00 0A 0A 0B BC 09 D3 01 FF	-	-
+mode2	4000	120	30	B5 1B C8 00 0A 0A 0B BC 09 D3 02 FF	-	-
+mode3	4000	120	30	B5 1B C8 00 0A 0A 0B BC 09 D3 03 FF	-	-
+ending	12000	150	80	86 86 E0 2D	-	-
+credits	32000	150	100	86 DC E5 2D	-	-

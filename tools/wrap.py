@@ -2,7 +2,7 @@
 
 Translators write a run's English with its control tokens but without {n}. Only {clr} and {p9a} start a new
 page; {wait} {delay:XX} {ba} {b8:..} {choice:..} {jump:..} {name9x} are zero-width and stay where they fall, in the
-same line (the game does not break the line there). Text is broken into lines of <= WIDTH cells and pages of LINES
+same line (the game does not break the line there), except that a {choice} line keeps only CHOICE_COL cells of text. Text is broken into lines of <= WIDTH cells and pages of LINES
 lines; extra pages are joined with {wait}{clr}. The last line of a page and any line holding a {wait} keep ARROW cells
 free for the blinking arrow; a last page of one short line is rebalanced (layout). A {n} the translator did write forces a line break.
 
@@ -19,6 +19,7 @@ WIDTH, LINES = 28, 3
 ARROW = 2  # cells kept free on a line with the page arrow: it is drawn in cell 28, touching a 27-cell line
 NAME_LEN = {"name93": 4, "name94": 5}  # Rock, Makki (English names patched at 00:9FE8)
 PAGE = {"clr", "p9a"}
+CHOICE_COL = 14  # a {choice} line keeps its text in cells 0-13: the cursor and Yes / No take cells 14-27
 
 
 def tok_name(tok):
@@ -44,7 +45,7 @@ def split_words(toks):
             if cur:
                 words.append(cur)
             cur = []
-        elif t == "{n}":
+        elif t == "{n}" or tok_name(t) == "choice":
             if cur:
                 words.append(cur)
             words.append([t])
@@ -93,6 +94,11 @@ def pages_of(toks, shave=0):
     for word in split_words(toks):
         if word == ["{n}"]:
             newline()
+            continue
+        if tok_name(word[0]) == "choice":  # Yes/No is drawn from cell CHOICE_COL of the current line (03:93F6)
+            if w >= CHOICE_COL:
+                newline()
+            cur.append(word[0])
             continue
         ww = sum(width(t) for t in word)
         arrow = any(tok_name(t) == "wait" for t in word)

@@ -156,7 +156,7 @@ def still_drawn(rom):
         import labels as lab
         for e in json.loads((root / "labels.json").read_text(encoding="utf-8")):
             if not e["en"]:
-                busy.update(lab.words(rom, int(e["id"], 16), e["cells"] * e["count"]))
+                busy.update(w & 0x7FFF for w in lab.words(rom, int(e["id"], 16), e["cells"] * e["count"]))  # bit 15 = end
     for name in ("code.json", "dict.json"):
         if (root / name).exists():
             for e in json.loads((root / name).read_text(encoding="utf-8")):
@@ -423,8 +423,8 @@ def render_card(number: int, title: str, height: int) -> list[list[int]]:
     x0 = (16 - len(num)) // 2
     for x, col in enumerate(num):
         for y in range(2, 12):  # digit rows (caps rows 2-11)
-            px[4 + y][x0 + x] = shade[col[y]]
-    top = 18  # number ends at row 15; 2 px gap
+            px[5 + y][x0 + x] = shade[col[y]]  # rows 7-16: 1 px under ACT (rows 0-5)
+    top = 18  # number ends at row 16; 1 px gap
     cols = strip(title)
     if top + len(cols) > height:
         raise ValueError(f"card {number} {title!r}: {len(cols)} px > {height - top}")

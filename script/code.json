@@ -1253,10 +1253,23 @@
   "notes": ""
  },
  {
+  "id": "04CC89",
+  "len": 16,
+  "jp": "「FF に合わせて 決定ボタンを",
+  "en": "Choose OFF and",
+  "refs": [
+   [
+    "04CB60",
+    "ldx"
+   ]
+  ],
+  "notes": "sound test help line 1 (missed by the catalog: odd address, read one word late); 「 is the O of OFF"
+ },
+ {
   "id": "04CCA9",
   "len": 12,
   "jp": "おすと おとが消えます。",
-  "en": "Press to stop the sound.",
+  "en": "press Confirm to stop.",
   "refs": [
    [
     "04CB69",
@@ -2101,6 +2114,71 @@
   "notes": ""
  },
  {
+  "id": "1ED4D6",
+  "len": 6,
+  "jp": "道具を預ける",
+  "en": "Store Items",
+  "refs": [
+   [
+    "1ED4C0",
+    "table"
+   ]
+  ],
+  "notes": "Standby Cargo menu table 1E:D4C0 (missed by the catalog: it read these strings one word late)"
+ },
+ {
+  "id": "1ED4E2",
+  "len": 7,
+  "jp": "道具をうけ取る",
+  "en": "Take Items",
+  "refs": [
+   [
+    "1ED4C2",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1ED4F0",
+  "len": 3,
+  "jp": "やめる",
+  "en": "Quit",
+  "refs": [
+   [
+    "1ED4C4",
+    "table"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "1ED4F6",
+  "len": 10,
+  "jp": "出演者を決めて下さい",
+  "en": "Pick actors",
+  "refs": [
+   [
+    "1EC9A4",
+    "ldx"
+   ]
+  ],
+  "notes": "party swap prompt; its window shows 11 cells"
+ },
+ {
+  "id": "1ED50A",
+  "len": 6,
+  "jp": "道具を預ける",
+  "en": "Store Items",
+  "refs": [
+   [
+    "1ECF11",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
   "id": "1ED516",
   "len": 3,
   "jp": "の空き",
@@ -2148,6 +2226,19 @@
   "notes": ""
  },
  {
+  "id": "1ED55A",
+  "len": 7,
+  "jp": "道具をうけ取る",
+  "en": "Take Items",
+  "refs": [
+   [
+    "1ED21C",
+    "ldx"
+   ]
+  ],
+  "notes": ""
+ },
+ {
   "id": "1ED568",
   "len": 9,
   "jp": "は もう持てません",
@@ -2159,6 +2250,71 @@
    ]
   ],
   "notes": ""
+ },
+ {
+  "id": "1EDDBB",
+  "len": 3,
+  "jp": "名前 ",
+  "en": "   ",
+  "refs": [
+   [
+    "1EDC04",
+    "ldx"
+   ]
+  ],
+  "notes": "save slot templates 1E:DDBB-DDFF (save jizo + Continue; odd addresses, missed by the catalog): digits are drawn over the spaces afterwards, so each keeps its length and space positions. Name label dropped (the name follows)"
+ },
+ {
+  "id": "1EDDC1",
+  "len": 9,
+  "jp": "LV    両役者",
+  "en": "LV       ",
+  "refs": [
+   [
+    "1EDC3C",
+    "ldx"
+   ]
+  ],
+  "notes": "level digits at cells 2-5; the rank words 両役者 dropped (no room for ryo/actor in the normal font)"
+ },
+ {
+  "id": "1EDDD3",
+  "len": 9,
+  "jp": "あと      尺",
+  "en": "XP      [0229]",
+  "refs": [
+   [
+    "1EDC77",
+    "ldx"
+   ]
+  ],
+  "notes": "experience to the next rank, right-aligned digits; 尺 kept like the status screen"
+ },
+ {
+  "id": "1EDDEB",
+  "len": 10,
+  "jp": "持金       両",
+  "en": "         [00E8]",
+  "refs": [
+   [
+    "1EDC9F",
+    "ldx"
+   ]
+  ],
+  "notes": "money, 両 kept like the menus; the digit field blank-fills from cell 2, so labels get 2 cells: none here (両 says it)"
+ },
+ {
+  "id": "1EDDFF",
+  "len": 11,
+  "jp": "時間    時間  分",
+  "en": "      hr  m",
+  "refs": [
+   [
+    "1EDCC7",
+    "ldx"
+   ]
+  ],
+  "notes": "play time: hours digits at cells 2-5, minutes at 8-9; 'Time' label has no room before the digits"
  },
  {
   "id": "1EDE15",
@@ -2194,7 +2350,7 @@
   "id": "1EDE3D",
   "len": 16,
   "jp": "ふるいきろくは 消えてもいいな？",
-  "en": "Overwrite the old record?",
+  "en": "Overwrite save?",
   "refs": [
    [
     "1EDA94",

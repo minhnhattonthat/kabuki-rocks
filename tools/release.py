@@ -1,4 +1,4 @@
-"""Local release: build, fix the SNES checksum, make and verify the BPS, zip it with the player README. Never publishes.
+"""Local release: checks + visual-QA gate, build (debug bank empty), fix the SNES checksum, make and verify the BPS, zip it with the player README. Never publishes.
 
     python -X utf8 tools/release.py [--ver 0.1]    # -> release/KabukiRocks_EN_v<ver>.zip (.bps + README.txt)
 """
@@ -31,7 +31,9 @@ final = ROOT / "build" / "kabuki_en_cs.sfc"
 out = ROOT / "release" / f"KabukiRocks_EN_v{a.ver}.bps"
 out.parent.mkdir(exist_ok=True)
 run(ROOT / "tools" / "check.py")
+run(SKILL / "qa_gate.py", "check", ROOT / "work" / "qa" / "manifest.tsv", ROOT / "work" / "qa" / "verdicts")
 run(ROOT / "build.py", "--out", built)
+assert set(built.read_bytes()[0x3F * 0x8000:0x40 * 0x8000]) == {0xFF}, "debug bank $3F not empty"  # build.py DEBUG_AT
 run(SKILL / "bps.py", "snes-checksum", built, "--out", final)
 run(SKILL / "bps.py", "make", orig, final, out)
 crc = f"{zlib.crc32(final.read_bytes()):08x}"

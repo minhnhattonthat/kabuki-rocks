@@ -325,7 +325,7 @@
   "id": "2DDD79",
   "size": 74,
   "jp": "「お お客さん！ {じぞう#0A0E}レンジャーしってる？{n} ショー見てかない ショー？{n}{choice:2DDF92}",
-  "en": "H-hey, mister! Ever heard of the Jizo Rangers? Wanna catch the show? The show? {choice:2DDF92}",
+  "en": "H-hey, mister! Heard of the Jizo Rangers? Wanna see the show?{choice:2DDF92}",
   "notes": ""
  },
  {
@@ -759,7 +759,7 @@
   "id": "2DF909",
   "size": 175,
   "jp": " TEST PLAYER{n}{         #034B} はぎした あきひろ{n}{         #034B} のなか しのぶ{delay:C8}{clr}{         #034B} みつぎ ふみとも{n}{         #034B} みのわ さとし{n}{         #034B} かとう まさたか{delay:C8}{clr}{         #034B} ねもと つよし{n}{         #034B} きたはら いくひろ{delay:C8}",
-  "en": " TEST PLAYER{n}      Hagishita Akihiro{n}      Nonaka Shinobu{delay:C8}{clr}          Mitsugi Fumitomo{n}      Minowa Satoshi{n}      Kato Masataka{delay:C8}{clr}          Nemoto Tsuyoshi{n}      Kitahara Ikuhiro{delay:C8}",
+  "en": " TEST PLAYER{n}      Hagishita Akihiro{n}      Nonaka Shinobu{delay:C8}{clr}      Mitsugi Fumitomo{n}      Minowa Satoshi{n}      Kato Masataka{delay:C8}{clr}      Nemoto Tsuyoshi{n}      Kitahara Ikuhiro{delay:C8}",
   "notes": ""
  },
  {

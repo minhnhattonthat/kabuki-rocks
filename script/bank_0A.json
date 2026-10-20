@@ -38,7 +38,7 @@
   "id": "0A846D",
   "size": 74,
   "jp": "「おつかれさまです。{n} 一泊10両になりますが お泊まりになりますか？{n}{choice:0A868A}",
-  "en": "Welcome, you must be tired. It's 10 ryo for one night. Will you be staying?{choice:0A868A}",
+  "en": "Welcome, you must be tired. It's 10 ryo a night. Staying?{choice:0A868A}",
   "notes": ""
  },
  {

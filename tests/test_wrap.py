@@ -21,3 +21,10 @@ def test_widow_rebalanced():
     p = pages(s)
     assert len(p) == 2
     assert len(p[-1]) > 1 or len(p[-1][0]) >= wrap.WIDTH // 2
+
+
+def test_choice_line_keeps_cursor_cells_free():
+    # Yes/No is drawn from cell CHOICE_COL of the current line: a longer question moves the choice down a line
+    p = pages("Welcome! I'm the Save Jizo. Shall I record your journey?{choice:09CAC2}")
+    assert p == [["Welcome! I'm the Save Jizo.", "Shall I record your journey?", "{choice:09CAC2}"]]
+    assert pages("Want it?{choice:09B3B0}") == [["Want it?{choice:09B3B0}"]]

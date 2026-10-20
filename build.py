@@ -164,14 +164,16 @@ def patch_sysmsg(rom, space):
                 rom[so + 1] = at
 
 
-PLACARD = 0x24AE58  # battle: empty party slot placard 出演者求む (compressed 4bpp, 6x6 tiles, OBJ 16x16 x 9)
+# battle party-slot placards (compressed 4bpp, 6x6 tiles, OBJ 16x16 x 9; loader 02:A59E): empty slot 出演者求む,
+# knocked-out member 休演中
+PLACARDS = {0x24AE58: ("ACTORS", "WANTED"), 0x24AC33: ("OFF", "STAGE")}
 PLACARD_ROWS = [0, 3, 1, 4, 2, 5]  # screen tile row -> tile row in the block (16x16 sprites: top halves first)
 
 
-def patch_placard(rom):
-    """Redraw the placard's paper (x 11-35, y 5-42) as ACTORS / WANTED, tiny font at double height."""
+def patch_placard(rom, addr, words):
+    """Redraw a placard's paper (x 11-35, y 5-42) as two words, tiny font at double height."""
     import lz
-    o = off(PLACARD)
+    o = off(addr)
     raw, used = lz.decompress(rom, o, 0x480)
     raw = bytearray(raw)
     img = [[0] * 48 for _ in range(48)]
@@ -187,7 +189,7 @@ def patch_placard(rom):
         for x in range(11, 36):
             img[y][x] = 0xF  # paper
     tiny = font.load_tiny()
-    for top, word in ((11, "ACTORS"), (27, "WANTED")):
+    for top, word in zip((11, 27), words):
         x0 = 11 + (25 - (4 * len(word) - 1)) // 2
         for i, ch in enumerate(word):
             for gy, row in enumerate(tiny[ch][1:]):  # caps use glyph rows 1-5
@@ -205,7 +207,7 @@ def patch_placard(rom):
             k = (PLACARD_ROWS[cy] * 6 + cx) * 32
             raw[k:k + 32] = t
     new = lz.compress(bytes(raw))
-    assert len(new) <= used, f"placard: {len(new):#x} > {used:#x}"
+    assert len(new) <= used, f"placard {addr:06X}: {len(new):#x} > {used:#x}"
     rom[o:o + len(new)] = new
 
 
@@ -349,6 +351,22 @@ def patch_msgclear(rom, space):
     rom[o:o + 8] = bytes([0x22, at & 0xFF, at >> 8 & 0xFF, at >> 16]) + b"\xea" * 4
 
 
+XCHG_ROW = 0x0FAD1B  # chest exchange list row: LDA #$15A0 ; STA $00 ; LDA $10 ; LDY $14 ; JSR $C75C, X = name length
+XCHG_NAME_MAX = 11  # the rate digits start 12 cells right of the name
+
+
+def patch_xchgnames(rom, space):
+    """Cap the item names in the chest exchange list (0F:AD15) at 11 cells: English names ran into the rate column."""
+    o = off(XCHG_ROW)
+    assert rom[o:o + 9] == bytes.fromhex("a9a0158500a510a414"), "exchange row"
+    m = XCHG_NAME_MAX.to_bytes(2, "little")
+    code = (bytes.fromhex("a9a0158500e0") + (XCHG_NAME_MAX + 1).to_bytes(2, "little")  # LDA #$15A0 ; STA $00 ; CPX
+            + bytes([0x90, 3, 0xA2]) + m + bytes.fromhex("a510a4146b"))  # BCC +3 ; LDX #max ; LDA $10 ; LDY $14 ; RTL
+    at = space.alloc(len(code))
+    rom[off(at):off(at) + len(code)] = code
+    rom[o:o + 9] = bytes([0x22, at & 0xFF, at >> 8 & 0xFF, at >> 16]) + b"\xea" * 5
+
+
 def patch_names(rom, space):
     """Replace the hard-coded JP name init with JSL to a loop copying both 6-word slots (7E:614D, 7E:6159)."""
     data = b""
@@ -486,10 +504,12 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             patch_sysmsg(rom, space)  # before the font: kana it no longer uses join the tiny-text pool
             patch_sysfrag(rom, space)
             patch_choice(rom)
-            patch_placard(rom)
+            for addr, words in PLACARDS.items():
+                patch_placard(rom, addr, words)
             patch_title(rom)
             patch_names(rom, space)
             patch_msgclear(rom, space)
+            patch_xchgnames(rom, space)
             plan = label_plan()
             uniq = {}  # identical baked cells share one glyph code
             for _, cells in plan:
@@ -537,7 +557,8 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
 CODESTR_BANK = 0x3B  # English for strings that live in code banks (script/code.json)
 # not relocatable this way: 078D81 is a false hit (07:81A4 is LDA #$81 / STA $4200); 02F078/02F07E are read as
 # $F078 + offset (fixed 6-byte slots; labels); banks $05/$0F use other readers: the bank $05 prologue
-# is patch_prologue; the rest of $05 (map place names) and $0F (composer) - TODO
+# is patch_prologue; $05 place names and the $0F composer / chest exchange screens are fixed-count slots written in
+# place (labels.json)
 # 04AD5F/0FCA01: their only "reference" is an 8-bit LDX/LDY #imm misread as 16-bit (04:EEBE is LDX #$5F)
 CODESTR_SKIP_IDS = {"078D81", "02F078", "02F07E", "0FCA01"}
 CODESTR_SKIP_BANKS = {0x05, 0x0F}
@@ -546,6 +567,8 @@ CODESTR_HELPERS = 0x3C8000  # one reader helper per source bank
 # each call site is LDA #pos ; LDX #speed ; LDY #string ; JSR $EF64 (pos = $3800 + row*$20 + column)
 PROLOGUE_IDS = {"05FB95", "05FBB1", "05FBCF", "05FBF7", "05FC0D", "05FC3B",
                 "05FC63", "05FC8D", "05FCBB", "05FCE7", "05FD0D"}
+# strings of a skipped bank that do have a plain bit-15 reader: 0F:FA26 (battle "can't use that here")
+CODESTR_KEEP_IDS = PROLOGUE_IDS | {"0FFA3C"}
 PROLOGUE_READ = 0x05EF13  # LDA ($65),y ; PHP ; AND #$7FFF ; JSL $00BA9D
 PROLOGUE_COLS = 32
 
@@ -592,7 +615,7 @@ def patch_codestr(rom, entries):
     by_bank = {}
     for e in entries:
         bank = int(e["id"][:2], 16)
-        if e["en"] and e["id"] not in CODESTR_SKIP_IDS and (bank not in CODESTR_SKIP_BANKS or e["id"] in PROLOGUE_IDS):
+        if e["en"] and e["id"] not in CODESTR_SKIP_IDS and (bank not in CODESTR_SKIP_BANKS or e["id"] in CODESTR_KEEP_IDS):
             by_bank.setdefault(bank, []).append(e)
     windows = {}  # source bank -> its [S, E) in CODESTR_BANK
     if not by_bank:

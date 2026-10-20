@@ -157,7 +157,7 @@
   "id": "098CA8",
   "size": 74,
   "jp": "「おつかれさまです。{n} 一泊10両になりますが お泊まりになりますか？{n}{choice:09905F}",
-  "en": "Welcome, you must be tired. It's 10 ryo for one night. Will you be staying?{choice:09905F}",
+  "en": "Welcome, you must be tired. It's 10 ryo a night. Staying?{choice:09905F}",
   "notes": ""
  },
  {
@@ -1137,7 +1137,7 @@
   "id": "09CA2B",
   "size": 90,
   "jp": "「おお よく来たな。 ワシが セーブ{じぞう#0A0E}{じゃ。#0A31}{n} さっそくじゃが たびのきろくを するのか？{n}{choice:09CAC2}",
-  "en": "Oh, welcome! I am the Save Jizo. Straight to business: shall I record your journey? {choice:09CAC2}",
+  "en": "Welcome! I'm the Save Jizo. Shall I record your journey?{choice:09CAC2}",
   "notes": ""
  },
  {
@@ -2026,7 +2026,7 @@
   "id": "09FB5D",
   "size": 259,
   "jp": "「あっ よびました？{n} 私 オエドの事なら 何でも しってるんで。{wait}{clr} そういえば！ 人に しられていない{洞くつ#0A1E}が{n} オエドに あるって しってます？{n}{choice:09FC62}{clr} あっ それってどこです？{wait}{clr} ああ～っ！ そっか{ーーー#0A2F}ー！！{n} 私も さいしょから そこじゃないかと{n} {思って#0A75}たんですが{wait}",
-  "en": "Oh, you called? I know everything there is to know about Oedo.{wait}{clr}Come to think of it! Did you know there's a cave in Oedo that nobody knows about?{choice:09FC62}{clr}Oh, so where is it?{wait}{clr}Ahh! Of course!! I had a feeling it was there all along, too.{wait}",
+  "en": "Oh, you called? I know everything there is to know about Oedo.{wait}{clr}Say! Did you know there's a cave in Oedo that nobody knows about?{choice:09FC62}{clr}Oh, so where is it?{wait}{clr}Ahh! Of course!! I had a feeling it was there all along, too.{wait}",
   "notes": ""
  },
  {

@@ -80,3 +80,19 @@ Evidence: `work/playtest/gate/NNNN.png|.sheetK.png|.<state>`, presses in `log.ts
 - [x] (fixed 2026-10-20: 3 table-driven system messages 00:9C64 added to sysmsg.json; all three checked from the user's state) field, Y button - text - walking-style popup still Japanese - "けいかいする"
 - [x] (fixed 2026-10-20: search after the walking-style bug; script/sysfrag.json + build.py patch_sysfrag, shot with tools/qa_sysfrag.py) system messages stitched from fragments still Japanese - chest/key/money/item used/got/put back/inventory full/song learned (9 messages, 12 fragments)
 - [x] (fixed 2026-10-20: template 01:E4FC has a second caller 00:9595 whose item store 0095B0 still hit the old slot and overwrote the jump; added to sysmsg.json slots. Checked from the user's state) chest search - crash into a garbled scene after "Rock searched the chest." (state kr_search_chest.mss)
+
+## 2026-10-20 release gate (debug tour tools/debug/tour.py + jp_left scan)
+- [x] (fixed: placard 24:AC33 redrawn OFF / STAGE, build.py PLACARDS) battle - knocked-out member placard still Japanese - "休演中"
+- [x] (fixed: labels.json 0FAE4B-0FCB6D, normal-font lengths) chest exchange (Otakker II) and song composer screens still Japanese
+- [x] (fixed: labels.json 0FCB19) composer - "ー" placeholders show as "K" (ー's code is K in the English font) - "KKKKKKKKKKKKKKKK"
+- [x] (fixed: build.py patch_xchgnames caps names at 11 cells) chest exchange list - English item names run into the rate column - "Full House E2lop"
+- [x] (fixed: font.still_drawn masked bit 15 off label words) travel menu / jizo map - last glyph of each kept-Japanese label lost its tile - "イズ" for イズモ, "花 ﾙ" for 花町
+- [x] (fixed: code.json 1ED4D6-1ED55A, 04CC89; codestr's catalog read them one word late) Standby Cargo menu (Store / Take items, Quit, "Choose your cast.") and sound-test help line 1 still Japanese - not yet seen in the emulator
+- [ ] travel menu / jizo-map place names (labels.json 05FD2F, 25 four-glyph slots) kept Japanese: baked in the tiny font they need ~74 font cells, ~14 are free. Needs a run-time tiny drawer at 05:BA72 (like asm/tiny.asm) - "イズモ", "花 町"
+- [ ] composer button bar is a Japanese graphic - "CLEAR もとす えんそう とうろく おわる" (the help line names "えんそう" the same way)
+- [ ] chest exchange - item names cut at 11 cells ("Vigor Hamm", "Spirit Lig"); tiny font would fit them
+- [x] (fixed: tools/wrap.py CHOICE_COL - a {choice} line keeps 14 cells of text, else the choice moves down a line; 6 three-line questions reworded) every Yes/No in event text - the choice is drawn from cell 14 of the current line (03:93F6) and overwrote longer English questions - "record your jo▶Yesy?"
+- [x] (fixed: code.json 1EDDBB-1EDDFF, odd-address templates the catalog missed; digit fields blank-fill from cell 2) save jizo / Continue slot line - Japanese and garbage after LV, money, play time - "1両役者 )C", "あと 30尺"; "Overwrite save?" shortened to clear its Yes/No
+- [x] (fixed: labels.json imm 1ECCCC, as the status screen; prompt "Pick actors") party swap screen - 両役者 / あと in the stat panel, "Choose your cast." clipped
+- [x] (fixed: font.render_card number 1 px lower) chapter cards 5, 6, 10, 18 - number touches "ACT"
+- [x] (fixed: bank_2D 6-space indent) credits TEST PLAYER pages 2-3 indented 4 cells further
