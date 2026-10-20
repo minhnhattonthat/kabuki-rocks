@@ -29,7 +29,7 @@ Evidence: `work/playtest/menu/NNNN.png|.sheetK.png|.<state>`, presses in `log.ts
 - [ ] step 0042, 0046 - text - Forte name window - "Compose a song" runs into the right frame, "g" clipped - "Compose a song"
 - [ ] step 0009-0011, 0036-0040 - text - Sell and Item tab bars - "Equip-/ment" hyphen-split over two tiny lines; stray slash after Battle - "Equip- ment", "Battle/"
 - [ ] step 0002, 0003, 0024, 0048 - text - shop menu, buy list, equip sub-menu - cursor sprite covers the first letter of the selected label (field-menu bug on more screens) - "Help", "Bamboo-maru", "Sell", "Equip"
-- [ ] step 0027 - wording - field/battle menu - 十八番 shown as "Forte", glossary says "Specialty" - "Forte"
+- [x] (ruling 2026-10-20: Forte; glossary and 2 dialogue lines updated) step 0027 - wording - field/battle menu - 十八番 shown as "Forte", glossary says "Specialty" - "Forte"
 - [ ] step 0048, 0054 - wording - equip sub-menu "Trade" opens a screen titled "Exchange" - "Trade" / "Exchange"
 - [ ] step 0048 - text - equip sub-menu - options in different fonts (tiny "Equip", large "Trade")
 - [ ] step 0031 - wording - Song Weapon, Remedy tab - status-inflicting song under Remedy; check label/description - "Silent... How Sultry" / "Inflicts Polyp"
@@ -53,7 +53,7 @@ Evidence: `work/playtest/battle/NNNN.png|.sheetK.png|.<state>`, presses in `log.
 - [x] (not a bug: JP build identical; the debug script lacks a fade-in after the battle, see docs/re/debug.md) step 0043 - blocker - after victory the screen stays black 900+ frames until the field menu is opened and closed (maybe debug state; confirm on a normal encounter) - (black screen)
 - [ ] step 0039 - wording - Rock's Forte "Compose a song weapon": A does nothing, no message - "Compose a song weapon"
 - [ ] step 0028 - wording - failed escape says they fled, then contradicts (first-pass shot overwritten) - "Rock and pals fled" / "But they were cut off!"
-- [ ] step 0000, 0010 - wording - voice stat has three names: HUD "S", descriptions "Voice", field menu "VP" - "S", "Voice", "VP"
+- [x] (ruling 2026-10-20: VP in all text; HUD H/S letters are the original's, kept) step 0000, 0010 - wording - voice stat has three names: HUD "S", descriptions "Voice", field menu "VP" - "S", "Voice", "VP"
 - [ ] step 0007, 0011 - wording - odd status names in item descriptions; check intent - "Cures Polyp", "Cures Love Slave", "Cures Hunched Over"
 - [ ] step 0028 - wording - song-cast message: "was sung!" crushed into the tiny font after the title - "♪Good Day to Blaze Off♪ was sung!"
 

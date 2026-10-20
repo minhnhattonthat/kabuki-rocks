@@ -66,8 +66,8 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 | 歌しばい | song play | the banned musical kabuki |
 | モンスターあわれみの令 | Edict of Mercy for Monsters | parody of 生類憐れみの令 |
 | 両 | ryo | money |
-| 体力 / 声力 | HP / Voice (?) | menu stats |
-| 十八番 | ? Specialties (juhachiban) | menu command |
+| 体力 / 声力 | HP / VP | stats, everywhere in text ("Restores 100 VP"); item names keep "Voice" (Voice Fan). The battle HUD's H/S sprite letters are the original's own, left as is (2026-10-20) |
+| 十八番 | Forte | menu/battle command (6 tiny letters max; "Specialty" doesn't fit) (2026-10-20) |
 
 ## Places
 | JP | EN | max | notes | Avoid |
@@ -80,7 +80,7 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 ## Decisions from earlier batches
 - 魔ぬけの森 -> Witless Woods (まぬけ pun; hermit tests "witless"). 魔の山 -> Demon Mountain. 四布町 -> Shippu Town. オエド -> Oedo.
 - 役人 -> Official. ダフ屋 -> Scalper. 幕の内ベントウ -> Makunouchi Bento. かぶきあげ -> Kabuki-age.
-- 歌武器 -> song weapon. 十八番 -> Specialty. 歌しばい -> song play. しばい小屋 -> playhouse. 千両役者 -> thousand-ryo star.
+- 歌武器 -> song weapon. 十八番 -> Forte (was Specialty; ruling 2026-10-20). 歌しばい -> song play. しばい小屋 -> playhouse. 千両役者 -> thousand-ryo star.
 - 天資軍 -> Tensai's army. 酒屋 -> Brewer. ナルカミ上人 -> His Holiness Narukami. 四天王 -> Four Heavenly Kings; ええからだ四天王 -> Bodacious Four Heavenly Kings.
 - コウセンのフウ -> Fu of the Kosen; セイガのヒョウ -> Hyo of the Seiga (readings unconfirmed; replace everywhere if settled).
 - Kozukenosuke's でゲス tic -> ", yesss!" (weaselly). Benkei's ござる -> stiff archaic English, no "gozaru" tag.
@@ -104,4 +104,4 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 - Wave 3 terms: 火薬島 -> Gunpowder Island. 野火ヶ原 -> Wildfire Plain. ドウカばし -> Fuse Bridge. 氷川洞 -> Hikawa Cave. 氷川の氷 -> Hikawa Ice. 港区/寺院区/都区/工業区 -> Port/Temple/Capital/Industrial District. ヒノクニ -> Hinokuni. エゾ -> Ezo. ムツ -> Mutsu. 長刀 -> naginata. 氏神一番 -> Ujigami Ichiban. デュエット -> duet. アソ町 -> Aso Town. 二股村 -> Futamata Village. じゆうの大仏 -> Liberty Buddha. 回復じぞう -> Healing Jizo. 辰五郎 -> Tatsugoro (Rock/Oshichi nickname 辰さん/辰っつぁん -> Tatsu / Tatsu-san). Tokubei's tic -> ", ook!" (laugh "Ukikikiki"). Hokaibo-dono / Sir {name93} for Benkei's どの. Fuji Musume: genteel Kyoto voice ("dear", "you see").
 - Song titles in double quotes, no note glyphs (checker is ASCII-only).
 - Glyph fixes: 0x17F = 座 (not 庭), 0xE5 = 一 (not ―).
-- Pending rulings: モ大エ (Mo-Daiku vs Mozaiku), 体力/声力 (HP / Voice?), ♪ in song titles (font has ♪ at 0x160; checker currently ASCII-only).
+- Pending rulings: モ大エ (Mo-Daiku vs Mozaiku), ♪ in song titles (font has ♪ at 0x160; checker currently ASCII-only).

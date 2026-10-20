@@ -4004,7 +4004,7 @@
   "ptr": "C6F1",
   "len": 8,
   "jp": "声力を100回復",
-  "en": "Restores 100 Voice",
+  "en": "Restores 100 VP",
   "notes": ""
  },
  {
@@ -4012,7 +4012,7 @@
   "ptr": "C701",
   "len": 8,
   "jp": "声力を500回復",
-  "en": "Restores 500 Voice",
+  "en": "Restores 500 VP",
   "notes": ""
  },
  {
@@ -4020,7 +4020,7 @@
   "ptr": "C711",
   "len": 9,
   "jp": "声力を2000回復",
-  "en": "Restores 2000 Voice",
+  "en": "Restores 2000 VP",
   "notes": ""
  },
  {
@@ -4108,7 +4108,7 @@
   "ptr": "C7C7",
   "len": 13,
   "jp": "体力・声力をMAXまで回復",
-  "en": "Fully restores HP and Voice",
+  "en": "Fully restores HP and VP",
   "notes": ""
  },
  {
@@ -4140,7 +4140,7 @@
   "ptr": "C815",
   "len": 15,
   "jp": "声力200回復（時々こわれる）",
-  "en": "Heals 200 Voice (may break)",
+  "en": "Heals 200 VP (may break)",
   "notes": ""
  },
  {
@@ -4156,7 +4156,7 @@
   "ptr": "C851",
   "len": 15,
   "jp": "声力を10回復（なくならない）",
-  "en": "Heals 10 Voice (unlimited)",
+  "en": "Heals 10 VP (unlimited)",
   "notes": ""
  },
  {
@@ -4428,7 +4428,7 @@
   "ptr": "CB33",
   "len": 11,
   "jp": "MAX声力が20ふえる",
-  "en": "Raises Max Voice by 20",
+  "en": "Raises Max VP by 20",
   "notes": ""
  },
  {
@@ -5260,7 +5260,7 @@
   "ptr": "D181",
   "len": 14,
   "jp": "声力10消[0222]で 気合いの一撃",
-  "en": "Critical hit for 10 Voice",
+  "en": "Critical hit for 10 VP",
   "notes": ""
  },
  {
@@ -5476,7 +5476,7 @@
   "ptr": "D36F",
   "len": 14,
   "jp": "戦闘中 まいターン声力が回復",
-  "en": "Heals Voice each battle turn",
+  "en": "Heals VP each battle turn",
   "notes": ""
  },
  {
@@ -5612,7 +5612,7 @@
   "ptr": "D4AD",
   "len": 13,
   "jp": "歩くと 声力が少しづつ回復",
-  "en": "Restores Voice as you walk",
+  "en": "Restores VP as you walk",
   "notes": ""
  },
  {
@@ -6268,7 +6268,7 @@
   "ptr": "DA3B",
   "len": 9,
   "jp": "声力を100ゆずる",
-  "en": "Gives 100 Voice",
+  "en": "Gives 100 VP",
   "notes": ""
  },
  {
@@ -6564,7 +6564,7 @@
   "ptr": "DC7B",
   "len": 8,
   "jp": "声力をかっぱらう",
-  "en": "Steals Voice",
+  "en": "Steals VP",
   "notes": ""
  },
  {
@@ -6660,7 +6660,7 @@
   "ptr": "DD5F",
   "len": 12,
   "jp": "のこりの体力・声力を見る",
-  "en": "Shows remaining HP and Voice",
+  "en": "Shows remaining HP and VP",
   "notes": ""
  },
  {
@@ -7060,7 +7060,7 @@
   "ptr": "E32D",
   "len": 9,
   "jp": "の声力が 回復した",
-  "en": "'s Voice is back",
+  "en": "'s VP is back",
   "notes": ""
  },
  {
@@ -7180,7 +7180,7 @@
   "ptr": "E475",
   "len": 11,
   "jp": "の声力を かっぱらった",
-  "en": " had Voice taken",
+  "en": " had VP taken",
   "notes": ""
  },
  {
@@ -7996,7 +7996,7 @@
   "ptr": "EDF9",
   "len": 10,
   "jp": "の 声力が 回復した",
-  "en": "'s Voice is back",
+  "en": "'s VP is back",
   "notes": ""
  },
  {
@@ -8044,7 +8044,7 @@
   "ptr": "EE77",
   "len": 12,
   "jp": "の 声力を かっぱらった",
-  "en": " lost some Voice",
+  "en": " lost some VP",
   "notes": ""
  },
  {

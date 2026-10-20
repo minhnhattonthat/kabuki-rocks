@@ -1501,7 +1501,7 @@
   "id": "09DD3E",
   "size": 392,
   "jp": "{景清#0908}は ジェスチャーで うら{イタコ#0921}の説明をはじめた。{wait}{clr}まず {モンスター#0A8B}を たおしたからといって{n}必ずしも その霊が あらわれる とはかぎらない。{wait}{clr}また かく実に その霊を {ひょうい#0A52}させられる{n}とはかぎらない。{wait}{clr}あくまでも {景清#0908}のレベルが その霊よりも 勝っている時に{n}かぎり 『{ひょうい#0A52}』させられるかもしれないのだ。{wait}{clr}霊を {ひょうい#0A52}させると 体力や声力 その他の力も{n}アップする！ {しかし #0A4E}『戦闘不能』 になると{n}霊は はずれてしまう。{wait}",
-  "en": "Kagekiyo began explaining Shadow Itako with gestures.{wait}{clr}First, defeating a monster does not always mean its spirit will appear.{wait}{clr}Nor can he be sure of making that spirit possess him.{wait}{clr}Only when Kagekiyo's level is higher than the spirit's can he possibly make it 'possess' him.{wait}{clr}A possessing spirit raises HP, Voice and other powers! But if he becomes 'unable to fight', the spirit leaves him.{wait}",
+  "en": "Kagekiyo began explaining Shadow Itako with gestures.{wait}{clr}First, defeating a monster does not always mean its spirit will appear.{wait}{clr}Nor can he be sure of making that spirit possess him.{wait}{clr}Only when Kagekiyo's level is higher than the spirit's can he possibly make it 'possess' him.{wait}{clr}A possessing spirit raises HP, VP and other powers! But if he becomes 'unable to fight', the spirit leaves him.{wait}",
   "notes": ""
  },
  {
