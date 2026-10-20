@@ -78,3 +78,4 @@ Evidence: `work/playtest/gate/NNNN.png|.sheetK.png|.<state>`, presses in `log.ts
 ## 2026-10-20 user report
 - [x] (fixed 2026-10-20: "Resume from where?", checked from title > Continue; save prompt 1EDE3D shortened to "Overwrite the old record?" for the same box, not seen) Continue screen - text - title overflows its box - "Where will you resume your journey?"
 - [x] (fixed 2026-10-20: 3 table-driven system messages 00:9C64 added to sysmsg.json; all three checked from the user's state) field, Y button - text - walking-style popup still Japanese - "けいかいする"
+- [x] (fixed 2026-10-20: search after the walking-style bug; script/sysfrag.json + build.py patch_sysfrag, shot with tools/qa_sysfrag.py) system messages stitched from fragments still Japanese - chest/key/money/item used/got/put back/inventory full/song learned (9 messages, 12 fragments)

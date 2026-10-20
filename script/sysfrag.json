@@ -1,0 +1,14 @@
+[
+ {"site": "0091D0", "y": "9773", "jp": "たちは{n}宝箱に合うカギを 持っていなかった。", "en": " and party{n}had no key for the chest.", "notes": "after the leader's name"},
+ {"site": "009217", "y": "96F5", "jp": "は 宝箱をしらべた。", "en": " searched the chest.", "notes": "after the leader's name"},
+ {"site": "009328", "y": "970D", "jp": "両の お金を見つけた。", "en": " ryo found!", "notes": "after the amount (digits)"},
+ {"site": "00955D", "y": "97DC", "jp": "は ", "en": " used{n} ", "notes": "name, this, item, 009583; ends in a space (build.py patch_sysfrag)"},
+ {"site": "009583", "y": "9817", "jp": "をつかった。", "en": "."},
+ {"site": "0095E8", "y": "97FB", "jp": "たちは ", "en": " and party got{n} ", "notes": "name, this, item, 00960E"},
+ {"site": "00960E", "y": "9805", "jp": "を手に入れた。", "en": "!"},
+ {"site": "00963E", "y": "97A2", "jp": "たちは 持ち物が いっぱいだった。{n}何か すてますか？{n}", "en": " can't carry any more.{n}Throw something away?{n}", "notes": "after the leader's name; a choice follows"},
+ {"site": "00969B", "y": "97DC", "jp": "は ", "en": " put back{n} ", "notes": "name, this, item, 0096C1"},
+ {"site": "0096C1", "y": "97E2", "jp": "を{n}もとに もどした。", "en": "."},
+ {"site": "00993B", "y": "99EA", "jp": "たちは{n}トビラに合うカギを 持っていなかった。", "en": " and party{n}had no key for the door.", "notes": "after the leader's name"},
+ {"site": "2BF357", "y": "F543", "jp": "は ♪{slot}♫が{n}歌えるようになった", "en": " can now sing{n}[01E1]{slot}[01E1]!", "slot": "2BF382", "notes": "song name word stored at end-relative STA $7F3FE4,x (2BF382); ♫ (01E2) no longer draws, ♪ both sides like battle"}
+]

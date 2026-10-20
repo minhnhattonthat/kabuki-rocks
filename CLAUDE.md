@@ -26,10 +26,13 @@ Skill: translate-retro-game (H:/translation/kabuki-rocks/.claude/skills/translat
 - Later the same day: all menu screens English (status, config + buttons, song lists, shop confirm/sell/help, battle lists/tabs/highlights), stat labels as icons, system messages (script/sysmsg.json), Yes/No choices, title menu + curtains and the battle placard redrawn (docs/re/graphics.md). QA: `sh tools/qa_screens.sh`, `python -X utf8 tools/qa_sysmsg.py`.
 - Open: ending/game over/save screens not surveyed; 両 kept as currency sign; unused ％ item/song ids show ％.
 
+## Status (2026-10-20)
+- RAM-script system messages: all 34 copier call sites (00:90C2/90C7) covered: whole templates in script/sysmsg.json (patch_sysmsg, incl. the table-driven walking-style ones 00:9C64), fragments stitched after a name/item/amount in script/sysfrag.json (patch_sysfrag; QA `python -X utf8 tools/qa_sysfrag.py`). 01:A02D has no text.
+
 ## Status update (2026-10-15, later)
 - Dialogue: all 1194 non-empty script runs translated and merged (script/bank_XX.json); credits/profile cards hand-laid with explicit {n} (bank 2D only). Dictionary: 1283/1331 words translated (script/dict.json), inserted by build.py `patch_dictionary` into banks $30/$31 (pointer tables + <$600 words in $30; reader routines + rest in $31; selector byte 7F:FFF8). `python -X utf8 tools/release.py --ver 0.1` -> release/KabukiRocks_EN_v0.1.bps (local only, never published).
 - Tools added: dictbatch.py, redecode.py, sysmsg.py (RAM-script message call sites), lua/glyphlog.lua (log glyph draws + callers), release.py.
-- NOT done (needs savestates/saves from the user to reach the screens): field menu labels and all window layouts (labels are literal glyph arrays in bank 04, e.g. 04:BACB/BAD1; windows are 3-4 cells wide), item/equip/status/battle/shop screens, ~34 RAM-script system messages stitched from fragments (docs: tools/sysmsg.py), party name table 1E:B3CA, menu cursors (0x12E/0x12F sites), `{name93}` rename (names are currently written as text by the build; a rename prompt exists at 0888FA), battle-message fragment spacing, graphics text survey beyond the intro, wrapper widow pages, 16 empty runs.
+- NOT done (needs savestates/saves from the user to reach the screens): field menu labels and all window layouts (labels are literal glyph arrays in bank 04, e.g. 04:BACB/BAD1; windows are 3-4 cells wide), item/equip/status/battle/shop screens, party name table 1E:B3CA, menu cursors (0x12E/0x12F sites), `{name93}` rename (names are currently written as text by the build; a rename prompt exists at 0888FA), battle-message fragment spacing, graphics text survey beyond the intro, wrapper widow pages, 16 empty runs.
 - Glyph table fixes found by translators: 0x17F=座, 0xE5=一, 0x155=対; runtime glyphs 0x227-0x231 inferred (tbl/jp.tbl). 0x229 guessed 尺.
 
 ## Status (2026-10-15, earlier)

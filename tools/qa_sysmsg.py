@@ -7,6 +7,7 @@ digit) like the callers' `STA $7F40xx`, run the copy with `LDA #$FFFF ; JSL $038
     python -X utf8 tools/qa_sysmsg.py            # -> work/qa/sysmsg/<site>.png + sheet.png
 """
 import json
+import os
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor
@@ -16,7 +17,8 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 import sysmsg  # noqa: E402
 
-SKILL = ROOT / ".claude" / "skills" / "translate-retro-game" / "scripts"
+SKILL = Path(os.environ.get("SKILL", "C:/Users/Nathan/.claude/plugins/cache/retro-translation/translate-retro-game/"
+                                     "29344d005fa4/skills/translate-retro-game")) / "scripts"  # as tools/qa_screens.sh
 OUT = ROOT / "work" / "qa" / "sysmsg"
 ROM = ROOT / "build" / "qa_sysmsg.sfc"
 BOOT = "1100 -;6 start;200 -;6 start;200 -;300 -"

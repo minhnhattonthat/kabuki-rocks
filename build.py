@@ -67,6 +67,54 @@ NAMES = {"name93": "Rock", "name94": "Makki"}  # glossary.md; widths in tools/wr
 NAME_INIT = 0x009FE8  # LDX #imm / STX $614D.. pairs up to 00:A011, then REP #$30 at 00:A012
 
 
+def patch_sysfrag(rom, space):
+    """Message fragments (script/sysfrag.json): the code writes a text op and a name, item or amount into 7F:4000,
+    then `LDY #frag ; JSL $0090C2|$0090C7` appends a fragment from its own bank. Each site gets its English
+    fragment (text + the original ops after the text) in the expansion area; its JSL goes to a helper that sets
+    DB to that bank around the copier. A {slot} is the word the code stores after the copy, end-relative."""
+    import sysmsg
+    helpers = {}
+    p = ROOT / "script" / "sysfrag.json"
+    for e in json.loads(p.read_text(encoding="utf-8")) if p.exists() else []:
+        if not e["en"]:
+            continue
+        site, y = int(e["site"], 16), int(e["y"], 16)
+        _, data = sysmsg.stream(rom, site >> 16, y)
+        i = 0
+        while i < len(data) and (data[i] < 0x80 or data[i] == 0x8F):  # glyph words and {n}
+            i += 1 if data[i] == 0x8F else 2
+        tail = data[i:-1]  # ops after the text, without the FF the copier adds
+        parts = e["en"].split("{slot}")
+        body = text.encode(parts[0], text.EN.enc)
+        if len(parts) == 2:
+            at = len(body)
+            body += b"\x02\xff" + text.encode(parts[1], text.EN.enc)
+        # the copier stops at the word FFFF and stores its first FF: after ops that is the end op, and a fragment
+        # that something else follows ends in a space (02 FF) whose FF the copier stores, like the Japanese
+        if tail:
+            body += tail + b"\xff\xff"
+        else:
+            assert e["en"].endswith(" "), e["site"]
+            body += b"\xff"
+        assert b"\xff\xff" not in body[:-2], e["site"]
+        dst = space.alloc(len(body))
+        rom[off(dst):off(dst) + len(body)] = body
+        if len(parts) == 2:  # STA $7F40xx-k,x with X just past the copied FF
+            so = off(int(e["slot"], 16))
+            assert rom[so] == 0x9F and rom[so + 3] == 0x7F, e["slot"]
+            rom[so + 1:so + 3] = (0x4000 + at - (len(body) - 1)).to_bytes(2, "little")
+        so = off(site)
+        assert rom[so] == 0x22 and rom[so + 2:so + 4] == b"\x90\x00" and rom[so + 1] in (0xC2, 0xC7), e["site"]
+        assert rom[so - 3] == 0xA0 and int.from_bytes(rom[so - 2:so], "little") == y, e["site"]
+        rom[so - 2:so] = (dst & 0xFFFF).to_bytes(2, "little")
+        key = (dst >> 16, rom[so + 1])
+        if key not in helpers:  # PHB ; PEA bank,bank ; PLB ; PLB ; JSL copier ; PLB ; RTL
+            code = bytes([0x8B, 0xF4, key[0], key[0], 0xAB, 0xAB, 0x22, key[1], 0x90, 0x00, 0xAB, 0x6B])
+            helpers[key] = space.alloc(len(code))
+            rom[off(helpers[key]):off(helpers[key]) + len(code)] = code
+        rom[so + 1:so + 4] = helpers[key].to_bytes(3, "little")
+
+
 def patch_sysmsg(rom, space):
     """System messages (script/sysmsg.json): script bytes copied by 00:90C7 into 7F:4000 and run there. Each
     template is rewritten in place as: text op, then per English segment `86 ptr` (text jump) to the segment in
@@ -435,6 +483,7 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             rom[off(a):off(a) + 4] = jump(dst)
         if not reloc_jp:
             patch_sysmsg(rom, space)  # before the font: kana it no longer uses join the tiny-text pool
+            patch_sysfrag(rom, space)
             patch_choice(rom)
             patch_placard(rom)
             patch_title(rom)
@@ -749,6 +798,8 @@ def patch_tiny(rom, dict_end=0):
             tbl[8 * i:8 * i + 7] = bytes(sum(p << (7 - x) for x, p in enumerate(r)) for r in g) + b"\x01"
     rom[off(TINY_FONT):off(TINY_FONT) + len(tbl)] = tbl
     t0, n = font.TINY_POOL
+    if n > 0xE40 // 16:  # the WRAM mirror (asm/tiny.asm !MIRROR) holds $E4 tiles; keep the pool's top end
+        t0, n = 0x100 - 0xE40 // 16, 0xE40 // 16
     defs = {"CODE": TINY_AT, "POOL_T0": t0, "POOL_N": n, "DICT_READ": DICT_READ, "TINY_FONT": TINY_FONT,
             "TINY_N": TINY_CODES}
     tmp = ROOT / "build" / "_tiny.sfc"
