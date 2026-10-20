@@ -50,7 +50,7 @@ Evidence: `work/playtest/battle/NNNN.png|.sheetK.png|.<state>`, presses in `log.
 - [ ] step 0009 - text - battle Item list - blank-name item (count 1, greyed) between Candy and Nigiri Sushi, garbage description - "        1"
 - [ ] step 0007 - text - battle Item list - weapon icon overlaps the count - "100-Kan Hammer"
 - [ ] step 0011 - text - battle Item list - long name runs into the count column - "Pickled Ginger Chips1"
-- [ ] step 0043 - blocker - after victory the screen stays black 900+ frames until the field menu is opened and closed (maybe debug state; confirm on a normal encounter) - (black screen)
+- [x] (not a bug: JP build identical; the debug script lacks a fade-in after the battle, see docs/re/debug.md) step 0043 - blocker - after victory the screen stays black 900+ frames until the field menu is opened and closed (maybe debug state; confirm on a normal encounter) - (black screen)
 - [ ] step 0039 - wording - Rock's Forte "Compose a song weapon": A does nothing, no message - "Compose a song weapon"
 - [ ] step 0028 - wording - failed escape says they fled, then contradicts (first-pass shot overwritten) - "Rock and pals fled" / "But they were cut off!"
 - [ ] step 0000, 0010 - wording - voice stat has three names: HUD "S", descriptions "Voice", field menu "VP" - "S", "Voice", "VP"
@@ -60,7 +60,7 @@ Evidence: `work/playtest/battle/NNNN.png|.sheetK.png|.<state>`, presses in `log.
 ## 2026-10-20 playtest - kabuki_en.sfc sha1 7f7b5251d5f0
 Evidence: `work/playtest/story/NNNN.png|.sheetK.png|.<state>`, presses in `log.tsv`.
 
-- [ ] step 0070-0071 - blocker? - Hana Town south gate - in the Soldier's Uniform the soldiers still block the gate with no hint where to go next (Ume: "give my regards", Makki: "come get me"); check the trigger and that the English points the player to it - "Soldier: Still a while before we head out."
+- [x] (not a bug: talking to Ume unlocks it, march starts by itself; English matches JP hint; work/play/gate 0006-0020) step 0070-0071 - blocker? - Hana Town south gate - in the Soldier's Uniform the soldiers still block the gate with no hint where to go next (Ume: "give my regards", Makki: "come get me"); check the trigger and that the English points the player to it - "Soldier: Still a while before we head out."
 - [ ] step 0065 - wording - Jingoro scene after the uniform change - one page fell between shots, unread; re-check - "Jingoro: Well, that suits..."
 - [ ] step 0021 - wording - Hana Town NPC - town named twice, clunky; "Hana Town" not in glossary - "Head north from this 'Hana Town' and there's a town called 'Nakidokoro Town'."
 - [ ] step 0062 - wording - Jingoro scene - "Hanakawado" (Sukenobu's family name) not in glossary - "your father is my friend, Hanakawado Sukenobu. A former actor."
@@ -68,3 +68,9 @@ Evidence: `work/playtest/story/NNNN.png|.sheetK.png|.<state>`, presses in `log.t
 - [ ] step 0039 - wording - Jizo Sushi woman - odd phrasing - "they say the shop won't start business for a while yet."
 - [ ] step 0013, 0046, 0062, 0064 - wording - more widow pages (known class) - "paper.", "Witless Woods!", "former actor.", "hear a word of it."
 - [ ] step 0062, 0064 - text - more line-3 runs into the page arrow (known class) - "I will set the world right!'", "just get out of this town!!"
+
+## 2026-10-20 playtest - kabuki_en.sfc sha1 7f7b5251d5f0
+Evidence: `work/playtest/gate/NNNN.png|.sheetK.png|.<state>`, presses in `log.tsv`.
+
+- [ ] step 0018 - text - outside the south gate, disguised Makki - opening quote never closed, no speaker name - "\"Oh, come on. Forgotten your childhood friend's face already?"
+- [ ] step 0007, 0008, 0011 - wording - Ume dialogue - more widow pages (known class) - "it yourself after all...", "on.", "path you believe in."

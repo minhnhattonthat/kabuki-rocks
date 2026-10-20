@@ -15,6 +15,6 @@ Useful ops (tools/script_ops.py):
 - `D2 lo hi PTR24` battle (seen ids 4000 497C 887B 937C 107D 507D ... ); PTR = where to continue (e.g. the FF after it).
 
 Recipes:
-- Battle: `A4 30 75 B5 1B B5 2B C8 00 0A 0A 0B BC 09 D2 40 00 14 80 3F FF` (battle starts ~f1920; mash A).
+- Battle: `A4 30 75 B5 1B B5 2B C8 00 0A 0A 0B BC 09 D2 40 00 14 80 3F BC 09 FF` (battle starts ~f1920; mash A). The `BC 09` after the battle fades the field back in; without it the screen stays black after the rewards until the field menu redraws it (same in JP).
 - Map tour: tools/lua/warpshot.lua + every warp from the scripts (work/maptour.hex) -> work/qa/maps3/w_<warp>.png. Warps `FF xx xx xx` are world maps (random battles); `xx xx 0C 05` are small rooms.
 - Field menu: any map + X.
