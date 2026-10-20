@@ -2,7 +2,7 @@
 
 Updated at the end of every session. Keep it to what the next session needs; history is in git.
 
-- **Phase:** 9 (release gate run 2026-10-20). Last local patch: release/KabukiRocks_EN_v0.4.zip (bps + README.txt, patched CRC32 021320eb, gate 75/75, smoke ok; not published).
+- **Phase:** 9, released. v1.0 published 2026-10-20: https://github.com/minhnhattonthat/kabuki-rocks/releases/tag/v1.0 (bps + zip, patched CRC32 021320eb, gate 75/75, smoke ok). Player reports: GitHub issues.
 - **Done:**
   - Dialogue: all 1194 non-empty event-script runs translated (`script/bank_XX.json`); credits/profile cards hand-laid (bank 2D). 16 runs are empty.
   - Dictionary: 1283/1331 words (`script/dict.json`, banks $30/$31).
@@ -21,4 +21,4 @@ Updated at the end of every session. Keep it to what the next session needs; his
   - Button Settings "Abutton" / "Bbutton": imm label 04AEE2 has 3 cells, no room for a space.
   - Song Weapon greyed songs with no hint; Forte "Compose a song weapon" does nothing (step 0039; battle savestate starts on Jiraiya's turn): both probably original behaviour, unchecked against JP.
   - Battle item list: weapon icon overlaps the count ("100-Kan Hammer").
-- **Waiting on the user:** romanization with macrons dropped (glossary, pending OK); readings of コウセン / セイガ (boss titles); whether to publish (see docs/decisions.md).
+- **Waiting on the user:** romanization with macrons dropped (glossary, pending OK); readings of コウセン / セイガ (boss titles).

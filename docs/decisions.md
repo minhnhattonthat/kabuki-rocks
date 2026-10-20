@@ -14,4 +14,5 @@ decision replaces one, mark the old one "replaced by D<n>" instead of deleting i
 | D6 | 2026-10-15 | Specs and plans | need approval, pre-approved | Pre-approved: work through the phases, report at the end. |
 | D7 | 2026-10-15 | Jokes and wordplay | literal, keep the punch | Keep the punch over literal meaning; no suffix glued onto a variable ("1th"), rephrase instead. |
 | D8 | 2026-10-20 | Open glossary terms from the playtest | user decides each, Claude recommends | User: "decide based on your recommendation". 十八番 -> Forte (fits 6 tiny letters, "Specialty" doesn't); 体力/声力 -> HP/VP; おひねり kept as ohineri (an NPC explains it); 装備 tab -> Gear; Kantaro, Satakeya!!, Planet Rendako, Hanakawado added. |
-| D9 | 2026-10-20 | Release | publish, local only | Local patches only (release/, gitignored) until the user says to publish. |
+| D9 | 2026-10-20 | Release | publish, local only | Local patches only (release/, gitignored) until the user says to publish. Replaced by D10. |
+| D10 | 2026-10-20 | Publish | stay local, publish | User: "publish to github minhnhattonthat". Public repo minhnhattonthat/kabuki-rocks, release v1.0 (bps + zip), like the sibling projects. |

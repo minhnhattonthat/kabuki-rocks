@@ -25,7 +25,7 @@ PLAYING
 KNOWN ISSUES
   - The money sign stays 両 (read "ryo").
   - Button Settings labels read "Abutton" / "Bbutton" (no room for a space).
-  - The ending, game over and save screens have not been checked in this version.
+  - In the battle item list, the weapon icon can overlap the item count.
   Report bugs (a savestate helps most): https://github.com/minhnhattonthat/kabuki-rocks/issues
 
 CREDITS
