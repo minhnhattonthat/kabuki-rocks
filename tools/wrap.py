@@ -3,8 +3,8 @@
 Translators write a run's English with its control tokens but without {n}. Only {clr} and {p9a} start a new
 page; {wait} {delay:XX} {ba} {b8:..} {choice:..} {jump:..} {name9x} are zero-width and stay where they fall, in the
 same line (the game does not break the line there). Text is broken into lines of <= WIDTH cells and pages of LINES
-lines; extra pages are joined with {wait}{clr}. The last line of a page and any line holding a {wait} keep one cell
-free for the blinking arrow. A {n} the translator did write forces a line break.
+lines; extra pages are joined with {wait}{clr}. The last line of a page and any line holding a {wait} keep ARROW cells
+free for the blinking arrow; a last page of one short line is rebalanced (layout). A {n} the translator did write forces a line break.
 
     python -X utf8 tools/wrap.py "Makki: Oh, but first we have to ask Granny Ume for permission!{wait}"
 """
@@ -16,6 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import text  # noqa: E402
 
 WIDTH, LINES = 28, 3
+ARROW = 2  # cells kept free on a line with the page arrow: it is drawn in cell 28, touching a 27-cell line
 NAME_LEN = {"name93": 4, "name94": 5}  # Rock, Makki (English names patched at 00:9FE8)
 PAGE = {"clr", "p9a"}
 
@@ -56,7 +57,24 @@ def split_words(toks):
 
 
 def layout(toks):
-    """Tokens of one page-less segment -> string with {n} line breaks and {wait}{clr} page breaks."""
+    """Tokens of one page-less segment -> string with {n} line breaks and {wait}{clr} page breaks. A last page
+    of one short line (a widow) pulls words from the line before it instead, when the page count stays the same."""
+    pages = pages_of(toks)
+    if len(pages) > 1 and len(pages[-1]) == 1 and plain_width(pages[-1][0]) < WIDTH // 2:
+        for shave in range(1, WIDTH // 2):
+            p = pages_of(toks, shave)
+            if len(p) == len(pages) and (len(p[-1]) > 1 or plain_width(p[-1][0]) >= WIDTH // 2):
+                pages = p
+                break
+    return "{wait}{clr}".join("{n}".join(lines) for lines in pages)
+
+
+def plain_width(line):
+    return sum(width(m.group(0)) for m in text.TOKEN.finditer(line))
+
+
+def pages_of(toks, shave=0):
+    """Pages (lists of line strings); the last line of a full page is `shave` cells shorter."""
     pages, lines, cur, w = [], [], [], 0
 
     def newline():
@@ -64,8 +82,13 @@ def layout(toks):
         lines.append("".join(cur))
         cur, w = [], 0
         if len(lines) == LINES:
-            pages.append("{n}".join(lines))
+            pages.append(lines[:])
             lines.clear()
+
+    def limit_for(arrow):
+        if len(lines) == LINES - 1:
+            return WIDTH - ARROW - shave
+        return WIDTH - ARROW if arrow else WIDTH
 
     for word in split_words(toks):
         if word == ["{n}"]:
@@ -73,18 +96,18 @@ def layout(toks):
             continue
         ww = sum(width(t) for t in word)
         arrow = any(tok_name(t) == "wait" for t in word)
-        limit = WIDTH - 1 if arrow or len(lines) == LINES - 1 else WIDTH
+        limit = limit_for(arrow)
         need = ww + (1 if cur and ww else 0)
         if cur and w + need > limit and ww:
             newline()
-            limit = WIDTH - 1 if arrow or len(lines) == LINES - 1 else WIDTH
+            limit = limit_for(arrow)
             need = ww
         cur += ([" "] if cur and ww else []) + word
         w += need
     if cur or lines or not pages:
         lines.append("".join(cur))
-        pages.append("{n}".join(lines))
-    return "{wait}{clr}".join(pages)
+        pages.append(lines[:])
+    return pages
 
 
 def wrap(en):

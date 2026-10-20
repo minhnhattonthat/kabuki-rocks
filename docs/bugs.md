@@ -7,14 +7,14 @@ Evidence: `work/playtest/2026-10-19/NNNN.png|.sheetK.png|.<state>`, presses in `
 
 - [ ] step 0000-0001 - text - boot screen before title - untranslated Japanese, about half the glyphs missing (blank cells); only the title is Latin - "本日は 来…いただ… て / とにあ…どう い 。/ な たい た いた た。/ 『KABUKI ROCKS』を…演いた 。/ い ( っ と に い。"
 - [ ] step 0002-0003 - text - attract intro narration over the planet map and castle - untranslated Japanese with garbled or missing glyphs - "は はるかかなた …… / …は … を ていた。/ …地『OEDO』は… / 邪7なかい"
-- [ ] step 0014, 0015, 0017, 0040, 0043 - text - dialogue box, line 3 - a line filling all 28 cells runs into the page-advance arrow; last character touched or hidden - "Do you not think they‡", "Shogun or no shogun,‡", "nothing but awful‡", "house is west‡", "What's he doing in‡"
+- [x] (fixed 2026-10-20: tools/wrap.py keeps 2 cells for the arrow) step 0014, 0015, 0017, 0040, 0043 - text - dialogue box, line 3 - a line filling all 28 cells runs into the page-advance arrow; last character touched or hidden - "Do you not think they‡", "Shogun or no shogun,‡", "nothing but awful‡", "house is west‡", "What's he doing in‡"
 - [ ] step 0009-0010 - text - chapter title card - graphic still Japanese (graphics survey, likely known) - "一番 旅立ち"
 - [ ] step 0031-0035 - text - town shop banners - graphic kanji (known: graphics survey) - "武", "防", "宿"
 - [ ] step 0021 - text - field menu (known) - "Song Weapon" crushed into two tiny lines behind the cursor icon; money and rank still show the Japanese glyph - "Song / Weapon", "0両", "Next rank in 30円"
 - [ ] step 0023 - text - field menu (known) - cursor sprite overlaps the selected label - "Item"
 - [ ] step 0024 - text - Item screen (known) - "Battle" tab jammed against the frame and the tab arrow - "Battle◀ Remedy Other"
 - [ ] step 0048 - wording - town NPC - "ohineri" not in the glossary and never explained; money shows as "ryo" (step 0041 "Rock got 300 ryo!"), reads like two currencies - "earn ohineri, and buy strong weapons, ya hear."
-- [ ] step 0008-0009, 0014, 0017, 0019, 0040, 0041 - wording - dialogue (known: wrapper widow pages) - one or two words alone on a new page - "awake?!", "ought to suffer more?", "things.", "of the playhouse.", "thing."
+- [x] (fixed 2026-10-20: tools/wrap.py rebalances a one-short-line last page; 180 -> 6 widows) step 0008-0009, 0014, 0017, 0019, 0040, 0041 - wording - dialogue (known: wrapper widow pages) - one or two words alone on a new page - "awake?!", "ought to suffer more?", "things.", "of the playhouse.", "thing."
 - [ ] step 0013 - wording - play cutscene - capital mid-sentence across a page break reads like a typo (royal "Ourselves"?) - "We shall allow no one but / Ourselves to enjoy anything!!"
 - [ ] step 0015, 0043 - wording - names missing from the glossary (confirm) - "Kantaro", "Satakeya!!", "Planet Rendako"
 
@@ -66,11 +66,11 @@ Evidence: `work/playtest/story/NNNN.png|.sheetK.png|.<state>`, presses in `log.t
 - [ ] step 0062 - wording - Jingoro scene - "Hanakawado" (Sukenobu's family name) not in glossary - "your father is my friend, Hanakawado Sukenobu. A former actor."
 - [ ] step 0064 - wording - Jingoro scene - "get out of this town" twice - "Wear this and you can get out of this town. For now, just get out of this town!!"
 - [ ] step 0039 - wording - Jizo Sushi woman - odd phrasing - "they say the shop won't start business for a while yet."
-- [ ] step 0013, 0046, 0062, 0064 - wording - more widow pages (known class) - "paper.", "Witless Woods!", "former actor.", "hear a word of it."
-- [ ] step 0062, 0064 - text - more line-3 runs into the page arrow (known class) - "I will set the world right!'", "just get out of this town!!"
+- [x] (wrapper fix 2026-10-20) step 0013, 0046, 0062, 0064 - wording - more widow pages (known class) - "paper.", "Witless Woods!", "former actor.", "hear a word of it."
+- [x] (wrapper fix 2026-10-20) step 0062, 0064 - text - more line-3 runs into the page arrow (known class) - "I will set the world right!'", "just get out of this town!!"
 
 ## 2026-10-20 playtest - kabuki_en.sfc sha1 7f7b5251d5f0
 Evidence: `work/playtest/gate/NNNN.png|.sheetK.png|.<state>`, presses in `log.tsv`.
 
 - [ ] step 0018 - text - outside the south gate, disguised Makki - opening quote never closed, no speaker name - "\"Oh, come on. Forgotten your childhood friend's face already?"
-- [ ] step 0007, 0008, 0011 - wording - Ume dialogue - more widow pages (known class) - "it yourself after all...", "on.", "path you believe in."
+- [x] (wrapper fix 2026-10-20) step 0007, 0008, 0011 - wording - Ume dialogue - more widow pages (known class) - "it yourself after all...", "on.", "path you believe in."
