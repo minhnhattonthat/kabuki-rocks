@@ -13,10 +13,10 @@ Evidence: `work/playtest/2026-10-19/NNNN.png|.sheetK.png|.<state>`, presses in `
 - [ ] step 0021 - text - field menu (known) - "Song Weapon" crushed into two tiny lines behind the cursor icon; money and rank still show the Japanese glyph - "Song / Weapon", "0両", "Next rank in 30円"
 - [ ] step 0023 - text - field menu (known) - cursor sprite overlaps the selected label - "Item"
 - [ ] step 0024 - text - Item screen (known) - "Battle" tab jammed against the frame and the tab arrow - "Battle◀ Remedy Other"
-- [ ] step 0048 - wording - town NPC - "ohineri" not in the glossary and never explained; money shows as "ryo" (step 0041 "Rock got 300 ryo!"), reads like two currencies - "earn ohineri, and buy strong weapons, ya hear."
+- [x] (glossary 2026-10-20: kept; explained by the bank_08 NPC, amounts in ryo) step 0048 - wording - town NPC - "ohineri" not in the glossary and never explained; money shows as "ryo" (step 0041 "Rock got 300 ryo!"), reads like two currencies - "earn ohineri, and buy strong weapons, ya hear."
 - [x] (fixed 2026-10-20: tools/wrap.py rebalances a one-short-line last page; 180 -> 6 widows) step 0008-0009, 0014, 0017, 0019, 0040, 0041 - wording - dialogue (known: wrapper widow pages) - one or two words alone on a new page - "awake?!", "ought to suffer more?", "things.", "of the playhouse.", "thing."
 - [x] (fixed 2026-10-20: "ourselves") step 0013 - wording - play cutscene - capital mid-sentence across a page break reads like a typo (royal "Ourselves"?) - "We shall allow no one but / Ourselves to enjoy anything!!"
-- [ ] step 0015, 0043 - wording - names missing from the glossary (confirm) - "Kantaro", "Satakeya!!", "Planet Rendako"
+- [x] (glossary 2026-10-20) step 0015, 0043 - wording - names missing from the glossary (confirm) - "Kantaro", "Satakeya!!", "Planet Rendako"
 
 ## 2026-10-20 playtest - kabuki_en.sfc sha1 7f7b5251d5f0
 Evidence: `work/playtest/menu/NNNN.png|.sheetK.png|.<state>`, presses in `log.tsv`.
@@ -27,12 +27,12 @@ Evidence: `work/playtest/menu/NNNN.png|.sheetK.png|.<state>`, presses in `log.ts
 - [x] (fixed 2026-10-20: stat names via labels.json tinyslots 04A250; arrow tiles remapped, build.py COMPARE_ARROW) step 0050 - text - Equip stat-compare box - Japanese left, garbled arrow - "攻撃力 16N 18"
 - [x] (fixed 2026-10-20: names via labels.json tinytable 049451, padded to 20 letters) step 0043-0045 - text - Forte name window - stale "g" from "Compose a song" stays at the right edge for other members - "Rouse          g", "Grand Brawl  g"
 - [x] (fixed 2026-10-20, as above) step 0042, 0046 - text - Forte name window - "Compose a song" runs into the right frame, "g" clipped - "Compose a song"
-- [ ] step 0009-0011, 0036-0040 - text - Sell and Item tab bars - "Equip-/ment" hyphen-split over two tiny lines; stray slash after Battle - "Equip- ment", "Battle/"
+- [x] ("Gear", one tiny line, 2026-10-20; the "/" is the original selected-tab edge, JP labels fill the same 3 cells) step 0009-0011, 0036-0040 - text - Sell and Item tab bars - "Equip-/ment" hyphen-split over two tiny lines; stray slash after Battle - "Equip- ment", "Battle/"
 - [ ] step 0002, 0003, 0024, 0048 - text - shop menu, buy list, equip sub-menu - cursor sprite covers the first letter of the selected label (field-menu bug on more screens) - "Help", "Bamboo-maru", "Sell", "Equip"
 - [x] (ruling 2026-10-20: Forte; glossary and 2 dialogue lines updated) step 0027 - wording - field/battle menu - 十八番 shown as "Forte", glossary says "Specialty" - "Forte"
 - [x] (fixed 2026-10-20: title now "Trade") step 0048, 0054 - wording - equip sub-menu "Trade" opens a screen titled "Exchange" - "Trade" / "Exchange"
 - [ ] step 0048 - text - equip sub-menu - options in different fonts (tiny "Equip", large "Trade")
-- [ ] step 0031 - wording - Song Weapon, Remedy tab - status-inflicting song under Remedy; check label/description - "Silent... How Sultry" / "Inflicts Polyp"
+- [x] (not a bug: same tab and description in JP, む言‥色っぽいね / ポリープにする) step 0031 - wording - Song Weapon, Remedy tab - status-inflicting song under Remedy; check label/description - "Silent... How Sultry" / "Inflicts Polyp"
 - [ ] ("Cancel / Commands" fixed 2026-10-20; "Abutton" open: imm label 04AEE2 has 3 cells = 6 tiny letters, no room for a space) step 0066 - wording - Button Settings - no space before "button"; "Cancel and Commands" unclear - "Abutton", "Bbutton", "Cancel and Commands"
 - [x] (fixed 2026-10-20: shared line now "That's the deal, then?") step 0023 - wording - Sell confirm reuses the buy line - "That's what ya want, huh?" / "Stop selling"
 - [ ] step 0072 - wording - Song Weapon - songs greyed, A does nothing, no hint (no song weapon equipped; likely original behaviour) - "Cheer Up"
@@ -54,7 +54,7 @@ Evidence: `work/playtest/battle/NNNN.png|.sheetK.png|.<state>`, presses in `log.
 - [ ] step 0039 - wording - Rock's Forte "Compose a song weapon": A does nothing, no message - "Compose a song weapon"
 - [x] (fixed 2026-10-20: "and pals tried to flee") step 0028 - wording - failed escape says they fled, then contradicts (first-pass shot overwritten) - "Rock and pals fled" / "But they were cut off!"
 - [x] (ruling 2026-10-20: VP in all text; HUD H/S letters are the original's, kept) step 0000, 0010 - wording - voice stat has three names: HUD "S", descriptions "Voice", field menu "VP" - "S", "Voice", "VP"
-- [ ] step 0007, 0011 - wording - odd status names in item descriptions; check intent - "Cures Polyp", "Cures Love Slave", "Cures Hunched Over"
+- [x] (not a bug: literal JP status names ポリープ / 愛のどれい / 前かがみ, the game's own jokes) step 0007, 0011 - wording - odd status names in item descriptions; check intent - "Cures Polyp", "Cures Love Slave", "Cures Hunched Over"
 - [ ] step 0028 - wording - song-cast message: "was sung!" crushed into the tiny font after the title - "♪Good Day to Blaze Off♪ was sung!"
 
 ## 2026-10-20 playtest - kabuki_en.sfc sha1 7f7b5251d5f0
@@ -63,7 +63,7 @@ Evidence: `work/playtest/story/NNNN.png|.sheetK.png|.<state>`, presses in `log.t
 - [x] (not a bug: talking to Ume unlocks it, march starts by itself; English matches JP hint; work/play/gate 0006-0020) step 0070-0071 - blocker? - Hana Town south gate - in the Soldier's Uniform the soldiers still block the gate with no hint where to go next (Ume: "give my regards", Makki: "come get me"); check the trigger and that the English points the player to it - "Soldier: Still a while before we head out."
 - [ ] step 0065 - wording - Jingoro scene after the uniform change - one page fell between shots, unread; re-check - "Jingoro: Well, that suits..."
 - [x] (reworded 2026-10-20; both names are in the JP line) step 0021 - wording - Hana Town NPC - town named twice, clunky; "Hana Town" not in glossary - "Head north from this 'Hana Town' and there's a town called 'Nakidokoro Town'."
-- [ ] step 0062 - wording - Jingoro scene - "Hanakawado" (Sukenobu's family name) not in glossary - "your father is my friend, Hanakawado Sukenobu. A former actor."
+- [x] (glossary 2026-10-20) step 0062 - wording - Jingoro scene - "Hanakawado" (Sukenobu's family name) not in glossary - "your father is my friend, Hanakawado Sukenobu. A former actor."
 - [x] (fixed 2026-10-20) step 0064 - wording - Jingoro scene - "get out of this town" twice - "Wear this and you can get out of this town. For now, just get out of this town!!"
 - [x] (fixed 2026-10-20) step 0039 - wording - Jizo Sushi woman - odd phrasing - "they say the shop won't start business for a while yet."
 - [x] (wrapper fix 2026-10-20) step 0013, 0046, 0062, 0064 - wording - more widow pages (known class) - "paper.", "Witless Woods!", "former actor.", "hear a word of it."

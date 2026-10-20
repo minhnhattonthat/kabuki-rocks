@@ -68,10 +68,19 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 | 両 | ryo | money |
 | 体力 / 声力 | HP / VP | stats, everywhere in text ("Restores 100 VP"); item names keep "Voice" (Voice Fan). The battle HUD's H/S sprite letters are the original's own, left as is (2026-10-20) |
 | 十八番 | Forte | menu/battle command (6 tiny letters max; "Specialty" doesn't fit) (2026-10-20) |
+| おひねり | ohineri | kept: a town NPC explains it (money twisted in paper, thrown at actors); amounts are in ryo (2026-10-20) |
+| さたけ屋！！ | Satakeya!! | audience shout of an actor's house name (kabuki 大向う), kept as is (2026-10-20) |
 
 ## Places
 | JP | EN | max | notes | Avoid |
 |---|---|---|---|---|
+| れんダコわく星 | Planet Rendako | | (2026-10-20) | |
+
+## People (minor)
+| JP | EN | notes |
+|---|---|---|
+| カンタロウ | Kantaro | stage villain in the opening play (2026-10-20) |
+| 花川戸 | Hanakawado | family name of Sukenobu / Sukeroku (credits card reads はなかわと; standard reading used) (2026-10-20) |
 
 ## Items / skills / terms
 | JP | EN | max | notes | Avoid |
