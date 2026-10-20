@@ -12,7 +12,7 @@ Evidence: `work/playtest/2026-10-19/NNNN.png|.sheetK.png|.<state>`, presses in `
 - [ ] step 0031-0035 - text - town shop banners - graphic kanji (known: graphics survey) - "武", "防", "宿"
 - [x] (as designed: 3-cell slot like JP 歌武器; 両 is the currency sign per the glossary ruling) step 0021 - text - field menu (known) - "Song Weapon" crushed into two tiny lines behind the cursor icon; money and rank still show the Japanese glyph - "Song / Weapon", "0両", "Next rank in 30円"
 - [x] (not a bug: same in JP, as below) step 0023 - text - field menu (known) - cursor sprite overlaps the selected label - "Item"
-- [ ] step 0024 - text - Item screen (known) - "Battle" tab jammed against the frame and the tab arrow - "Battle◀ Remedy Other"
+- [x] (not a bug: JP 戦闘用 fills the same 3 cells up to the selected-tab edge) step 0024 - text - Item screen (known) - "Battle" tab jammed against the frame and the tab arrow - "Battle◀ Remedy Other"
 - [x] (glossary 2026-10-20: kept; explained by the bank_08 NPC, amounts in ryo) step 0048 - wording - town NPC - "ohineri" not in the glossary and never explained; money shows as "ryo" (step 0041 "Rock got 300 ryo!"), reads like two currencies - "earn ohineri, and buy strong weapons, ya hear."
 - [x] (fixed 2026-10-20: tools/wrap.py rebalances a one-short-line last page; 180 -> 6 widows) step 0008-0009, 0014, 0017, 0019, 0040, 0041 - wording - dialogue (known: wrapper widow pages) - one or two words alone on a new page - "awake?!", "ought to suffer more?", "things.", "of the playhouse.", "thing."
 - [x] (fixed 2026-10-20: "ourselves") step 0013 - wording - play cutscene - capital mid-sentence across a page break reads like a typo (royal "Ourselves"?) - "We shall allow no one but / Ourselves to enjoy anything!!"
@@ -47,15 +47,15 @@ Evidence: `work/playtest/battle/NNNN.png|.sheetK.png|.<state>`, presses in `log.
 - [x] (fixed 2026-10-20: message line build.py patch_msgclear; song descriptions/rows via tiny text; recheck item descriptions) step 0024-0026, 0033 - text - battle descriptions/messages not cleared before a shorter string; tail of previous one remains (also song list rows: "Wave of Loverage", "Punch-kun's SongRun") - "Inflicts Poisonvel 6", "Deals holy damageve35", "Benkei took damageks!"
 - [x] (fixed 2026-10-20: no name is printed (JP starts with 「), 22 shouts now in quotes) step 0030, 0032, 0036 - text - Forte shout lines miss the speaker name before the colon - ": One more push!", ": Have at thee!", ": Whoa, careful!"
 - [x] (fixed 2026-10-20: ": A spirited blow!!") step 0041 - text - critical-hit message lacks punctuation after the name - "Rock A spirited blow!!"
-- [ ] step 0009 - text - battle Item list - blank-name item (count 1, greyed) between Candy and Nigiri Sushi, garbage description - "        1"
+- [x] (QA poke artefact: the JP build shows the same junk row from the same state, work/qa/b50jp) step 0009 - text - battle Item list - blank-name item (count 1, greyed) between Candy and Nigiri Sushi, garbage description - "        1"
 - [ ] step 0007 - text - battle Item list - weapon icon overlaps the count - "100-Kan Hammer"
-- [ ] step 0011 - text - battle Item list - long name runs into the count column - "Pickled Ginger Chips1"
+- [x] (within the 10-cell name limit; one blank cell before the count in the shot) step 0011 - text - battle Item list - long name runs into the count column - "Pickled Ginger Chips1"
 - [x] (not a bug: JP build identical; the debug script lacks a fade-in after the battle, see docs/re/debug.md) step 0043 - blocker - after victory the screen stays black 900+ frames until the field menu is opened and closed (maybe debug state; confirm on a normal encounter) - (black screen)
 - [ ] step 0039 - wording - Rock's Forte "Compose a song weapon": A does nothing, no message - "Compose a song weapon"
 - [x] (fixed 2026-10-20: "and pals tried to flee") step 0028 - wording - failed escape says they fled, then contradicts (first-pass shot overwritten) - "Rock and pals fled" / "But they were cut off!"
 - [x] (ruling 2026-10-20: VP in all text; HUD H/S letters are the original's, kept) step 0000, 0010 - wording - voice stat has three names: HUD "S", descriptions "Voice", field menu "VP" - "S", "Voice", "VP"
 - [x] (not a bug: literal JP status names ポリープ / 愛のどれい / 前かがみ, the game's own jokes) step 0007, 0011 - wording - odd status names in item descriptions; check intent - "Cures Polyp", "Cures Love Slave", "Cures Hunched Over"
-- [ ] step 0028 - wording - song-cast message: "was sung!" crushed into the tiny font after the title - "♪Good Day to Blaze Off♪ was sung!"
+- [x] (won't fix: を唱えた！ is 5 fixed LDA #code cells (labels.json imm); a 21-letter title + ♪♪ already fills the 28-cell line) step 0028 - wording - song-cast message: "was sung!" crushed into the tiny font after the title - "♪Good Day to Blaze Off♪ was sung!"
 
 ## 2026-10-20 playtest - kabuki_en.sfc sha1 7f7b5251d5f0
 Evidence: `work/playtest/story/NNNN.png|.sheetK.png|.<state>`, presses in `log.tsv`.
