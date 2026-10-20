@@ -4,7 +4,7 @@
 # ROM_ARGS go to build.py (default: the English build; pass --reloc-jp for the Japanese original).
 set -e
 cd "$(dirname "$0")/.."
-SKILL=.claude/skills/translate-retro-game/scripts
+SKILL=${SKILL:-C:/Users/Nathan/.claude/plugins/cache/retro-translation/translate-retro-game/29344d005fa4/skills/translate-retro-game}/scripts
 OUT=work/qa/screens
 BOOT="1100 -;6 start;200 -;6 start;200 -"
 # 80 42: event flag $42 enables the Song Weapon menu command (04:8104)
