@@ -59,7 +59,7 @@
   "id": "088331",
   "size": 82,
   "jp": "{役者A「#0919}{面白い#0A00}のか{‥‥ #0A2C}では {歌しばい#065A}は 禁止{じゃ！#0A58}{n}{    #035F}余の他の者が 楽しむ事など ゆるさん！！{wait}{clr}{役者B「#091A}ハッ！{wait}",
-  "en": "Actor A: Amusing, is it... Then song plays are banned! We shall allow no one but Ourselves to enjoy anything!!{wait}{clr}Actor B: Yes, my lord!{wait}",
+  "en": "Actor A: Amusing, is it... Then song plays are banned! We shall allow no one but ourselves to enjoy anything!!{wait}{clr}Actor B: Yes, my lord!{wait}",
   "notes": ""
  },
  {
@@ -248,7 +248,7 @@
   "id": "088F7E",
   "size": 789,
   "jp": "{name93}「エッ！？ どういう事だよ！？{wait}{ba}{p9a}{甚五郎#0922}「まあ きけ！{ お前#0A1B}の父は わしの友の{n}{    #035F}花川戸（はなかわど）{スケノブ#091D}。{n}{    #035F}元役者なの{じゃ。#0A31}{wait}{b8:000D}{clr}{name93}「{‥‥‥#065F}{wait}{ba}{p9a}{甚五郎#0922}「お前が生まれると すぐ {スケノブ#091D}は{n}{    #035F}『世をただす！』 と言って たびに出た‥‥{wait}{clr}{    #035F}役者とは 人々にユメをあたえる者。{n}{    #035F}1ヶ月前までの {天下太平#0A04}（てんかたいへい）の{n}{    #035F}日々は {スケノブ#091D}のおかげだ。{wait}{b8:000D}{clr}{name93}「オレの{父ちゃん#0A93}が{‥‥‥#065F}{wait}{ba}{p9a}{甚五郎#0922}「お前の父は りっぱな 役者{じゃ。#0A31}{wait}{b8:000D}{clr}{name93}「{父ちゃん#0A93}は りっぱなんかじゃねえ！{n}オレと {母ちゃん#0AA8}を すてたんだ！！{wait}{clr}そのせいで {母ちゃん#0AA8}は{‥‥‥#065F}{wait}{ba}{p9a}{甚五郎#0922}「‥‥おこっているのか？ ‥‥ムリもない。{n}{    #035F}{しかし #0A4E}{name93}よ 父をうらむでないぞ！{wait}{clr}{    #035F}{スケノブ#091D}について もう{少し#0A22}{n}{    #035F}話しておかねばならぬが 今のお前では{n}{    #035F}何を話しても きかぬじゃろう。{wait}{clr}{    #035F}これをお前に わたす。 兵士のふく{じゃ。#0A31}{n}{    #035F}役者の血をひくお前にも すぐに{n}{    #035F}{天資#0909}軍の手が のびるであろう。{wait}{clr}{    #035F}これを着れば {この町#0A71}を 出られる。{n}{    #035F}とりあえず {この町#0A71}から 出るの{じゃ！#0A58}！{wait}",
-  "en": "{name93}: Huh!? What's that supposed to mean!?{wait}{ba}{p9a}Jingoro: Just listen! Your father is my friend, Hanakawado Sukenobu. A former actor.{wait}{b8:000D}{clr}{name93}: ...{wait}{ba}{p9a}Jingoro: Right after you were born, Sukenobu said 'I will set the world right!' and set off on a journey...{wait}{clr}An actor is one who gives people dreams. The days of peace throughout the land, up until a month ago, were thanks to Sukenobu.{wait}{b8:000D}{clr}{name93}: My dad did that...{wait}{ba}{p9a}Jingoro: Your father is a fine actor.{wait}{b8:000D}{clr}{name93}: My dad's no fine anything! He walked out on me and Mom!!{wait}{clr}And because of that, Mom...{wait}{ba}{p9a}Jingoro: ...You're angry? ...Small wonder. But {name93}, do not hold a grudge against your father!{wait}{clr}There is more I must tell you about Sukenobu, but as you are now, you would not hear a word of it.{wait}{clr}I give you this. A soldier's uniform. You have an actor's blood, so Tensai's army will soon come for you too.{wait}{clr}Wear this and you can get out of this town. For now, just get out of this town!!{wait}",
+  "en": "{name93}: Huh!? What's that supposed to mean!?{wait}{ba}{p9a}Jingoro: Just listen! Your father is my friend, Hanakawado Sukenobu. A former actor.{wait}{b8:000D}{clr}{name93}: ...{wait}{ba}{p9a}Jingoro: Right after you were born, Sukenobu said 'I will set the world right!' and set off on a journey...{wait}{clr}An actor is one who gives people dreams. The days of peace throughout the land, up until a month ago, were thanks to Sukenobu.{wait}{b8:000D}{clr}{name93}: My dad did that...{wait}{ba}{p9a}Jingoro: Your father is a fine actor.{wait}{b8:000D}{clr}{name93}: My dad's no fine anything! He walked out on me and Mom!!{wait}{clr}And because of that, Mom...{wait}{ba}{p9a}Jingoro: ...You're angry? ...Small wonder. But {name93}, do not hold a grudge against your father!{wait}{clr}There is more I must tell you about Sukenobu, but as you are now, you would not hear a word of it.{wait}{clr}I give you this. A soldier's uniform. You have an actor's blood, so Tensai's army will soon come for you too.{wait}{clr}Wear this and you can slip out of town. For now, just get out of here!!{wait}",
   "notes": ""
  },
  {
@@ -297,7 +297,7 @@
   "id": "0894A6",
   "size": 62,
   "jp": "{   #052F}「やあねェ。 おさななじみのカオ{n}{    #035F}もう わすれちゃったの？{wait}",
-  "en": "\"Oh, come on. Forgotten your childhood friend's face already?{wait}",
+  "en": "Oh, come on. Forgotten your childhood friend's face already?{wait}",
   "notes": ""
  },
  {
@@ -1592,7 +1592,7 @@
   "id": "08EFA6",
   "size": 52,
   "jp": "「この{『花町』#0361}から 北へ行くと{n} {『泣き所町』#0363}っていう町が あるよ。{wait}",
-  "en": "Head north from this 'Hana Town' and there's a town called 'Nakidokoro Town'.{wait}",
+  "en": "Go north from here in 'Hana Town' and you'll reach a town called 'Nakidokoro Town'.{wait}",
   "notes": ""
  },
  {
@@ -1627,7 +1627,7 @@
   "id": "08F279",
   "size": 98,
   "jp": "「{この町#0A71}にも やっと {じぞう#0A0E}ずしチェーンが できたよ。{n} でも お店がはじまるのは まだ さきなんだって。{wait}",
-  "en": "A Jizo Sushi chain finally opened in this town too. But they say the shop won't start business for a while yet.{wait}",
+  "en": "A Jizo Sushi chain finally opened in this town too. But they say it won't open for business for a while yet.{wait}",
   "notes": ""
  },
  {
