@@ -60,6 +60,8 @@ CHOICE_CURSOR = 0x0393EF  # LDA #$012E in the text printer's yes/no handler
 # other `LDA #$012E` (▶) glyph sites: equip compare arrows (00:DF9E, JSL $04B764), cursors (00:E26E, 1E:CEB9).
 # Bank 05's #$012E/#$012F go into an object list (05:EFA1), not the font.
 ARROW_SITES = (0x00DF9E, 0x00E26E, 0x1ECEB9)
+# equip compare ▶ written as raw tilemap words (LDA #$1DEA / #$1DFA = attr $1C00 + glyph 0x12E's tiles $1EA/$1FA)
+COMPARE_ARROW = ((0x04A230, 0x1DEA), (0x04A236, 0x1DFA))
 # shortcut: other `LDA #$012E/$012F` cursor sites (menus, docs/re/font.md) still draw N/O; fix with the menus
 NAMES = {"name93": "Rock", "name94": "Makki"}  # glossary.md; widths in tools/wrap.py NAME_LEN
 NAME_INIT = 0x009FE8  # LDX #imm / STX $614D.. pairs up to 00:A011, then REP #$30 at 00:A012
@@ -457,6 +459,11 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
                 o = off(site)
                 assert rom[o:o + 3] == b"\xa9\x2e\x01", hex(site)
                 rom[o + 1:o + 3] = int.from_bytes(text.EN.enc["▶"], "big").to_bytes(2, "little")
+            arrow_tiles = font.glyph_tiles(rom, int.from_bytes(text.EN.enc["▶"], "big"))
+            for (site, word), tile in zip(COMPARE_ARROW, arrow_tiles):
+                o = off(site)
+                assert rom[o] == 0xA9 and int.from_bytes(rom[o + 1:o + 3], "little") == word, hex(site)
+                rom[o + 1:o + 3] = (word & 0xFC00 | tile).to_bytes(2, "little")
             dentries = json.loads((ROOT / "script" / "dict.json").read_text(encoding="utf-8"))
             dict_end = patch_dictionary(rom, dentries) if any(e["en"] for e in dentries) else 0
             cpath = ROOT / "script" / "code.json"
@@ -555,7 +562,7 @@ def label_plan():
     for e in json.loads(p.read_text(encoding="utf-8")) if p.exists() else []:
         if not e["en"]:
             continue
-        if e.get("kind") in ("tiny", "tinyrows", "tinytable"):  # build.py patch_tiny
+        if e.get("kind") in ("tiny", "tinyrows", "tinytable", "tinyslots"):  # build.py patch_tiny
             continue
         if e.get("kind") == "hook":
             for s in e["en"]:
@@ -770,6 +777,19 @@ def patch_tiny(rom, dict_end=0):
             call = bytes([0x22, rows_at & 0xFF, rows_at >> 8 & 0xFF, rows_at >> 16]) + (b"\x6b" if ret else b"")
             rom[so:so + len(old)] = call + b"\xea" * (len(old) - len(call))
             rows_at += len(code)
+        elif e.get("kind") == "tinyslots" and e["en"]:
+            # a routine `LDA long,x ; BMI ; JSR $B71D ; INX INX ; BRA ; AND #$7FFF ; JMP $B71D` over fixed-size
+            # string slots (X = slot * stride) becomes LDA.l table,x ; TAX ; JSL tiny71d ; RTS
+            so = off(int(e["id"], 16))
+            old_tail = bytes.fromhex("3007201db7e8e880f329ff7f4c1db7")
+            assert rom[so] == 0xBF and rom[so + 4:so + 4 + len(old_tail)] == old_tail, e["id"]
+            for i, s in enumerate(e["en"]):
+                t = off(table_at + i * e["stride"])
+                assert rom[t:t + 2] == b"\xff\xff", e["id"]
+                rom[t:t + 2] = put(s, e["cells"], e["id"]).to_bytes(2, "little")
+            new = b"\xbf" + table_at.to_bytes(3, "little") + b"\xaa" + jsl("tiny71d") + b"\x60"
+            rom[so:so + 4 + len(old_tail)] = new + b"\xea" * (4 + len(old_tail) - len(new))
+            table_at += len(e["en"]) * e["stride"]
         elif e.get("kind") == "tinytable" and e["en"]:
             loop, cont, entry = TINY_TABLES[e["id"]]
             so = off(int(e["id"], 16))

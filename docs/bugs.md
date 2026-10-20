@@ -24,7 +24,7 @@ Evidence: `work/playtest/menu/NNNN.png|.sheetK.png|.<state>`, presses in `log.ts
 - [x] (not a bug: the active tab is the one right of ◀; both screens list the same Remedy items. Weapons in it come from the QA inventory poke) step 0036-0040 - text - field Item vs shop Sell (QA state; re-check on a normal save) - field Item "Remedy" tab empty ("Free 24") while shop Sell "Remedy" lists 10 items incl. weapons (Kotetsu Blade, 100-Kan Hammer) - "Free 24"
 - [ ] (likely QA poke: descriptions come from per-category records (02:DF7D, $5E85 ids), the poke put one id list in every tab; re-check on a real save) step 0014, 0015 - text - shop Sell help line - garbage glyph rows instead of a description - Kotetsu Blade: two lines of junk glyphs; Candy: two junk glyphs
 - [ ] (likely QA poke, as above) step 0013, 0020, 0021 - text - shop Sell help line - wrong or missing description - Phoenix Feather shows "Hannya Ring"; 100-Kan Hammer shows "..."; Quick Cucumber Roll blank
-- [ ] step 0050 - text - Equip stat-compare box - Japanese left, garbled arrow - "攻撃力 16N 18"
+- [x] (fixed 2026-10-20: stat names via labels.json tinyslots 04A250; arrow tiles remapped, build.py COMPARE_ARROW) step 0050 - text - Equip stat-compare box - Japanese left, garbled arrow - "攻撃力 16N 18"
 - [ ] step 0043-0045 - text - Forte name window - stale "g" from "Compose a song" stays at the right edge for other members - "Rouse          g", "Grand Brawl  g"
 - [ ] step 0042, 0046 - text - Forte name window - "Compose a song" runs into the right frame, "g" clipped - "Compose a song"
 - [ ] step 0009-0011, 0036-0040 - text - Sell and Item tab bars - "Equip-/ment" hyphen-split over two tiny lines; stray slash after Battle - "Equip- ment", "Battle/"
