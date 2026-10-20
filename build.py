@@ -473,6 +473,7 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             patch_fixed(rom)
             patch_menutiles(rom)
             patch_cards(rom)
+            patch_signs(rom)
             patch_name_limits(rom)
             patch_tab_spacers(rom)
             patch_tiny(rom, dict_end)
@@ -1007,6 +1008,52 @@ CARD_FRAME = (0x1EE228, 12)  # top / middle / bottom rows of the card frame, 4 t
 CARD_INDEX = (15, 12, 14)  # font.render_card background / ink / shade -> palette index
 
 
+def encode4(rows):
+    """8 rows of 8 palette indices -> 32 bytes of SNES 4bpp."""
+    t = bytearray(32)
+    for y, row in enumerate(rows):
+        for x, v in enumerate(row):
+            for k in range(4):
+                t[(k >> 1) * 16 + 2 * y + (k & 1)] |= (v >> k & 1) << (7 - x)
+    return bytes(t)
+
+
+def decode4(t):
+    return [[sum((t[(k >> 1) * 16 + 2 * y + (k & 1)] >> (7 - x) & 1) << k for k in range(4)) for x in range(8)]
+            for y in range(8)]
+
+
+SIGN_TILES = (0x1BD99D, 0x400)  # town map tile block with the shop-sign kanji (map block 151, table 01:A0E2)
+SIGN_INDEX = {".": 3, "#": 15, "+": 5}
+
+
+def patch_signs(rom):
+    """Shop-sign kanji 武 防 道 宿 楽 靴 茶 -> icons / INN (assets/signs.txt); sign g is tiles 2g, 2g+1, 2g+16, 2g+17."""
+    import lz
+    arts = []
+    for line in (ROOT / "assets" / "signs.txt").read_text(encoding="utf-8").splitlines():
+        if line.startswith("== "):
+            arts.append([])
+        elif arts and line:
+            assert len(line) == 12, line
+            arts[-1].append([SIGN_INDEX[c] for c in line])
+    o = off(SIGN_TILES[0])
+    raw, used = lz.decompress(rom, o, SIGN_TILES[1])
+    raw = bytearray(raw)
+    for g, art in enumerate(arts):
+        assert len(art) == 11, g
+        tiles = (2 * g, 2 * g + 1, 2 * g + 16, 2 * g + 17)
+        px = [decode4(raw[t * 32:t * 32 + 32]) for t in tiles]
+        img = [px[0][y] + px[1][y] for y in range(8)] + [px[2][y] + px[3][y] for y in range(8)]
+        for y, row in enumerate(art):
+            img[5 + y][2:14] = row
+        for k, t in enumerate(tiles):
+            raw[t * 32:t * 32 + 32] = encode4([r[(k & 1) * 8:(k & 1) * 8 + 8] for r in img[(k >> 1) * 8:(k >> 1) * 8 + 8]])
+    new = lz.compress(bytes(raw))
+    assert len(new) <= used, f"sign tiles: {len(new):#x} > {used:#x}"
+    rom[o:o + len(new)] = new
+
+
 def patch_cards(rom):
     """Chapter cards (一番 旅立ち ...): every card column redrawn from script/cards.json, tiles shared."""
     import lz
@@ -1032,12 +1079,7 @@ def patch_cards(rom):
         px = font.render_card(e["id"], e["en"], rows * 8)
         for r in range(rows):
             for col in range(2):
-                t = bytearray(32)
-                for y in range(8):
-                    for x in range(8):
-                        v = CARD_INDEX[px[r * 8 + y][col * 8 + x]]
-                        for k in range(4):
-                            t[(k >> 1) * 16 + 2 * y + (k & 1)] |= (v >> k & 1) << (7 - x)
+                t = encode4([[CARD_INDEX[p] for p in row[col * 8:col * 8 + 8]] for row in px[r * 8:r * 8 + 8]])
                 if bytes(t) not in pool:
                     pool[bytes(t)] = next(free)  # StopIteration: more tiles than the Japanese titles used
                 idx = pool[bytes(t)]

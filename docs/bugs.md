@@ -9,7 +9,7 @@ Evidence: `work/playtest/2026-10-19/NNNN.png|.sheetK.png|.<state>`, presses in `
 - [x] (fixed in patch_prologue) step 0002-0003 - text - attract intro narration over the planet map and castle - untranslated Japanese with garbled or missing glyphs - "は はるかかなた …… / …は … を ていた。/ …地『OEDO』は… / 邪7なかい"
 - [x] (fixed 2026-10-20: tools/wrap.py keeps 2 cells for the arrow) step 0014, 0015, 0017, 0040, 0043 - text - dialogue box, line 3 - a line filling all 28 cells runs into the page-advance arrow; last character touched or hidden - "Do you not think they‡", "Shogun or no shogun,‡", "nothing but awful‡", "house is west‡", "What's he doing in‡"
 - [x] (patch_cards 2026-10-20: all 18 cards, card 1 checked in the emulator) step 0009-0010 - text - chapter title card - graphic still Japanese (graphics survey, likely known) - "一番 旅立ち"
-- [ ] step 0031-0035 - text - town shop banners - graphic kanji (known: graphics survey) - "武", "防", "宿"
+- [x] (patch_signs 2026-10-20: icons + INN; checked on the step-0031 town screen with the new tiles) step 0031-0035 - text - town shop banners - graphic kanji (known: graphics survey) - "武", "防", "宿"
 - [x] (as designed: 3-cell slot like JP 歌武器; 両 is the currency sign per the glossary ruling) step 0021 - text - field menu (known) - "Song Weapon" crushed into two tiny lines behind the cursor icon; money and rank still show the Japanese glyph - "Song / Weapon", "0両", "Next rank in 30円"
 - [x] (not a bug: same in JP, as below) step 0023 - text - field menu (known) - cursor sprite overlaps the selected label - "Item"
 - [x] (not a bug: JP 戦闘用 fills the same 3 cells up to the selected-tab edge) step 0024 - text - Item screen (known) - "Battle" tab jammed against the frame and the tab arrow - "Battle◀ Remedy Other"
