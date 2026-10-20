@@ -7,7 +7,7 @@
  {"site": "01980A", "y": "9875", "jp": "ほう よくこんな所まで きたのォ～。 もし ここから{n}そとへ出たいのならば 出してやろう。 そとへ出るか？{n}", "en": "Oh ho, you made it this far! Shall I send you outside?{n}", "notes": "a Yes/No choice follows (9D)"},
  {"site": "01981D", "y": "990B", "jp": "そうか。 まあ ムリにとは言わんが。{wait}", "en": "I see. Well, I won't force you.{wait}"},
  {"site": "01982E", "y": "98E4", "jp": "よ～し わかった。 まかせておけ。{wait}", "en": "All righty. Leave it to me.{wait}"},
- {"site": "01E411", "y": "E4FC", "jp": "[item]を 見つけた。{wait}", "en": "Found {slot}!{wait}", "slots": [[["01E429"], 21]]},
+ {"site": "01E411", "y": "E4FC", "jp": "[item]を 見つけた。{wait}", "en": "Found {slot}!{wait}", "slots": [[["01E429", "0095B0"], 21]], "notes": "also copied by 00:9595 (chest item), which stores the item at 0095B0"},
  {"site": "01E43D", "y": "E511", "jp": "[item]を 見つけた。{n}しかし、持ち物がいっぱいです。何かすてますか？{n}", "en": "Found {slot}! Inventory full. Discard one?{n}", "slots": [[["01E455"], 21]], "notes": "a choice follows (9D)"},
  {"site": "01E4A2", "y": "E556", "jp": "[item]を すてて、{n}[item]を 手に入れた。{wait}", "en": "Threw away {slot} and got {slot}!{wait}", "slots": [[["01E4BA"], 21], [["01E4D1"], 21]]},
  {"site": "039639", "y": "9685", "jp": "たましい「‥‥‥{wait}", "en": "Soul: ......{wait}"},
