@@ -10,8 +10,8 @@ Evidence: `work/playtest/2026-10-19/NNNN.png|.sheetK.png|.<state>`, presses in `
 - [x] (fixed 2026-10-20: tools/wrap.py keeps 2 cells for the arrow) step 0014, 0015, 0017, 0040, 0043 - text - dialogue box, line 3 - a line filling all 28 cells runs into the page-advance arrow; last character touched or hidden - "Do you not think they‡", "Shogun or no shogun,‡", "nothing but awful‡", "house is west‡", "What's he doing in‡"
 - [ ] step 0009-0010 - text - chapter title card - graphic still Japanese (graphics survey, likely known) - "一番 旅立ち"
 - [ ] step 0031-0035 - text - town shop banners - graphic kanji (known: graphics survey) - "武", "防", "宿"
-- [ ] step 0021 - text - field menu (known) - "Song Weapon" crushed into two tiny lines behind the cursor icon; money and rank still show the Japanese glyph - "Song / Weapon", "0両", "Next rank in 30円"
-- [ ] step 0023 - text - field menu (known) - cursor sprite overlaps the selected label - "Item"
+- [x] (as designed: 3-cell slot like JP 歌武器; 両 is the currency sign per the glossary ruling) step 0021 - text - field menu (known) - "Song Weapon" crushed into two tiny lines behind the cursor icon; money and rank still show the Japanese glyph - "Song / Weapon", "0両", "Next rank in 30円"
+- [x] (not a bug: same in JP, as below) step 0023 - text - field menu (known) - cursor sprite overlaps the selected label - "Item"
 - [ ] step 0024 - text - Item screen (known) - "Battle" tab jammed against the frame and the tab arrow - "Battle◀ Remedy Other"
 - [x] (glossary 2026-10-20: kept; explained by the bank_08 NPC, amounts in ryo) step 0048 - wording - town NPC - "ohineri" not in the glossary and never explained; money shows as "ryo" (step 0041 "Rock got 300 ryo!"), reads like two currencies - "earn ohineri, and buy strong weapons, ya hear."
 - [x] (fixed 2026-10-20: tools/wrap.py rebalances a one-short-line last page; 180 -> 6 widows) step 0008-0009, 0014, 0017, 0019, 0040, 0041 - wording - dialogue (known: wrapper widow pages) - one or two words alone on a new page - "awake?!", "ought to suffer more?", "things.", "of the playhouse.", "thing."
@@ -28,10 +28,10 @@ Evidence: `work/playtest/menu/NNNN.png|.sheetK.png|.<state>`, presses in `log.ts
 - [x] (fixed 2026-10-20: names via labels.json tinytable 049451, padded to 20 letters) step 0043-0045 - text - Forte name window - stale "g" from "Compose a song" stays at the right edge for other members - "Rouse          g", "Grand Brawl  g"
 - [x] (fixed 2026-10-20, as above) step 0042, 0046 - text - Forte name window - "Compose a song" runs into the right frame, "g" clipped - "Compose a song"
 - [x] ("Gear", one tiny line, 2026-10-20; the "/" is the original selected-tab edge, JP labels fill the same 3 cells) step 0009-0011, 0036-0040 - text - Sell and Item tab bars - "Equip-/ment" hyphen-split over two tiny lines; stray slash after Battle - "Equip- ment", "Battle/"
-- [ ] step 0002, 0003, 0024, 0048 - text - shop menu, buy list, equip sub-menu - cursor sprite covers the first letter of the selected label (field-menu bug on more screens) - "Help", "Bamboo-maru", "Sell", "Equip"
+- [x] (not a bug: the JP cursor sits against the first glyph the same way, work/qa/cursor_cmp.png) step 0002, 0003, 0024, 0048 - text - shop menu, buy list, equip sub-menu - cursor sprite covers the first letter of the selected label (field-menu bug on more screens) - "Help", "Bamboo-maru", "Sell", "Equip"
 - [x] (ruling 2026-10-20: Forte; glossary and 2 dialogue lines updated) step 0027 - wording - field/battle menu - 十八番 shown as "Forte", glossary says "Specialty" - "Forte"
 - [x] (fixed 2026-10-20: title now "Trade") step 0048, 0054 - wording - equip sub-menu "Trade" opens a screen titled "Exchange" - "Trade" / "Exchange"
-- [ ] step 0048 - text - equip sub-menu - options in different fonts (tiny "Equip", large "Trade")
+- [x] (labels.json "tiny": 4 on Trade, 2026-10-20) step 0048 - text - equip sub-menu - options in different fonts (tiny "Equip", large "Trade")
 - [x] (not a bug: same tab and description in JP, む言‥色っぽいね / ポリープにする) step 0031 - wording - Song Weapon, Remedy tab - status-inflicting song under Remedy; check label/description - "Silent... How Sultry" / "Inflicts Polyp"
 - [ ] ("Cancel / Commands" fixed 2026-10-20; "Abutton" open: imm label 04AEE2 has 3 cells = 6 tiny letters, no room for a space) step 0066 - wording - Button Settings - no space before "button"; "Cancel and Commands" unclear - "Abutton", "Bbutton", "Cancel and Commands"
 - [x] (fixed 2026-10-20: shared line now "That's the deal, then?") step 0023 - wording - Sell confirm reuses the buy line - "That's what ya want, huh?" / "Stop selling"

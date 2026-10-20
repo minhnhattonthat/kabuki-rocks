@@ -12,7 +12,7 @@
  {"id": "048811", "cells": 8, "count": 1, "en": ["Reorder"], "notes": "item menu (04:B6B6)"},
  {"id": "048823", "cells": 8, "count": 1, "en": ["Done"], "notes": "item menu"},
  {"id": "04A55D", "cells": 4, "count": 1, "en": ["Equip"], "notes": "equip submenu (04:968A)"},
- {"id": "04A565", "cells": 7, "count": 1, "en": ["Trade"], "notes": "equip submenu (04:96AF)"},
+ {"id": "04A565", "cells": 7, "tiny": 4, "count": 1, "en": ["Trade"], "notes": "equip submenu (04:96AF); tiny like Equip above it"},
  {"id": "04A578", "cells": 6, "count": 1, "en": ["Remove"], "notes": "04:9F8D"},
  {"id": "04B491", "cells": 2, "count": 4, "en": ["[01F0][02FF]", "[01F4][02FF]", "[01F5][02FF]", "[01F6][02FF]"], "notes": "equip candidate header 武 器 / 防 具 / 履 物 / 楽 器 (04:B481, drawn with a gap cell): category icons, as in the equip slots"},
  {"id": "04B4C3", "cells": 8, "count": 1, "en": ["Trade"], "notes": "04:B4B4 (title of the screen the equip submenu's Trade opens)"},

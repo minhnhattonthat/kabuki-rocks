@@ -629,7 +629,9 @@ def label_plan():
         for i, s in enumerate(e["en"]):
             n = e["cells"]
             addr = int(e["id"], 16) + 2 * n * i
-            plan.append(((addr, e.get("term", False)), label_cells(s, n)))
+            t = e.get("tiny", n)  # "tiny": k = tiny font in the first k cells (matches a tiny neighbour), blanks after
+            cells = label_cells(s, t) + [int.from_bytes(text.EN.enc[" "], "big")] * (n - t)
+            plan.append(((addr, e.get("term", False)), cells))
     return plan
 
 
