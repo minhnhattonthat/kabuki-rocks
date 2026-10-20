@@ -1438,7 +1438,7 @@
   "id": "05FB95",
   "len": 14,
   "jp": "本日はご来場いただきまして、",
-  "en": "Thank you for joining us today,",
+  "en": "Thank you all very much",
   "refs": [
    [
     "05ED7A",
@@ -1451,7 +1451,7 @@
   "id": "05FBB1",
   "len": 15,
   "jp": "まことにありがとうございます。",
-  "en": "we are most grateful.",
+  "en": "for coming today.",
   "refs": [
    [
     "05EDDE",
@@ -1464,10 +1464,36 @@
   "id": "05FBCF",
   "len": 20,
   "jp": "みなさま、たいへんおまたせいたしました。",
-  "en": "Ladies and gentlemen, thank you for waiting.",
+  "en": "Sorry to keep you waiting!",
   "refs": [
    [
     "05EDF7",
+    "ldy"
+   ]
+  ],
+  "notes": "boot curtain: each line <= 30 cells, centred by build.py patch_prologue"
+ },
+ {
+  "id": "05FBF7",
+  "len": 11,
+  "jp": "ただ今より、本日の演目",
+  "en": "We now present today's play,",
+  "refs": [
+   [
+    "05EE10",
+    "ldy"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FC0D",
+  "len": 23,
+  "jp": "『KABUKI ROCKS』を上演いたします。",
+  "en": "'KABUKI ROCKS'!",
+  "refs": [
+   [
+    "05EE29",
     "ldy"
    ]
   ],
@@ -1477,7 +1503,7 @@
   "id": "05FC3B",
   "len": 20,
   "jp": "さいごまで、ごゆっくりとごらんください。",
-  "en": "Please enjoy the show to the very end.",
+  "en": "Please enjoy it to the end.",
   "refs": [
    [
     "05EE42",
@@ -1490,10 +1516,36 @@
   "id": "05FC63",
   "len": 21,
   "jp": "ここは、はるかかなた、れんダコわく星・・・",
-  "en": "Far, far away lies Planet Rendako...",
+  "en": "Far off lies Planet Rendako...",
   "refs": [
    [
     "05E36F",
+    "ldy"
+   ]
+  ],
+  "notes": "attract intro"
+ },
+ {
+  "id": "05FC8D",
+  "len": 23,
+  "jp": "人々は、将軍の下、天下太平の世をすごしていた。",
+  "en": "The shogun's land knew peace.",
+  "refs": [
+   [
+    "05E2F5",
+    "ldy"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FCBB",
+  "len": 22,
+  "jp": "が、しかし今その中心地『OEDO』では・・・",
+  "en": "But in its capital, OEDO...",
+  "refs": [
+   [
+    "05E311",
     "ldy"
    ]
   ],
@@ -1503,10 +1555,23 @@
   "id": "05FCE7",
   "len": 19,
   "jp": "邪悪なかげが、しのびよろうとしていた。",
-  "en": "where an evil shadow was creeping in.",
+  "en": "an evil shadow crept closer.",
   "refs": [
    [
     "05EBEB",
+    "ldy"
+   ]
+  ],
+  "notes": ""
+ },
+ {
+  "id": "05FD0D",
+  "len": 17,
+  "jp": "ATLUS PRESENTS・・・",
+  "en": "ATLUS PRESENTS...",
+  "refs": [
+   [
+    "05ECB9",
     "ldy"
    ]
   ],

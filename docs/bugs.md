@@ -5,8 +5,8 @@ Tick `- [x] (fixed in <build>)` once re-checked from the cited state.
 ## 2026-10-19 playtest - kabuki_en.sfc sha1 7f7b5251d5f0
 Evidence: `work/playtest/2026-10-19/NNNN.png|.sheetK.png|.<state>`, presses in `log.tsv`.
 
-- [ ] step 0000-0001 - text - boot screen before title - untranslated Japanese, about half the glyphs missing (blank cells); only the title is Latin - "本日は 来…いただ… て / とにあ…どう い 。/ な たい た いた た。/ 『KABUKI ROCKS』を…演いた 。/ い ( っ と に い。"
-- [ ] step 0002-0003 - text - attract intro narration over the planet map and castle - untranslated Japanese with garbled or missing glyphs - "は はるかかなた …… / …は … を ていた。/ …地『OEDO』は… / 邪7なかい"
+- [x] (fixed in patch_prologue: bank $05 strings read from $3B, lines re-centred) step 0000-0001 - text - boot screen before title - untranslated Japanese, about half the glyphs missing (blank cells); only the title is Latin - "本日は 来…いただ… て / とにあ…どう い 。/ な たい た いた た。/ 『KABUKI ROCKS』を…演いた 。/ い ( っ と に い。"
+- [x] (fixed in patch_prologue) step 0002-0003 - text - attract intro narration over the planet map and castle - untranslated Japanese with garbled or missing glyphs - "は はるかかなた …… / …は … を ていた。/ …地『OEDO』は… / 邪7なかい"
 - [x] (fixed 2026-10-20: tools/wrap.py keeps 2 cells for the arrow) step 0014, 0015, 0017, 0040, 0043 - text - dialogue box, line 3 - a line filling all 28 cells runs into the page-advance arrow; last character touched or hidden - "Do you not think they‡", "Shogun or no shogun,‡", "nothing but awful‡", "house is west‡", "What's he doing in‡"
 - [ ] step 0009-0010 - text - chapter title card - graphic still Japanese (graphics survey, likely known) - "一番 旅立ち"
 - [ ] step 0031-0035 - text - town shop banners - graphic kanji (known: graphics survey) - "武", "防", "宿"

@@ -468,7 +468,8 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             dict_end = patch_dictionary(rom, dentries) if any(e["en"] for e in dentries) else 0
             cpath = ROOT / "script" / "code.json"
             if cpath.exists():
-                patch_codestr(rom, json.loads(cpath.read_text(encoding="utf-8")))
+                centries = json.loads(cpath.read_text(encoding="utf-8"))
+                patch_prologue(rom, centries, patch_codestr(rom, centries))
             patch_fixed(rom)
             patch_menutiles(rom)
             patch_name_limits(rom)
@@ -483,11 +484,49 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
 
 CODESTR_BANK = 0x3B  # English for strings that live in code banks (script/code.json)
 # not relocatable this way: 078D81 is a false hit (07:81A4 is LDA #$81 / STA $4200); 02F078/02F07E are read as
-# $F078 + offset (fixed 6-byte slots; labels); banks $05/$0F use other readers (prologue, composer) - TODO
+# $F078 + offset (fixed 6-byte slots; labels); banks $05/$0F use other readers: the bank $05 prologue
+# is patch_prologue; the rest of $05 (map place names) and $0F (composer) - TODO
 # 04AD5F/0FCA01: their only "reference" is an 8-bit LDX/LDY #imm misread as 16-bit (04:EEBE is LDX #$5F)
 CODESTR_SKIP_IDS = {"078D81", "02F078", "02F07E", "0FCA01"}
 CODESTR_SKIP_BANKS = {0x05, 0x0F}
 CODESTR_HELPERS = 0x3C8000  # one reader helper per source bank
+# boot curtain and attract intro (bank $05): typed one glyph per frame-step by 05:EF13 `LDA ($65),y` (DB = $05);
+# each call site is LDA #pos ; LDX #speed ; LDY #string ; JSR $EF64 (pos = $3800 + row*$20 + column)
+PROLOGUE_IDS = {"05FB95", "05FBB1", "05FBCF", "05FBF7", "05FC0D", "05FC3B",
+                "05FC63", "05FC8D", "05FCBB", "05FCE7", "05FD0D"}
+PROLOGUE_READ = 0x05EF13  # LDA ($65),y ; PHP ; AND #$7FFF ; JSL $00BA9D
+PROLOGUE_COLS = 32
+
+
+def patch_prologue(rom, entries, windows):
+    """Bank $05 prologue strings: the reader takes bank CODESTR_BANK inside patch_codestr's window for bank $05,
+    and each line is centred (its column in the LDA #pos before the LDY #string)."""
+    if 0x05 not in windows:
+        return
+    start, end = windows[0x05]
+    o = off(PROLOGUE_READ)
+    assert rom[o:o + 10] == bytes.fromhex("b16508 29ff7f 229dba00".replace(" ", ""))
+    lda_or = b"\xb1\x65\x09\x00\x00\x6b"  # LDA ($65),y ; ORA #0 (N from bit 15 again) ; RTL
+    swap = b"\x8b\xf4" + bytes([CODESTR_BANK] * 2) + b"\xab\xab\xb1\x65\xab\x09\x00\x00\x6b"  # PHB ; DB = new ; LDA ; PLB
+    read = (b"\xa5\x65\xc9" + start.to_bytes(2, "little") + b"\x90" + bytes([5 + len(swap)])  # LDA $65 ; CMP #S ; BCC
+            + b"\xc9" + end.to_bytes(2, "little") + b"\xb0" + bytes([len(swap)]) + swap + lda_or)  # CMP #E ; BCS
+    mask = b"\x29\xff\x7f\x5c\x9d\xba\x00"  # AND #$7FFF ; JML $00BA9D (its RTL returns to 05:EF1D)
+    at = CODESTR_HELPERS + 0x400  # after the per-bank helpers
+    assert rom[off(at):off(at) + len(read) + len(mask)] == b"\xff" * (len(read) + len(mask))
+    rom[off(at):off(at) + len(read) + len(mask)] = read + mask
+    m = at + len(read)
+    rom[o:o + 10] = (b"\x22" + at.to_bytes(3, "little") + b"\x08"  # JSL read ; PHP
+                     + b"\x22" + m.to_bytes(3, "little") + b"\xea")  # JSL mask ; NOP
+    for e in entries:
+        if e["id"] in PROLOGUE_IDS and e["en"]:
+            n = len(e["en"])
+            assert n <= PROLOGUE_COLS - 2, (e["id"], e["en"])
+            for site, kind in e["refs"]:
+                s = off(int(site, 16)) - 6  # LDA #pos ; LDX #speed ; LDY (site = the LDY)
+                assert rom[s] == 0xA9 and rom[s + 3] == 0xA2, site
+                pos = int.from_bytes(rom[s + 1:s + 3], "little")
+                pos = pos & ~0x1F | (PROLOGUE_COLS - n) // 2
+                rom[s + 1:s + 3] = pos.to_bytes(2, "little")
 
 
 def patch_codestr(rom, entries):
@@ -501,10 +540,11 @@ def patch_codestr(rom, entries):
     by_bank = {}
     for e in entries:
         bank = int(e["id"][:2], 16)
-        if e["en"] and e["id"] not in CODESTR_SKIP_IDS and bank not in CODESTR_SKIP_BANKS:
+        if e["en"] and e["id"] not in CODESTR_SKIP_IDS and (bank not in CODESTR_SKIP_BANKS or e["id"] in PROLOGUE_IDS):
             by_bank.setdefault(bank, []).append(e)
+    windows = {}  # source bank -> its [S, E) in CODESTR_BANK
     if not by_bank:
-        return 0
+        return windows
     taken = set()  # string-ish starts per bank, from the blind scan and the catalog
     for o, n, term, s in codestr.scan(bytes(rom[:0x180000]), 1):
         taken.add((o // 0x8000, codestr.cpu(o) & 0xFFFF))
@@ -525,6 +565,7 @@ def patch_codestr(rom, entries):
         if pos + size > 0x10000:
             raise ValueError(f"code strings do not fit bank ${CODESTR_BANK:02X}")
         start, end = pos, pos + size
+        windows[bank] = (start, end)
         for e, blob in zip(es, blobs):
             old, new = int(e["id"][2:], 16), pos
             rom[off(CODESTR_BANK << 16 | pos):off(CODESTR_BANK << 16 | pos) + len(blob)] = blob
@@ -550,7 +591,7 @@ def patch_codestr(rom, entries):
                 rom[m.start():m.start() + 4] = bytes([0x22, h & 0xFF, h >> 8 & 0xFF, h >> 16])
     o = off(CODESTR_HELPERS)
     rom[o:o + len(helpers)] = helpers
-    return sum(len(v) for v in by_bank.values())
+    return windows
 
 
 def label_plan():
