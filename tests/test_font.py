@@ -10,6 +10,15 @@ import font  # noqa: E402
 pytestmark = pytest.mark.skipif(not font.ROM.exists(), reason="no ROM")
 
 
+def test_render_card():
+    """Title turned clockwise under the number; a title longer than the card raises."""
+    px = font.render_card(1, "I", 40)
+    assert len(px) == 40 and all(len(r) == 16 for r in px)
+    assert any(px[y][x] for y in range(18, 40) for x in range(16))
+    with pytest.raises(ValueError):
+        font.render_card(1, "Departure Departure", 80)
+
+
 def render(rom, chr_, code):
     top, bottom = font.glyph_tiles(rom, code)
     return font.tile_pixels(chr_, top) + font.tile_pixels(chr_, bottom)

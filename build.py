@@ -472,6 +472,7 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
                 patch_prologue(rom, centries, patch_codestr(rom, centries))
             patch_fixed(rom)
             patch_menutiles(rom)
+            patch_cards(rom)
             patch_name_limits(rom)
             patch_tab_spacers(rom)
             patch_tiny(rom, dict_end)
@@ -997,6 +998,57 @@ def patch_menutiles(rom):
         new = lz.compress(bytes(raw))
         assert len(new) <= used, f"menu tiles at {src:06X}: {len(new):#x} > {used:#x}"
         rom[o:o + len(new)] = new
+
+
+CARD_TILES = (0x1D8000, 0x2C60)  # chapter card glyph tiles (4bpp, loaded by 1E:DF6C), compressed
+CARD_MAPS = 0x10C06A  # per chapter: word pointer (bank $10) to 2 tilemap words per row, 1E:E18D
+CARD_ROWS = 0x1EE1FE  # per chapter: h, the card has 2h+1 rows; the last row is the base (tile $161)
+CARD_FRAME = (0x1EE228, 12)  # top / middle / bottom rows of the card frame, 4 tilemap words each (1E:E0C1)
+CARD_INDEX = (15, 12, 14)  # font.render_card background / ink / shade -> palette index
+
+
+def patch_cards(rom):
+    """Chapter cards (一番 旅立ち ...): every card column redrawn from script/cards.json, tiles shared."""
+    import lz
+    o = off(CARD_TILES[0])
+    raw, used = lz.decompress(rom, o, CARD_TILES[1])
+    raw = bytearray(raw)
+    f = off(CARD_FRAME[0])
+    frame = {int.from_bytes(rom[f + 2 * k:f + 2 * k + 2], "little") & 0x3FF for k in range(CARD_FRAME[1])}
+    pool = {bytes(raw[t * 32:t * 32 + 32]): t for t in frame}  # frame tiles stay; the blank body tile is reused
+    entries = json.loads((ROOT / "script" / "cards.json").read_text(encoding="utf-8"))
+    maps = {}  # chapter -> ROM offset of its tilemap words
+    for e in entries:
+        c = e["id"] - 1
+        maps[c] = off(0x100000 | int.from_bytes(rom[off(CARD_MAPS) + 2 * c:off(CARD_MAPS) + 2 * c + 2], "little"))
+    # only tiles the original titles drew are reused (others in the block are the curtain backdrop)
+    old = {int.from_bytes(rom[m + 2 * k:m + 2 * k + 2], "little") & 0x3FF
+           for c, m in maps.items() for k in range(4 * rom[off(CARD_ROWS) + c])}
+    free = iter(sorted(old - frame))
+    for e in entries:
+        c = e["id"] - 1
+        rows = rom[off(CARD_ROWS) + c] * 2  # without the base row
+        m = maps[c]
+        px = font.render_card(e["id"], e["en"], rows * 8)
+        for r in range(rows):
+            for col in range(2):
+                t = bytearray(32)
+                for y in range(8):
+                    for x in range(8):
+                        v = CARD_INDEX[px[r * 8 + y][col * 8 + x]]
+                        for k in range(4):
+                            t[(k >> 1) * 16 + 2 * y + (k & 1)] |= (v >> k & 1) << (7 - x)
+                if bytes(t) not in pool:
+                    pool[bytes(t)] = next(free)  # StopIteration: more tiles than the Japanese titles used
+                idx = pool[bytes(t)]
+                w = m + 2 * (2 * r + col)
+                rom[w:w + 2] = (int.from_bytes(rom[w:w + 2], "little") & 0xFC00 | idx).to_bytes(2, "little")
+    for t, idx in pool.items():
+        raw[idx * 32:idx * 32 + 32] = t
+    new = lz.compress(bytes(raw))
+    assert len(new) <= used, f"chapter card tiles: {len(new):#x} > {used:#x}"
+    rom[o:o + len(new)] = new
+    return len(pool)
 
 
 NAME_MAX_SITES = (0x04BBDF, 0x04BC02)  # `LDA #$0006`: glyph limit when drawing a party name (04:BBC9)

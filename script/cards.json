@@ -1,0 +1,20 @@
+[
+ {"id": 1, "jp": "旅立ち", "en": "Departure"},
+ {"id": 2, "jp": "舟唄", "en": "Boat Song"},
+ {"id": 3, "jp": "酒よ", "en": "Oh, Sake"},
+ {"id": 4, "jp": "半分少女", "en": "Half a Girl"},
+ {"id": 5, "jp": "まつり", "en": "Festival"},
+ {"id": 6, "jp": "虹の都", "en": "Rainbows", "notes": "city of rainbows; 62 px"},
+ {"id": 7, "jp": "会いたい", "en": "Missing You"},
+ {"id": 8, "jp": "ふたり", "en": "Two of Us"},
+ {"id": 9, "jp": "フレンズ", "en": "Friends"},
+ {"id": 10, "jp": "別れ", "en": "Farewell"},
+ {"id": 11, "jp": "雪国", "en": "Snow Country"},
+ {"id": 12, "jp": "再会", "en": "Reunion"},
+ {"id": 13, "jp": "青い山脈", "en": "Blue Mountains"},
+ {"id": 14, "jp": "恨み節", "en": "Grudge Song"},
+ {"id": 15, "jp": "空よ", "en": "Oh, Sky"},
+ {"id": 16, "jp": "オエド", "en": "Oedo"},
+ {"id": 17, "jp": "ラスト・ソング", "en": "Last Song"},
+ {"id": 18, "jp": "メイン・テーマ", "en": "Main Theme"}
+]

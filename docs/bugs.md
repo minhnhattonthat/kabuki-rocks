@@ -8,7 +8,7 @@ Evidence: `work/playtest/2026-10-19/NNNN.png|.sheetK.png|.<state>`, presses in `
 - [x] (fixed in patch_prologue: bank $05 strings read from $3B, lines re-centred) step 0000-0001 - text - boot screen before title - untranslated Japanese, about half the glyphs missing (blank cells); only the title is Latin - "本日は 来…いただ… て / とにあ…どう い 。/ な たい た いた た。/ 『KABUKI ROCKS』を…演いた 。/ い ( っ と に い。"
 - [x] (fixed in patch_prologue) step 0002-0003 - text - attract intro narration over the planet map and castle - untranslated Japanese with garbled or missing glyphs - "は はるかかなた …… / …は … を ていた。/ …地『OEDO』は… / 邪7なかい"
 - [x] (fixed 2026-10-20: tools/wrap.py keeps 2 cells for the arrow) step 0014, 0015, 0017, 0040, 0043 - text - dialogue box, line 3 - a line filling all 28 cells runs into the page-advance arrow; last character touched or hidden - "Do you not think they‡", "Shogun or no shogun,‡", "nothing but awful‡", "house is west‡", "What's he doing in‡"
-- [ ] step 0009-0010 - text - chapter title card - graphic still Japanese (graphics survey, likely known) - "一番 旅立ち"
+- [x] (patch_cards 2026-10-20: all 18 cards, card 1 checked in the emulator) step 0009-0010 - text - chapter title card - graphic still Japanese (graphics survey, likely known) - "一番 旅立ち"
 - [ ] step 0031-0035 - text - town shop banners - graphic kanji (known: graphics survey) - "武", "防", "宿"
 - [x] (as designed: 3-cell slot like JP 歌武器; 両 is the currency sign per the glossary ruling) step 0021 - text - field menu (known) - "Song Weapon" crushed into two tiny lines behind the cursor icon; money and rank still show the Japanese glyph - "Song / Weapon", "0両", "Next rank in 30円"
 - [x] (not a bug: same in JP, as below) step 0023 - text - field menu (known) - cursor sprite overlaps the selected label - "Item"
@@ -61,7 +61,7 @@ Evidence: `work/playtest/battle/NNNN.png|.sheetK.png|.<state>`, presses in `log.
 Evidence: `work/playtest/story/NNNN.png|.sheetK.png|.<state>`, presses in `log.tsv`.
 
 - [x] (not a bug: talking to Ume unlocks it, march starts by itself; English matches JP hint; work/play/gate 0006-0020) step 0070-0071 - blocker? - Hana Town south gate - in the Soldier's Uniform the soldiers still block the gate with no hint where to go next (Ume: "give my regards", Makki: "come get me"); check the trigger and that the English points the player to it - "Soldier: Still a while before we head out."
-- [ ] step 0065 - wording - Jingoro scene after the uniform change - one page fell between shots, unread; re-check - "Jingoro: Well, that suits..."
+- [x] (checked in script: run 089321 is one page, "Well, that suits you quite nicely. Give my regards to Ume-san.") step 0065 - wording - Jingoro scene after the uniform change - one page fell between shots, unread; re-check - "Jingoro: Well, that suits..."
 - [x] (reworded 2026-10-20; both names are in the JP line) step 0021 - wording - Hana Town NPC - town named twice, clunky; "Hana Town" not in glossary - "Head north from this 'Hana Town' and there's a town called 'Nakidokoro Town'."
 - [x] (glossary 2026-10-20) step 0062 - wording - Jingoro scene - "Hanakawado" (Sukenobu's family name) not in glossary - "your father is my friend, Hanakawado Sukenobu. A former actor."
 - [x] (fixed 2026-10-20) step 0064 - wording - Jingoro scene - "get out of this town" twice - "Wear this and you can get out of this town. For now, just get out of this town!!"

@@ -390,6 +390,48 @@ def render_label(text: str, cells: int, lines: int = 1) -> list[list[list[int]]]
     return [[r[c * 8:c * 8 + 8] for r in px] for c in range(cells)]
 
 
+def render_card(number: int, title: str, height: int) -> list[list[int]]:
+    """Chapter card column (1E:E18D), 16 px wide and `height` px tall, pixels 0 = background, 1 = ink, 2 = shade:
+    tiny "ACT" over the number on top, then `title` in the dialogue font turned 90 degrees clockwise (reads top
+    to bottom), centred in the rest."""
+    tiny = load_tiny()
+    en = {ch: rows for ch, rows in load_en().values()}
+    px = [[0] * 16 for _ in range(height)]
+
+    def strip(s):  # horizontal 16-row strip of s, proportional: each glyph's ink columns plus a 1-px gap
+        cols = []
+        for ch in s:
+            if ch == " ":  # (no glyph: the game's space is code $2FF)
+                cols += [[3] * 16] * 2
+                continue
+            rows = en[ch]
+            ink = [x for x in range(8) if any(r[x] != 3 for r in rows)]
+            cols += [[rows[y][x] for y in range(16)] for x in range(ink[0], ink[-1] + 1)] + [[3] * 16]
+        return cols[:-1]
+
+    shade = {3: 0, 1: 1, 2: 2}
+    for i, ch in enumerate("ACT"):
+        for y, row in enumerate(tiny[ch]):
+            for x, p in enumerate(row):
+                if p:
+                    px[y][2 + 4 * i + x] = 1
+    num = strip(str(number))
+    x0 = (16 - len(num)) // 2
+    for x, col in enumerate(num):
+        for y in range(2, 12):  # digit rows (caps rows 2-11)
+            px[4 + y][x0 + x] = shade[col[y]]
+    top = 18  # number ends at row 15; 2 px gap
+    cols = strip(title)
+    if top + len(cols) > height:
+        raise ValueError(f"card {number} {title!r}: {len(cols)} px > {height - top}")
+    y0 = top + (height - top - len(cols)) // 2
+    for i, col in enumerate(cols):  # clockwise: glyph row r lands in column 15 - r
+        for r in range(16):
+            if col[r] != 3:
+                px[y0 + i][15 - r] = shade[col[r]]
+    return px
+
+
 TINY_SAMPLES = [("Song/Weapon", 3, 2), ("Item", 3, 1), ("Forte", 3, 1), ("Run", 3, 1), ("Attack", 3, 1),
                 ("Equip", 4, 1), ("Status", 4, 1), ("Config", 4, 1)] + \
     [(w, 4, 1) for w in ("HP", "Voice", "Attack", "Accuracy", "Defense", "Evasion", "Speed", "Singing", "Spirit")] + \
