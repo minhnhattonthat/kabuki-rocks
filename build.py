@@ -269,6 +269,30 @@ def patch_choice(rom):
         + b"\xea" * (len(CHOICE_ORIG) - 4)
 
 
+BATTLE_STORE = 0x02F08F  # battle glyph store: PHX PHY JSL $00BAEF PLY PLX, then $0800/$0802 -> $2780/$27C0,y
+MSG_LINE, MSG_CELLS = 0x1044, 28  # battle message line (02:E9A3 clears it with X=$1C before most messages)
+
+
+def patch_msgclear(rom, space):
+    """A glyph drawn at the start of the battle message line blanks the whole line first. Some messages
+    (" took damage") print without clearing; the JP texts were long enough to cover the previous one."""
+    o = off(BATTLE_STORE)
+    assert rom[o:o + 8] == bytes.fromhex("da5a22efba007afa")
+    plain = bytes.fromhex("da5a22efba007afa6b")                          # PHX PHY JSL $00BAEF PLY PLX RTL
+    def half(src, dst):  # LDA src ; AND #$E3FF ; ORA $000709 ; STA dst+line,x
+        return (b"\xad" + src.to_bytes(2, "little") + bytes.fromhex("29ffe30f090700") + b"\x9d"
+                + (dst + MSG_LINE).to_bytes(2, "little"))
+    loop = (half(0x0800, 0x2780) + half(0x0802, 0x27C0)
+            + b"\xe8\xe8\xe0" + (2 * MSG_CELLS).to_bytes(2, "little"))   # INX INX ; CPX #2*cells
+    loop += bytes([0x90, (-(len(loop) + 2)) & 0xFF])                     # BCC loop
+    clear = (bytes.fromhex("48da5a a9ff02 22efba00 7a a20000".replace(" ", ""))  # PHA PHX PHY ; blank tiles ; PLY
+             + loop + b"\xfa\x68")                                       # PLX PLA
+    code = b"\xc0" + MSG_LINE.to_bytes(2, "little") + bytes([0xD0, len(clear)]) + clear + plain  # CPY ; BNE plain
+    at = space.alloc(len(code))
+    rom[off(at):off(at) + len(code)] = code
+    rom[o:o + 8] = bytes([0x22, at & 0xFF, at >> 8 & 0xFF, at >> 16]) + b"\xea" * 4
+
+
 def patch_names(rom, space):
     """Replace the hard-coded JP name init with JSL to a loop copying both 6-word slots (7E:614D, 7E:6159)."""
     data = b""
@@ -408,6 +432,7 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             patch_placard(rom)
             patch_title(rom)
             patch_names(rom, space)
+            patch_msgclear(rom, space)
             plan = label_plan()
             uniq = {}  # identical baked cells share one glyph code
             for _, cells in plan:

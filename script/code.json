@@ -568,7 +568,7 @@
   "id": "028E5E",
   "len": 13,
   "jp": "両のおひねりがとんできた！",
-  "en": " ryo in ohineri came flying!",
+  "en": " ryo in ohineri flew in!",
   "refs": [
    [
     "028C6E",
@@ -576,6 +576,19 @@
    ]
   ],
   "notes": ""
+ },
+ {
+  "id": "028E78",
+  "len": 15,
+  "jp": "尺 えんぎのはばがひろがった！",
+  "en": " shaku more acting range!",
+  "refs": [
+   [
+    "028CFE",
+    "ldx"
+   ]
+  ],
+  "notes": "after the battle rewards, number printed first; 尺 (shaku) is the rank-point unit (glyph 0x229)"
  },
  {
   "id": "028E96",

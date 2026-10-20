@@ -6820,7 +6820,7 @@
   "ptr": "E0C5",
   "len": 9,
   "jp": " 気合いの一撃！！",
-  "en": " A spirited blow!!",
+  "en": ": A spirited blow!!",
   "notes": ""
  },
  {
@@ -7412,7 +7412,7 @@
   "ptr": "E753",
   "len": 14,
   "jp": "「つ・る・か・めっ・はぁー！",
-  "en": ": Tsuru-kame-HA!",
+  "en": "\"Tsuru-kame-HA!\"",
   "notes": ""
  },
  {
@@ -7428,7 +7428,7 @@
   "ptr": "E78B",
   "len": 6,
   "jp": "「んがんっん",
-  "en": ": Nngh-gulp!",
+  "en": "\"Nngh-gulp!\"",
   "notes": ""
  },
  {
@@ -7484,7 +7484,7 @@
   "ptr": "E831",
   "len": 16,
   "jp": "「くらえ！100両のバクダンやぁ",
-  "en": ": 100-ryo bomb!",
+  "en": "\"100-ryo bomb!\"",
   "notes": ""
  },
  {
@@ -7492,7 +7492,7 @@
   "ptr": "E851",
   "len": 16,
   "jp": "「くらえ！500両のバクダンやぁ",
-  "en": ": 500-ryo bomb!",
+  "en": "\"500-ryo bomb!\"",
   "notes": ""
  },
  {
@@ -7508,7 +7508,7 @@
   "ptr": "E87F",
   "len": 13,
   "jp": "「かがくにんぽう 火の鳥！",
-  "en": ": Ninja Phoenix!",
+  "en": "\"Ninja Phoenix!\"",
   "notes": ""
  },
  {
@@ -7580,7 +7580,7 @@
   "ptr": "E94B",
   "len": 14,
   "jp": "「私 あのこと しってるのよ",
-  "en": ": I know secrets",
+  "en": "\"I know secrets\"",
   "notes": ""
  },
  {
@@ -7604,7 +7604,7 @@
   "ptr": "E99F",
   "len": 15,
   "jp": "「あっUFOだ！ほらっアレ！！",
-  "en": ": Look, a UFO!!",
+  "en": "\"Look, a UFO!!\"",
   "notes": ""
  },
  {
@@ -7732,7 +7732,7 @@
   "ptr": "EB23",
   "len": 11,
   "jp": "「かわりみのじゅつ！！",
-  "en": ": Substitution!!",
+  "en": "\"Substitution!!\"",
   "notes": ""
  },
  {
@@ -7740,7 +7740,7 @@
   "ptr": "EB39",
   "len": 7,
   "jp": "「ウッフーン！",
-  "en": ": Ooh-la-la!",
+  "en": "\"Ooh-la-la!\"",
   "notes": ""
  },
  {
@@ -7748,7 +7748,7 @@
   "ptr": "EB47",
   "len": 6,
   "jp": "「オリャー！",
-  "en": ": Hraaah!",
+  "en": "\"Hraaah!\"",
   "notes": ""
  },
  {
@@ -7852,7 +7852,7 @@
   "ptr": "EC63",
   "len": 10,
   "jp": "「バーンナックゥー！",
-  "en": ": Burn Knuuckle!",
+  "en": "\"Burn Knuuckle!\"",
   "notes": ""
  },
  {
@@ -8132,7 +8132,7 @@
   "ptr": "EF89",
   "len": 15,
   "jp": "「みんな、もうひとガンバリよ！",
-  "en": ": One more push!",
+  "en": "\"One more push!\"",
   "notes": ""
  },
  {
@@ -8156,7 +8156,7 @@
   "ptr": "EFE7",
   "len": 5,
   "jp": "「エーイ！",
-  "en": ": Eeyah!",
+  "en": "\"Eeyah!\"",
   "notes": ""
  },
  {
@@ -8164,7 +8164,7 @@
   "ptr": "EFF1",
   "len": 6,
   "jp": "「ホホホッ！",
-  "en": ": Ohohoho!",
+  "en": "\"Ohohoho!\"",
   "notes": ""
  },
  {
@@ -8180,7 +8180,7 @@
   "ptr": "F019",
   "len": 9,
   "jp": "「しゃけパーンチ！",
-  "en": ": Salmon Puunch!",
+  "en": "\"Salmon Puunch!\"",
   "notes": ""
  },
  {
@@ -8188,7 +8188,7 @@
   "ptr": "F02B",
   "len": 7,
   "jp": "「つばめ返し！",
-  "en": ": Swallow Cut!",
+  "en": "\"Swallow Cut!\"",
   "notes": ""
  },
  {
@@ -8196,7 +8196,7 @@
   "ptr": "F039",
   "len": 10,
   "jp": "「えんげつさっぽう！",
-  "en": ": Full Moon Cut!",
+  "en": "\"Full Moon Cut!\"",
   "notes": ""
  },
  {
@@ -8204,7 +8204,7 @@
   "ptr": "F04D",
   "len": 10,
   "jp": "「いくで ござるぞ！",
-  "en": ": Have at thee!",
+  "en": "\"Have at thee!\"",
   "notes": ""
  },
  {
@@ -8212,7 +8212,7 @@
   "ptr": "F061",
   "len": 11,
   "jp": "「おっと、気をつけなっ",
-  "en": ": Whoa, careful!",
+  "en": "\"Whoa, careful!\"",
   "notes": ""
  },
  {
@@ -8228,7 +8228,7 @@
   "ptr": "F087",
   "len": 11,
   "jp": "「ちぇっ、しけてやがる",
-  "en": ": Tch, slim haul",
+  "en": "\"Tch, slim haul\"",
   "notes": ""
  },
  {
@@ -8244,7 +8244,7 @@
   "ptr": "F0BD",
   "len": 11,
   "jp": "「うっ！ こ、これは！",
-  "en": ": Ugh! Th-this!",
+  "en": "\"Ugh! Th-this!\"",
   "notes": ""
  },
  {
@@ -8260,7 +8260,7 @@
   "ptr": "F0F3",
   "len": 16,
   "jp": "「神通力が‥‥ うす‥れる‥‥‥",
-  "en": ": Power... wanes",
+  "en": "\"Power... wanes\"",
   "notes": ""
  },
  {
@@ -8268,7 +8268,7 @@
   "ptr": "F113",
   "len": 15,
   "jp": "「頭が スーッとするようだ‥‥",
-  "en": ": So refreshing",
+  "en": "\"So refreshing\"",
   "notes": ""
  },
  {

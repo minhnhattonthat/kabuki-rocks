@@ -545,6 +545,7 @@ BA={ba}
 # 0x220-0x231: item/battle-screen run-time glyphs, inferred from context (攻撃力 守備力 素早さ 精神力 命中率 回避率 ...)
 0227=攻
 0228=撃
+0229=尺
 022B=避
 022C=素
 022D=唱
