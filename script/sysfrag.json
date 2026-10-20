@@ -10,5 +10,5 @@
  {"site": "00969B", "y": "97DC", "jp": "は ", "en": " put back{n} ", "notes": "name, this, item, 0096C1"},
  {"site": "0096C1", "y": "97E2", "jp": "を{n}もとに もどした。", "en": "."},
  {"site": "00993B", "y": "99EA", "jp": "たちは{n}トビラに合うカギを 持っていなかった。", "en": " and party{n}had no key for the door.", "notes": "after the leader's name"},
- {"site": "2BF357", "y": "F543", "jp": "は ♪{slot}♫が{n}歌えるようになった", "en": " can now sing{n}[01E1]{slot}[01E1]!", "slot": "2BF382", "notes": "song name word stored at end-relative STA $7F3FE4,x (2BF382); ♫ (01E2) no longer draws, ♪ both sides like battle"}
+ {"site": "2BF357", "y": "F543", "jp": "は ♪{slot}♫が{n}歌えるようになった", "en": " can now sing{n}[01E1]{slot}[01E2]!", "slot": "2BF382", "notes": "song name word stored at end-relative STA $7F3FE4,x (2BF382); [01E2] keeps ♫ out of the reused kanji tiles (font.still_drawn)"}
 ]

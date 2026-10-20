@@ -162,6 +162,10 @@ def still_drawn(rom):
             for e in json.loads((root / name).read_text(encoding="utf-8")):
                 if not e["en"]:
                     add_text(e["jp"])
+    for p in root.glob("*.json"):  # original glyphs English text keeps as raw codes, e.g. [01E2] = ♫
+        for code in re.findall(r"\[([0-9A-F]{4})\]", p.read_text(encoding="utf-8")):
+            if int(code, 16) < 0x300:
+                busy.add(int(code, 16))
     return busy
 
 
