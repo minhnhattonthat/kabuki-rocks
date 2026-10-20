@@ -17,5 +17,8 @@
  {"site": "1EE357", "y": "E383", "jp": "いやなモザイクが消えて まる見えになった！！{wait}", "en": "The pesky mosaic vanished. Now everything's in plain view!!{wait}"},
  {"site": "1EE3D3", "y": "E3E1", "jp": "宝箱には アイテムが入っています{wait}", "en": "There's an item in the treasure chest.{wait}"},
  {"site": "2BF262", "y": "F566", "jp": "ディスクチェンジャーがあります。{n}歌いますか？{n}", "en": "There's a disc changer here. Will you sing?{n}", "notes": "a choice follows (9D)"},
- {"site": "2BF28A", "y": "F51D", "jp": "{name93}は 楽屋シップの なかまをよんだ{wait}", "en": "{name93} called the crew of the Dressing Room Ship.{wait}"}
+ {"site": "2BF28A", "y": "F51D", "jp": "{name93}は 楽屋シップの なかまをよんだ{wait}", "en": "{name93} called the crew of the Dressing Room Ship.{wait}"},
+ {"site": "009C64", "y": "9C6A", "jp": "けいかいする{wait}", "en": "Walking style: Cautious{wait}", "notes": "field Y button; site = slot of pointer table 00:9C64"},
+ {"site": "009C66", "y": "9C80", "jp": "てきをさがす{wait}", "en": "Walking style: Hunt Foes{wait}", "notes": "as above"},
+ {"site": "009C68", "y": "9C96", "jp": "ちょうさする{wait}", "en": "Walking style: Investigate{wait}", "notes": "as above"}
 ]
