@@ -31,6 +31,8 @@ def spans():
     for e in json.loads((S / "labels.json").read_text(encoding="utf-8")):
         if not e["en"] and "cells" in e:
             yield off(int(e["id"], 16)), 2 * e["cells"] * e["count"], f"kept Japanese label {e['id']}"
+        elif e.get("kind") == "place":  # read only to pick the pre-rendered English (asm/tiny.asm place4)
+            yield off(int(e["id"], 16)), 2 * e["cells"] * e["count"], f"place names {e['id']}"
 
 
 if __name__ == "__main__":

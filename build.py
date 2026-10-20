@@ -351,22 +351,6 @@ def patch_msgclear(rom, space):
     rom[o:o + 8] = bytes([0x22, at & 0xFF, at >> 8 & 0xFF, at >> 16]) + b"\xea" * 4
 
 
-XCHG_ROW = 0x0FAD1B  # chest exchange list row: LDA #$15A0 ; STA $00 ; LDA $10 ; LDY $14 ; JSR $C75C, X = name length
-XCHG_NAME_MAX = 11  # the rate digits start 12 cells right of the name
-
-
-def patch_xchgnames(rom, space):
-    """Cap the item names in the chest exchange list (0F:AD15) at 11 cells: English names ran into the rate column."""
-    o = off(XCHG_ROW)
-    assert rom[o:o + 9] == bytes.fromhex("a9a0158500a510a414"), "exchange row"
-    m = XCHG_NAME_MAX.to_bytes(2, "little")
-    code = (bytes.fromhex("a9a0158500e0") + (XCHG_NAME_MAX + 1).to_bytes(2, "little")  # LDA #$15A0 ; STA $00 ; CPX
-            + bytes([0x90, 3, 0xA2]) + m + bytes.fromhex("a510a4146b"))  # BCC +3 ; LDX #max ; LDA $10 ; LDY $14 ; RTL
-    at = space.alloc(len(code))
-    rom[off(at):off(at) + len(code)] = code
-    rom[o:o + 9] = bytes([0x22, at & 0xFF, at >> 8 & 0xFF, at >> 16]) + b"\xea" * 5
-
-
 def patch_names(rom, space):
     """Replace the hard-coded JP name init with JSL to a loop copying both 6-word slots (7E:614D, 7E:6159)."""
     data = b""
@@ -509,7 +493,6 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             patch_title(rom)
             patch_names(rom, space)
             patch_msgclear(rom, space)
-            patch_xchgnames(rom, space)
             plan = label_plan()
             uniq = {}  # identical baked cells share one glyph code
             for _, cells in plan:
@@ -544,6 +527,8 @@ def build(out, marker=False, reloc_jp=False, qa=None, debug=None):
             patch_menutiles(rom)
             patch_cards(rom)
             patch_signs(rom)
+            patch_plaques(rom)
+            patch_composer(rom)
             patch_name_limits(rom)
             patch_tab_spacers(rom)
             patch_tiny(rom, dict_end)
@@ -678,7 +663,7 @@ def label_plan():
     for e in json.loads(p.read_text(encoding="utf-8")) if p.exists() else []:
         if not e["en"]:
             continue
-        if e.get("kind") in ("tiny", "tinyrows", "tinytable", "tinyslots"):  # build.py patch_tiny
+        if e.get("kind") in ("tiny", "tinyrows", "tinytable", "tinyslots", "place"):  # build.py patch_tiny
             continue
         if e.get("kind") == "hook":
             for s in e["en"]:
@@ -752,6 +737,9 @@ def install_glyph_ext(rom, ext):
 ASAR = ROOT / "tools" / "asar" / "asar.exe"  # gitignored binary (Asar 1.91)
 TINY_AT = 0x3E8000  # asm/tiny.asm: item names in the field lists drawn in the tiny font at run time
 TINY_FONT = 0x3E9000  # its letters: 8 bytes per glyph code from 0x100
+PLACE_MAP = 0x3E9400  # tiny.asm place4: 8 tile words per place name (labels.json kind "place")
+PLACE_TILES = 0x3E9600  # its pre-rendered 2bpp tiles, 16 bytes each
+PLACE_HOOK = 0x05BA72  # the 4-glyph slot reader (travel menu, jizo map header)
 TINY_CODES = 0x65  # codes 0x100-0x164 (ASCII + extras)
 # item-name loops `JSL DICT_READ ; BMI ; draw ; INX ; INX ; BRA` -> JSL entry + what follows the loop
 _B71D, _B725 = b"\x30\x07\x20\x1d\xb7\xe8\xe8\x80\xf3", b"\x30\x07\x20\x25\xb7\xe8\xe8\x80\xf3"
@@ -825,7 +813,24 @@ def patch_tiny(rom, dict_end=0):
     if n > 0xE40 // 16:  # the WRAM mirror (asm/tiny.asm !MIRROR) holds $E4 tiles; keep the pool's top end
         t0, n = 0x100 - 0xE40 // 16, 0xE40 // 16
     defs = {"CODE": TINY_AT, "POOL_T0": t0, "POOL_N": n, "DICT_READ": DICT_READ, "TINY_FONT": TINY_FONT,
-            "TINY_N": TINY_CODES}
+            "TINY_N": TINY_CODES, "PLACE_LO": 0, "PLACE_HI": 0, "PLACE_MAP": PLACE_MAP, "PLACE_TILES": PLACE_TILES}
+    labels = json.loads((ROOT / "script" / "labels.json").read_text(encoding="utf-8"))
+    place = next((e for e in labels if e.get("kind") == "place" and e["en"]), None)
+    if place:  # each name: 4 cells baked in the tiny font, tiles deduplicated, blank halves -> $FFFF
+        blank, tiles, words = font.encode_tile([[3] * 8] * 8), [], []
+        for s in place["en"]:
+            cells = font.render_label(s, place["cells"], 2 if "/" in s else 1)
+            for d in [font.encode_tile(c[:8]) for c in cells] + [font.encode_tile(c[8:]) for c in cells]:
+                if d != blank and d not in tiles:
+                    tiles.append(d)
+                words.append(0xFFFF if d == blank else tiles.index(d))
+        assert place["cells"] == 4 and len(tiles) <= n, ("place names", len(tiles), n)
+        data = b"".join(w.to_bytes(2, "little") for w in words)
+        assert len(data) <= PLACE_TILES - PLACE_MAP and PLACE_TILES + 16 * len(tiles) <= 0x3F0000
+        rom[off(PLACE_MAP):off(PLACE_MAP) + len(data)] = data
+        rom[off(PLACE_TILES):off(PLACE_TILES) + 16 * len(tiles)] = b"".join(tiles)
+        defs["PLACE_LO"] = int(place["id"], 16) & 0xFFFF
+        defs["PLACE_HI"] = defs["PLACE_LO"] + 2 * place["cells"] * place["count"]
     tmp = ROOT / "build" / "_tiny.sfc"
     tmp.parent.mkdir(exist_ok=True)
     tmp.write_bytes(rom)
@@ -850,7 +855,12 @@ def patch_tiny(rom, dict_end=0):
     patches = {0x0082A8: (bytes.fromhex("a9808d1521"), jsl("nmi_upload") + b"\xea"),  # NMI: upload the cells
                0x00B817: (bytes.fromhex("221e8e00"), jsl("font_reload")),  # font reload: upload them again
                # battle song description (15 cells before the Cost label): JSL $02DCB1 (dictionary word at Y)
-               0x02DCAC: (bytes.fromhex("22b1dc02"), jsl("tiny_f08f"))}
+               0x02DCAC: (bytes.fromhex("22b1dc02"), jsl("tiny_f08f")),
+               # chest exchange list name (English ran into the rate column): LDA #$15A0 ; STA $00 ; LDA $10 ;
+               # LDY $14 ; JSR $C75C -> JSL xchg_row ; BRA +6
+               0x0FAD1B: (bytes.fromhex("a9a0158500a510a414205cc7"), jsl("xchg_row") + b"\x80\x06" + b"\xea" * 6)}
+    if place:  # PHP ; REP #$30 ; STA $00 -> JSL place4 ; RTS
+        patches[PLACE_HOOK] = (bytes.fromhex("08c2308500"), jsl("place4") + b"\x60")
     for site, (old, new) in patches.items():
         o = off(site)
         assert rom[o:o + len(old)] == old and len(new) == len(old), hex(site)
@@ -1126,6 +1136,84 @@ def patch_signs(rom):
             raw[t * 32:t * 32 + 32] = encode4([r[(k & 1) * 8:(k & 1) * 8 + 8] for r in img[(k >> 1) * 8:(k >> 1) * 8 + 8]])
     new = lz.compress(bytes(raw))
     assert len(new) <= used, f"sign tiles: {len(new):#x} > {used:#x}"
+    rom[o:o + len(new)] = new
+
+
+PLAQUE_TILES = (0x1AB613, 0x1A80)  # jizo-map OBJ sheet (loaded by 0F:A299), compressed
+PLAQUE_FRAMES = 0x2EE255  # 7 metasprites of 25 bytes: 80 04 01 00 00, then 5 x 2 (tile, attr) 16x16 sprites
+
+
+def patch_plaques(rom):
+    """Jizo-map region plaques (イズモ ... オエド) -> the English region names (first 7 travel-menu places)."""
+    import lz
+    o = off(PLAQUE_TILES[0])
+    raw, used = lz.decompress(rom, o, PLAQUE_TILES[1])
+    raw = bytearray(raw)
+    place = next(e for e in json.loads((ROOT / "script" / "labels.json").read_text(encoding="utf-8"))
+                 if e["id"] == "05FD2F")
+    ink = {1: 0x2, 2: 0xB}  # font ink / shade -> plaque ink / its antialias
+    for p, name in enumerate(place["en"][:7]):
+        f = off(PLAQUE_FRAMES) + 25 * p
+        sprites = [rom[f + 5 + 2 * k] for k in range(10)]
+        # the name tiles: columns 1-3, and column 0 too where it isn't the shared left cap (04/06)
+        cols = [c for c in range(4) if c or sprites[0] != 0x04]
+        img = {}  # (x, y) on the 80x32 plaque -> pixel, name tiles only
+        for c in cols:
+            for r in range(2):
+                for d, (dx, dy) in zip((0, 1, 16, 17), ((0, 0), (8, 0), (0, 8), (8, 8))):
+                    px = decode4(raw[(sprites[5 * r + c] + d) * 32:][:32])
+                    for y in range(8):
+                        for x in range(8):
+                            img[c * 16 + dx + x, r * 16 + dy + y] = px[y][x]
+        x_lo = 6 if cols[0] == 0 else 16  # inner paper: x 6-65, y 9-21
+        for (x, y), v in img.items():
+            if x >= x_lo and 9 <= y <= 21:
+                img[x, y] = 0xA
+        text = font.strip(name)
+        x0 = max(x_lo, (6 + 66 - len(text)) // 2)
+        if x0 + len(text) > 64:
+            raise ValueError(f"plaque {name!r}: {len(text)} px > {64 - x_lo}")
+        for i, col in enumerate(text):
+            for gy in range(2, 14):  # caps rows 2-11 at y 10-19, descenders to y 21
+                if col[gy] in ink:
+                    img[x0 + i, 8 + gy] = ink[col[gy]]
+        for c in cols:
+            for r in range(2):
+                for d, (dx, dy) in zip((0, 1, 16, 17), ((0, 0), (8, 0), (0, 8), (8, 8))):
+                    t = sprites[5 * r + c] + d
+                    raw[t * 32:t * 32 + 32] = encode4([[img[c * 16 + dx + x, r * 16 + dy + y] for x in range(8)]
+                                                       for y in range(8)])
+    new = lz.compress(bytes(raw))
+    assert len(new) <= used, f"plaque tiles: {len(new):#x} > {used:#x}"
+    rom[o:o + len(new)] = new
+
+
+COMPOSER_OBJ = (0x1AAB64, 0xB40)  # composer OBJ sheet (loaded by 0F:C851), compressed
+COMPOSER_BUTTONS = {0x20: "BACK", 0x24: "PLAY", 0x28: "SAVE", 0x2C: "DONE"}  # もとす えんそう とうろく おわる
+
+
+def patch_composer(rom):
+    """Composer button bar: each button is 32x16 (tiles t..t+3 over t+16..t+19); redrawn in dialogue-font caps
+    (CLEAR's bold 2-px strokes would make a 4-letter word 31 px wide)."""
+    import lz
+    o = off(COMPOSER_OBJ[0])
+    raw, used = lz.decompress(rom, o, COMPOSER_OBJ[1])
+    raw = bytearray(raw)
+    for t0, word in COMPOSER_BUTTONS.items():
+        cols = font.strip(word)
+        img = [[0xE] * 32 for _ in range(16)]
+        x0 = (32 - len(cols)) // 2
+        assert x0 >= 1, word
+        for x, col in enumerate(cols):
+            for gy in range(2, 12):  # caps rows 2-11 -> y 3-12, as CLEAR
+                if col[gy] != 3:
+                    img[1 + gy][x0 + x] = 0x5
+        for c in range(4):
+            for r in range(2):
+                t = t0 + c + 16 * r
+                raw[t * 32:t * 32 + 32] = encode4([row[c * 8:c * 8 + 8] for row in img[r * 8:r * 8 + 8]])
+    new = lz.compress(bytes(raw))
+    assert len(new) <= used, f"composer tiles: {len(new):#x} > {used:#x}"
     rom[o:o + len(new)] = new
 
 

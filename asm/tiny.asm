@@ -2,7 +2,8 @@
 ; Two 3x5 letters per 8-px cell, drawn into the top tile of the cell (bottom = blank tile $3FF). Cells get BG3
 ; page-0 tiles from a pool (font.TINY_POOL); their pixels go to a WRAM mirror, uploaded by the NMI hook.
 ; Defines from build.py: CODE, POOL_T0 (first pool tile), POOL_N (slots), DICT_READ, TINY_FONT (8 bytes per code
-; from $100: rows 0-5, pixels in the high nibble, byte 6 = 1 when the glyph exists), TINY_N (codes in TINY_FONT).
+; from $100: rows 0-5, pixels in the high nibble, byte 6 = 1 when the glyph exists), TINY_N (codes in TINY_FONT),
+; PLACE_LO/PLACE_HI/PLACE_MAP/PLACE_TILES (place4).
 lorom
 
 !MIRROR = $7FD000   ; POOL_N tiles of 16 bytes (7F:D000-FABF is never written by the game, tools/lua/wramuse.lua)
@@ -20,6 +21,7 @@ lorom
 !TRIES = $7FE024
 !SLOT = $7FE026
 !MODE = $7FE028     ; 0: field menus (04:B71D/B725 conventions), 1: battle (02:F08F)
+!PMAP = $7FE02A     ; place4: offset into PLACE_MAP
 !KEY = $7A31
 !CAP = $0060        ; slots uploaded per frame (16 bytes each)
 
@@ -60,6 +62,12 @@ tiny725:            ; loops that drew with JSR $B725: attribute already in $0709
 .done:
     PLP
     RTL
+tiny_field:         ; field drawing without tiny725's screen-mode check (xchg_row)
+    PHP
+    REP #$30
+    LDA #$0000
+    STA.l !MODE
+    BRA tiny_body
 tiny_f08f:          ; battle loops that drew with JSL $02F08F (attribute in $0709)
     PHP
     REP #$30
@@ -240,6 +248,19 @@ alloc:
     ASL
     STA.l !MOFF
     JSR .advance
+    JMP mark
+.advance:
+    LDA.l !NEXT
+    INC
+    CMP.w #!POOL_N
+    BCC +
+    LDA #$0000
++:
+    STA.l !NEXT
+    RTS
+
+; SLOT -> dirty range [DLO, DHI)
+mark:
     LDA.l !DHI
     BEQ .first
     LDA.l !SLOT
@@ -258,15 +279,6 @@ alloc:
     STA.l !DLO
     INC
     STA.l !DHI
-    RTS
-.advance:
-    LDA.l !NEXT
-    INC
-    CMP.w #!POOL_N
-    BCC +
-    LDA #$0000
-+:
-    STA.l !NEXT
     RTS
 
 init:
@@ -339,6 +351,138 @@ store:              ; $0800/$0802 -> tilemap buffer at Y (04:B72D; battle: 02:F0
     STA $2780,y
     INY
     INY
+    RTS
+
+; --- 0F:AD1B (JSL), chest exchange list row: $00 = the name's dictionary word pointer (0F:E9E1 left it there),
+; --- $10 = tilemap offset, $14 = attribute bits, DB = $0F. Draws the name in the tiny font instead of 0F:C75C.
+xchg_row:
+    PHP
+    PHB
+    REP #$30
+    PEA $7E7E
+    PLB
+    PLB
+    LDA $0709
+    PHA
+    LDA $14
+    STA $0709
+    LDX $00
+    LDY $10
+    JSL tiny_field
+    PLA
+    STA $0709
+    PLB
+    PLP
+    RTL
+
+; --- 05:BA72 (JSL; A = pointer to a 4-glyph slot, DB = $05, D = 0): the 4 cells' tile words -> $02-$08 (tops) and
+; --- $0A-$10 (bottoms), which 05:BAD1 stores. Place names (PLACE_LO..PLACE_HI, 8-byte slots) use pre-rendered
+; --- tiles (PLACE_MAP: 8 words per name, tile index or $FFFF = blank; PLACE_TILES: 16 bytes per tile) copied to
+; --- fixed slots at the top of the pool; any other slot is drawn glyph by glyph as before. X and Y are kept.
+place4:
+    PHP
+    REP #$30
+    PHX
+    PHY
+    STA $00
+    CMP.w #!PLACE_LO
+    BCC .orig
+    CMP.w #!PLACE_HI
+    BCS .orig
+    JSR init
+    LDA $00
+    SEC
+    SBC.w #!PLACE_LO
+    ASL
+    STA.l !PMAP
+    LDX #$0000
+.cell:
+    PHX
+    LDA.l !PMAP
+    TAX
+    LDA.l !PLACE_MAP,x
+    BMI .blank
+    JSR place_tile
+    BRA .put
+.blank:
+    LDA #$2FFF      ; blank tile $3FF
+.put:
+    PLX
+    STA $02,x
+    LDA.l !PMAP
+    INC
+    INC
+    STA.l !PMAP
+    INX
+    INX
+    CPX #$0010
+    BNE .cell
+    BRA .done
+.orig:              ; 05:BA72-BACE
+    LDY #$0000
+    LDX #$0000
+-:
+    LDA ($00),y
+    AND #$7FFF
+    PHX
+    PHY
+    JSL $00BA9D
+    PLY
+    PLX
+    LDA $0800
+    STA $02,x
+    LDA $0802
+    STA $0A,x
+    INY
+    INY
+    INX
+    INX
+    CPX #$0008
+    BNE -
+.done:
+    PLY
+    PLX
+    PLP
+    RTL
+
+place_tile:         ; A = tile index u -> its 16 bytes into slot POOL_N-1-u, marked dirty; A = its tile word
+    STA.l !TMP
+    LDA.w #!POOL_N-1
+    SEC
+    SBC.l !TMP
+    STA.l !SLOT
+    ASL
+    ASL
+    ASL
+    ASL
+    TAY             ; Y = mirror offset
+    LDA.l !TMP
+    ASL
+    ASL
+    ASL
+    ASL
+    TAX             ; X = source offset
+    LDA #$0008
+    STA.l !TMP
+-:
+    LDA.l !PLACE_TILES,x
+    PHX
+    TYX
+    STA.l !MIRROR,x
+    PLX
+    INX
+    INX
+    INY
+    INY
+    LDA.l !TMP
+    DEC
+    STA.l !TMP
+    BNE -
+    JSR mark
+    LDA.l !SLOT
+    CLC
+    ADC.w #!POOL_T0
+    ORA #$2C00      ; as emit
     RTS
 
 ; --- NMI, frame-ready branch (00:82A8, replaces LDA #$80 ; STA $2115; 8-bit A/X, DB = 0): upload dirty slots
@@ -439,4 +583,6 @@ print "tiny725=", hex(tiny725)
 print "tiny_f08f=", hex(tiny_f08f)
 print "nmi_upload=", hex(nmi_upload)
 print "font_reload=", hex(font_reload)
+print "place4=", hex(place4)
+print "xchg_row=", hex(xchg_row)
 print "end=", hex(pc())

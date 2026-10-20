@@ -85,12 +85,12 @@ Evidence: `work/playtest/gate/NNNN.png|.sheetK.png|.<state>`, presses in `log.ts
 - [x] (fixed: placard 24:AC33 redrawn OFF / STAGE, build.py PLACARDS) battle - knocked-out member placard still Japanese - "休演中"
 - [x] (fixed: labels.json 0FAE4B-0FCB6D, normal-font lengths) chest exchange (Otakker II) and song composer screens still Japanese
 - [x] (fixed: labels.json 0FCB19) composer - "ー" placeholders show as "K" (ー's code is K in the English font) - "KKKKKKKKKKKKKKKK"
-- [x] (fixed: build.py patch_xchgnames caps names at 11 cells) chest exchange list - English item names run into the rate column - "Full House E2lop"
+- [x] (fixed: names capped at 11 cells, later drawn in the tiny font instead) chest exchange list - English item names run into the rate column - "Full House E2lop"
 - [x] (fixed: font.still_drawn masked bit 15 off label words) travel menu / jizo map - last glyph of each kept-Japanese label lost its tile - "イズ" for イズモ, "花 ﾙ" for 花町
 - [x] (fixed: code.json 1ED4D6-1ED55A, 04CC89; codestr's catalog read them one word late) Standby Cargo menu (Store / Take items, Quit, "Choose your cast.") and sound-test help line 1 still Japanese - not yet seen in the emulator
-- [ ] travel menu / jizo-map place names (labels.json 05FD2F, 25 four-glyph slots) kept Japanese: baked in the tiny font they need ~74 font cells, ~14 are free. Needs a run-time tiny drawer at 05:BA72 (like asm/tiny.asm) - "イズモ", "花 町"
-- [ ] composer button bar is a Japanese graphic - "CLEAR もとす えんそう とうろく おわる" (the help line names "えんそう" the same way)
-- [ ] chest exchange - item names cut at 11 cells ("Vigor Hamm", "Spirit Lig"); tiny font would fit them
+- [x] (fixed: labels.json kind place, asm/tiny.asm place4 at 05:BA72 copies pre-rendered tiles; jizo-map region plaques are OBJ metasprites 2E:E255 over sheet 1A:B613, build.py patch_plaques) travel menu / jizo-map place names kept Japanese - "イズモ", "花 町"
+- [x] (fixed: OBJ sheet 1A:AAB64 tiles $20-$3F, build.py patch_composer -> BACK PLAY SAVE DONE; the help line's button is the same sprite) composer button bar is a Japanese graphic - "CLEAR もとす えんそう とうろく おわる"
+- [x] (fixed: asm/tiny.asm xchg_row at 0F:AD1B draws the name in the tiny font; replaces the 11-cell cap) chest exchange - item names cut at 11 cells ("Vigor Hamm", "Spirit Lig")
 - [x] (fixed: tools/wrap.py CHOICE_COL - a {choice} line keeps 14 cells of text, else the choice moves down a line; 6 three-line questions reworded) every Yes/No in event text - the choice is drawn from cell 14 of the current line (03:93F6) and overwrote longer English questions - "record your jo▶Yesy?"
 - [x] (fixed: code.json 1EDDBB-1EDDFF, odd-address templates the catalog missed; digit fields blank-fill from cell 2) save jizo / Continue slot line - Japanese and garbage after LV, money, play time - "1両役者 )C", "あと 30尺"; "Overwrite save?" shortened to clear its Yes/No
 - [x] (fixed: labels.json imm 1ECCCC, as the status screen; prompt "Pick actors") party swap screen - 両役者 / あと in the stat panel, "Choose your cast." clipped
