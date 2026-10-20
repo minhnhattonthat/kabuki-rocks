@@ -680,9 +680,13 @@ TINY_ROWS_AT = 0x3CB000
 # a printer of strings picked through a pointer table (labels.json kind "tinytable": "keys" = the X values at the
 # `LDA long,x` that fetches the pointer, "en"): that LDA reads a new table of English string pointers instead, and
 # the string loop that follows becomes JSL entry ; BRA cont. {id = the LDA: (loop start, cont, entry)}
+# With a 4th item (pre, tail): [loop, cont) becomes JSL stub + tail, the stub (generated) runs pre then JML entry.
 TINY_TABLES = {
     "04ADCA": (0x04ADCF, 0x04ADE8, "tiny725"),  # config values (04:AD8D): 8-bit kana strings via 04:ADFB.. tables
     "04B104": (0x04B10A, 0x04B11D, "tiny725"),  # button functions (04:B0D5), X = function * 2
+    # Forte names (04:9451, X = member * 2): LDY #$09E4 ; attribute $1C00, or $0C00 when $E3 ; JSR $B2D4 ; PLP ; RTS
+    "049451": (0x049458, 0x049473, "tiny725",
+               (bytes.fromhex("a0e409a9001c8d0907a5e329ff00f006a9000c8d0907"), b"\x28\x60")),
 }
 TINY_TABLE_AT = 0x3CB800
 
@@ -791,7 +795,7 @@ def patch_tiny(rom, dict_end=0):
             rom[so:so + 4 + len(old_tail)] = new + b"\xea" * (4 + len(old_tail) - len(new))
             table_at += len(e["en"]) * e["stride"]
         elif e.get("kind") == "tinytable" and e["en"]:
-            loop, cont, entry = TINY_TABLES[e["id"]]
+            loop, cont, entry, *stub = TINY_TABLES[e["id"]]
             so = off(int(e["id"], 16))
             assert rom[so] == 0xBF, e["id"]  # LDA long,x
             keys = {int(k, 16): s for k, s in zip(e["keys"], e["en"])}
@@ -804,7 +808,15 @@ def patch_tiny(rom, dict_end=0):
             rom[so + 1:so + 4] = base.to_bytes(3, "little")
             table_at += hi - lo + 2
             lo_ = off(loop)
-            new = jsl(entry) + bytes([0x80, cont - (loop + 6)])
+            if stub:
+                pre, tail = stub[0]
+                code = pre + b"\x5c" + sym[entry].to_bytes(3, "little")  # ... ; JML entry (its RTL returns to us)
+                assert rom[off(rows_at):off(rows_at) + len(code)] == b"\xff" * len(code)
+                rom[off(rows_at):off(rows_at) + len(code)] = code
+                new = b"\x22" + rows_at.to_bytes(3, "little") + tail
+                rows_at += len(code)
+            else:
+                new = jsl(entry) + bytes([0x80, cont - (loop + 6)])
             rom[lo_:off(cont)] = new + b"\xea" * (cont - loop - len(new))
 
 

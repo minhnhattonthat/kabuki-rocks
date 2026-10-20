@@ -25,8 +25,8 @@ Evidence: `work/playtest/menu/NNNN.png|.sheetK.png|.<state>`, presses in `log.ts
 - [ ] (likely QA poke: descriptions come from per-category records (02:DF7D, $5E85 ids), the poke put one id list in every tab; re-check on a real save) step 0014, 0015 - text - shop Sell help line - garbage glyph rows instead of a description - Kotetsu Blade: two lines of junk glyphs; Candy: two junk glyphs
 - [ ] (likely QA poke, as above) step 0013, 0020, 0021 - text - shop Sell help line - wrong or missing description - Phoenix Feather shows "Hannya Ring"; 100-Kan Hammer shows "..."; Quick Cucumber Roll blank
 - [x] (fixed 2026-10-20: stat names via labels.json tinyslots 04A250; arrow tiles remapped, build.py COMPARE_ARROW) step 0050 - text - Equip stat-compare box - Japanese left, garbled arrow - "攻撃力 16N 18"
-- [ ] step 0043-0045 - text - Forte name window - stale "g" from "Compose a song" stays at the right edge for other members - "Rouse          g", "Grand Brawl  g"
-- [ ] step 0042, 0046 - text - Forte name window - "Compose a song" runs into the right frame, "g" clipped - "Compose a song"
+- [x] (fixed 2026-10-20: names via labels.json tinytable 049451, padded to 20 letters) step 0043-0045 - text - Forte name window - stale "g" from "Compose a song" stays at the right edge for other members - "Rouse          g", "Grand Brawl  g"
+- [x] (fixed 2026-10-20, as above) step 0042, 0046 - text - Forte name window - "Compose a song" runs into the right frame, "g" clipped - "Compose a song"
 - [ ] step 0009-0011, 0036-0040 - text - Sell and Item tab bars - "Equip-/ment" hyphen-split over two tiny lines; stray slash after Battle - "Equip- ment", "Battle/"
 - [ ] step 0002, 0003, 0024, 0048 - text - shop menu, buy list, equip sub-menu - cursor sprite covers the first letter of the selected label (field-menu bug on more screens) - "Help", "Bamboo-maru", "Sell", "Equip"
 - [x] (ruling 2026-10-20: Forte; glossary and 2 dialogue lines updated) step 0027 - wording - field/battle menu - 十八番 shown as "Forte", glossary says "Specialty" - "Forte"
