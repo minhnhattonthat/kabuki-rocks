@@ -2194,7 +2194,7 @@
   "id": "1EDE3D",
   "len": 16,
   "jp": "ふるいきろくは 消えてもいいな？",
-  "en": "The old record will be erased. All right?",
+  "en": "Overwrite the old record?",
   "refs": [
    [
     "1EDA94",
@@ -2233,7 +2233,7 @@
   "id": "1EDE85",
   "len": 18,
   "jp": "どこから たびを さいかいしますか？",
-  "en": "Where will you resume your journey?",
+  "en": "Resume from where?",
   "refs": [
    [
     "1ED9BA",

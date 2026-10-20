@@ -74,3 +74,6 @@ Evidence: `work/playtest/gate/NNNN.png|.sheetK.png|.<state>`, presses in `log.ts
 
 - [x] (fixed 2026-10-20: stray quote removed; JP speaker is a blank indent, so no name per glossary) step 0018 - text - outside the south gate, disguised Makki - opening quote never closed, no speaker name - "\"Oh, come on. Forgotten your childhood friend's face already?"
 - [x] (wrapper fix 2026-10-20) step 0007, 0008, 0011 - wording - Ume dialogue - more widow pages (known class) - "it yourself after all...", "on.", "path you believe in."
+
+## 2026-10-20 user report
+- [x] (fixed 2026-10-20: "Resume from where?", checked from title > Continue; save prompt 1EDE3D shortened to "Overwrite the old record?" for the same box, not seen) Continue screen - text - title overflows its box - "Where will you resume your journey?"
