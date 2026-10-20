@@ -271,11 +271,14 @@ def patch_choice(rom):
 
 BATTLE_STORE = 0x02F08F  # battle glyph store: PHX PHY JSL $00BAEF PLY PLX, then $0800/$0802 -> $2780/$27C0,y
 MSG_LINE, MSG_CELLS = 0x1044, 28  # battle message line (02:E9A3 clears it with X=$1C before most messages)
+BLANK_FILL_RET = 0xE9B4  # return address of the JSL $02F08F in 02:E9AE (blank X cells at Y)
 
 
 def patch_msgclear(rom, space):
     """A glyph drawn at the start of the battle message line blanks the whole line first. Some messages
-    (" took damage") print without clearing; the JP texts were long enough to cover the previous one."""
+    (" took damage") print without clearing; the JP texts were long enough to cover the previous one.
+    Not for the game's own blank fill (02:E9AE): the song menu clears only its 15-cell description field there,
+    and the Cost/Area labels after it are drawn once (02:BE24)."""
     o = off(BATTLE_STORE)
     assert rom[o:o + 8] == bytes.fromhex("da5a22efba007afa")
     plain = bytes.fromhex("da5a22efba007afa6b")                          # PHX PHY JSL $00BAEF PLY PLX RTL
@@ -285,8 +288,10 @@ def patch_msgclear(rom, space):
     loop = (half(0x0800, 0x2780) + half(0x0802, 0x27C0)
             + b"\xe8\xe8\xe0" + (2 * MSG_CELLS).to_bytes(2, "little"))   # INX INX ; CPX #2*cells
     loop += bytes([0x90, (-(len(loop) + 2)) & 0xFF])                     # BCC loop
-    clear = (bytes.fromhex("48da5a a9ff02 22efba00 7a a20000".replace(" ", ""))  # PHA PHX PHY ; blank tiles ; PLY
-             + loop + b"\xfa\x68")                                       # PLX PLA
+    clear = (bytes.fromhex("da5a a9ff02 22efba00 7a a20000".replace(" ", ""))  # PHX PHY ; blank tiles ; PLY
+             + loop + b"\xfa")                                           # PLX
+    clear = (b"\x48\xa3\x06\xc9" + BLANK_FILL_RET.to_bytes(2, "little")  # PHA ; LDA 6,s (F08F's caller) ; CMP
+             + bytes([0xF0, len(clear)]) + clear + b"\x68")              # BEQ skip ; ... ; skip: PLA
     code = b"\xc0" + MSG_LINE.to_bytes(2, "little") + bytes([0xD0, len(clear)]) + clear + plain  # CPY ; BNE plain
     at = space.alloc(len(code))
     rom[off(at):off(at) + len(code)] = code
@@ -635,7 +640,9 @@ TINY_SITES = {0x049FE9: ("tiny71d", _B71D, b"\x80\x0d"),  # item list (BRA $9FFC
               # 00:E133 (dictionary word A at Y, e.g. the Forte description 04:9449); in battle it stays per-glyph
               0x00E139: ("tiny71d", b"\x30\x08\x22\x7b\xb7\x04\xe8\xe8\x80\xf2", b"\x6b"),
               # battle item and song lists (name pointer in $07E5; JSL $02F08F per glyph): BRA $DF4F
-              0x02DF3A: ("tiny_f08f", b"\x30\x08\x22\x8f\xf0\x02\xe8\xe8\x80\xf2", b"\x80\x0f")}
+              0x02DF3A: ("tiny_f08f", b"\x30\x08\x22\x8f\xf0\x02\xe8\xe8\x80\xf2", b"\x80\x0f"),
+              # battle song list (greys songs costing more VP than $0A93; the loop ended the routine: RTS)
+              0x02DB8E: ("tiny_f08f", b"\x30\x08\x22\x8f\xf0\x02\xe8\xe8\x80\xf2", b"\x60")}
 # whole English phrases drawn by the tiny renderer instead of glyph-by-glyph code (labels.json kind "tiny", id =
 # site): original bytes there, tilemap position, entry; the bytes become LDY #pos ; LDX #string ; JSL entry
 TINY_HOOKS = {
@@ -710,7 +717,9 @@ def patch_tiny(rom, dict_end=0):
         assert rom[o:o + 4 + len(loop)] == read + loop, hex(site)
         rom[o:o + 4 + len(after)] = jsl(entry) + after
     patches = {0x0082A8: (bytes.fromhex("a9808d1521"), jsl("nmi_upload") + b"\xea"),  # NMI: upload the cells
-               0x00B817: (bytes.fromhex("221e8e00"), jsl("font_reload"))}  # font reload: upload them again
+               0x00B817: (bytes.fromhex("221e8e00"), jsl("font_reload")),  # font reload: upload them again
+               # battle song description (15 cells before the Cost label): JSL $02DCB1 (dictionary word at Y)
+               0x02DCAC: (bytes.fromhex("22b1dc02"), jsl("tiny_f08f"))}
     for site, (old, new) in patches.items():
         o = off(site)
         assert rom[o:o + len(old)] == old and len(new) == len(old), hex(site)
