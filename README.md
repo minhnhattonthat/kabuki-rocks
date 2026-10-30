@@ -9,6 +9,21 @@ no game data you can play; you need your own dump of the Japanese game.
 **Found a bug?** [Report it](../../issues/new/choose): untranslated text, typos, overflow, crashes. Attaching a savestate
 helps most.
 
+## Translation status
+
+| Part | Status |
+|---|---|
+| Dialogue / story | Translated |
+| Menus (field, item, status, config, song lists, shop, battle) and system messages | Translated (money sign kept as 両, read "ryo") |
+| Boot/attract prologue, title menu, Continue and save screens | Translated |
+| Graphics text: curtains, battle placards, 18 chapter cards, town shop signs | Translated |
+| Song composer, chest exchange, travel menu and jizo-map place names | Translated |
+| Standby Cargo menu, sound-test help | Not checked in play (translated, not yet seen on screen) |
+| Credits | Translated |
+
+Known issues: Button Settings labels read "Abutton" / "Bbutton" (no room for a space); in the battle item list the
+weapon icon can overlap the item count. Playtest log: `docs/bugs.md`.
+
 ## What's here
 
 | Path | What it is |
